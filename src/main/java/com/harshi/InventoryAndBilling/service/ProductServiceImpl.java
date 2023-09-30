@@ -26,4 +26,10 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.save(product);
 	}
 
+
+	@Override
+	public Product getProductById(Long productId) {
+		return productRepository.findById(productId).get();
+	}
+
 }

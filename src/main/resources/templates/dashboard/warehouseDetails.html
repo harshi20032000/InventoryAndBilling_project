@@ -1,0 +1,24 @@
+<!-- warehouseDetails.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="container">
+        <h2>Warehouse Details Page</h2>
+        <h3 th:text="${warehouse.wareName}"></h3>
+        <h4>Products:</h4>
+        <ul>
+            <li th:each="product : ${warehouse.products}">
+                <span th:text="${product.brandName}"></span> -
+                <span th:text="'Quantity: ' + 1"></span> <!-- You can replace '1' with the actual quantity -->
+            </li>
+        </ul>
+        <div class="button-container">
+            <a class="button" href="/inventorybilling/showLanding">Home</a>
+            <a class="button" href="/inventorybilling/showWarehouseList">Warehouse List</a>
+        </div>
+    </div>
+</body>
+</html>

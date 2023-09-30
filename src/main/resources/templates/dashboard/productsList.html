@@ -62,6 +62,9 @@
                     <td th:text="${product.brandName}"></td>
                     <td th:text="${product.pType}"></td>
                     <td th:text="${product.price}"></td>
+                    <td>
+                <a th:href="@{'/productDetails/' + ${product.productId}}">View Details</a>
+            </td>
                 </tr>
             </tbody>
         </table>

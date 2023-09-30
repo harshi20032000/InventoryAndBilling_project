@@ -23,4 +23,9 @@ public class WarehouseServiceImpl implements WarehouseService {
 		return warehouseRepository.save(warehouse);
 	}
 
+	@Override
+	public Warehouse getWarehouseById(Long warehouseId) {
+		return warehouseRepository.findById(warehouseId).get();
+	}
+
 }

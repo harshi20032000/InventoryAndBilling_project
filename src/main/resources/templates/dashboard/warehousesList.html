@@ -19,6 +19,9 @@
                 <tr th:each="warehouse : ${warehousesList}">
                     <td th:text="${warehouse.wareId}"></td>
                     <td th:text="${warehouse.wareName}"></td>
+                    <td>
+                <a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}">View Details</a>
+            </td>
                     <!-- Add more columns as needed -->
                 </tr>
             </tbody>

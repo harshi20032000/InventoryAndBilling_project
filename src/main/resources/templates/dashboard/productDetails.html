@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- ... (head content) ... -->
+</head>
+
+<body>
+	<div class="container">
+		<h2>Product Details Page</h2>
+		<h3 th:text="${product.brandName}"></h3>
+		<p th:text="'Price: ' + ${product.price}"></p>
+		<p th:text="'Product Code: ' + ${product.productId}"></p>
+		<h4>Warehouses:</h4>
+		<ul>
+			<li th:each="warehouse : ${product.warehouses}">
+				<span th:text="${warehouse.wareName}"></span> -
+				<span th:text="'Quantity: ' + ${warehouse.products.size()}"></span>
+			</li>
+		</ul>
+		<div class="button-container">
+			<a class="button" href="/inventorybilling/showLanding">Home</a>
+			<a class="button" href="/inventorybilling/showProductsList">Product List</a>
+		</div>
+	</div>
+</body>
+
+</html>
