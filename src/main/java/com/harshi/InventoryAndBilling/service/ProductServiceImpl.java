@@ -16,15 +16,13 @@ public class ProductServiceImpl implements ProductService {
 
 
 	@Override
-	public List<Product> getAllAvailableProducts() {
-		// TODO Auto-generated method stub
+	public List<Product> showProductsList() {
 		return productRepository.findAll();
 	}
 
 
 	@Override
 	public Product saveProduct(Product product) {
-		// TODO Auto-generated method stub
 		return productRepository.save(product);
 	}
 

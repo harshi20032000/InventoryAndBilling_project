@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="container">
+        <h2>Add Warehouse</h2>
+        <form action="addWarehouse" method="post" th:object="${warehouse}">
+            <!-- Add form fields for warehouse details -->
+            <div class="form-group">
+                <label for="wareName">Warehouse Name:</label>
+                <input type="text" class="form-control" id="wareName" name="wareName" th:field="*{wareName}" required>
+            </div>
+            <!-- Add more form fields as needed -->
+
+            <button type="submit" class="btn btn-primary">Save Warehouse</button>
+        </form>
+        <a href="showWarehouseList">Back to Warehouse List</a>
+        <b th:text="${msg}"></b>
+         <div class="button-container">
+            <a class="button" href="showLanding">Home</a>
+        </div>
+    </div>
+</body>
+</html>

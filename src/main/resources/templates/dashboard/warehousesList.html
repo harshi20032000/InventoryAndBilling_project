@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="container">
+        <h2>Warehouse List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Warehouse ID</th>
+                    <th>Warehouse Name</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of warehouses and display them in the table -->
+                <tr th:each="warehouse : ${warehousesList}">
+                    <td th:text="${warehouse.wareId}"></td>
+                    <td th:text="${warehouse.wareName}"></td>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </tbody>
+        </table>
+        <a href="showAddWarehouse">Add Warehouse</a>
+        <b th:text="${msg}"></b>
+        <div class="button-container">
+            <a class="button" href="showLanding">Home</a>
+        </div>
+    </div>
+</body>
+</html>

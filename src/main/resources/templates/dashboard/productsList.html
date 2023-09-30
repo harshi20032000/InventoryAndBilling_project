@@ -57,7 +57,7 @@
             </thead>
             <tbody>
                 <!-- Iterate through the list of available products and display them in the table -->
-                <tr th:each="product : ${availableProducts}">
+                <tr th:each="product : ${productsList}">
                     <td th:text="${product.productId}"></td>
                     <td th:text="${product.brandName}"></td>
                     <td th:text="${product.pType}"></td>

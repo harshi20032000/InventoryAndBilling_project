@@ -9,12 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.harshi.InventoryAndBilling.entities.Product;
 import com.harshi.InventoryAndBilling.service.PaymentService;
 import com.harshi.InventoryAndBilling.service.ProductService;
+import com.harshi.InventoryAndBilling.service.WarehouseService;
 
 @Controller
 public class DashboardController {
@@ -25,11 +24,16 @@ public class DashboardController {
 	@Autowired
 	private ProductService productService;
 
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(DashboardController.class);
-	
+
+	/**
+	 * This ia an empty product attribute so that the form can us this while
+	 * rendering
+	 */
 	@ModelAttribute("product")
 	public Product getProduct() {
-	    return new Product();
+		return new Product();
 	}
 
 	@RequestMapping("/showTotalOutstanding")
@@ -46,13 +50,13 @@ public class DashboardController {
 		return "dashboard/landing";
 	}
 
-	@RequestMapping("/showAvailableProducts")
-	public String showAvailableProducts(ModelMap modelMap) {
+	@RequestMapping("/showProductsList")
+	public String showProductsList(ModelMap modelMap) {
 		LOGGER.info("Inside showAvailableProducts() on DashboardController");
 		// Retrieve available products and add them to the modelMap
-		List<Product> availableProducts = productService.getAllAvailableProducts();
-		modelMap.addAttribute("availableProducts", availableProducts);
-		return "dashboard/availableProducts";
+		List<Product> productsList = productService.showProductsList();
+		modelMap.addAttribute("productsList", productsList);
+		return "dashboard/productsList";
 	}
 
 	@RequestMapping("/showAddProducts")
@@ -64,13 +68,13 @@ public class DashboardController {
 	@RequestMapping("/addProducts")
 	public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
 		Product savedProduct = productService.saveProduct(product);
-		List<Product> availableProducts = productService.getAllAvailableProducts();
-		modelMap.addAttribute("availableProducts", availableProducts);
+		List<Product> productsList = productService.showProductsList();
+		modelMap.addAttribute("productsList", productsList);
 		String msg = new String("Product saved with id - " + savedProduct.getProductId());
 		modelMap.addAttribute("msg", msg);
 		// emailUtil.sendEmail("learningpandit@gmail.com", msg,
 		// savedProduct.toString());
-		return "dashboard/availableProducts";
+		return "dashboard/productsList";
 	}
 
 }
