@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Products</title>
+	<style>
+		/* Add your CSS styles here */
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h2>Add New Product</h2>
+		<!-- Create a form to add a new product -->
+		<form action="addProducts" method="post" th:object="${product}">
+			<label for="brandName">Brand Name:</label>
+			<input type="text" id="brandName" name="brandName" th:field="*{brandName}" required>
+
+			<label for="pType">Product Type:</label>
+			<input type="text" id="pType" name="pType" th:field="*{pType}" required>
+
+			<label for="price">Price:</label>
+			<input type="number" class="form-control" id="price" name="price" th:field="*{price}" required>
+
+
+			<!-- Add other fields for your Product entity here -->
+
+			<input type="submit" value="Add Product">
+		</form>
+		<div class="button-container">
+			<a class="button" href="showLanding">Home</a>
+			<a class="button" href="showAvailableProducts">Show Available Products</a>
+			<a class="button" href="#">Add Excel</a>
+		</div>
+	</div>
+</body>
+
+</html>

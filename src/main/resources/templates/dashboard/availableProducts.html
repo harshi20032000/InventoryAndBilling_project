@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Products</title>
+    <style>
+        /* Add CSS styles for your table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Available Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Brand Name</th>
+                    <th>Product Type</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of available products and display them in the table -->
+                <tr th:each="product : ${availableProducts}">
+                    <td th:text="${product.productId}"></td>
+                    <td th:text="${product.brandName}"></td>
+                    <td th:text="${product.pType}"></td>
+                    <td th:text="${product.price}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <a class="button" href="showAddProducts">Add Products</a>
+            <a class="button" href="showLanding">Home</a>
+        </div>
+        <b th:text="${msg}"></b>
+    </div>
+</body>
+</html>

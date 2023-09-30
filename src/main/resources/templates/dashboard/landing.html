@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Inventory Management and Billing App</h2>
+        <div class="landing-components">
+            <!-- Component 1: Total Outstanding -->
+            <div class="landing-component">
+                <a href="showTotalOutstanding">Total Outstanding</a>
+            </div>
+            
+            <!-- Component 2: Available Products -->
+            <div class="landing-component">
+                <a href="showAvailableProducts">Available Products</a>
+            </div>
+            
+            <!-- Component 3: Book Order -->
+            <div class="landing-component">
+                <a href="bookOrder">Book Order</a>
+            </div>
+            
+            <!-- Component 4: Warehouse List -->
+            <div class="landing-component">
+                <a href="warehouseList">Warehouse List</a>
+            </div>
+        </div>
+        <b th:text="${msg}"></b>
+    </div>
+</body>
+</html>
