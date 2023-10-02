@@ -3,6 +3,7 @@ package com.harshi.InventoryAndBilling.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,8 +20,10 @@ public class Warehouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long wareId;
-
+    @Column(unique = true)
     private String wareName;
+    
+    private String wareCode; // Add the wareCode property
 
     @ManyToMany()
     @JoinTable(
@@ -36,8 +39,9 @@ public class Warehouse {
         // Default constructor
     }
 
-    public Warehouse(String wareName) {
+    public Warehouse(String wareName, String wareCode) { // Update constructor
         this.wareName = wareName;
+        this.wareCode = wareCode;
     }
 
     // Getters and setters
@@ -58,6 +62,14 @@ public class Warehouse {
         this.wareName = wareName;
     }
 
+    public String getWareCode() { // Add getter for wareCode
+        return wareCode;
+    }
+
+    public void setWareCode(String wareCode) { // Add setter for wareCode
+        this.wareCode = wareCode;
+    }
+
     public Set<Product> getProducts() {
         return products;
     }
@@ -69,7 +81,7 @@ public class Warehouse {
         return "Warehouse{" +
                 "wareId=" + wareId +
                 ", wareName='" + wareName + '\'' +
+                ", wareCode='" + wareCode + '\'' + // Include wareCode in toString
                 '}';
     }
 }
-

@@ -6,23 +6,47 @@
 </head>
 
 <body>
+
 	<div class="container">
 		<h2>Product Details Page</h2>
-		<h3 th:text="${product.brandName}"></h3>
-		<p th:text="'Price: ' + ${product.price}"></p>
-		<p th:text="'Product Code: ' + ${product.productId}"></p>
-		<h4>Warehouses:</h4>
-		<ul>
-			<li th:each="warehouse : ${product.warehouses}">
-				<span th:text="${warehouse.wareName}"></span> -
-				<span th:text="'Quantity: ' + ${warehouse.products.size()}"></span>
-			</li>
-		</ul>
-		<div class="button-container">
-			<a class="button" href="/inventorybilling/showLanding">Home</a>
-			<a class="button" href="/inventorybilling/showProductsList">Product List</a>
-		</div>
+		<h3>Product Name: <span th:text="${product.brandName}"></span></h3>
+		<p>Price: <span th:text="${product.price}"></span></p>
+		<p>Product Code: <span th:text="${product.pType}"></span></p>
+
+		<h3>Warehouses</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Warehouse ID</th>
+					<th>Warehouse Code</th>
+					<th>Warehouse Name</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Iterate through the list of warehouses -->
+				<tr th:each="warehouse : ${warehouses}">
+					<td th:text="${warehouse.wareId}"></td>
+					<td th:text="${warehouse.wareCode}"></td>
+					<td th:text="${warehouse.wareName}"></td>
+					<td>
+						<!-- Display the quantity from the warehouseQuantities map -->
+						<span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Add an "Edit Quantities" button with the productId as a request parameter -->
+		<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button"
+			id="editQuantitiesButton">Edit Quantities</a>
+
+
+		<!-- Add buttons to navigate to the homepage and product list page -->
+		<a href="/inventorybilling/showLanding" class="button">Home</a>
+		<a href="/inventorybilling/showProductsList" class="button">Product List</a>
 	</div>
+
 </body>
 
 </html>

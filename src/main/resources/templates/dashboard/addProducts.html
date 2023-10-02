@@ -26,6 +26,31 @@
 
 
 			<!-- Add other fields for your Product entity here -->
+			<h3>Warehouses</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Warehouse ID</th>
+						<th>Warehouse Code</th>
+						<th>Warehouse Name</th>
+						<th>Quantity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Iterate through available warehouses -->
+					<tr th:each="warehouse : ${warehouses}">
+						<td th:text="${warehouse.wareId}"></td>
+						<td th:text="${warehouse.wareCode}"></td>
+						<td th:text="${warehouse.wareName}"></td>
+						<td>
+                    <!-- Add an input field to set quantity -->
+                    <input type="number" th:field="*{warehouseQuantities[__${warehouse.wareId}__]}" />
+                </td>
+					</tr>
+				</tbody>
+			</table>
+
+
 
 			<input type="submit" value="Add Product">
 		</form>

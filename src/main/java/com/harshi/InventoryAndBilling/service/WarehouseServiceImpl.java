@@ -20,6 +20,8 @@ public class WarehouseServiceImpl implements WarehouseService {
 
 	@Override
 	public Warehouse saveWarehouse(Warehouse warehouse) {
+		warehouse.setWareName(warehouse.getWareName().toUpperCase());
+		warehouse.setWareCode(warehouse.getWareCode().toUpperCase());
 		return warehouseRepository.save(warehouse);
 	}
 

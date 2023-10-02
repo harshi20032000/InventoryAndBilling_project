@@ -10,7 +10,8 @@
             <thead>
                 <tr>
                     <th>Warehouse ID</th>
-                    <th>Warehouse Name</th>
+					<th>Warehouse Code</th>
+					<th>Warehouse Name</th>
                     <!-- Add more columns as needed -->
                 </tr>
             </thead>
@@ -18,7 +19,8 @@
                 <!-- Iterate through the list of warehouses and display them in the table -->
                 <tr th:each="warehouse : ${warehousesList}">
                     <td th:text="${warehouse.wareId}"></td>
-                    <td th:text="${warehouse.wareName}"></td>
+					<td th:text="${warehouse.wareCode}"></td>
+					<td th:text="${warehouse.wareName}"></td>
                     <td>
                 <a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}">View Details</a>
             </td>
