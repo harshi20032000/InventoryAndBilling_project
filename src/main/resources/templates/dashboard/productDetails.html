@@ -9,9 +9,11 @@
 
 	<div class="container">
 		<h2>Product Details Page</h2>
+		<p>Product Id: <span th:text="${product.productId}"></span></p>
+		<p>Product Code: <span th:text="${product.pType}"></span></p>
 		<h3>Product Name: <span th:text="${product.brandName}"></span></h3>
 		<p>Price: <span th:text="${product.price}"></span></p>
-		<p>Product Code: <span th:text="${product.pType}"></span></p>
+
 
 		<h3>Warehouses</h3>
 		<table>
@@ -36,12 +38,9 @@
 				</tr>
 			</tbody>
 		</table>
-
 		<!-- Add an "Edit Quantities" button with the productId as a request parameter -->
-		<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button"
-			id="editQuantitiesButton">Edit Quantities</a>
-
-
+		<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button" id="editQuantitiesButton">Edit
+			Quantities</a>
 		<!-- Add buttons to navigate to the homepage and product list page -->
 		<a href="/inventorybilling/showLanding" class="button">Home</a>
 		<a href="/inventorybilling/showProductsList" class="button">Product List</a>

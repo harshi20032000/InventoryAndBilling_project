@@ -82,18 +82,23 @@ public class ProductController {
 		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
 		model.addAttribute("product", product);
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
+		model.addAttribute("editPage", true); // Set the editPage attribute to true
 		return "dashboard/editProductQuantities";
 	}
 
 	@PostMapping("/updateProductQuantities")
-	public String updateProductQuantities(@ModelAttribute("product") Product product) {
+	public String updateProductQuantities(@ModelAttribute("product") Product product, ModelMap modelMap) {
 		// Update the product quantities in the database
 		Product fetchedProduct = productService.getProductById(product.getProductId());
-		if (fetchedProduct.getProductId() == product.getProductId())
-			productService.saveProduct(product);
-
+		if (fetchedProduct.getProductId() == product.getProductId()) {
+			fetchedProduct.setWarehouseQuantities(product.getWarehouseQuantities());
+			productService.saveProduct(fetchedProduct);}
+		List<Product> productsList = productService.showProductsList();
+		modelMap.addAttribute("productsList", productsList);
+		String msg = new String("Product updated with id - " + product.getProductId());
+		modelMap.addAttribute("msg", msg);
 		// Redirect to the product details page to display the updated details
-		return "redirect:/inventorybilling/productDetails/" + product.getProductId();
+		return "dashboard/productsList";
 	}
 
 }
