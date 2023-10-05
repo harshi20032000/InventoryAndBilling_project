@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Reps Details Page</h2>
+        <p>ID: <span th:text="${reps.repId}"></span></p>
+        <p>Name: <span th:text="${reps.repName}"></span></p>
+        <p>Location: <span th:text="${reps.repLocation}"></span></p>
+        
+        <!-- Add a "Back to Reps List" button -->
+        <a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
+        <!-- Add buttons to navigate to the homepage and add reps page -->
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+        <a href="/inventorybilling/showAddReps" class="btn btn-success">Add Reps</a>
+    </div>
+</body>
+
+</html>

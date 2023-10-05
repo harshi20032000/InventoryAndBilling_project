@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Add Reps</h2>
+        <form action="/inventorybilling/addReps" method="post" th:object="${reps}">
+            <div class="form-group">
+                <label for="repName">Name:</label>
+                <input type="text" id="repName" name="repName" th:field="*{repName}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="repLocation">Location:</label>
+                <input type="text" id="repLocation" name="repLocation" th:field="*{repLocation}" class="form-control" required />
+            </div>
+            
+            <!-- Add a "Save" button to submit the form -->
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        
+        <!-- Add a "Back to Reps List" button -->
+        <a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
+        <!-- Add buttons to navigate to the homepage -->
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    </div>
+</body>
+
+</html>

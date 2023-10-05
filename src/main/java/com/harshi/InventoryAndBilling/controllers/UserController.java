@@ -53,7 +53,7 @@ public class UserController {
 		boolean isLoginSuccess = securityService.login(email, password);
 		if (isLoginSuccess) {
 			LOGGER.info("Redirecting landing.html");
-			modelMap.addAttribute("msg", "Invalid username/password. Try Again");
+			modelMap.addAttribute("msg", "Login Success!");
 			return "dashboardView/landing";
 		} else
 			modelMap.addAttribute("msg", "Invalid username/password. Try Again");

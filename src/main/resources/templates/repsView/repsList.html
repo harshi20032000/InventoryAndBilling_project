@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Reps List</h2>
+        <!-- Display a table with representative details -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of representatives -->
+                <tr th:each="reps : ${repsList}">
+                    <td th:text="${reps.repId}"></td>
+                    <td th:text="${reps.repName}"></td>
+                    <td th:text="${reps.repLocation}"></td>
+                    <td>
+                        <!-- Add a "View Details" button linking to repsDetails page -->
+                        <a th:href="@{'/repsDetails/' + ${reps.repId}}" class="btn btn-info">View Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add "Add Reps" and "Home" buttons -->
+        <a href="/inventorybilling/showAddReps" class="btn btn-success">Add Reps</a>
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    </div>
+</body>
+
+</html>
