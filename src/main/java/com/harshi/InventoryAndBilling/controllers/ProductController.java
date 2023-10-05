@@ -82,7 +82,6 @@ public class ProductController {
 		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
 		model.addAttribute("product", product);
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		model.addAttribute("editPage", true); // Set the editPage attribute to true
 		return "dashboard/editProductQuantities";
 	}
 

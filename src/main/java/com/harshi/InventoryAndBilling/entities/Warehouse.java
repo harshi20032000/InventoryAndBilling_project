@@ -1,9 +1,13 @@
 package com.harshi.InventoryAndBilling.entities;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,6 +37,12 @@ public class Warehouse {
             inverseJoinColumns = @JoinColumn(name = "product_id")
         )
     private Set<Product> products = new HashSet<>();
+    
+    @ElementCollection
+	@CollectionTable(name = "product_warehouse_quantity", joinColumns = @JoinColumn(name = "warehouse_id"))
+	@MapKeyJoinColumn(name = "product_id")
+	@Column(name = "quantity")
+	private Map<Product, Integer> productQuantities = new HashMap<>();
 
     // Constructors, getters, and setters
 
@@ -76,7 +87,15 @@ public class Warehouse {
 
     // Other methods if needed
 
-    @Override
+    public Map<Product, Integer> getProductQuantities() {
+		return productQuantities;
+	}
+
+	public void setProductQuantities(Map<Product, Integer> productQuantities) {
+		this.productQuantities = productQuantities;
+	}
+
+	@Override
     public String toString() {
         return "Warehouse{" +
                 "wareId=" + wareId +

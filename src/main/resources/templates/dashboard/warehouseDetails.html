@@ -1,24 +1,50 @@
-<!-- warehouseDetails.html -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <!-- ... (head content) ... -->
 </head>
+
 <body>
+
     <div class="container">
         <h2>Warehouse Details Page</h2>
-        <h3 th:text="${warehouse.wareName}"></h3>
-        <h4>Products:</h4>
-        <ul>
-            <li th:each="product : ${warehouse.products}">
-                <span th:text="${product.brandName}"></span> -
-                <span th:text="'Quantity: ' + 1"></span> <!-- You can replace '1' with the actual quantity -->
-            </li>
-        </ul>
-        <div class="button-container">
-            <a class="button" href="/inventorybilling/showLanding">Home</a>
-            <a class="button" href="/inventorybilling/showWarehouseList">Warehouse List</a>
-        </div>
+        <p>Warehouse ID: <span th:text="${warehouse.wareId}"></span></p>
+        <p>Warehouse Code: <span th:text="${warehouse.wareCode}"></span></p>
+        <h3>Warehouse Name: <span th:text="${warehouse.wareName}"></span></h3>
+
+        <h3>Products in Warehouse</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of products in the warehouse -->
+                <tr th:each="product : ${productsList}">
+                    <td th:text="${product.productId}"></td>
+                    <td th:text="${product.pType}"></td>
+                    <td th:text="${product.brandName}"></td>
+                    <td>
+                        <!-- Display the quantity of the product in the warehouse -->
+                        <span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add an "Edit Quantities" button with the productId as a request parameter -->
+		<a th:href="@{'/editWarehouseQuantities/' + ${warehouse.wareId}}" class="button" id="editQuantitiesButton">Edit
+			Quantities</a>
+
+        <!-- Add buttons to navigate to the homepage and warehouse list page -->
+        <a href="/inventorybilling/showLanding" class="button">Home</a>
+        <a href="/inventorybilling/showWarehouseList" class="button">Warehouse List</a>
     </div>
+
 </body>
+
 </html>

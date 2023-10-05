@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Warehouse Quantities</h2>
+        <form action="/inventorybilling/updateWarehouseQuantities" method="post" th:object="${warehouse}">
+            <h3>Warehouse Name: <span th:text="${warehouse.wareName}"></span></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Product Code</th>
+                        <th>Quantity</th>
+                        <th>New Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterate through the list of products in the warehouse -->
+                    <tr th:each="product : ${productsList}">
+                        <td th:text="${product.productId}"></td>
+                        <td th:text="${product.brandName}"></td>
+                        <td th:text="${product.pType}"></td>
+                        <td>
+                            <!-- Display the current quantity for the product in the warehouse -->
+                            <span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
+                        </td>
+                        <td>
+                            <!-- Add an input field to edit the new quantity for the product -->
+                            <input type="number" th:field="*{productQuantities[__${product.productId}__]}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Add a hidden input field for the warehouseId -->
+            <input type="hidden" th:field="*{wareId}" />
+            <!-- Add a save button to submit the form -->
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <!-- Add a home button to navigate back to warehouse details -->
+        <a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}" class="btn btn-secondary">Back to Warehouse Details</a>
+    </div>
+</body>
+
+</html>
