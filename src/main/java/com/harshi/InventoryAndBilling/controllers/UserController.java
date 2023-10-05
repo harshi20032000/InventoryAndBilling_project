@@ -28,7 +28,7 @@ public class UserController {
 	@RequestMapping("/showReg")
 	public String showRegistrationPage() {
 		LOGGER.info("Inside showRegistrationPage() on UserController");
-		return "login/registerUser";
+		return "loginView/registerUser";
 	}
 
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
@@ -37,13 +37,13 @@ public class UserController {
 		user.setPassword((user.getPassword()));
 		userRepository.save(user);
 		LOGGER.info("Redirecting to login.html on UserController");
-		return "login/login";
+		return "loginView/login";
 	}
 
 	@RequestMapping("/showLogin")
 	public String showLoginPage() {
 		LOGGER.info("Inside to showLoginPage() on UserController");
-		return "login/login";
+		return "loginView/login";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -54,10 +54,10 @@ public class UserController {
 		if (isLoginSuccess) {
 			LOGGER.info("Redirecting landing.html");
 			modelMap.addAttribute("msg", "Invalid username/password. Try Again");
-			return "dashboard/landing";
+			return "dashboardView/landing";
 		} else
 			modelMap.addAttribute("msg", "Invalid username/password. Try Again");
 		LOGGER.info("Redirecting to login.html on UserController");
-		return "login/login";
+		return "loginView/login";
 	}
 }

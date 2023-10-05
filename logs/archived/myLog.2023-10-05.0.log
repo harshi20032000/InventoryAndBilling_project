@@ -227,3 +227,117 @@
 2023-10-05 11:15:47|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-10-05 11:15:47|[RMI TCP Connection(9)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
 2023-10-05 11:15:47|[RMI TCP Connection(9)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-05 12:19:13|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.7 with PID 11720 (C:\Users\Admin\Downloads\codebase\InventoryAndBillingWithoutSecurity\target\classes started by Admin in C:\Users\Admin\Downloads\codebase\InventoryAndBillingWithoutSecurity)
+2023-10-05 12:19:13|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-05 12:19:15|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-05 12:19:15|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 153 ms. Found 5 JPA repository interfaces.
+2023-10-05 12:19:16|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-05 12:19:16|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:19:16|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-05 12:19:16|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-05 12:19:16|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-05 12:19:16|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2736 ms
+2023-10-05 12:19:16|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-05 12:19:16|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-05 12:19:16|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-05 12:19:17|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-05 12:19:17|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-05 12:19:17|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-05 12:19:18|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26c59348
+2023-10-05 12:19:18|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-05 12:19:19|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-05 12:19:20|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-05 12:19:21|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-05 12:19:21|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-05 12:19:22|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-05 12:19:22|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-05 12:19:23|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:19:23|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-05 12:19:23|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 10.637 seconds (process running for 12.565)
+2023-10-05 12:19:44|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-05 12:19:44|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-05 12:19:44|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2023-10-05 12:19:52|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Inside to showLoginPage() on UserController
+2023-10-05 12:19:54|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Inside showLoginPage() with email - harshibabu604@gmail.comon UserController
+2023-10-05 12:19:54|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Redirecting landing.html
+2023-10-05 12:19:56|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-05 12:19:58|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:19:59|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:20:04|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:20:06|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:20:10|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAddProducts() on DashboardController
+2023-10-05 12:21:30|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:22:10|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:22:12|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-05 12:22:25|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:22:28|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:22:48|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:22:50|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:23:32|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:25:57|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:26:36|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:26:40|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:26:42|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-05 12:26:43|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:26:44|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:30:06|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:30:10|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:30:43|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:31:19|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:31:45|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:31:49|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:31:53|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:31:59|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:32:04|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:37:26|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Inside showAvailableProducts() on DashboardController
+2023-10-05 12:38:28|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:38:30|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-05 12:40:06|[RMI TCP Connection(30)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-05 12:46:28|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.7 with PID 6248 (C:\Users\Admin\Downloads\codebase\InventoryAndBillingWithoutSecurity\target\classes started by Admin in C:\Users\Admin\Downloads\codebase\InventoryAndBillingWithoutSecurity)
+2023-10-05 12:46:28|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-05 12:46:29|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-05 12:46:30|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 124 ms. Found 5 JPA repository interfaces.
+2023-10-05 12:46:31|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-05 12:46:31|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:46:31|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-05 12:46:31|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-05 12:46:31|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-05 12:46:31|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2359 ms
+2023-10-05 12:46:31|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-05 12:46:31|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-05 12:46:31|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-05 12:46:31|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-05 12:46:32|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-05 12:46:32|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-05 12:46:32|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29c25bbc
+2023-10-05 12:46:32|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-05 12:46:33|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-05 12:46:35|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-05 12:46:35|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-05 12:46:35|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-05 12:46:36|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-05 12:46:37|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-05 12:46:37|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:46:37|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-05 12:46:37|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 9.556 seconds (process running for 11.185)
+2023-10-05 12:47:23|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-05 12:47:23|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-05 12:47:23|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 4 ms
+2023-10-05 12:47:36|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting landing.html
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-05 12:47:44|[RMI TCP Connection(10)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.

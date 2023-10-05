@@ -45,7 +45,7 @@ public class ProductController {
 		// Retrieve available products and add them to the modelMap
 		List<Product> productsList = productService.showProductsList();
 		modelMap.addAttribute("productsList", productsList);
-		return "dashboard/productsList";
+		return "productView/productsList";
 	}
 
 	@RequestMapping("/showAddProducts")
@@ -53,7 +53,7 @@ public class ProductController {
 		LOGGER.info("Inside showAddProducts() on DashboardController");
 		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		return "dashboard/addProducts";
+		return "productView/addProducts";
 	}
 
 	@RequestMapping("/addProducts")
@@ -64,7 +64,7 @@ public class ProductController {
 		modelMap.addAttribute("productsList", productsList);
 		String msg = new String("Product saved with id - " + savedProduct.getProductId());
 		modelMap.addAttribute("msg", msg);
-		return "dashboard/productsList";
+		return "productView/productsList";
 	}
 
 	@GetMapping("/productDetails/{productId}")
@@ -73,7 +73,7 @@ public class ProductController {
 		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
 		model.addAttribute("product", product);
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		return "dashboard/productDetails";
+		return "productView/productDetails";
 	}
 
 	@GetMapping("/editProductQuantities/{productId}")
@@ -82,7 +82,7 @@ public class ProductController {
 		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
 		model.addAttribute("product", product);
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		return "dashboard/editProductQuantities";
+		return "productView/editProductQuantities";
 	}
 
 	@PostMapping("/updateProductQuantities")
@@ -97,7 +97,7 @@ public class ProductController {
 		String msg = new String("Product updated with id - " + product.getProductId());
 		modelMap.addAttribute("msg", msg);
 		// Redirect to the product details page to display the updated details
-		return "dashboard/productsList";
+		return "productView/productsList";
 	}
 
 }

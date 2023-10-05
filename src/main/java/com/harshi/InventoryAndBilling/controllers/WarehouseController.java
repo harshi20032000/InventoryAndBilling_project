@@ -26,7 +26,6 @@ public class WarehouseController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(WarehouseController.class);
 
-
 	@Autowired
 	private WarehouseService warehouseService;
 	
@@ -45,13 +44,13 @@ public class WarehouseController {
 		// Retrieve all warehouses and add them to the modelMap
 		List<Warehouse> warehousesList = warehouseService.showWarehousesList();
 		modelMap.addAttribute("warehousesList", warehousesList);
-		return "dashboard/warehousesList";
+		return "warehouseView/warehousesList";
 	}
 
 	@RequestMapping("/showAddWarehouse")
 	public String showAddWarehouse() {
 		LOGGER.info("Inside showAddWarehouse() on WarehouseController");
-		return "dashboard/addWarehouse";
+		return "warehouseView/addWarehouse";
 	}
 
 	@RequestMapping("/addWarehouse")
@@ -63,7 +62,7 @@ public class WarehouseController {
 		modelMap.addAttribute("msg", msg);
 		// emailUtil.sendEmail("learningpandit@gmail.com", msg,
 		// savedProduct.toString());
-		return "dashboard/warehousesList";
+		return "warehouseView/warehousesList";
 	}
 	
     @GetMapping("/warehouseDetails/{warehouseId}")
@@ -72,7 +71,7 @@ public class WarehouseController {
         List<Product> productsList = productService.showProductsList();
 		model.addAttribute("productsList", productsList);
         model.addAttribute("warehouse", warehouse);
-        return "dashboard/warehouseDetails";
+        return "warehouseView/warehouseDetails";
     }
     
     @GetMapping("/editWarehouseQuantities/{warehouseId}")
@@ -81,7 +80,7 @@ public class WarehouseController {
         List<Product> productsList = productService.showProductsList(); // Fetch all products
         model.addAttribute("warehouse", warehouse);
         model.addAttribute("productsList", productsList); // Pass products list to the view
-        return "dashboard/editWarehouseQuantities";
+        return "warehouseView/editWarehouseQuantities";
     }
     
     @PostMapping("/updateWarehouseQuantities")
@@ -97,9 +96,8 @@ public class WarehouseController {
         modelMap.addAttribute("warehousesList", warehousesList);
         String msg = "Warehouse updated with ID - " + warehouse.getWareId();
         modelMap.addAttribute("msg", msg);
-
         // Redirect to the warehouse details page to display the updated details
-        return "dashboard/warehousesList";
+        return "warehouseView/warehousesList";
     }
 
 
