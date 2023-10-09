@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Book Order - Select Products</h2>
+        
+         <!-- Display Order Details -->
+        <div>
+            <h3>Order Details</h3>
+            <p>Order ID: <span th:text="${order.orderId}"></span></p>
+            <p>Order Date: <span th:text="${order.orderDate}"></span></p>
+        </div>
+        
+        
+       <!-- Display Selected Rep Details -->
+        <div>
+            <h3>Selected Rep Details</h3>
+            <p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
+            <p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
+            <p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
+            <!-- Add more rep details as needed -->
+        </div>
+        
+        
+        
+        <!-- Display Party Details -->
+        <h3>Party Details</h3>
+        <p>Party ID: <span th:text="${order.party.partyId}"></span></p>
+        <p>Party Name: <span th:text="${order.party.partyName}"></span></p>
+        <p>Party Name: <span th:text="${order.party.partyLocation}"></span></p>
+        <!-- Add any other party details as needed -->
+
+        <!-- Add a form to select products -->
+        <form action="/inventorybilling/bookOrderSaveProducts" method="post">
+            <!-- Add product selection logic here -->
+            
+            <button type="submit" class="btn btn-primary">Next</button>
+        </form>
+    </div>
+</body>
+
+</html>

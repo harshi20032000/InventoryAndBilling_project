@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.harshi.InventoryAndBilling.entities.Product;
 import com.harshi.InventoryAndBilling.entities.Warehouse;
 import com.harshi.InventoryAndBilling.service.ProductService;
+import com.harshi.InventoryAndBilling.service.RepsService;
 import com.harshi.InventoryAndBilling.service.WarehouseService;
 @Controller
 public class WarehouseController {
@@ -28,6 +29,9 @@ public class WarehouseController {
 
 	@Autowired
 	private WarehouseService warehouseService;
+	
+	@Autowired
+    private RepsService repsService;
 	
 	/**
 	 * This ia an empty product attribute so that the form can us this while
