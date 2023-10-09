@@ -28,7 +28,7 @@ public class RepsController {
 
     @RequestMapping("/showRepsList")
     public String showRepsList(ModelMap modelMap) {
-        List<Reps> repsList = repsService.showRepsList();
+        List<Reps> repsList = repsService.getRepsList();
         modelMap.addAttribute("repsList", repsList);
         return "repsView/repsList";
     }
@@ -41,7 +41,7 @@ public class RepsController {
     @RequestMapping("/addReps")
     public String addReps(@ModelAttribute("reps") Reps reps, ModelMap modelMap) {
         Reps savedReps = repsService.saveReps(reps);
-        List<Reps> repsList = repsService.showRepsList();
+        List<Reps> repsList = repsService.getRepsList();
         modelMap.addAttribute("repsList", repsList);
         String msg = "Representative saved with ID - " + savedReps.getRepId();
         modelMap.addAttribute("msg", msg);

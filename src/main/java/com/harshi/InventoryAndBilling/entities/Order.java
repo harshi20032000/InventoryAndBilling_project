@@ -1,9 +1,12 @@
 package com.harshi.InventoryAndBilling.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -14,6 +17,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapKeyJoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -22,130 +26,129 @@ import jakarta.persistence.TemporalType;
 @Table(name = "orders")
 public class Order {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long orderId;
 
-    @Temporal(TemporalType.DATE)
-    private Date orderDate;
+	@Temporal(TemporalType.DATE)
+	private Date orderDate;
 
-    @ManyToOne
-    @JoinColumn(name = "rep_id")
-    private Reps reps;
+	@ManyToOne
+	@JoinColumn(name = "rep_id")
+	private Reps reps;
 
-    @ManyToOne
-    @JoinColumn(name = "party_id")
-    private Party party;
+	@ManyToOne
+	@JoinColumn(name = "party_id")
+	private Party party;
 
-    @ManyToOne
-    @JoinColumn(name = "transport_id")
-    private Transport transport;
+	@ManyToOne
+	@JoinColumn(name = "transport_id")
+	private Transport transport;
 
-    @ElementCollection
-    @CollectionTable(name = "order_quantity_details")
-    @MapKeyJoinColumn(name = "product_id")
-    @Column(name = "quantity")
-    private Map<Product, Integer> quantityDetails = new HashMap<>();
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<OrderLineItem> orderLineItems = new ArrayList<>();
 
-    @ElementCollection
-    @CollectionTable(name = "order_price_details")
-    @MapKeyJoinColumn(name = "product_id")
-    @Column(name = "price")
-    private Map<Product, Double> priceDetails = new HashMap<>();
+	@ManyToOne
+	@JoinColumn(name = "payment_id")
+	private Payment payment;
 
-    @ManyToOne
-    @JoinColumn(name = "payment_id")
-    private Payment payment;
+	// Constructors, getters, and setters
 
-    // Constructors, getters, and setters
+	public Order() {
+		// Default constructor
+	}
 
-    public Order() {
-        // Default constructor
-    }
+	public Order(Date orderDate, Reps reps, Party party, Transport transport) {
+		this.orderDate = orderDate;
+		this.reps = reps;
+		this.party = party;
+		this.transport = transport;
+	}
 
-    public Order(Date orderDate, Reps reps, Party party, Transport transport) {
-        this.orderDate = orderDate;
-        this.reps = reps;
-        this.party = party;
-        this.transport = transport;
-    }
+	// Getters and setters
 
-    // Getters and setters
+	public Long getOrderId() {
+		return orderId;
+	}
 
-    public Long getOrderId() {
-        return orderId;
-    }
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
+	public Date getOrderDate() {
+		return orderDate;
+	}
 
-    public Date getOrderDate() {
-        return orderDate;
-    }
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
+	public Reps getReps() {
+		return reps;
+	}
 
-    public Reps getReps() {
-        return reps;
-    }
+	public void setReps(Reps reps) {
+		this.reps = reps;
+	}
 
-    public void setReps(Reps reps) {
-        this.reps = reps;
-    }
+	public Party getParty() {
+		return party;
+	}
 
-    public Party getParty() {
-        return party;
-    }
+	public void setParty(Party party) {
+		this.party = party;
+	}
 
-    public void setParty(Party party) {
-        this.party = party;
-    }
+	public Transport getTransport() {
+		return transport;
+	}
 
-    public Transport getTransport() {
-        return transport;
-    }
+	public void setTransport(Transport transport) {
+		this.transport = transport;
+	}
 
-    public void setTransport(Transport transport) {
-        this.transport = transport;
-    }
+	public Payment getPayment() {
+		return payment;
+	}
 
-    public Map<Product, Integer> getQuantityDetails() {
-        return quantityDetails;
-    }
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
 
-    public void setQuantityDetails(Map<Product, Integer> quantityDetails) {
-        this.quantityDetails = quantityDetails;
-    }
+	// Other methods if needed
 
-    public Map<Product, Double> getPriceDetails() {
-        return priceDetails;
-    }
+	public List<OrderLineItem> getOrderLineItems() {
+		return orderLineItems;
+	}
 
-    public void setPriceDetails(Map<Product, Double> priceDetails) {
-        this.priceDetails = priceDetails;
-    }
+	public void setOrderLineItems(List<OrderLineItem> orderLineItems) {
+		this.orderLineItems = orderLineItems;
+	}
 
-    public Payment getPayment() {
-        return payment;
-    }
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", orderDate=" + orderDate + ", reps=" + reps + ", party=" + party
+				+ ", transport=" + transport + ", orderLineItems=" + orderLineItems + ", payment=" + payment + "]";
+	}
+	
+	 public void addLineItem(OrderLineItem lineItem) {
+	        // Set the order for the line item
+	        lineItem.setOrder(this);
+	        
+	        // Add the line item to the list of line items
+	        orderLineItems.add(lineItem);
+	    }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
+	    public void removeLineItem(OrderLineItem lineItem) {
+	        // Remove the line item from the list of line items
+	    	orderLineItems.remove(lineItem);
+	        
+	        // Set the order for the line item to null
+	        if (lineItem != null) {
+	            lineItem.setOrder(null);
+	        }
+	    }
 
-    // Other methods if needed
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", orderDate=" + orderDate +
-                ", reps=" + reps +
-                ", party=" + party +
-                ", transport=" + transport +
-                '}';
-    }
+
 }

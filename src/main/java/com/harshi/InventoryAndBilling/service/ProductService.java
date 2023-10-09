@@ -6,7 +6,7 @@ import com.harshi.InventoryAndBilling.entities.Product;
 
 public interface ProductService {
 
-	List<Product> showProductsList();
+	List<Product> getProductsList();
 
 	Product saveProduct(Product product);
 

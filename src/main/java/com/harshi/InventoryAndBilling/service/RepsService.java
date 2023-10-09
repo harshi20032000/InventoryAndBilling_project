@@ -6,7 +6,7 @@ import com.harshi.InventoryAndBilling.entities.Reps;
 
 public interface RepsService {
 	
-    List<Reps> showRepsList();
+    List<Reps> getRepsList();
 
     Reps saveReps(Reps reps);
 

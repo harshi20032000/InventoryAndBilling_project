@@ -6,7 +6,7 @@ import com.harshi.InventoryAndBilling.entities.Warehouse;
 
 public interface WarehouseService {
 
-	List<Warehouse> showWarehousesList();
+	List<Warehouse> getWarehousesList();
 
 	Warehouse saveWarehouse(Warehouse warehouse);
 

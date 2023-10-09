@@ -46,7 +46,7 @@ public class WarehouseController {
 	public String showWarehouseList(ModelMap modelMap) {
 		LOGGER.info("Inside showWarehouseList() on WarehouseController");
 		// Retrieve all warehouses and add them to the modelMap
-		List<Warehouse> warehousesList = warehouseService.showWarehousesList();
+		List<Warehouse> warehousesList = warehouseService.getWarehousesList();
 		modelMap.addAttribute("warehousesList", warehousesList);
 		return "warehouseView/warehousesList";
 	}
@@ -60,7 +60,7 @@ public class WarehouseController {
 	@RequestMapping("/addWarehouse")
 	public String addWarehouse(@ModelAttribute("warehouse") Warehouse warehouse, ModelMap modelMap) {
 		Warehouse savedWarehouse = warehouseService.saveWarehouse(warehouse);
-		List<Warehouse> warehousesList = warehouseService.showWarehousesList();
+		List<Warehouse> warehousesList = warehouseService.getWarehousesList();
 		modelMap.addAttribute("warehousesList", warehousesList);
 		String msg = new String("Warehouse saved with id - " + savedWarehouse.getWareId());
 		modelMap.addAttribute("msg", msg);
@@ -72,7 +72,7 @@ public class WarehouseController {
     @GetMapping("/warehouseDetails/{warehouseId}")
     public String showWarehouseDetails(@PathVariable Long warehouseId, Model model) {
         Warehouse warehouse = warehouseService.getWarehouseById(warehouseId);
-        List<Product> productsList = productService.showProductsList();
+        List<Product> productsList = productService.getProductsList();
 		model.addAttribute("productsList", productsList);
         model.addAttribute("warehouse", warehouse);
         return "warehouseView/warehouseDetails";
@@ -81,7 +81,7 @@ public class WarehouseController {
     @GetMapping("/editWarehouseQuantities/{warehouseId}")
     public String editWarehouseQuantities(@PathVariable Long warehouseId, Model model) {
         Warehouse warehouse = warehouseService.getWarehouseById(warehouseId);
-        List<Product> productsList = productService.showProductsList(); // Fetch all products
+        List<Product> productsList = productService.getProductsList(); // Fetch all products
         model.addAttribute("warehouse", warehouse);
         model.addAttribute("productsList", productsList); // Pass products list to the view
         return "warehouseView/editWarehouseQuantities";
@@ -96,7 +96,7 @@ public class WarehouseController {
             warehouseService.saveWarehouse(fetchedWarehouse);
         }
 
-        List<Warehouse> warehousesList = warehouseService.showWarehousesList();
+        List<Warehouse> warehousesList = warehouseService.getWarehousesList();
         modelMap.addAttribute("warehousesList", warehousesList);
         String msg = "Warehouse updated with ID - " + warehouse.getWareId();
         modelMap.addAttribute("msg", msg);

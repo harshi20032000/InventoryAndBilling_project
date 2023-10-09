@@ -14,7 +14,7 @@ public class WarehouseServiceImpl implements WarehouseService {
 	private WarehouseRepository warehouseRepository;
 
 	@Override
-	public List<Warehouse> showWarehousesList() {
+	public List<Warehouse> getWarehousesList() {
 		return warehouseRepository.findAll();
 	}
 

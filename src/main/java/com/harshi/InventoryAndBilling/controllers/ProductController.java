@@ -43,7 +43,7 @@ public class ProductController {
 	public String showProductsList(ModelMap modelMap) {
 		LOGGER.info("Inside showAvailableProducts() on DashboardController");
 		// Retrieve available products and add them to the modelMap
-		List<Product> productsList = productService.showProductsList();
+		List<Product> productsList = productService.getProductsList();
 		modelMap.addAttribute("productsList", productsList);
 		return "productView/productsList";
 	}
@@ -51,7 +51,7 @@ public class ProductController {
 	@RequestMapping("/showAddProducts")
 	public String showAddProducts(Model model) {
 		LOGGER.info("Inside showAddProducts() on DashboardController");
-		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
+		List<Warehouse> warehouses = warehouseService.getWarehousesList(); // Fetch all warehouses
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
 		return "productView/addProducts";
 	}
@@ -60,7 +60,7 @@ public class ProductController {
 	public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
 		// Save the product with warehouse quantities
 		Product savedProduct = productService.saveProduct(product);
-		List<Product> productsList = productService.showProductsList();
+		List<Product> productsList = productService.getProductsList();
 		modelMap.addAttribute("productsList", productsList);
 		String msg = new String("Product saved with id - " + savedProduct.getProductId());
 		modelMap.addAttribute("msg", msg);
@@ -70,7 +70,7 @@ public class ProductController {
 	@GetMapping("/productDetails/{productId}")
 	public String showProductDetails(@PathVariable Long productId, Model model) {
 		Product product = productService.getProductById(productId);
-		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
+		List<Warehouse> warehouses = warehouseService.getWarehousesList(); // Fetch all warehouses
 		model.addAttribute("product", product);
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
 		return "productView/productDetails";
@@ -79,7 +79,7 @@ public class ProductController {
 	@GetMapping("/editProductQuantities/{productId}")
 	public String editProductQuantities(@PathVariable Long productId, Model model) {
 		Product product = productService.getProductById(productId);
-		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
+		List<Warehouse> warehouses = warehouseService.getWarehousesList(); // Fetch all warehouses
 		model.addAttribute("product", product);
 		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
 		return "productView/editProductQuantities";
@@ -92,7 +92,7 @@ public class ProductController {
 		if (fetchedProduct.getProductId() == product.getProductId()) {
 			fetchedProduct.setWarehouseQuantities(product.getWarehouseQuantities());
 			productService.saveProduct(fetchedProduct);}
-		List<Product> productsList = productService.showProductsList();
+		List<Product> productsList = productService.getProductsList();
 		modelMap.addAttribute("productsList", productsList);
 		String msg = new String("Product updated with id - " + product.getProductId());
 		modelMap.addAttribute("msg", msg);
