@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="container">
+        <h2>Transport Details Page</h2>
+        <p>ID: <span th:text="${transport.transportId}"></span></p>
+        <p>Name: <span th:text="${transport.transportName}"></span></p>
+        <p>Contact Details: <span th:text="${transport.contactDetails}"></span></p>
+        
+        <!-- Add a "Back to Transport List" button -->
+        <a href="/inventorybilling/showTransportList" class="btn btn-secondary">Back to Transport List</a>
+        <!-- Add buttons to navigate to the homepage and add transport page -->
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+        <a href="/inventorybilling/showAddTransport" class="btn btn-success">Add Transport</a>
+    </div>
+</body>
+</html>

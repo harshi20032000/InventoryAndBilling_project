@@ -2,21 +2,15 @@ package com.harshi.InventoryAndBilling.entities;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -41,9 +35,9 @@ public class Order {
 	@JoinColumn(name = "party_id")
 	private Party party;
 
-	@ManyToOne
-	@JoinColumn(name = "transport_id")
-	private Transport transport;
+    @ManyToOne
+    @JoinColumn(name = "transport_and_built_number_id")
+    private TransportAndBuiltNumber transportAndBuiltNumber;
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderLineItem> orderLineItems = new ArrayList<>();
@@ -58,12 +52,12 @@ public class Order {
 		// Default constructor
 	}
 
-	public Order(Date orderDate, Reps reps, Party party, Transport transport) {
-		this.orderDate = orderDate;
-		this.reps = reps;
-		this.party = party;
-		this.transport = transport;
-	}
+	public Order(Date orderDate, Reps reps, Party party, TransportAndBuiltNumber transportAndBuiltNumber) {
+        this.orderDate = orderDate;
+        this.reps = reps;
+        this.party = party;
+        this.transportAndBuiltNumber = transportAndBuiltNumber;
+    }
 
 	// Getters and setters
 
@@ -99,14 +93,6 @@ public class Order {
 		this.party = party;
 	}
 
-	public Transport getTransport() {
-		return transport;
-	}
-
-	public void setTransport(Transport transport) {
-		this.transport = transport;
-	}
-
 	public Payment getPayment() {
 		return payment;
 	}
@@ -125,10 +111,18 @@ public class Order {
 		this.orderLineItems = orderLineItems;
 	}
 
+	public TransportAndBuiltNumber getTransportAndBuiltNumber() {
+		return transportAndBuiltNumber;
+	}
+
+	public void setTransportAndBuiltNumber(TransportAndBuiltNumber transportAndBuiltNumber) {
+		this.transportAndBuiltNumber = transportAndBuiltNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "Order [orderId=" + orderId + ", orderDate=" + orderDate + ", reps=" + reps + ", party=" + party
-				+ ", transport=" + transport + ", orderLineItems=" + orderLineItems + ", payment=" + payment + "]";
+				+ ", transport=" + transportAndBuiltNumber + ", orderLineItems=" + orderLineItems + ", payment=" + payment + "]";
 	}
 	
 	 public void addLineItem(OrderLineItem lineItem) {

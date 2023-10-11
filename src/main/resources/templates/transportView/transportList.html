@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Transport List</h2>
+        <!-- Display a table with transport details -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Contact Details</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of transports -->
+                <tr th:each="transport : ${transportList}">
+                    <td th:text="${transport.transportId}"></td>
+                    <td th:text="${transport.transportName}"></td>
+                    <td th:text="${transport.contactDetails}"></td>
+                    <td>
+                        <!-- Add a "View Details" button linking to transportDetails page -->
+                        <a th:href="@{'/transportDetails/' + ${transport.transportId}}" class="btn btn-info">View Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add "Add Transport" and "Home" buttons -->
+                <a href="/inventorybilling/showAddTransport" class="btn btn-success">Add Transport</a>
+
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    </div>
+</body>
+
+</html>

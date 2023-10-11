@@ -1,0 +1,54 @@
+<!-- Display Order Details -->
+<div>
+    <h3>Order Details</h3>
+    <p>Order ID: <span th:text="${order.orderId}"></span></p>
+    <p>Order Date: <span th:text="${order.orderDate}"></span></p>
+</div>
+
+<!-- Display Selected Rep Details -->
+<div>
+    <h3>Selected Rep Details</h3>
+    <p>Reps ID: <span th:text="${order.reps?.repId} ?: 'N/A'"></span></p>
+    <p>Reps Name: <span th:text="${order.reps?.repName} ?: 'N/A'"></span></p>
+    <p>Reps Location: <span th:text="${order.reps?.repLocation} ?: 'N/A'"></span></p>
+    <!-- Add more rep details as needed -->
+</div>
+
+<!-- Display Party Details -->
+<h3>Party Details</h3>
+<p>Party ID: <span th:text="${order.party?.partyId} ?: 'N/A'"></span></p>
+<p>Party Name: <span th:text="${order.party?.partyName} ?: 'N/A'"></span></p>
+<p>Party Location: <span th:text="${order.party?.partyLocation} ?: 'N/A'"></span></p>
+<!-- Add any other party details as needed -->
+
+<!-- Display Product Line Items -->
+<h3>Order Line Items</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Rate</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="lineItem : ${order.orderLineItems}">
+            <td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+            <td th:text="${lineItem.rate}"></td>
+            <td th:text="${lineItem.quantity}"></td>
+            <td th:text="${lineItem.rate * lineItem.quantity}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Display Transport and BuiltyNumber -->
+<h3>Transport and BuiltyNumber</h3>
+<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span></p>
+<p>Builty Number: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+
+<!-- Add a "Back to Order List" button -->
+<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
+<!-- Add buttons to navigate to the homepage and create order page -->
+<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+</div>
