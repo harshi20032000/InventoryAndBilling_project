@@ -1,13 +1,18 @@
 package com.harshi.InventoryAndBilling.entities;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.Table;
 
 /**
@@ -35,6 +40,12 @@ public class OrderLineItem {
     private int quantity;
 
     private BigDecimal rate;
+    
+    @ElementCollection
+    @CollectionTable(name = "order_line_item_warehouse_quantities", joinColumns = @JoinColumn(name = "order_line_item_id"))
+    @MapKeyJoinColumn(name = "warehouse_id")
+    @Column(name = "quantity")
+    private Map<Warehouse, Integer> orderWarehouseQuantities;
 
     // Constructors, getters, and setters
 
@@ -93,7 +104,15 @@ public class OrderLineItem {
 
     // Other methods if needed
 
-    @Override
+    public Map<Warehouse, Integer> getOrderWarehouseQuantities() {
+		return orderWarehouseQuantities;
+	}
+
+	public void setOrderWarehouseQuantities(Map<Warehouse, Integer> orderWarehouseQuantities) {
+		this.orderWarehouseQuantities = orderWarehouseQuantities;
+	}
+
+	@Override
     public String toString() {
         return "OrderLineItem{" +
                 "id=" + id +

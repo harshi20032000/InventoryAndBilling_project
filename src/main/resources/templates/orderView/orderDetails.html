@@ -30,6 +30,7 @@
             <th>Rate</th>
             <th>Quantity</th>
             <th>Total Price</th>
+            <th>Warehouse-Quantities</th>
         </tr>
     </thead>
     <tbody>
@@ -38,14 +39,32 @@
             <td th:text="${lineItem.rate}"></td>
             <td th:text="${lineItem.quantity}"></td>
             <td th:text="${lineItem.rate * lineItem.quantity}"></td>
+            <td colspan="4">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>WareID</th>
+                            <th>WareName</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+                            <td th:text="${entry.key.wareId}"></td>
+                            <td th:text="${entry.key.wareName}"></td>
+                            <td th:text="${entry.value}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
         </tr>
     </tbody>
 </table>
 
 <!-- Display Transport and BuiltyNumber -->
-<h3>Transport and BuiltyNumber</h3>
+<h3>Transport-Details</h3>
 <p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span></p>
-<p>Builty Number: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+<p>Bilty No: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
 
 <!-- Add a "Back to Order List" button -->
 <a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>

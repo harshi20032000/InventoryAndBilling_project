@@ -2,6 +2,8 @@ package com.harshi.InventoryAndBilling.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,38 +17,69 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.harshi.InventoryAndBilling.entities.Transport;
 import com.harshi.InventoryAndBilling.service.TransportService;
 
+/**
+ * Controller class for managing transport-related operations.
+ */
 @Controller
 public class TransportController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TransportController.class);
 
     @Autowired
     private TransportService transportService;
 
-    // Method to show the transport list
+    /**
+     * Display the list of transports.
+     *
+     * @param modelMap ModelMap for adding attributes to the view.
+     * @return The view name for the transport list.
+     */
     @RequestMapping("/showTransportList")
     public String showTransportList(ModelMap modelMap) {
+        LOGGER.info("Displaying the list of transports");
         List<Transport> transportList = transportService.getTransportList();
         modelMap.addAttribute("transportList", transportList);
         return "transportView/transportList";
     }
 
-    // Method to show transport details by transportId
+    /**
+     * Display the details of a specific transport by transportId.
+     *
+     * @param transportId The ID of the transport to display.
+     * @param model Model for adding attributes to the view.
+     * @return The view name for the transport details.
+     */
     @GetMapping("/transportDetails/{transportId}")
     public String showTransportDetails(@PathVariable Long transportId, Model model) {
+        LOGGER.info("Displaying transport details for transport with ID: {}", transportId);
         Transport transport = transportService.getTransportById(transportId);
         model.addAttribute("transport", transport);
         return "transportView/transportDetails";
     }
 
-    // Method to display the add transport form
+    /**
+     * Display the form for adding new transports.
+     *
+     * @param model Model for adding attributes to the view.
+     * @return The view name for the add transport form.
+     */
     @RequestMapping("/showAddTransport")
     public String showAddTransport(Model model) {
+        LOGGER.info("Displaying the add transport form");
         model.addAttribute("transport", new Transport());
         return "transportView/addTransport";
     }
 
-    // Method to handle transport addition
+    /**
+     * Handle the addition of new transports.
+     *
+     * @param transport   The Transport object to be added.
+     * @param modelMap ModelMap for adding attributes to the view.
+     * @return The view name for the transport list.
+     */
     @PostMapping("/addTransport")
     public String addTransport(@ModelAttribute("transport") Transport transport, ModelMap modelMap) {
+        LOGGER.info("Saving a new transport");
         Transport savedTransport = transportService.saveTransport(transport);
         List<Transport> transportList = transportService.getTransportList();
         modelMap.addAttribute("transportList", transportList);

@@ -14,50 +14,78 @@ import com.harshi.InventoryAndBilling.entities.User;
 import com.harshi.InventoryAndBilling.repo.UserRepository;
 import com.harshi.InventoryAndBilling.service.SecurityService;
 
+/**
+ * Controller class for managing user-related operations including registration and login.
+ */
 @Controller
 public class UserController {
 
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Autowired
-	private SecurityService securityService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    @Autowired
+    private UserRepository userRepository;
 
-	@RequestMapping("/showReg")
-	public String showRegistrationPage() {
-		LOGGER.info("Inside showRegistrationPage() on UserController");
-		return "loginView/registerUser";
-	}
+    @Autowired
+    private SecurityService securityService;
 
-	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
-	public String register(@ModelAttribute("user") User user) {
-		LOGGER.info("Inside register() for user " + user+ "on UserController");
-		user.setPassword((user.getPassword()));
-		userRepository.save(user);
-		LOGGER.info("Redirecting to login.html on UserController");
-		return "loginView/login";
-	}
+    /**
+     * Display the registration page.
+     *
+     * @return The view name for the registration page.
+     */
+    @RequestMapping("/showReg")
+    public String showRegistrationPage() {
+        LOGGER.info("Displaying the registration page");
+        return "loginView/registerUser";
+    }
 
-	@RequestMapping("/showLogin")
-	public String showLoginPage() {
-		LOGGER.info("Inside to showLoginPage() on UserController");
-		return "loginView/login";
-	}
+    /**
+     * Register a new user.
+     *
+     * @param user The User object to be registered.
+     * @return The view name for the login page.
+     */
+    @RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+    public String register(@ModelAttribute("user") User user) {
+        LOGGER.info("Registering user: {}", user);
+        user.setPassword((user.getPassword()));  // Ensure proper handling of the password, e.g., hashing.
+        userRepository.save(user);
+        LOGGER.info("User registered: {}", user);
+        return "loginView/login";
+    }
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@RequestParam("email") String email, @RequestParam("password") String password,
-			ModelMap modelMap) {
-		LOGGER.info("Inside showLoginPage() with email - " + email+"on UserController");
-		boolean isLoginSuccess = securityService.login(email, password);
-		if (isLoginSuccess) {
-			LOGGER.info("Redirecting landing.html");
-			modelMap.addAttribute("msg", "Login Success!");
-			return "dashboardView/landing";
-		} else
-			modelMap.addAttribute("msg", "Invalid username/password. Try Again");
-		LOGGER.info("Redirecting to login.html on UserController");
-		return "loginView/login";
-	}
+    /**
+     * Display the login page.
+     *
+     * @return The view name for the login page.
+     */
+    @RequestMapping("/showLogin")
+    public String showLoginPage() {
+        LOGGER.info("Displaying the login page");
+        return "loginView/login";
+    }
+
+    /**
+     * Handle user login.
+     *
+     * @param email    The user's email for login.
+     * @param password The user's password for login.
+     * @param modelMap ModelMap for adding attributes to the view.
+     * @return The appropriate view based on login success or failure.
+     */
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@RequestParam("email") String email, @RequestParam("password") String password,
+                       ModelMap modelMap) {
+        LOGGER.info("Attempting login for email: {}", email);
+        boolean isLoginSuccess = securityService.login(email, password);
+        if (isLoginSuccess) {
+            LOGGER.info("Login successful for email: {}", email);
+            modelMap.addAttribute("msg", "Login Success!");
+            return "dashboardView/landing";
+        } else {
+            LOGGER.warn("Login failed for email: {}", email);
+            modelMap.addAttribute("msg", "Invalid username/password. Try Again");
+        }
+        return "loginView/login";
+    }
 }
