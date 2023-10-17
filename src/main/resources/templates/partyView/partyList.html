@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Party List</h2>
+        <!-- Display a table with party details -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of parties -->
+                <tr th:each="party : ${partyList}">
+                    <td th:text="${party.partyId}"></td>
+                    <td th:text="${party.partyName}"></td>
+                    <td th:text="${party.partyLocation}"></td>
+                    <td>
+                        <!-- Add a "View Details" button linking to partyDetails page -->
+                        <a th:href="@{'/partyDetails/' + ${party.partyId}}" class="btn btn-info">View Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add "Add Party" and "Home" buttons -->
+        <a href="/inventorybilling/showAddParty" class="btn btn-success">Add Party</a>
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    </div>
+</body>
+
+</html>

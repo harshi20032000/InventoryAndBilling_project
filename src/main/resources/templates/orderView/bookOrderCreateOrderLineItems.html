@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- ... (head content) ... -->
+</head>
+
+<body>
+	<div class="container">
+		<h2>Book Order - Select Products</h2>
+
+		<!-- Display Order Details -->
+		<div>
+			<h3>Order Details</h3>
+			<p>Order ID: <span th:text="${order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+		</div>
+
+		<!-- Display Selected Rep Details -->
+		<div>
+			<h3>Selected Rep Details</h3>
+			<p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
+			<p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
+			<p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
+			<!-- Add more rep details as needed -->
+		</div>
+
+		<!-- Display Party Details -->
+		<h3>Party Details</h3>
+		<p>Party ID: <span th:text="${order.party.partyId}"></span></p>
+		<p>Party Name: <span th:text="${order.party.partyName}"></span></p>
+		<p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
+		<!-- Add any other party details as needed -->
+
+		<!-- Product description -->
+
+		<div>
+			<h3>Selected Product Details</h3>
+			<p>Product ID: <span th:text="${selectedProduct.productId}"></span></p>
+			<p>Product Brand: <span th:text="${selectedProduct.brandName}"></span></p>
+			<p>Product Type: <span th:text="${selectedProduct.pType}"></span></p>
+			<p>Product Price: <span th:text="${selectedProduct.price}"></span></p>
+			<p>Total Product Quantity: <span th:text="${totalQuantitiesInWarehouse}"></span></p>
+		</div>
+		<form action="/inventorybilling/bookOrderSaveOrderLineItems" method="post">
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+			<input type="hidden" name="productId" th:value="${selectedProduct.productId}" />
+
+
+
+			<!-- Add input fields for rate and quantity -->
+			<div class="form-group">
+				<label for="rate">Rate:</label>
+				<input type="text" id="rate" name="rate" class="form-control" required />
+			</div>
+			<div class="form-group">
+				<label for="quantity">Quantity:</label>
+				<input type="text" id="quantity" name="quantity" class="form-control" required />
+			</div>
+
+			<button type="submit" class="btn btn-primary">Next</button>
+		</form>
+	</div>
+</body>
+
+</html>

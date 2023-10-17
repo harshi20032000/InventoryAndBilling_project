@@ -19,85 +19,132 @@ import com.harshi.InventoryAndBilling.entities.Warehouse;
 import com.harshi.InventoryAndBilling.service.ProductService;
 import com.harshi.InventoryAndBilling.service.WarehouseService;
 
+/**
+ * Controller class for managing product-related operations.
+ */
 @Controller
 public class ProductController {
 
-	@Autowired
-	private ProductService productService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
-	@Autowired
-	private WarehouseService warehouseService;
+    @Autowired
+    private ProductService productService;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
+    @Autowired
+    private WarehouseService warehouseService;
 
-	/**
-	 * This ia an empty product attribute so that the form can us this while
-	 * rendering
-	 */
-	@ModelAttribute("product")
-	public Product getProduct() {
-		return new Product();
-	}
+    /**
+     * This is an empty product attribute so that the form can use this while rendering.
+     *
+     * @return A new Product instance.
+     */
+    @ModelAttribute("product")
+    public Product getProduct() {
+        return new Product();
+    }
 
-	@RequestMapping("/showProductsList")
-	public String showProductsList(ModelMap modelMap) {
-		LOGGER.info("Inside showAvailableProducts() on DashboardController");
-		// Retrieve available products and add them to the modelMap
-		List<Product> productsList = productService.showProductsList();
-		modelMap.addAttribute("productsList", productsList);
-		return "productView/productsList";
-	}
+    /**
+     * Display the list of available products.
+     *
+     * @param modelMap ModelMap for adding attributes to the view.
+     * @return The view name for the product list.
+     */
+    @RequestMapping("/showProductsList")
+    public String showProductsList(ModelMap modelMap) {
+        LOGGER.info("Displaying the list of available products");
+        // Retrieve available products and add them to the modelMap
+        List<Product> productsList = productService.getProductsList();
+        modelMap.addAttribute("productsList", productsList);
+        return "productView/productsList";
+    }
 
-	@RequestMapping("/showAddProducts")
-	public String showAddProducts(Model model) {
-		LOGGER.info("Inside showAddProducts() on DashboardController");
-		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
-		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		return "productView/addProducts";
-	}
+    /**
+     * Display the form for adding new products.
+     *
+     * @param model Model for adding attributes to the view.
+     * @return The view name for the add products form.
+     */
+    @RequestMapping("/showAddProducts")
+    public String showAddProducts(Model model) {
+        LOGGER.info("Displaying the add products form");
+        List<Warehouse> warehouses = warehouseService.getWarehousesList();
+        model.addAttribute("warehouses", warehouses);
+        return "productView/addProducts";
+    }
 
-	@RequestMapping("/addProducts")
-	public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
-		// Save the product with warehouse quantities
-		Product savedProduct = productService.saveProduct(product);
-		List<Product> productsList = productService.showProductsList();
-		modelMap.addAttribute("productsList", productsList);
-		String msg = new String("Product saved with id - " + savedProduct.getProductId());
-		modelMap.addAttribute("msg", msg);
-		return "productView/productsList";
-	}
+    /**
+     * Handle the addition of new products.
+     *
+     * @param product   The Product object to be added.
+     * @param modelMap  ModelMap for adding attributes to the view.
+     * @return The view name for the product list.
+     */
+    @RequestMapping("/addProducts")
+    public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
+        LOGGER.info("Saving a new product");
+        // Save the product with warehouse quantities
+        Product savedProduct = productService.saveProduct(product);
+        List<Product> productsList = productService.getProductsList();
+        modelMap.addAttribute("productsList", productsList);
+        String msg = "Product saved with ID - " + savedProduct.getProductId();
+        modelMap.addAttribute("msg", msg);
+        return "productView/productsList";
+    }
 
-	@GetMapping("/productDetails/{productId}")
-	public String showProductDetails(@PathVariable Long productId, Model model) {
-		Product product = productService.getProductById(productId);
-		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
-		model.addAttribute("product", product);
-		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		return "productView/productDetails";
-	}
+    /**
+     * Display the details of a specific product by productId.
+     *
+     * @param productId The ID of the product to display.
+     * @param model     Model for adding attributes to the view.
+     * @return The view name for the product details.
+     */
+    @GetMapping("/productDetails/{productId}")
+    public String showProductDetails(@PathVariable Long productId, Model model) {
+        LOGGER.info("Displaying product details for product with ID: {}", productId);
+        Product product = productService.getProductById(productId);
+        List<Warehouse> warehouses = warehouseService.getWarehousesList();
+        model.addAttribute("product", product);
+        model.addAttribute("warehouses", warehouses);
+        return "productView/productDetails";
+    }
 
-	@GetMapping("/editProductQuantities/{productId}")
-	public String editProductQuantities(@PathVariable Long productId, Model model) {
-		Product product = productService.getProductById(productId);
-		List<Warehouse> warehouses = warehouseService.showWarehousesList(); // Fetch all warehouses
-		model.addAttribute("product", product);
-		model.addAttribute("warehouses", warehouses); // Pass warehouses to the view
-		return "productView/editProductQuantities";
-	}
+    /**
+     * Edit product quantities for a specific product by productId.
+     *
+     * @param productId The ID of the product to edit quantities for.
+     * @param model     Model for adding attributes to the view.
+     * @return The view name for editing product quantities.
+     */
+    @GetMapping("/editProductQuantities/{productId}")
+    public String editProductQuantities(@PathVariable Long productId, Model model) {
+        LOGGER.info("Editing product quantities for product with ID: {}", productId);
+        Product product = productService.getProductById(productId);
+        List<Warehouse> warehouses = warehouseService.getWarehousesList();
+        model.addAttribute("product", product);
+        model.addAttribute("warehouses", warehouses);
+        return "productView/editProductQuantities";
+    }
 
-	@PostMapping("/updateProductQuantities")
-	public String updateProductQuantities(@ModelAttribute("product") Product product, ModelMap modelMap) {
-		// Update the product quantities in the database
-		Product fetchedProduct = productService.getProductById(product.getProductId());
-		if (fetchedProduct.getProductId() == product.getProductId()) {
-			fetchedProduct.setWarehouseQuantities(product.getWarehouseQuantities());
-			productService.saveProduct(fetchedProduct);}
-		List<Product> productsList = productService.showProductsList();
-		modelMap.addAttribute("productsList", productsList);
-		String msg = new String("Product updated with id - " + product.getProductId());
-		modelMap.addAttribute("msg", msg);
-		// Redirect to the product details page to display the updated details
-		return "productView/productsList";
-	}
-
+    /**
+     * Update product quantities in the database for a specific product by productId.
+     *
+     * @param product   The Product object containing updated quantities.
+     * @param modelMap  ModelMap for adding attributes to the view.
+     * @return The view name for the product list.
+     */
+    @PostMapping("/updateProductQuantities")
+    public String updateProductQuantities(@ModelAttribute("product") Product product, ModelMap modelMap) {
+        LOGGER.info("Updating product quantities for product with ID: {}", product.getProductId());
+        // Update the product quantities in the database
+        Product fetchedProduct = productService.getProductById(product.getProductId());
+        if (fetchedProduct.getProductId() == product.getProductId()) {
+            fetchedProduct.setWarehouseQuantities(product.getWarehouseQuantities());
+            productService.saveProduct(fetchedProduct);
+        }
+        List<Product> productsList = productService.getProductsList();
+        modelMap.addAttribute("productsList", productsList);
+        String msg = "Product updated with ID - " + product.getProductId();
+        modelMap.addAttribute("msg", msg);
+        return "productView/productsList";
+    }
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Party Details Page</h2>
+        <p>ID: <span th:text="${party.partyId}"></span></p>
+        <p>Name: <span th:text="${party.partyName}"></span></p>
+        <p>Location: <span th:text="${party.partyLocation}"></span></p>
+        
+        <!-- Add a "Back to Party List" button -->
+        <a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Party List</a>
+        <!-- Add buttons to navigate to the homepage and add party page -->
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+        <a href="/inventorybilling/showAddParty" class="btn btn-success">Add Party</a>
+    </div>
+</body>
+
+</html>

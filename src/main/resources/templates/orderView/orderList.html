@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Order List</h2>
+        <!-- Display a table with order details -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Party</th>
+                    <th>Rep</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate through the list of orders -->
+                <tr th:each="order : ${orderList}">
+                    <td th:text="${order.orderId}"></td>
+                    <td th:text="${order.orderDate}"></td>
+                    <!-- Use the null-safe navigation operator to access partyName -->
+                    <td th:text="${order.party != null ? order.party.partyName : 'N/A'}"></td>
+                    <!-- Use the null-safe navigation operator to access repName -->
+                    <td th:text="${order.reps != null ? order.reps.repName : 'N/A'}"></td>
+                    <td>
+                        <!-- Add a "View Details" button linking to OrderDetailsPage -->
+                        <a th:href="@{'/orderDetails/' + ${order.orderId}}" class="btn btn-info">View Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add "Create Order" and "Home" buttons -->
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    </div>
+</body>
+
+</html>

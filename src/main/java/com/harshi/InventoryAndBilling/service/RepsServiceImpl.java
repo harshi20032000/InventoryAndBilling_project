@@ -16,7 +16,7 @@ public class RepsServiceImpl implements RepsService {
     private RepsRepository repsRepository;
 
     @Override
-    public List<Reps> showRepsList() {
+    public List<Reps> getRepsList() {
         return repsRepository.findAll();
     }
 

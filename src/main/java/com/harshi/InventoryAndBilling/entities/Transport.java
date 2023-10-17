@@ -15,7 +15,6 @@ public class Transport {
     private Long transportId;
 
     private String transportName;
-    private String builtNo;
     private String contactDetails;
 
     // Constructors, getters, and setters
@@ -24,9 +23,8 @@ public class Transport {
         // Default constructor
     }
 
-    public Transport(String transportName, String builtNo, String contactDetails) {
+    public Transport(String transportName, String contactDetails) {
         this.transportName = transportName;
-        this.builtNo = builtNo;
         this.contactDetails = contactDetails;
     }
 
@@ -46,14 +44,6 @@ public class Transport {
         this.transportName = transportName;
     }
 
-    public String getBuiltNo() {
-        return builtNo;
-    }
-
-    public void setBuiltNo(String builtNo) {
-        this.builtNo = builtNo;
-    }
-
     public String getContactDetails() {
         return contactDetails;
     }
@@ -66,8 +56,7 @@ public class Transport {
     public String toString() {
         return "Transport{" +
                 "transportId=" + transportId +
-                ", transportName='" + transportName + '\'' +
-                ", builtNo='" + builtNo + '\'' +
+                ", transportName='" + transportName + '\''+ '\'' +
                 ", contactDetails='" + contactDetails + '\'' +
                 '}';
     }

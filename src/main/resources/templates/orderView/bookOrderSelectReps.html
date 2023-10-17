@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="container">
+        <h2>Book Order</h2>
+        <p>Current Date: <span th:text="${currentDate}"></span></p>
+
+        <h3>Select Sales Representative</h3>
+        <form action="/inventorybilling/bookOrderSaveReps" method="post">
+            <div class="form-group">
+                <label for="selectedRep">Select a Sales Representative:</label>
+                <select name="selectedRep" id="selectedRep" class="form-control">
+                    <option th:each="rep : ${repsList}" th:value="${rep.repId}" th:text="${rep.repId}+' - '+${rep.repName} + ' - ' + ${rep.repLocation}"></option>
+                </select>
+            </div>
+            <input type="hidden" name="currentDate" th:value="${currentDate}" />
+            <button type="submit" class="btn btn-primary">Next</button>
+        </form>
+
+        <!-- Add a button to add a new representative -->
+        <a href="/inventorybilling/showAddReps" class="btn btn-success">Add New Reps</a>
+
+        <!-- Add a Home button or other navigation options as needed -->
+        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    </div>
+</body>
+</html>
+
