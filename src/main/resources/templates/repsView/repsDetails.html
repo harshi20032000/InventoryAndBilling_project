@@ -2,15 +2,65 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- ... (head content) ... -->
+    <style>
+        /* Define your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-secondary {
+            background-color: #777;
+            color: #fff;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h2>Reps Details Page</h2>
-        <p>ID: <span th:text="${reps.repId}"></span></p>
-        <p>Name: <span th:text="${reps.repName}"></span></p>
-        <p>Location: <span th:text="${reps.repLocation}"></span></p>
+        <div class="card">
+            <p>ID: <span th:text="${reps.repId}"></span></p>
+            <p>Name: <span th:text="${reps.repName}"></span></p>
+            <p>Location: <span th:text="${reps.repLocation}"></span></p>
+        </div>
         
         <!-- Add a "Back to Reps List" button -->
         <a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>

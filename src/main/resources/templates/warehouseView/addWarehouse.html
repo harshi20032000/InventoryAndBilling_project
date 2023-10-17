@@ -1,29 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- ... (head content) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Warehouse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input.form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h2>Add Warehouse</h2>
         <form action="addWarehouse" method="post" th:object="${warehouse}">
-            <!-- Add form fields for warehouse details -->
             <div class="form-group">
                 <label for="wareName">Warehouse Name:</label>
                 <input type="text" class="form-control" id="wareName" name="wareName" th:field="*{wareName}" required>
-                
             </div>
             <div class="form-group">
                 <label for="wareCode">Warehouse Code:</label>
                 <input type="text" class="form-control" id="wareCode" name="wareCode" th:field="*{wareCode}" required>
             </div>
-            <!-- Add more form fields as needed -->
 
             <button type="submit" class="btn btn-primary">Save Warehouse</button>
         </form>
         <a href="showWarehouseList">Back to Warehouse List</a>
         <b th:text="${msg}"></b>
-         <div class="button-container">
+        <div class="button-container">
             <a class="button" href="showLanding">Home</a>
         </div>
     </div>

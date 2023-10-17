@@ -2,64 +2,134 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Add Products</title>
-	<style>
-		/* Add your CSS styles here */
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Products</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 
 <body>
-	<div class="container">
-		<h2>Add New Product</h2>
-		<!-- Create a form to add a new product -->
-		<form action="addProducts" method="post" th:object="${product}">
-			<label for="brandName">Brand Name:</label>
-			<input type="text" id="brandName" name="brandName" th:field="*{brandName}" required>
+    <div class="container">
+        <h2>Add New Product</h2>
+        <!-- Create a form to add a new product -->
+        <form action="addProducts" method="post" th:object="${product}">
+            <label for="brandName">Brand Name:</label>
+            <input type="text" id="brandName" name="brandName" th:field="*{brandName}" required>
 
-			<label for="pType">Product Type:</label>
-			<input type="text" id="pType" name="pType" th:field="*{pType}" required>
+            <label for="pType">Product Type:</label>
+            <input type="text" id="pType" name="pType" th:field="*{pType}" required>
 
-			<label for="price">Price:</label>
-			<input type="number" class="form-control" id="price" name="price" th:field="*{price}" required>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" th:field="*{price}" required>
 
-
-			<!-- Add other fields for your Product entity here -->
-			<h3>Warehouses</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Warehouse ID</th>
-						<th>Warehouse Code</th>
-						<th>Warehouse Name</th>
-						<th>Quantity</th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- Iterate through available warehouses -->
-					<tr th:each="warehouse : ${warehouses}">
-						<td th:text="${warehouse.wareId}"></td>
-						<td th:text="${warehouse.wareCode}"></td>
-						<td th:text="${warehouse.wareName}"></td>
-						<td>
-                    <!-- Add an input field to set quantity -->
-                    <input type="number" th:field="*{warehouseQuantities[__${warehouse.wareId}__]}" />
-                </td>
-					</tr>
-				</tbody>
-			</table>
-
-
-
-			<input type="submit" value="Add Product">
-		</form>
-		<div class="button-container">
-			<a class="button" href="showLanding">Home</a>
-			<a class="button" href="showProductsList">Show Available Products</a>
-			<a class="button" href="#">Add Excel</a>
-		</div>
-	</div>
+            <!-- Add other fields for your Product entity here -->
+            <h3>Warehouses</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Warehouse ID</th>
+                        <th>Warehouse Code</th>
+                        <th>Warehouse Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterate through available warehouses -->
+                    <tr th:each="warehouse : ${warehouses}">
+                        <td th:text="${warehouse.wareId}"></td>
+                        <td th:text="${warehouse.wareCode}"></td>
+                        <td th:text="${warehouse.wareName}"></td>
+                        <td>
+                            <!-- Add an input field to set quantity -->
+                            <input type="number" th:field="*{warehouseQuantities[__${warehouse.wareId}__]}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Add Product">
+        </form>
+        <div class="button-container">
+            <a class="button" href="showLanding">Home</a>
+            <a class="button" href="showProductsList">Show Available Products</a>
+            <a class="button" href="#">Add Excel</a>
+        </div>
+    </div>
 </body>
 
 </html>
