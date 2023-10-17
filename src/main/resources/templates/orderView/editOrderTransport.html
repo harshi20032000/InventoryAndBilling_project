@@ -6,7 +6,6 @@
 </head>
 
 <body>
-	<!-- Display Order Details -->
 	<div>
 		<h3>Order Details</h3>
 		<p>Order ID: <span th:text="${order.orderId}"></span></p>
@@ -69,19 +68,51 @@
 		</tbody>
 	</table>
 
-	<!-- Display Transport and BuiltyNumber -->
-	<h3>Transport-Details</h3>
-	<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span></p>
-	<p>Bilty No: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+	<div class="container">
+		<h2>Edit Order Transport Details</h2>
 
-	<!-- Add an "Edit Order" button linking to the Edit Order Page -->
-	<a th:href="@{'/showEditOrderTransport/' + ${order.orderId}}" class="btn btn-warning">Edit Transport Details</a>
+		<!-- Display the current transport details -->
+		<h3>Current Transport Details</h3>
+		<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span>
+		</p>
+		<p>Builty Number: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+
+		<!-- Create a form for updating transport details -->
+		<form action="/inventorybilling/editOrderTransport" method="post">
+			<h3>Update Transport Details</h3>
+
+			<!-- Select a transport from the list -->
+			<div class="form-group">
+				<label for="selectedTransport">Select Transport:</label>
+				<select class="form-control" name="transportId">
+					<option th:each="transport : ${transportList}" th:value="${transport.transportId}"
+						th:text="${transport.transportName}"></option>
+				</select>
+			</div>
+
+			<!-- Update the Builty Number -->
+			<div class="form-group">
+				<label for="builtyNumber">Builty Number:</label>
+				<input type="text" class="form-control" name="biltyNumber" />
+			</div>
+
+			<!-- Add hidden input for orderId -->
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+
+			<!-- Add a "Save Changes" button to update the transport details -->
+			<button type="submit" class="btn btn-success">Save Changes</button>
+		</form>
+
+
+		<!-- Add a "Back to Order Details" button -->
+		<a href="/inventorybilling/orderDetails/${order.orderId}" class="btn btn-secondary">Back to Order Details</a>
+	</div>
 
 
 	<!-- Add a "Back to Order List" button -->
 	<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
-	<!-- Add buttons to navigate to the homepage and create order page -->
-	<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+	</form>
+	</div>
 </body>
 
 </html>

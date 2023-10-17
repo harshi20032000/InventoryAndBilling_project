@@ -16,7 +16,7 @@
                     <th>Date</th>
                     <th>Party</th>
                     <th>Rep</th>
-                    <th>Action</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +24,10 @@
                 <tr th:each="order : ${orderList}">
                     <td th:text="${order.orderId}"></td>
                     <td th:text="${order.orderDate}"></td>
-                    <td th:text="${order.reps.repName}"></td>
+                    <!-- Use the null-safe navigation operator to access partyName -->
+                    <td th:text="${order.party != null ? order.party.partyName : 'N/A'}"></td>
+                    <!-- Use the null-safe navigation operator to access repName -->
+                    <td th:text="${order.reps != null ? order.reps.repName : 'N/A'}"></td>
                     <td>
                         <!-- Add a "View Details" button linking to OrderDetailsPage -->
                         <a th:href="@{'/orderDetails/' + ${order.orderId}}" class="btn btn-info">View Details</a>

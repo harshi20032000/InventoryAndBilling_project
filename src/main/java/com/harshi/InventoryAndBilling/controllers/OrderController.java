@@ -40,89 +40,90 @@ import com.harshi.InventoryAndBilling.service.TransportService;
 @Controller
 public class OrderController {
 
-    @Autowired
-    private ProductService productService;
+	@Autowired
+	private ProductService productService;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
 
-    @Autowired
-    private RepsService repsService;
+	@Autowired
+	private RepsService repsService;
 
-    @Autowired
-    private OrderService orderService;
+	@Autowired
+	private OrderService orderService;
 
-    @Autowired
-    private PartyService partyService;
+	@Autowired
+	private PartyService partyService;
 
-    @Autowired
-    private TransportService transportService;
+	@Autowired
+	private TransportService transportService;
 
-    @Autowired
-    private TransportAndBuiltNumberRepository transportAndBuiltNumberRepo;
+	@Autowired
+	private TransportAndBuiltNumberRepository transportAndBuiltNumberRepo;
 
-    /**
-     * Display the initial page for booking an order.
-     *
-     * @param modelMap ModelMap for adding attributes to the view.
-     * @return The view name for selecting a representative.
-     */
-    @GetMapping("/showBookOrder")
-    public String showBookOrder(ModelMap modelMap) {
-        LOGGER.info("Entering showBookOrder");
-        // 1. Get the current date
-        LocalDate currentDate = LocalDate.now();
-        modelMap.addAttribute("currentDate", currentDate);
+	/**
+	 * Display the initial page for booking an order.
+	 *
+	 * @param modelMap ModelMap for adding attributes to the view.
+	 * @return The view name for selecting a representative.
+	 */
+	@GetMapping("/showBookOrder")
+	public String showBookOrder(ModelMap modelMap) {
+		LOGGER.info("Entering showBookOrder");
+		// 1. Get the current date
+		LocalDate currentDate = LocalDate.now();
+		modelMap.addAttribute("currentDate", currentDate);
 
-        // 2. Get the list of representatives from repsService
-        List<Reps> repsList = repsService.getRepsList();
-        modelMap.addAttribute("repsList", repsList);
+		// 2. Get the list of representatives from repsService
+		List<Reps> repsList = repsService.getRepsList();
+		modelMap.addAttribute("repsList", repsList);
 
-        // Return the view name where users can select a representative
-        return "orderView/bookOrderSelectReps";
-    }
+		// Return the view name where users can select a representative
+		return "orderView/bookOrderSelectReps";
+	}
 
-    /**
-     * Save the selected representative for the order.
-     *
-     * @param selectedRepId The ID of the selected representative.
-     * @param currentDate    The current date.
-     * @param modelMap       ModelMap for adding attributes to the view.
-     * @return The view name for selecting a party.
-     */
-    @PostMapping("/bookOrderSaveReps")
-    public String bookOrderSaveReps(@RequestParam("selectedRep") Long selectedRepId,
-            @RequestParam("currentDate") LocalDate currentDate, ModelMap modelMap) {
-        LOGGER.info("Saving selected representative with ID: {}", selectedRepId);
-        // Create a new Order object
-        Order order = new Order();
-        order.setOrderDate(Date.valueOf(currentDate));
+	/**
+	 * Save the selected representative for the order.
+	 *
+	 * @param selectedRepId The ID of the selected representative.
+	 * @param currentDate   The current date.
+	 * @param modelMap      ModelMap for adding attributes to the view.
+	 * @return The view name for selecting a party.
+	 */
+	@PostMapping("/bookOrderSaveReps")
+	public String bookOrderSaveReps(@RequestParam("selectedRep") Long selectedRepId,
+			@RequestParam("currentDate") LocalDate currentDate, ModelMap modelMap) {
+		LOGGER.info("Saving selected representative with ID: {}", selectedRepId);
+		// Create a new Order object
+		Order order = new Order();
+		order.setOrderDate(Date.valueOf(currentDate));
 
-        // Get the selected representative by ID
-        Reps selectedRep = repsService.getRepsById(selectedRepId);
-        order.setReps(selectedRep);
+		// Get the selected representative by ID
+		Reps selectedRep = repsService.getRepsById(selectedRepId);
+		order.setReps(selectedRep);
 
-        // Save the order to the database
-        Order savedOrder = orderService.saveOrder(order);
-        List<Party> partyList = partyService.getPartyList();
-        modelMap.addAttribute("order", savedOrder);
-        modelMap.addAttribute("partyList", partyList);
+		// Save the order to the database
+		Order savedOrder = orderService.saveOrder(order);
+		List<Party> partyList = partyService.getPartyList();
+		modelMap.addAttribute("order", savedOrder);
+		modelMap.addAttribute("partyList", partyList);
 
-        // Redirect to the next step with the order ID
-        return "orderView/bookOrderSelectParty";
-    }
-    /**
-     * Saves the selected party for a specific order.
-     *
-     * @param selectedPartyId The ID of the selected party.
-     * @param orderId The ID of the order.
-     * @param modelMap The model map for storing attributes.
-     * @return The view for selecting products for the order.
-     */
-    @PostMapping("/bookOrderSaveParty")
-    public String bookOrderSaveParty(@RequestParam("selectedParty") Long selectedPartyId,
-            @RequestParam("orderId") Long orderId, ModelMap modelMap) {
+		// Redirect to the next step with the order ID
+		return "orderView/bookOrderSelectParty";
+	}
 
-        LOGGER.info("Saving selected party with ID: {} for order with ID: {}", selectedPartyId, orderId);
+	/**
+	 * Saves the selected party for a specific order.
+	 *
+	 * @param selectedPartyId The ID of the selected party.
+	 * @param orderId         The ID of the order.
+	 * @param modelMap        The model map for storing attributes.
+	 * @return The view for selecting products for the order.
+	 */
+	@PostMapping("/bookOrderSaveParty")
+	public String bookOrderSaveParty(@RequestParam("selectedParty") Long selectedPartyId,
+			@RequestParam("orderId") Long orderId, ModelMap modelMap) {
+
+		LOGGER.info("Saving selected party with ID: {} for order with ID: {}", selectedPartyId, orderId);
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
 
@@ -141,21 +142,22 @@ public class OrderController {
 
 		// Redirect to the next step or view
 		return "orderView/bookOrderSelectProduct";
-    }
+	}
 
-    /**
-     * Calculates the total product quantities for the selected product in an order.
-     *
-     * @param selectedProductId The ID of the selected product.
-     * @param orderId The ID of the order.
-     * @param modelMap The model map for storing attributes.
-     * @return The view for creating order line items.
-     */
-    @PostMapping("/bookOrderShowTotalProductQuantity")
-    public String bookOrderShowTotalProductQuantity(@RequestParam("selectedProduct") Long selectedProductId,
-            @RequestParam("orderId") Long orderId, ModelMap modelMap) {
+	/**
+	 * Calculates the total product quantities for the selected product in an order.
+	 *
+	 * @param selectedProductId The ID of the selected product.
+	 * @param orderId           The ID of the order.
+	 * @param modelMap          The model map for storing attributes.
+	 * @return The view for creating order line items.
+	 */
+	@PostMapping("/bookOrderShowTotalProductQuantity")
+	public String bookOrderShowTotalProductQuantity(@RequestParam("selectedProduct") Long selectedProductId,
+			@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
-        LOGGER.info("Calculating total quantities for selected product with ID: {} in order with ID: {}", selectedProductId, orderId);
+		LOGGER.info("Calculating total quantities for selected product with ID: {} in order with ID: {}",
+				selectedProductId, orderId);
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
 
@@ -171,39 +173,39 @@ public class OrderController {
 		modelMap.addAttribute("totalQuantitiesInWarehouse", totalQuantitiesInWarehouse);
 
 		return "orderView/bookOrderCreateOrderLineItems";
-    }
+	}
 
-    /**
-     * Calculates the total quantities for a product based on warehouse quantities.
-     *
-     * @param warehouseQuantities A map of warehouse quantities.
-     * @return The total quantities as a BigDecimal.
-     */
-    private BigDecimal calculateTotalQuantities(Map<Warehouse, Integer> warehouseQuantities) {
+	/**
+	 * Calculates the total quantities for a product based on warehouse quantities.
+	 *
+	 * @param warehouseQuantities A map of warehouse quantities.
+	 * @return The total quantities as a BigDecimal.
+	 */
+	private BigDecimal calculateTotalQuantities(Map<Warehouse, Integer> warehouseQuantities) {
 
 		Long totalQuantitiesInWarehouse = 0L;
 		for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
 			totalQuantitiesInWarehouse += entry.getValue();
 		}
 		return BigDecimal.valueOf(totalQuantitiesInWarehouse);
-    }
+	}
 
-    /**
-     * Saves order line items for a product in an order.
-     *
-     * @param selectedProductId The ID of the selected product.
-     * @param orderId The ID of the order.
-     * @param rate The rate for the product.
-     * @param quantity The quantity of the product.
-     * @param modelMap The model map for storing attributes.
-     * @return The view for selecting transport for the order.
-     */
-    @PostMapping("/bookOrderSaveOrderLineItems")
-    public String bookOrderSaveOrderLineItems(@RequestParam("productId") Long selectedProductId,
-            @RequestParam("orderId") Long orderId, @RequestParam("rate") BigDecimal rate,
-            @RequestParam("quantity") int quantity, ModelMap modelMap) {
+	/**
+	 * Saves order line items for a product in an order.
+	 *
+	 * @param selectedProductId The ID of the selected product.
+	 * @param orderId           The ID of the order.
+	 * @param rate              The rate for the product.
+	 * @param quantity          The quantity of the product.
+	 * @param modelMap          The model map for storing attributes.
+	 * @return The view for selecting transport for the order.
+	 */
+	@PostMapping("/bookOrderSaveOrderLineItems")
+	public String bookOrderSaveOrderLineItems(@RequestParam("productId") Long selectedProductId,
+			@RequestParam("orderId") Long orderId, @RequestParam("rate") BigDecimal rate,
+			@RequestParam("quantity") int quantity, ModelMap modelMap) {
 
-        LOGGER.info("Saving order line items for product with ID: {} in order with ID: {}", selectedProductId, orderId);
+		LOGGER.info("Saving order line items for product with ID: {} in order with ID: {}", selectedProductId, orderId);
 
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
@@ -240,16 +242,16 @@ public class OrderController {
 
 		// Redirect to the next step or view
 		return "orderView/bookOrderSelectTransport";
-    }
+	}
 
-    /**
-     * Updates the product quantities based on order line items.
-     *
-     * @param quantity The quantity to update.
-     * @param selectedProduct The selected product.
-     * @return A map of warehouse quantities for the order.
-     */
-    private Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct) {
+	/**
+	 * Updates the product quantities based on order line items.
+	 *
+	 * @param quantity        The quantity to update.
+	 * @param selectedProduct The selected product.
+	 * @return A map of warehouse quantities for the order.
+	 */
+	private Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct) {
 
 		Map<Warehouse, Integer> warehouseQuantities = selectedProduct.getWarehouseQuantities();
 		Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
@@ -280,21 +282,21 @@ public class OrderController {
 		// returns the quantities of product deducted from each warehouse for a specific
 		// order to track for future reference.
 		return orderWarehouseQuantities;
-    }
+	}
 
-    /**
-     * Saves the selected transport for an order.
-     *
-     * @param selectedTransportId The ID of the selected transport.
-     * @param orderId The ID of the order.
-     * @param modelMap The model map for storing attributes.
-     * @return The landing page or the appropriate next view.
-     */
-    @PostMapping("/bookOrderSaveTransport")
-    public String bookOrderSaveTransport(@RequestParam("selectedTransport") Long selectedTransportId,
-            @RequestParam("orderId") Long orderId, ModelMap modelMap) {
+	/**
+	 * Saves the selected transport for an order.
+	 *
+	 * @param selectedTransportId The ID of the selected transport.
+	 * @param orderId             The ID of the order.
+	 * @param modelMap            The model map for storing attributes.
+	 * @return The landing page or the appropriate next view.
+	 */
+	@PostMapping("/bookOrderSaveTransport")
+	public String bookOrderSaveTransport(@RequestParam("selectedTransport") Long selectedTransportId,
+			@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
-        LOGGER.info("Saving selected transport with ID: {} for order with ID: {}", selectedTransportId, orderId);
+		LOGGER.info("Saving selected transport with ID: {} for order with ID: {}", selectedTransportId, orderId);
 
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
@@ -320,35 +322,61 @@ public class OrderController {
 
 		// Redirect to the next step or view
 		return "dashboardView/landing"; // Replace with the appropriate next view
-    }
+	}
 
+	/**
+	 * Display the order list.
+	 *
+	 * @param modelMap ModelMap for adding attributes to the view.
+	 * @return The view name for the order list.
+	 */
+	@RequestMapping("/showOrderList")
+	public String showOrderList(ModelMap modelMap) {
+		LOGGER.info("Displaying order list");
+		List<Order> orderList = orderService.getAllOrders();
+		modelMap.addAttribute("orderList", orderList);
+		return "orderView/orderList";
+	}
 
-    /**
-     * Display the order list.
-     *
-     * @param modelMap ModelMap for adding attributes to the view.
-     * @return The view name for the order list.
-     */
-    @RequestMapping("/showOrderList")
-    public String showOrderList(ModelMap modelMap) {
-        LOGGER.info("Displaying order list");
-        List<Order> orderList = orderService.getAllOrders();
-        modelMap.addAttribute("orderList", orderList);
-        return "orderView/orderList";
-    }
+	/**
+	 * Display the details of a specific order.
+	 *
+	 * @param orderId  The ID of the order to display.
+	 * @param modelMap ModelMap for adding attributes to the view.
+	 * @return The view name for the order details.
+	 */
+	@GetMapping("/orderDetails/{orderId}")
+	public String showOrderDetails(@PathVariable Long orderId, ModelMap modelMap) {
+		LOGGER.info("Displaying order details for order with ID: {}", orderId);
+		Order order = orderService.getOrderById(orderId);
+		modelMap.addAttribute("order", order);
+		return "orderView/orderDetails";
+	}
 
-    /**
-     * Display the details of a specific order.
-     *
-     * @param orderId  The ID of the order to display.
-     * @param modelMap ModelMap for adding attributes to the view.
-     * @return The view name for the order details.
-     */
-    @GetMapping("/orderDetails/{orderId}")
-    public String showOrderDetails(@PathVariable Long orderId, ModelMap modelMap) {
-        LOGGER.info("Displaying order details for order with ID: {}", orderId);
-        Order order = orderService.getOrderById(orderId);
-        modelMap.addAttribute("order", order);
-        return "orderView/orderDetails";
-    }
+	@GetMapping("/showEditOrderTransport/{orderId}")
+	public String showEditOrderTransport(@PathVariable Long orderId, ModelMap model) {
+		// Retrieve the order by ID
+		Order order = orderService.getOrderById(orderId);
+		List<Transport> transportList = transportService.getTransportList();
+
+		// Add the order to the model for editing
+		model.addAttribute("order", order);
+		model.addAttribute("transportList", transportList);
+
+		// Add any necessary data for editing
+
+		return "orderView/editOrderTransport";
+	}
+
+	@PostMapping("/editOrderTransport")
+	public String editOrderTransport(@RequestParam("orderId") Long orderId,
+			@RequestParam("transportId") Long transportId, @RequestParam("biltyNumber") String biltyNumber,
+			ModelMap modelMap) {
+		// Update the order in the database
+		Order updatedOrder = orderService.updateOrderBiltyNo(orderId, transportId, biltyNumber);
+		modelMap.addAttribute("order", updatedOrder);
+		// Redirect to the order details page or order list page
+		return "orderView/orderDetails";
+	}
+
 }

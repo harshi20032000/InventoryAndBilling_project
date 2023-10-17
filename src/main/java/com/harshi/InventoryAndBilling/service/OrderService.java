@@ -11,5 +11,7 @@ public interface OrderService {
 	public Order getOrderById(Long id);
 
 	public List<Order> getAllOrders();
+	
+	public Order updateOrderBiltyNo(Long orderId, Long transportId, String biltyNumber);
 
 }
