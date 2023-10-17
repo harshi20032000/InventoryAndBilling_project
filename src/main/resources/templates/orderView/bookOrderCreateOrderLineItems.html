@@ -31,6 +31,47 @@
 		<p>Party Name: <span th:text="${order.party.partyName}"></span></p>
 		<p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
 		<!-- Add any other party details as needed -->
+		<h3>Order Line Items</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Rate</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Warehouse Quantities</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Check if orderLineItems is not empty before iterating -->
+				<th:if="${order.orderLineItems !=null and not #lists.isEmpty(order.orderLineItems)}">
+					<tr th:each="lineItem : ${order.orderLineItems}">
+						<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+						<td th:text="${lineItem.rate}"></td>
+						<td th:text="${lineItem.quantity}"></td>
+						<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+						<td colspan="4">
+							<table>
+								<thead>
+									<tr>
+										<th>Warehouse ID</th>
+										<th>Warehouse Name</th>
+										<th>Quantity Taken</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+										<td th:text="${entry.key.wareId}"></td>
+										<td th:text="${entry.key.wareName}"></td>
+										<td th:text="${entry.value}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					</th:if>
+			</tbody>
+		</table>
 
 		<!-- Product description -->
 

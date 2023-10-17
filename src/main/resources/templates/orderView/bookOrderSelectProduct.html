@@ -2,50 +2,94 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- ... (head content) ... -->
+	<!-- ... (head content) ... -->
 </head>
 
 <body>
-    <div class="container">
-        <h2>Book Order - Select Products</h2>
-        
-        <!-- Display Order Details -->
-        <div>
-            <h3>Order Details</h3>
-            <p>Order ID: <span th:text="${order.orderId}"></span></p>
-            <p>Order Date: <span th:text="${order.orderDate}"></span></p>
-        </div>
-        
-        <!-- Display Selected Rep Details -->
-        <div>
-            <h3>Selected Rep Details</h3>
-            <p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
-            <p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
-            <p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
-            <!-- Add more rep details as needed -->
-        </div>
-        
-        <!-- Display Party Details -->
-        <h3>Party Details</h3>
-        <p>Party ID: <span th:text="${order.party.partyId}"></span></p>
-        <p>Party Name: <span th:text="${order.party.partyName}"></span></p>
-        <p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
-        <!-- Add any other party details as needed -->
+	<div class="container">
+		<h2>Book Order - Select Products</h2>
 
-        <!-- Product Selection Dropdown -->
-        <form action="/inventorybilling/bookOrderShowTotalProductQuantity" method="post">
+		<!-- Display Order Details -->
+		<div>
+			<h3>Order Details</h3>
+			<p>Order ID: <span th:text="${order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+		</div>
+
+		<!-- Display Selected Rep Details -->
+		<div>
+			<h3>Selected Rep Details</h3>
+			<p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
+			<p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
+			<p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
+			<!-- Add more rep details as needed -->
+		</div>
+
+		<!-- Display Party Details -->
+		<h3>Party Details</h3>
+		<p>Party ID: <span th:text="${order.party.partyId}"></span></p>
+		<p>Party Name: <span th:text="${order.party.partyName}"></span></p>
+		<p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
+		
+		<h3>Order Line Items</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Rate</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Warehouse Quantities</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Check if orderLineItems is not empty before iterating -->
+				<th:if="${order.orderLineItems !=null and not #lists.isEmpty(order.orderLineItems)}">
+					<tr th:each="lineItem : ${order.orderLineItems}">
+						<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+						<td th:text="${lineItem.rate}"></td>
+						<td th:text="${lineItem.quantity}"></td>
+						<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+						<td colspan="4">
+							<table>
+								<thead>
+									<tr>
+										<th>Warehouse ID</th>
+										<th>Warehouse Name</th>
+										<th>Quantity Taken</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+										<td th:text="${entry.key.wareId}"></td>
+										<td th:text="${entry.key.wareName}"></td>
+										<td th:text="${entry.value}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					</th:if>
+					
+			</tbody>
+		</table>
+
+
+		<!-- Product Selection Dropdown -->
+		<form action="/inventorybilling/bookOrderShowTotalProductQuantity" method="post">
 			<input type="hidden" name="orderId" th:value="${order.orderId}" />
 
-            <div class="form-group">
-                <label for="selectedProduct">Select a Product:</label>
-                <select name="selectedProduct" id="selectedProduct" class="form-control">
-                    <option th:each="product : ${productsList}" th:value="${product.productId}"
-                        th:text="${product.productId}+' - '+${product.brandName}+ ' - ' + ${product.pType}+ ' - ' + ${product.price}"></option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">AddProductToOrder</button>
-        </form>
-    </div>
+			<div class="form-group">
+				<label for="selectedProduct">Select a Product:</label>
+				<select name="selectedProduct" id="selectedProduct" class="form-control">
+					<option th:each="product : ${productsList}" th:value="${product.productId}"
+						th:text="${product.productId}+' - '+${product.brandName}+ ' - ' + ${product.pType}+ ' - ' + ${product.price}">
+					</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">AddProductToOrder</button>
+		</form>
+	</div>
 </body>
 
 </html>

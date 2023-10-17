@@ -233,15 +233,15 @@ public class OrderController {
 
 		// Update the order with the new line item and product
 		Order updatedOrder = orderService.saveOrder(order);
-		List<Transport> transportsList = transportService.getTransportList();
+		// List<Transport> transportsList = transportService.getTransportList();
 
 		modelMap.addAttribute("order", updatedOrder);
 		modelMap.addAttribute("lineItem", lineItem);
-		modelMap.addAttribute("totalPrice", totalPrice);
-		modelMap.addAttribute("transportsList", transportsList);
+		// modelMap.addAttribute("totalPrice", totalPrice);
+		// modelMap.addAttribute("transportsList", transportsList);
 
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectTransport";
+		return "orderView/bookOrderSelectMoreProducts";
 	}
 
 	/**
@@ -282,6 +282,32 @@ public class OrderController {
 		// returns the quantities of product deducted from each warehouse for a specific
 		// order to track for future reference.
 		return orderWarehouseQuantities;
+	}
+
+	@PostMapping("/bookOrderShowSelectProducts")
+	public String bookOrderShowSelectProducts(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
+
+		// Get the order by ID
+		Order order = orderService.getOrderById(orderId);
+		List<Product> productsList = productService.getProductsList();
+		modelMap.addAttribute("order", order);
+		modelMap.addAttribute("productsList", productsList);
+		
+		// Redirect to the next step or view
+		return "orderView/bookOrderSelectProduct"; 
+	}
+	
+	@PostMapping("/bookOrderShowSelectTransport")
+	public String bookOrderShowSelectTransport(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
+
+		// Get the order by ID
+		Order order = orderService.getOrderById(orderId);
+		List<Transport> transportsList = transportService.getTransportList();
+		modelMap.addAttribute("transportsList", transportsList);
+		modelMap.addAttribute("order", order);
+		
+		// Redirect to the next step or view
+		return "orderView/bookOrderSelectTransport"; 
 	}
 
 	/**

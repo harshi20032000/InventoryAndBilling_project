@@ -76,6 +76,10 @@ public class OrderServiceImpl implements OrderService {
 	    if (transportAndBuiltNumber == null) {
 	        // If no TransportAndBuiltNumber exists, create a new one
 	        transportAndBuiltNumber = new TransportAndBuiltNumber();
+	        transportAndBuiltNumber.setTransport(transport);
+		    transportAndBuiltNumber.setBuiltNumber(biltyNumber);
+	        transportAndBuiltNumber = transportAndBuiltNumberRepository.save(transportAndBuiltNumber);
+
 	    }
 
 	    // Set the updated Transport and Builty Number
