@@ -2,6 +2,64 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- ... (head content) ... -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -10,25 +68,23 @@
             <thead>
                 <tr>
                     <th>Warehouse ID</th>
-					<th>Warehouse Code</th>
-					<th>Warehouse Name</th>
-                    <!-- Add more columns as needed -->
+                    <th>Warehouse Code</th>
+                    <th>Warehouse Name</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Iterate through the list of warehouses and display them in the table -->
                 <tr th:each="warehouse : ${warehousesList}">
                     <td th:text="${warehouse.wareId}"></td>
-					<td th:text="${warehouse.wareCode}"></td>
-					<td th:text="${warehouse.wareName}"></td>
+                    <td th:text="${warehouse.wareCode}"></td>
+                    <td th:text="${warehouse.wareName}"></td>
                     <td>
-                <a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}">View Details</a>
-            </td>
-                    <!-- Add more columns as needed -->
+                        <a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}">View Details</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
-        <a href="showAddWarehouse">Add Warehouse</a>
+        <a href="showAddWarehouse" class="button">Add Warehouse</a>
         <b th:text="${msg}"></b>
         <div class="button-container">
             <a class="button" href="showLanding">Home</a>
