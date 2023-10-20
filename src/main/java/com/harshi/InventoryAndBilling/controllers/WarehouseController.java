@@ -1,6 +1,7 @@
 package com.harshi.InventoryAndBilling.controllers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -122,10 +123,13 @@ public class WarehouseController {
 
             // Fetch the list of products
             List<Product> productsList = productService.getProductsList();
+            
+            Integer totalProductQuantity = totalProductQuantity(warehouse);
 
             // Add the warehouse and products list to the model
             model.addAttribute("warehouse", warehouse);
             model.addAttribute("productsList", productsList);
+            model.addAttribute("totalProductQuantity", totalProductQuantity);
 
             // Log a message indicating a successful retrieval of warehouse details
             LOGGER.info("Viewing warehouse details for Warehouse ID: {}", warehouseId);
@@ -141,8 +145,24 @@ public class WarehouseController {
     }
 
 
-    
     /**
+     * Find the sum of quantities of all product in a warehouse.
+     *
+     * @param product   The warehouse whose sum of quantities of every product it has we need to find.
+     * @return The sum of quantities of the every product in that warehouse.
+     */
+    private Integer totalProductQuantity(Warehouse warehouse) {
+    	Integer totalProductQuantity = 0;
+        Map<Product, Integer> productQuantities = warehouse.getProductQuantities();
+
+        for (Integer quantity : productQuantities.values()) {
+            totalProductQuantity += quantity;
+        }
+
+        return totalProductQuantity;
+	}
+
+	/**
      * Displays a form to edit the quantities of products in a specific warehouse.
      *
      * @param warehouseId The unique identifier of the warehouse.
@@ -158,9 +178,12 @@ public class WarehouseController {
             // Fetch the list of products
             List<Product> productsList = productService.getProductsList();
             
+            Integer totalProductQuantity = totalProductQuantity(warehouse);
+            
             // Add the warehouse and products list to the model
             model.addAttribute("warehouse", warehouse);
             model.addAttribute("productsList", productsList);
+            model.addAttribute("totalProductQuantity", totalProductQuantity);
             
             // Log a message indicating a successful retrieval of warehouse and products
             LOGGER.info("Editing warehouse quantities for Warehouse ID: {}", warehouseId);

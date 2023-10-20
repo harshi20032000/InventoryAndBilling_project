@@ -68,6 +68,19 @@
 		</tbody>
 	</table>
 
+	<!-- Display a message if there are no order line items -->
+	<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
+
+	<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
+	<!-- Display Total Order Price if it's not null or empty -->
+	<h3 th:if="${totalPrice != null and totalPrice > 0}">Total Order Price: <span th:text="${totalPrice}"></span>
+	</h3>
+
+	<!-- Display Total Order Quantity if it's not null or empty -->
+	<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
+			th:text="${totalQuantities}"></span>
+	</h3>
+
 	<div class="container">
 		<h2>Edit Order Transport Details</h2>
 
@@ -112,6 +125,7 @@
 	<!-- Add a "Back to Order List" button -->
 	<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
 	</form>
+	<b>.....On edit Order Transport Details Page.....</b>
 	</div>
 </body>
 

@@ -167,10 +167,16 @@ public class OrderController {
 		// Calculate total quantities from warehouseQuantities (you need to implement
 		// this logic)
 		BigDecimal totalQuantitiesInWarehouse = calculateTotalQuantities(selectedProduct.getWarehouseQuantities());
+		
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
 
 		modelMap.addAttribute("order", order);
 		modelMap.addAttribute("selectedProduct", selectedProduct);
 		modelMap.addAttribute("totalQuantitiesInWarehouse", totalQuantitiesInWarehouse);
+		 modelMap.addAttribute("totalPrice", totalPrice);
+		 modelMap.addAttribute("totalQuantities", totalQuantities);
 
 		return "orderView/bookOrderCreateOrderLineItems";
 	}
@@ -219,8 +225,7 @@ public class OrderController {
 		lineItem.setRate(rate);
 		lineItem.setQuantity(quantity);
 
-		// Calculate total price for the line item
-		BigDecimal totalPrice = rate.multiply(BigDecimal.valueOf(quantity));
+		
 
 		// Update the warehouse quantities and get orderWarehouseQuantities
 		Map<Warehouse, Integer> orderWarehouseQuantities = updateProductQuantities(quantity, selectedProduct);
@@ -233,15 +238,34 @@ public class OrderController {
 
 		// Update the order with the new line item and product
 		Order updatedOrder = orderService.saveOrder(order);
-		// List<Transport> transportsList = transportService.getTransportList();
+		
+		// Calculate total price for the line item
+				BigDecimal totalPrice = totalOrderPrice(order);
+				Integer totalQuantities = totalOrderQuantity(order);
 
 		modelMap.addAttribute("order", updatedOrder);
 		modelMap.addAttribute("lineItem", lineItem);
-		// modelMap.addAttribute("totalPrice", totalPrice);
-		// modelMap.addAttribute("transportsList", transportsList);
+		 modelMap.addAttribute("totalPrice", totalPrice);
+		 modelMap.addAttribute("totalQuantities", totalQuantities);
 
 		// Redirect to the next step or view
 		return "orderView/bookOrderSelectMoreProducts";
+	}
+
+	private Integer totalOrderQuantity(Order order) {
+		int totalQuantity=0;
+		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
+			totalQuantity+=eachOrderLineItem.getQuantity();
+		}
+		return totalQuantity;
+	}
+
+	private BigDecimal totalOrderPrice(Order order) {
+		BigDecimal totalPrice= new BigDecimal(0);
+		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
+			totalPrice=totalPrice.add(eachOrderLineItem.getRate().multiply(new BigDecimal(eachOrderLineItem.getQuantity())));
+		}
+		return totalPrice;
 	}
 
 	/**
@@ -252,37 +276,42 @@ public class OrderController {
 	 * @return A map of warehouse quantities for the order.
 	 */
 	private Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct) {
+	    Map<Warehouse, Integer> warehouseQuantities = selectedProduct.getWarehouseQuantities();
+	    Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
 
-		Map<Warehouse, Integer> warehouseQuantities = selectedProduct.getWarehouseQuantities();
-		Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
-		for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
-			Warehouse warehouse = entry.getKey();
-			Integer availableQuantity = entry.getValue();
+	    for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
+	        Warehouse warehouse = entry.getKey();
+	        Integer availableQuantity = entry.getValue();
 
-			// Calculate how much can be deducted from this warehouse
-			int quantityToDeduct = Math.min(availableQuantity, quantity);
+	        // Calculate how much can be deducted from this warehouse
+	        int quantityToDeduct = Math.min(availableQuantity, quantity);
 
-			// Deduct the quantity from this warehouse
-			warehouseQuantities.put(warehouse, availableQuantity - quantityToDeduct);
-			// Put the quantity of product deducted from this warehouse into the new field
-			// to be returned to show for each OrderDetails.
-			orderWarehouseQuantities.put(warehouse, quantityToDeduct);
+	        if (quantityToDeduct > 0) {
+	            // Deduct the quantity from this warehouse
+	            warehouseQuantities.put(warehouse, availableQuantity - quantityToDeduct);
 
-			// Reduce the total quantity
-			quantity -= quantityToDeduct;
+	            // Put the quantity of product deducted from this warehouse into the new field
+	            // to be returned to show for each OrderDetails.
+	            orderWarehouseQuantities.put(warehouse, quantityToDeduct);
 
-			// If quantity is now zero, break the loop
-			if (quantity == 0) {
-				break;
-			}
-		}
+	            // Reduce the total quantity
+	            quantity -= quantityToDeduct;
+	        }
 
-		// Set the updated warehouseQuantities to the selectedProduct
-		selectedProduct.setWarehouseQuantities(warehouseQuantities);
-		// returns the quantities of product deducted from each warehouse for a specific
-		// order to track for future reference.
-		return orderWarehouseQuantities;
+	        // If quantity is now zero, break the loop
+	        if (quantity == 0) {
+	            break;
+	        }
+	    }
+
+	    // Set the updated warehouseQuantities to the selectedProduct
+	    selectedProduct.setWarehouseQuantities(warehouseQuantities);
+
+	    // returns the quantities of product deducted from each warehouse for a specific
+	    // order to track for future reference.
+	    return orderWarehouseQuantities;
 	}
+
 
 	@PostMapping("/bookOrderShowSelectProducts")
 	public String bookOrderShowSelectProducts(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
@@ -290,8 +319,15 @@ public class OrderController {
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
 		List<Product> productsList = productService.getProductsList();
+		
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
+		
 		modelMap.addAttribute("order", order);
 		modelMap.addAttribute("productsList", productsList);
+		 modelMap.addAttribute("totalPrice", totalPrice);
+		 modelMap.addAttribute("totalQuantities", totalQuantities);
 		
 		// Redirect to the next step or view
 		return "orderView/bookOrderSelectProduct"; 
@@ -303,6 +339,13 @@ public class OrderController {
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
 		List<Transport> transportsList = transportService.getTransportList();
+		
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
+		
+		 modelMap.addAttribute("totalPrice", totalPrice);
+		 modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("transportsList", transportsList);
 		modelMap.addAttribute("order", order);
 		
@@ -375,6 +418,13 @@ public class OrderController {
 	public String showOrderDetails(@PathVariable Long orderId, ModelMap modelMap) {
 		LOGGER.info("Displaying order details for order with ID: {}", orderId);
 		Order order = orderService.getOrderById(orderId);
+		
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
+		
+		 modelMap.addAttribute("totalPrice", totalPrice);
+		 modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("order", order);
 		return "orderView/orderDetails";
 	}

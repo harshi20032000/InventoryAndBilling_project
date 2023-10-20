@@ -1,6 +1,7 @@
 package com.harshi.InventoryAndBilling.controllers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -103,12 +104,32 @@ public class ProductController {
         LOGGER.info("Displaying product details for product with ID: {}", productId);
         Product product = productService.getProductById(productId);
         List<Warehouse> warehouses = warehouseService.getWarehousesList();
+        Integer totalProductQuantity = totalProductQuantity(product);
+        model.addAttribute("totalProductQuantity", totalProductQuantity);
         model.addAttribute("product", product);
         model.addAttribute("warehouses", warehouses);
         return "productView/productDetails";
     }
 
     /**
+     * Find the sum of quantities of a product in each warehouse.
+     *
+     * @param product   The Product whose sum of quantities we need to find.
+     * @return The sum of quantities of the product.
+     */
+    private Integer totalProductQuantity(Product product) {
+        Integer totalProductQuantity = 0;
+        Map<Warehouse, Integer> warehouseQuantities = product.getWarehouseQuantities();
+
+        for (Integer quantity : warehouseQuantities.values()) {
+            totalProductQuantity += quantity;
+        }
+
+        return totalProductQuantity;
+    }
+
+
+	/**
      * Edit product quantities for a specific product by productId.
      *
      * @param productId The ID of the product to edit quantities for.
@@ -120,6 +141,8 @@ public class ProductController {
         LOGGER.info("Editing product quantities for product with ID: {}", productId);
         Product product = productService.getProductById(productId);
         List<Warehouse> warehouses = warehouseService.getWarehousesList();
+        Integer totalProductQuantity = totalProductQuantity(product);
+        model.addAttribute("totalProductQuantity", totalProductQuantity);
         model.addAttribute("product", product);
         model.addAttribute("warehouses", warehouses);
         return "productView/editProductQuantities";

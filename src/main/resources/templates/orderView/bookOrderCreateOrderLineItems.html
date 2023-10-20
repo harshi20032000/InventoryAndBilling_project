@@ -73,6 +73,19 @@
 			</tbody>
 		</table>
 
+		<!-- Display a message if there are no order line items -->
+		<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
+
+		<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
+		<!-- Display Total Order Price if it's not null or empty -->
+		<h3 th:if="${totalPrice != null and totalPrice > 0}">Total Order Price: <span th:text="${totalPrice}"></span>
+		</h3>
+
+		<!-- Display Total Order Quantity if it's not null or empty -->
+		<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
+				th:text="${totalQuantities}"></span>
+		</h3>
+
 		<!-- Product description -->
 
 		<div>
@@ -101,6 +114,9 @@
 
 			<button type="submit" class="btn btn-primary">Next</button>
 		</form>
+		<!-- Add a Home button or other navigation options as needed -->
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+		<b>.....On Book Order Create OrderLineItem Page.....</b>
 	</div>
 </body>
 

@@ -2,113 +2,119 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Inventory Management and Billing App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product Details - Inventory Management and Billing App</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
 
-        h2 {
-            color: #333;
-        }
+		h2 {
+			color: #333;
+		}
 
-        p, h3 {
-            margin: 10px 0;
-        }
+		p,
+		h3 {
+			margin: 10px 0;
+		}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-        table, th, td {
-            border: 1px solid #ccc;
-        }
+		table,
+		th,
+		td {
+			border: 1px solid #ccc;
+		}
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+		th,
+		td {
+			padding: 10px;
+			text-align: left;
+		}
 
-        th {
-            background-color: #333;
-            color: #fff;
-        }
+		th {
+			background-color: #333;
+			color: #fff;
+		}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
 
-        a.button {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            margin: 5px;
-        }
+		a.button {
+			display: inline-block;
+			text-decoration: none;
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+			margin: 5px;
+		}
 
-        a.button:hover {
-            background-color: #555;
-        }
-    </style>
+		a.button:hover {
+			background-color: #555;
+		}
+	</style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h2>Product Details Page</h2>
-        <p>Product Id: <span th:text="${product.productId}"></span></p>
-        <p>Product Code: <span th:text="${product.pType}"></span></p>
-        <h3>Product Name: <span th:text="${product.brandName}"></span></h3>
-        <p>Price: <span th:text="${product.price}"></span></p>
+	<div class="container">
+		<h2>Product Details Page</h2>
+		<p>Product Id: <span th:text="${product.productId}"></span></p>
+		<p>Product Code: <span th:text="${product.pType}"></span></p>
+		<h3>Product Name: <span th:text="${product.brandName}"></span></h3>
+		<p>Price: <span th:text="${product.price}"></span></p>
 
-        <h3>Warehouses</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Warehouse ID</th>
-                    <th>Warehouse Code</th>
-                    <th>Warehouse Name</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Iterate through the list of warehouses -->
-                <tr th:each="warehouse : ${warehouses}">
-                    <td th:text="${warehouse.wareId}"></td>
-                    <td th:text="${warehouse.wareCode}"></td>
-                    <td th:text="${warehouse.wareName}"></td>
-                    <td>
-                        <!-- Display the quantity from the warehouseQuantities map -->
-                        <span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- Add an "Edit Quantities" button with the productId as a request parameter -->
-        <a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button" id="editQuantitiesButton">Edit
-            Quantities</a>
-        <!-- Add buttons to navigate to the homepage and product list page -->
-        <a href="/inventorybilling/showLanding" class="button">Home</a>
-        <a href="/inventorybilling/showProductsList" class="button">Product List</a>
-    </div>
+		<h3>Warehouses</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Warehouse ID</th>
+					<th>Warehouse Code</th>
+					<th>Warehouse Name</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Iterate through the list of warehouses -->
+				<tr th:each="warehouse : ${warehouses}">
+					<td th:text="${warehouse.wareId}"></td>
+					<td th:text="${warehouse.wareCode}"></td>
+					<td th:text="${warehouse.wareName}"></td>
+					<td>
+						<!-- Display the quantity from the warehouseQuantities map -->
+						<span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>Total Product Quantity: <span th:text="${totalProductQuantity}"></span></p>
+		<!-- Add an "Edit Quantities" button with the productId as a request parameter -->
+		<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button" id="editQuantitiesButton">Edit
+			Quantities</a>
+		<!-- Add buttons to navigate to the homepage and product list page -->
+		<a href="/inventorybilling/showLanding" class="button">Home</a>
+		<a href="/inventorybilling/showProductsList" class="button">Product List</a>
+		<b>.....On Product Details Page.....</b>
+	</div>
 
 </body>
 
