@@ -15,7 +15,7 @@
 
 		.container {
 			max-width: 800px;
-			margin: 0 auto;
+			margin: 20px auto;
 			padding: 20px;
 			background-color: #fff;
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -24,6 +24,7 @@
 
 		h2 {
 			color: #333;
+			text-align: center;
 		}
 
 		.landing-components {
@@ -58,6 +59,19 @@
 			margin-top: 20px;
 			font-weight: bold;
 			color: #333;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
 		}
 	</style>
 </head>
@@ -109,8 +123,10 @@
 
 
 		</div>
-		<b th:text="${msg}"></b>
 	</div>
+	<footer>
+		<b th:text="${msg}"></b>
+	</footer>
 </body>
 
 </html>
