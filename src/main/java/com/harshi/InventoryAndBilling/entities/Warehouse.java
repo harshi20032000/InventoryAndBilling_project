@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.hibernate.validator.constraints.Length;
+
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -17,6 +19,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "warehouse")
@@ -25,10 +28,16 @@ public class Warehouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long wareId;
+    
     @Column(unique = true)
+    @NotBlank(message = "wareName is mandatory")
+    @Length(min=5, max=15, message="lastName should be min 5 and max 15")
     private String wareName;
     
-    private String wareCode; // Add the wareCode property
+    @Column(unique = true)
+    @NotBlank(message = "wareCode is mandatory")
+    @Length(min=3, max=5, message="wareCode should be min 3 and max 5")
+    private String wareCode; 
 
     @ManyToMany()
     @JoinTable(
