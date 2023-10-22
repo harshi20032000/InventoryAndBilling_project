@@ -1,7 +1,7 @@
 package com.harshi.InventoryAndBilling.entities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -25,7 +25,7 @@ public class Order {
 	private Long orderId;
 
 	@Temporal(TemporalType.DATE)
-	private Date orderDate;
+	private LocalDate orderDate;
 
 	@ManyToOne
 	@JoinColumn(name = "rep_id")
@@ -51,7 +51,7 @@ public class Order {
 		// Default constructor
 	}
 
-	public Order(Date orderDate, Reps reps, Party party, TransportAndBuiltNumber transportAndBuiltNumber) {
+	public Order(LocalDate orderDate, Reps reps, Party party, TransportAndBuiltNumber transportAndBuiltNumber) {
         this.orderDate = orderDate;
         this.reps = reps;
         this.party = party;
@@ -68,11 +68,11 @@ public class Order {
 		this.orderId = orderId;
 	}
 
-	public Date getOrderDate() {
+	public LocalDate getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
 

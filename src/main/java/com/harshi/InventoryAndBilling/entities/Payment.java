@@ -1,6 +1,6 @@
 package com.harshi.InventoryAndBilling.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +21,7 @@ public class Payment {
     private Long payId;
 
     @Temporal(TemporalType.DATE)
-    private Date payDate;
+    private LocalDate payDate;
 
     private Double payAmount;
     
@@ -39,7 +39,7 @@ public class Payment {
         // Default constructor
     }
 
-    public Payment(Date payDate, Double payAmount, String payMode, String payType) {
+    public Payment(LocalDate payDate, Double payAmount, String payMode, String payType) {
         this.payDate = payDate;
         this.payAmount = payAmount;
         this.payMode = payMode;
@@ -56,11 +56,11 @@ public class Payment {
         this.payId = payId;
     }
 
-    public Date getPayDate() {
+    public LocalDate getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Date payDate) {
+    public void setPayDate(LocalDate payDate) {
         this.payDate = payDate;
     }
 

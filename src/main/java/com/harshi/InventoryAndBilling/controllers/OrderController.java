@@ -1,8 +1,9 @@
 package com.harshi.InventoryAndBilling.controllers;
 
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -102,7 +104,7 @@ public class OrderController {
 		LOGGER.info("Saving selected representative with ID: {}", selectedRepId);
 		// Create a new Order object
 		Order order = new Order();
-		order.setOrderDate(Date.valueOf(currentDate));
+		order.setOrderDate(currentDate);
 
 		// Get the selected representative by ID
 		Reps selectedRep = repsService.getRepsById(selectedRepId);
@@ -492,7 +494,7 @@ public class OrderController {
 
 	@PostMapping("/addOrderPayment")
 	public String addOrderPayment(@ModelAttribute("payment") Payment payment, @RequestParam Long orderId,
-			ModelMap modelMap) {
+			ModelMap modelMap, @RequestParam("payDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate payDate) {
 		// Find the order by orderId
 		Order order = orderService.getOrderById(orderId);
 
@@ -500,6 +502,7 @@ public class OrderController {
 		payment.setOrder(order);
 
 		// Save the payment
+		payment.setPayDate(payDate);
 		Payment savedPayment = paymentService.savePayment(payment);
 
 		// add the savedPayment to order and update the order
@@ -517,6 +520,10 @@ public class OrderController {
 		modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("order", updatedOrder);
 		return "orderView/orderDetails";
+	}
+	
+	public Date convertToDate(LocalDate localDate) {
+	    return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 	}
 
 }
