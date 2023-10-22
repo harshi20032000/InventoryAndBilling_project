@@ -29,9 +29,6 @@ public class Party {
     @NotBlank(message="partyLocation is mandatory")
     private String partyLocation;
 
-    @OneToMany(mappedBy = "party")
-    private Set<Payment> payments = new HashSet<>();
-
     // Constructors, getters, and setters
 
     public Party() {
@@ -69,9 +66,6 @@ public class Party {
         this.partyLocation = partyLocation;
     }
 
-    public Set<Payment> getPayments() {
-        return payments;
-    }
 
     // Other methods if needed
 

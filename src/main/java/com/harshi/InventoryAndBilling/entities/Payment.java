@@ -24,12 +24,14 @@ public class Payment {
     private Date payDate;
 
     private Double payAmount;
+    
     private String payMode;
+    
     private String payType;
-
-    @ManyToOne
-    @JoinColumn(name = "party_id")
-    private Party party;
+    
+    @ManyToOne 
+    @JoinColumn(name = "order_id")
+    private Order order;
 
     // Constructors, getters, and setters
 
@@ -86,17 +88,17 @@ public class Payment {
         this.payType = payType;
     }
 
-    public Party getParty() {
-        return party;
-    }
-
-    public void setParty(Party party) {
-        this.party = party;
-    }
-
     // Other methods if needed
 
-    @Override
+    public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	@Override
     public String toString() {
         return "Payment{" +
                 "payId=" + payId +

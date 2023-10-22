@@ -16,10 +16,10 @@ import jakarta.mail.internet.MimeMessage;
 @Component
 public class EmailUtil {
 
-	@Value("${com.harshi.flightReservation.itinerary.email.body}")
+	//@Value("${com.harshi.flightReservation.itinerary.email.body}")
 	private String EMAIL_BODY;
 
-	@Value("${com.harshi.flightReservation.itinerary.email.subject}")
+	//@Value("${com.harshi.flightReservation.itinerary.email.subject}")
 	private String EMAIL_SUBJECT;
 
 	@Autowired

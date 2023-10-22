@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.harshi.InventoryAndBilling.entities.Order;
 import com.harshi.InventoryAndBilling.entities.OrderLineItem;
 import com.harshi.InventoryAndBilling.entities.Party;
+import com.harshi.InventoryAndBilling.entities.Payment;
 import com.harshi.InventoryAndBilling.entities.Product;
 import com.harshi.InventoryAndBilling.entities.Reps;
 import com.harshi.InventoryAndBilling.entities.Transport;
@@ -30,6 +32,7 @@ import com.harshi.InventoryAndBilling.entities.Warehouse;
 import com.harshi.InventoryAndBilling.repo.TransportAndBuiltNumberRepository;
 import com.harshi.InventoryAndBilling.service.OrderService;
 import com.harshi.InventoryAndBilling.service.PartyService;
+import com.harshi.InventoryAndBilling.service.PaymentService;
 import com.harshi.InventoryAndBilling.service.ProductService;
 import com.harshi.InventoryAndBilling.service.RepsService;
 import com.harshi.InventoryAndBilling.service.TransportService;
@@ -58,6 +61,9 @@ public class OrderController {
 	private TransportService transportService;
 
 	@Autowired
+	private PaymentService paymentService;
+
+	@Autowired
 	private TransportAndBuiltNumberRepository transportAndBuiltNumberRepo;
 
 	/**
@@ -75,6 +81,7 @@ public class OrderController {
 
 		// 2. Get the list of representatives from repsService
 		List<Reps> repsList = repsService.getRepsList();
+		// Add the order to the model for reference
 		modelMap.addAttribute("repsList", repsList);
 
 		// Return the view name where users can select a representative
@@ -104,6 +111,7 @@ public class OrderController {
 		// Save the order to the database
 		Order savedOrder = orderService.saveOrder(order);
 		List<Party> partyList = partyService.getPartyList();
+		// Add the order to the model for reference
 		modelMap.addAttribute("order", savedOrder);
 		modelMap.addAttribute("partyList", partyList);
 
@@ -136,7 +144,7 @@ public class OrderController {
 		// Update the order with the new party
 		Order updatedOrder = orderService.saveOrder(order);
 		List<Product> productsList = productService.getProductsList();
-
+		// Add the order to the model for reference
 		modelMap.addAttribute("order", updatedOrder);
 		modelMap.addAttribute("productsList", productsList);
 
@@ -167,16 +175,16 @@ public class OrderController {
 		// Calculate total quantities from warehouseQuantities (you need to implement
 		// this logic)
 		BigDecimal totalQuantitiesInWarehouse = calculateTotalQuantities(selectedProduct.getWarehouseQuantities());
-		
+
 		// Calculate total price for the line item
 		BigDecimal totalPrice = totalOrderPrice(order);
 		Integer totalQuantities = totalOrderQuantity(order);
-
+		// Add the order to the model for reference
 		modelMap.addAttribute("order", order);
 		modelMap.addAttribute("selectedProduct", selectedProduct);
 		modelMap.addAttribute("totalQuantitiesInWarehouse", totalQuantitiesInWarehouse);
-		 modelMap.addAttribute("totalPrice", totalPrice);
-		 modelMap.addAttribute("totalQuantities", totalQuantities);
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
 
 		return "orderView/bookOrderCreateOrderLineItems";
 	}
@@ -225,8 +233,6 @@ public class OrderController {
 		lineItem.setRate(rate);
 		lineItem.setQuantity(quantity);
 
-		
-
 		// Update the warehouse quantities and get orderWarehouseQuantities
 		Map<Warehouse, Integer> orderWarehouseQuantities = updateProductQuantities(quantity, selectedProduct);
 
@@ -238,32 +244,33 @@ public class OrderController {
 
 		// Update the order with the new line item and product
 		Order updatedOrder = orderService.saveOrder(order);
-		
-		// Calculate total price for the line item
-				BigDecimal totalPrice = totalOrderPrice(order);
-				Integer totalQuantities = totalOrderQuantity(order);
 
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
+		// Add the order to the model for reference
 		modelMap.addAttribute("order", updatedOrder);
 		modelMap.addAttribute("lineItem", lineItem);
-		 modelMap.addAttribute("totalPrice", totalPrice);
-		 modelMap.addAttribute("totalQuantities", totalQuantities);
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
 
 		// Redirect to the next step or view
 		return "orderView/bookOrderSelectMoreProducts";
 	}
 
 	private Integer totalOrderQuantity(Order order) {
-		int totalQuantity=0;
+		int totalQuantity = 0;
 		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
-			totalQuantity+=eachOrderLineItem.getQuantity();
+			totalQuantity += eachOrderLineItem.getQuantity();
 		}
 		return totalQuantity;
 	}
 
 	private BigDecimal totalOrderPrice(Order order) {
-		BigDecimal totalPrice= new BigDecimal(0);
+		BigDecimal totalPrice = new BigDecimal(0);
 		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
-			totalPrice=totalPrice.add(eachOrderLineItem.getRate().multiply(new BigDecimal(eachOrderLineItem.getQuantity())));
+			totalPrice = totalPrice
+					.add(eachOrderLineItem.getRate().multiply(new BigDecimal(eachOrderLineItem.getQuantity())));
 		}
 		return totalPrice;
 	}
@@ -276,42 +283,41 @@ public class OrderController {
 	 * @return A map of warehouse quantities for the order.
 	 */
 	private Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct) {
-	    Map<Warehouse, Integer> warehouseQuantities = selectedProduct.getWarehouseQuantities();
-	    Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
+		Map<Warehouse, Integer> warehouseQuantities = selectedProduct.getWarehouseQuantities();
+		Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
 
-	    for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
-	        Warehouse warehouse = entry.getKey();
-	        Integer availableQuantity = entry.getValue();
+		for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
+			Warehouse warehouse = entry.getKey();
+			Integer availableQuantity = entry.getValue();
 
-	        // Calculate how much can be deducted from this warehouse
-	        int quantityToDeduct = Math.min(availableQuantity, quantity);
+			// Calculate how much can be deducted from this warehouse
+			int quantityToDeduct = Math.min(availableQuantity, quantity);
 
-	        if (quantityToDeduct > 0) {
-	            // Deduct the quantity from this warehouse
-	            warehouseQuantities.put(warehouse, availableQuantity - quantityToDeduct);
+			if (quantityToDeduct > 0) {
+				// Deduct the quantity from this warehouse
+				warehouseQuantities.put(warehouse, availableQuantity - quantityToDeduct);
 
-	            // Put the quantity of product deducted from this warehouse into the new field
-	            // to be returned to show for each OrderDetails.
-	            orderWarehouseQuantities.put(warehouse, quantityToDeduct);
+				// Put the quantity of product deducted from this warehouse into the new field
+				// to be returned to show for each OrderDetails.
+				orderWarehouseQuantities.put(warehouse, quantityToDeduct);
 
-	            // Reduce the total quantity
-	            quantity -= quantityToDeduct;
-	        }
+				// Reduce the total quantity
+				quantity -= quantityToDeduct;
+			}
 
-	        // If quantity is now zero, break the loop
-	        if (quantity == 0) {
-	            break;
-	        }
-	    }
+			// If quantity is now zero, break the loop
+			if (quantity == 0) {
+				break;
+			}
+		}
 
-	    // Set the updated warehouseQuantities to the selectedProduct
-	    selectedProduct.setWarehouseQuantities(warehouseQuantities);
+		// Set the updated warehouseQuantities to the selectedProduct
+		selectedProduct.setWarehouseQuantities(warehouseQuantities);
 
-	    // returns the quantities of product deducted from each warehouse for a specific
-	    // order to track for future reference.
-	    return orderWarehouseQuantities;
+		// returns the quantities of product deducted from each warehouse for a specific
+		// order to track for future reference.
+		return orderWarehouseQuantities;
 	}
-
 
 	@PostMapping("/bookOrderShowSelectProducts")
 	public String bookOrderShowSelectProducts(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
@@ -319,38 +325,38 @@ public class OrderController {
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
 		List<Product> productsList = productService.getProductsList();
-		
+
 		// Calculate total price for the line item
 		BigDecimal totalPrice = totalOrderPrice(order);
 		Integer totalQuantities = totalOrderQuantity(order);
-		
+		// Add the order to the model for reference
 		modelMap.addAttribute("order", order);
 		modelMap.addAttribute("productsList", productsList);
-		 modelMap.addAttribute("totalPrice", totalPrice);
-		 modelMap.addAttribute("totalQuantities", totalQuantities);
-		
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
+
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectProduct"; 
+		return "orderView/bookOrderSelectProduct";
 	}
-	
+
 	@PostMapping("/bookOrderShowSelectTransport")
 	public String bookOrderShowSelectTransport(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
 		List<Transport> transportsList = transportService.getTransportList();
-		
+
 		// Calculate total price for the line item
 		BigDecimal totalPrice = totalOrderPrice(order);
 		Integer totalQuantities = totalOrderQuantity(order);
-		
-		 modelMap.addAttribute("totalPrice", totalPrice);
-		 modelMap.addAttribute("totalQuantities", totalQuantities);
+		// Add the order to the model for reference
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("transportsList", transportsList);
 		modelMap.addAttribute("order", order);
-		
+
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectTransport"; 
+		return "orderView/bookOrderSelectTransport";
 	}
 
 	/**
@@ -386,7 +392,7 @@ public class OrderController {
 
 		// Update the order with the new transport
 		Order updatedOrder = orderService.saveOrder(order);
-
+		// Add the msg to the model for reference
 		modelMap.addAttribute("msg", "Order saved with " + updatedOrder.getOrderId());
 
 		// Redirect to the next step or view
@@ -418,13 +424,13 @@ public class OrderController {
 	public String showOrderDetails(@PathVariable Long orderId, ModelMap modelMap) {
 		LOGGER.info("Displaying order details for order with ID: {}", orderId);
 		Order order = orderService.getOrderById(orderId);
-		
+
 		// Calculate total price for the line item
 		BigDecimal totalPrice = totalOrderPrice(order);
 		Integer totalQuantities = totalOrderQuantity(order);
-		
-		 modelMap.addAttribute("totalPrice", totalPrice);
-		 modelMap.addAttribute("totalQuantities", totalQuantities);
+		// Add the order to the model for reference
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("order", order);
 		return "orderView/orderDetails";
 	}
@@ -436,10 +442,14 @@ public class OrderController {
 		List<Transport> transportList = transportService.getTransportList();
 
 		// Add the order to the model for editing
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
+		// Add the order to the model for reference
+		model.addAttribute("totalPrice", totalPrice);
+		model.addAttribute("totalQuantities", totalQuantities);
 		model.addAttribute("order", order);
 		model.addAttribute("transportList", transportList);
-
-		// Add any necessary data for editing
 
 		return "orderView/editOrderTransport";
 	}
@@ -450,8 +460,62 @@ public class OrderController {
 			ModelMap modelMap) {
 		// Update the order in the database
 		Order updatedOrder = orderService.updateOrderBiltyNo(orderId, transportId, biltyNumber);
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(updatedOrder);
+		Integer totalQuantities = totalOrderQuantity(updatedOrder);
+		// Add the order to the model for reference
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("order", updatedOrder);
+
 		// Redirect to the order details page or order list page
+		return "orderView/orderDetails";
+	}
+
+	@GetMapping("/showAddOrderPayment/{orderId}")
+	public String showAddOrderPayment(@PathVariable Long orderId, ModelMap model) {
+		// Retrieve the order by ID
+		Order order = orderService.getOrderById(orderId);
+
+		
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(order);
+		Integer totalQuantities = totalOrderQuantity(order);
+		// Add the order to the model for reference
+		model.addAttribute("totalPrice", totalPrice);
+		model.addAttribute("totalQuantities", totalQuantities);
+		model.addAttribute("order", order);
+		model.addAttribute("payment", new Payment());
+
+		return "orderView/addOrderPayment";
+	}
+
+	@PostMapping("/addOrderPayment")
+	public String addOrderPayment(@ModelAttribute("payment") Payment payment, @RequestParam Long orderId,
+			ModelMap modelMap) {
+		// Find the order by orderId
+		Order order = orderService.getOrderById(orderId);
+
+		// Set the order for the payment
+		payment.setOrder(order);
+
+		// Save the payment
+		Payment savedPayment = paymentService.savePayment(payment);
+
+		// add the savedPayment to order and update the order
+
+		// Add the saved payment to the order's payment list
+		order.addPayment(savedPayment);
+
+		// Update the order
+		Order updatedOrder = orderService.saveOrder(order);
+		// Calculate total price for the line item
+		BigDecimal totalPrice = totalOrderPrice(updatedOrder);
+		Integer totalQuantities = totalOrderQuantity(updatedOrder);
+		// Add the order to the model for reference
+		modelMap.addAttribute("totalPrice", totalPrice);
+		modelMap.addAttribute("totalQuantities", totalQuantities);
+		modelMap.addAttribute("order", updatedOrder);
 		return "orderView/orderDetails";
 	}
 

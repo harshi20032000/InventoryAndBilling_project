@@ -42,9 +42,8 @@ public class Order {
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderLineItem> orderLineItems = new ArrayList<>();
 
-	@ManyToOne
-	@JoinColumn(name = "payment_id")
-	private Payment payment;
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Payment> payments = new ArrayList<>();
 
 	// Constructors, getters, and setters
 
@@ -93,16 +92,6 @@ public class Order {
 		this.party = party;
 	}
 
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
-
-	// Other methods if needed
-
 	public List<OrderLineItem> getOrderLineItems() {
 		return orderLineItems;
 	}
@@ -119,11 +108,6 @@ public class Order {
 		this.transportAndBuiltNumber = transportAndBuiltNumber;
 	}
 
-	@Override
-	public String toString() {
-		return "Order [orderId=" + orderId + ", orderDate=" + orderDate + ", reps=" + reps + ", party=" + party
-				+ ", transport=" + transportAndBuiltNumber + ", orderLineItems=" + orderLineItems + ", payment=" + payment + "]";
-	}
 	
 	 public void addLineItem(OrderLineItem lineItem) {
 	        // Set the order for the line item
@@ -143,6 +127,27 @@ public class Order {
 	        }
 	    }
 
+		public List<Payment> getPayments() {
+			return payments;
+		}
+
+		public void setPayments(List<Payment> payments) {
+			this.payments = payments;
+		}
+
+		@Override
+		public String toString() {
+			return "Order [orderId=" + orderId + ", orderDate=" + orderDate + ", reps=" + reps + ", party=" + party
+					+ ", transport=" + transportAndBuiltNumber + ", orderLineItems=" + orderLineItems+ "]";
+		}
+
+		public void addPayment(Payment payment) {
+		    if (payments == null) {
+		        payments = new ArrayList<>(); 
+		    }
+		    payments.add(payment);
+		    payment.setOrder(this); 
+		}
 
 
 }

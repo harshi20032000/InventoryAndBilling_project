@@ -2,12 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<!-- ... (head content) ... -->
+    <!-- ... (head content) ... -->
 </head>
 
 <body>
-	<!-- Display Order Details -->
-	<div>
+    <div>
 		<h3>Order Details</h3>
 		<p>Order ID: <span th:text="${order.orderId}"></span></p>
 		<p>Order Date: <span th:text="${order.orderDate}"></span></p>
@@ -82,23 +81,54 @@
 			th:text="${totalQuantities}"></span>
 	</h3>
 
-	<!-- Display Transport and BuiltyNumber -->
-	<h3>Transport-Details</h3>
-	<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span></p>
-	<p>Bilty No: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+    <div class="container">
+        <h2>Add Payment to Order</h2>
 
-	<!-- Added an "Edit Transport Details" button linking to the showEditOrderTransport method -->
-	<a th:href="@{'/showEditOrderTransport/' + ${order.orderId}}" class="btn btn-warning">Edit Transport Details</a>
-	
-	<!-- Added an "add Payment to order" button linking to the showAddOrderPayment method -->
-	<a th:href="@{'/showAddOrderPayment/' + ${order.orderId}}" class="btn btn-warning">Add Payment To Order</a>
+        <!-- Create a form for adding a new payment -->
+        <form action="/inventorybilling/addOrderPayment" method="post">
+            <h3>Payment Details</h3>
 
+            <!-- Add payment date input -->
+            <div class="form-group">
+                <label for="paymentDate">Payment Date:</label>
+                <input type="date" class="form-control" name="paymentDate" />
+            </div>
 
-	<!-- Added a "Back to Order List" button -->
-	<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
-	<!-- Added buttons to navigate to the homepage -->
+            <!-- Add payment amount input -->
+            <div class="form-group">
+                <label for="paymentAmount">Payment Amount:</label>
+                <input type="text" class="form-control" name="paymentAmount" />
+            </div>
+
+            <!-- Add payment mode input -->
+            <div class="form-group">
+                <label for="paymentMode">Payment Mode:</label>
+                <input type="text" class="form-control" name="paymentMode" />
+            </div>
+
+            <!-- Add payment type input -->
+            <div class="form-group">
+                <label for="paymentType">Payment Type:</label>
+                <input type="text" class="form-control" name="paymentType" />
+            </div>
+
+            <!-- Add hidden input for orderId -->
+            <input type="hidden" name="orderId" th:value="${order.orderId}" />
+
+            <!-- Add a "Add Payment" button to submit the payment details -->
+            <button type="submit" class="btn btn-success">Add Payment</button>
+        </form>
+
+        <!-- Add a "Back to Order Details" button -->
+        <a href="/inventorybilling/orderDetails/${order.orderId}" class="btn btn-secondary">Back to Order Details</a>
+    </div>
+
+    <!-- Add a "Back to Order List" button -->
+    <a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
+    <!-- Add buttons to navigate to the homepage -->
 	<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-	<b>.....On Order Details Page.....</b>
+    <b>.....On Add Order Payment Page.....</b>
+    </div>
 </body>
 
 </html>
