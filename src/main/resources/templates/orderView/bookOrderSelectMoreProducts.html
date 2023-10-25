@@ -52,80 +52,97 @@
             margin-bottom: 20px;
         }
     </style>
+
 </head>
 
 <body>
-    <div class="container">
-        <h2>Book Order - Select Transport</h2>
+	<div class="container">
+		<h2>Book Order - Select Transport</h2>
 
-        <!-- Display Order Details -->
-        <div>
-            <h3>Order Details</h3>
-            <p>Order ID: <span th:text="${order.orderId}"></span></p>
-            <p>Order Date: <span th:text="${order.orderDate}"></span></p>
-        </div>
+		<!-- Display Order Details -->
+		<div>
+			<h3>Order Details</h3>
+			<p>Order ID: <span th:text="${order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+		</div>
 
-        <!-- Display Selected Rep Details -->
-        <div>
-            <h3>Selected Rep Details</h3>
-            <p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
-            <p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
-            <p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
-            <!-- Add more rep details as needed -->
-        </div>
+		<!-- Display Selected Rep Details -->
+		<div>
+			<h3>Selected Rep Details</h3>
+			<p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
+			<p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
+			<p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
+			<!-- Add more rep details as needed -->
+		</div>
 
-        <!-- Display Party Details -->
-        <h3>Party Details</h3>
-        <p>Party ID: <span th:text="${order.party.partyId}"></span></p>
-        <p>Party Name: <span th:text="${order.party.partyName}"></span></p>
-        <p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
-        <!-- Add any other party details as needed -->
+		<!-- Display Party Details -->
+		<h3>Party Details</h3>
+		<p>Party ID: <span th:text="${order.party.partyId}"></span></p>
+		<p>Party Name: <span th:text="${order.party.partyName}"></span></p>
+		<p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
+		<!-- Add any other party details as needed -->
 
-       <h3>Order Line Items</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Rate</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
-            <th>Warehouse Quantities</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="lineItem : ${order.orderLineItems}">
-            <td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
-            <td th:text="${lineItem.rate}"></td>
-            <td th:text="${lineItem.quantity}"></td>
-            <td th:text="${lineItem.rate * lineItem.quantity}"></td>
-            <td colspan="4">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Warehouse ID</th>
-                            <th>Warehouse Name</th>
-                            <th>Quantity Taken</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
-                            <td th:text="${entry.key.wareId}"></td>
-                            <td th:text="${entry.key.wareName}"></td>
-                            <td th:text="${entry.value}"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>
+		<h3>Order Line Items</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Rate</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Warehouse Quantities</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="lineItem : ${order.orderLineItems}">
+					<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+					<td th:text="${lineItem.rate}"></td>
+					<td th:text="${lineItem.quantity}"></td>
+					<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+					<td colspan="4">
+						<table>
+							<thead>
+								<tr>
+									<th>Warehouse ID</th>
+									<th>Warehouse Name</th>
+									<th>Quantity Taken</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+									<td th:text="${entry.key.wareId}"></td>
+									<td th:text="${entry.key.wareName}"></td>
+									<td th:text="${entry.value}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
- <!-- Save and Next button (form submission) -->
-    <form action="/inventorybilling/bookOrderShowSelectProducts" method="post">
-        <input type="hidden" name="orderId" th:value="${order.orderId}" />
-        <button type="submit" class="btn btn-success">Order More Products</button>
-    </form>
+		<!-- Display Total Order Price and Total Order Quantity -->
+		<h3>Total Order Price: <span th:text="${totalPrice}"></span></h3>
+		<h3>Total Order Quantity: <span th:text="${totalQuantities}"></span></h3>
+		<!-- Save and Next button (form submission) -->
+		<form action="/inventorybilling/bookOrderShowSelectProducts" method="post">
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+			<button type="submit" class="btn btn-success">Order More Products</button>
+		</form>
 
- <!-- Save and Next button (form submission) -->
-    <form action="/inventorybilling/bookOrderShowSelectTransport" method="post">
-        <input type="hidden" name="orderId"
+		<!-- Save and Next button (form submission) -->
+		<form action="/inventorybilling/bookOrderShowSelectTransport" method="post">
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+			<button type="submit" class="btn btn-success">Save and Next</button>
+		</form>
+
+		<!-- Add a Home button or other navigation options as needed -->
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+
+		<b>.....On Book Order Select More Products Page.....</b>
+
+
+	</div>
+</body>
+
+</html>

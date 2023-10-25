@@ -1,6 +1,6 @@
 package com.harshi.InventoryAndBilling.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,15 +21,17 @@ public class Payment {
     private Long payId;
 
     @Temporal(TemporalType.DATE)
-    private Date payDate;
+    private LocalDate payDate;
 
     private Double payAmount;
+    
     private String payMode;
+    
     private String payType;
-
-    @ManyToOne
-    @JoinColumn(name = "party_id")
-    private Party party;
+    
+    @ManyToOne 
+    @JoinColumn(name = "order_id")
+    private Order order;
 
     // Constructors, getters, and setters
 
@@ -37,7 +39,7 @@ public class Payment {
         // Default constructor
     }
 
-    public Payment(Date payDate, Double payAmount, String payMode, String payType) {
+    public Payment(LocalDate payDate, Double payAmount, String payMode, String payType) {
         this.payDate = payDate;
         this.payAmount = payAmount;
         this.payMode = payMode;
@@ -54,11 +56,11 @@ public class Payment {
         this.payId = payId;
     }
 
-    public Date getPayDate() {
+    public LocalDate getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Date payDate) {
+    public void setPayDate(LocalDate payDate) {
         this.payDate = payDate;
     }
 
@@ -86,17 +88,17 @@ public class Payment {
         this.payType = payType;
     }
 
-    public Party getParty() {
-        return party;
-    }
-
-    public void setParty(Party party) {
-        this.party = party;
-    }
-
     // Other methods if needed
 
-    @Override
+    public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	@Override
     public String toString() {
         return "Payment{" +
                 "payId=" + payId +

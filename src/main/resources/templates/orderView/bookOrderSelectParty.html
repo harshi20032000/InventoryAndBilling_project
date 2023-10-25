@@ -62,41 +62,44 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2>Book Order - Select Party</h2>
+	<div class="container">
+		<h2>Book Order - Select Party</h2>
 
-        <!-- Display Order Details -->
-        <div>
-            <h3>Order Details</h3>
-            <p>Order ID: <span th:text="${order.orderId}"></span></p>
-            <p>Order Date: <span th:text="${order.orderDate}"></span></p>
-        </div>
+		<!-- Display Order Details -->
+		<div>
+			<h3>Order Details</h3>
+			<p>Order ID: <span th:text="${order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+		</div>
 
-        <!-- Display Selected Rep Details -->
-        <div>
-            <h3>Selected Rep Details</h3>
-            <p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
-            <p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
-            <p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
-            <!-- Add more rep details as needed -->
-        </div>
+		<!-- Display Selected Rep Details -->
+		<div>
+			<h3>Selected Rep Details</h3>
+			<p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
+			<p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
+			<p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
+			<!-- Add more rep details as needed -->
+		</div>
 
-        <!-- Select Party -->
-        <form action="/inventorybilling/bookOrderSaveParty" method="post">
-            <h3>Select Party</h3>
-            <select name="selectedParty" id="selectedParty">
-                <!-- Iterate through the list of parties and create options -->
-                <option th:each="party : ${partyList}" th:value="${party.partyId}" th:text="${party.partyId}+' - '+${party.partyName}+ ' - ' + ${party.partyLocation}"></option>
-            </select>
-            <input type="hidden" name="orderId" th:value="${order.orderId}" />
-            <button type="submit">Next</button>
-        </form>
+		<!-- Select Party -->
+		<form action="/inventorybilling/bookOrderSaveParty" method="post">
+			<h3>Select Party</h3>
+			<select name="selectedParty" id="selectedParty">
+				<!-- Iterate through the list of parties and create options -->
+				<option th:each="party : ${partyList}" th:value="${party.partyId}"
+					th:text="${party.partyId}+' - '+${party.partyName}+ ' - ' + ${party.partyLocation}"></option>
+			</select>
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+			<button type="submit">Next</button>
+		</form>
 
-        <!-- Add a button to add a new party -->
-        <a href="/inventorybilling/showAddParty">Add New Party</a>
+		<!-- Add a button to add a new party -->
+		<a href="/inventorybilling/showAddParty">Add New Party</a>
 
-        <!-- Add a Home button or other navigation options as needed -->
-        <a href="/inventorybilling/showLanding">Home</a>
-    </div>
+		<!-- Add a Home button or other navigation options as needed -->
+		<a href="/inventorybilling/showLanding">Home</a>
+		<b>.....On Book Order Select Party Page.....</b>
+	</div>
 </body>
+
 </html>

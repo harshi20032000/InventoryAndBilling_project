@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- ... (head content) ... -->
+</head>
+
+<body>
+    <div>
+		<h3>Order Details</h3>
+		<p>Order ID: <span th:text="${order.orderId}"></span></p>
+		<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+	</div>
+
+	<!-- Display Selected Rep Details -->
+	<div>
+		<h3>Selected Rep Details</h3>
+		<p>Reps ID: <span th:text="${order.reps?.repId} ?: 'N/A'"></span></p>
+		<p>Reps Name: <span th:text="${order.reps?.repName} ?: 'N/A'"></span></p>
+		<p>Reps Location: <span th:text="${order.reps?.repLocation} ?: 'N/A'"></span></p>
+		<!-- Add more rep details as needed -->
+	</div>
+
+	<!-- Display Party Details -->
+	<h3>Party Details</h3>
+	<p>Party ID: <span th:text="${order.party?.partyId} ?: 'N/A'"></span></p>
+	<p>Party Name: <span th:text="${order.party?.partyName} ?: 'N/A'"></span></p>
+	<p>Party Location: <span th:text="${order.party?.partyLocation} ?: 'N/A'"></span></p>
+	<!-- Add any other party details as needed -->
+
+	<!-- Display Product Line Items -->
+	<h3>Order Line Items</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Product</th>
+				<th>Rate</th>
+				<th>Quantity</th>
+				<th>Total Price</th>
+				<th>Warehouse-Quantities</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="lineItem : ${order.orderLineItems}">
+				<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+				<td th:text="${lineItem.rate}"></td>
+				<td th:text="${lineItem.quantity}"></td>
+				<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+				<td colspan="4">
+					<table>
+						<thead>
+							<tr>
+								<th>WareID</th>
+								<th>WareName</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+								<td th:text="${entry.key.wareId}"></td>
+								<td th:text="${entry.key.wareName}"></td>
+								<td th:text="${entry.value}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- Display a message if there are no order line items -->
+	<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
+
+	<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
+	<!-- Display Total Order Price if it's not null or empty -->
+	<h3 th:if="${totalPrice != null and totalPrice > 0}">Total Order Price: <span th:text="${totalPrice}"></span>
+	</h3>
+
+	<!-- Display Total Order Quantity if it's not null or empty -->
+	<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
+			th:text="${totalQuantities}"></span>
+	</h3>
+
+    <div class="container">
+        <h2>Add Payment to Order</h2>
+
+        <!-- Create a form for adding a new payment -->
+        <form action="/inventorybilling/addOrderPayment" method="post">
+            <h3>Payment Details</h3>
+
+            <!-- Add payment date input -->
+            <div class="form-group">
+                <label for="payDate">Payment Date:</label>
+                <input type="date" class="form-control" name="payDate" />
+            </div>
+
+            <!-- Add payment amount input -->
+            <div class="form-group">
+                <label for="payAmount">Payment Amount:</label>
+                <input type="text" class="form-control" name="payAmount" />
+            </div>
+
+            <!-- Add payment mode input -->
+            <div class="form-group">
+                <label for="payMode">Payment Mode:</label>
+                <input type="text" class="form-control" name="payMode" />
+            </div>
+
+            <!-- Add payment type input -->
+            <div class="form-group">
+                <label for="payType">Payment Type:</label>
+                <input type="text" class="form-control" name="payType" />
+            </div>
+
+            <!-- Add hidden input for orderId -->
+            <input type="hidden" name="orderId" th:value="${order.orderId}" />
+
+            <!-- Add a "Add Payment" button to submit the payment details -->
+            <button type="submit" class="btn btn-success">Add Payment</button>
+        </form>
+
+        <!-- Add a "Back to Order Details" button -->
+        <a href="/inventorybilling/orderDetails/${order.orderId}" class="btn btn-secondary">Back to Order Details</a>
+    </div>
+
+    <!-- Add a "Back to Order List" button -->
+    <a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
+    <!-- Add buttons to navigate to the homepage -->
+	<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+    <b>.....On Add Order Payment Page.....</b>
+    </div>
+</body>
+
+</html>

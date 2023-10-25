@@ -2,89 +2,92 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
 
-        .container {
-            margin-top: 20px;
-        }
+		.container {
+			margin-top: 20px;
+		}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+		h2 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
 
-        th {
-            background-color: #007bff;
-            color: #fff;
-        }
+		th {
+			background-color: #007bff;
+			color: #fff;
+		}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
 
-         .btn {
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 5px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+		.btn {
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 10px 5px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
 
-        .btn-secondary {
-            background-color: #777;
-            color: #fff;
-        }
-    </style>
+		.btn-secondary {
+			background-color: #777;
+			color: #fff;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Reps List</h2>
-        <!-- Display a table with representative details -->
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Iterate through the list of representatives -->
-                <tr th:each="reps : ${repsList}">
-                    <td th:text="${reps.repId}"></td>
-                    <td th:text="${reps.repName}"></td>
-                    <td th:text="${reps.repLocation}"></td>
-                    <td>
-                        <!-- Add a "View Details" button linking to repsDetails page -->
-                        <a th:href="@{'/repsDetails/' + ${reps.repId}}" class="btn btn-info">View Details</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- Add "Add Reps" and "Home" buttons -->
-        <a href="/inventorybilling/showAddReps" class="btn btn-secondary">Add Reps</a>
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-    </div>
+	<div class="container">
+		<h2>Reps List</h2>
+		<!-- Display a table with representative details -->
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Location</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Iterate through the list of representatives -->
+				<tr th:each="reps : ${repsList}">
+					<td th:text="${reps.repId}"></td>
+					<td th:text="${reps.repName}"></td>
+					<td th:text="${reps.repLocation}"></td>
+					<td>
+						<!-- Add a "View Details" button linking to repsDetails page -->
+						<a th:href="@{'/repsDetails/' + ${reps.repId}}" class="btn btn-info">View Details</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Add "Add Reps" and "Home" buttons -->
+		<a href="/inventorybilling/showAddReps" class="btn btn-secondary">Add Reps</a>
+		<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+		<b>.....On Reps List Page.....</b>
+	</div>
 </body>
 
 </html>

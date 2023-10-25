@@ -2,6 +2,8 @@ package com.harshi.InventoryAndBilling.entities;
 
 import java.util.Set;
 
+import org.hibernate.validator.constraints.Length;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +13,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "user")
@@ -20,10 +24,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Length(min=2, max=15, message="firstName should be min 2 char and max 15 char")
+    @NotBlank(message="firstName is mandatory")
     private String firstName;
+    
+    @Length(min=3, max=12, message="lastName should be min 3 char and max 15 char")
+    @NotBlank(message="lastName is mandatory")
     private String lastName;
+    
     @Column(unique = true)
+    @NotBlank(message="Username is mandatory")
+    @Email
     private String email;
+    
+    @Length(min=8, max=15, message="lastName should be min 8 char and max 15 char")
+    @NotBlank(message="password is mandatory")
     private String password;
 
     @ManyToMany

@@ -2,99 +2,103 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<!-- ... (head content) ... -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        .container {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
+		.container {
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			border-radius: 5px;
+			margin: 20px auto;
+			max-width: 800px;
+		}
 
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+		h2 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
 
-        h3 {
-            font-size: 20px;
-            margin-top: 20px;
-        }
+		h3 {
+			font-size: 20px;
+			margin-top: 20px;
+		}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
+		th,
+		td {
+			border: 1px solid #ccc;
+			padding: 10px;
+			text-align: left;
+		}
 
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
 
-        .button {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
+		.button {
+			background-color: #007BFF;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			text-decoration: none;
+			display: inline-block;
+			margin-top: 10px;
+		}
 
-        #editQuantitiesButton {
-            background-color: #28a745;
-        }
-    </style>
+		#editQuantitiesButton {
+			background-color: #28a745;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Warehouse Details Page</h2>
-        <p>Warehouse ID: <span th:text="${warehouse.wareId}"></span></p>
-        <p>Warehouse Code: <span th:text="${warehouse.wareCode}"></span></p>
-        <h3>Warehouse Name: <span th:text="${warehouse.wareName}"></span></h3>
+	<div class="container">
+		<h2>Warehouse Details Page</h2>
+		<p>Warehouse ID: <span th:text="${warehouse.wareId}"></span></p>
+		<p>Warehouse Code: <span th:text="${warehouse.wareCode}"></span></p>
+		<h3>Warehouse Name: <span th:text="${warehouse.wareName}"></span></h3>
 
-        <h3>Products in Warehouse</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product ID</th>
-                    <th>Product Code</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="product : ${productsList}">
-                    <td th:text="${product.productId}"></td>
-                    <td th:text="${product.pType}"></td>
-                    <td th:text="${product.brandName}"></td>
-                    <td>
-                        <span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <a th:href="@{'/editWarehouseQuantities/' + ${warehouse.wareId}}" class="button" id="editQuantitiesButton">Edit Quantities</a>
-        <a href="/inventorybilling/showLanding" class="button">Home</a>
-        <a href="/inventorybilling/showWarehouseList" class="button">Warehouse List</a>
-    </div>
+		<h3>Products in Warehouse</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product ID</th>
+					<th>Product Code</th>
+					<th>Product Name</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${productsList}">
+					<td th:text="${product.productId}"></td>
+					<td th:text="${product.pType}"></td>
+					<td th:text="${product.brandName}"></td>
+					<td>
+						<span th:text="${product.warehouseQuantities[warehouse.wareId]}"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>Total Product Quantity: <span th:text="${totalProductQuantity}"></span></p>
+		<a th:href="@{'/editWarehouseQuantities/' + ${warehouse.wareId}}" class="button" id="editQuantitiesButton">Edit
+			Quantities</a>
+		<a href="/inventorybilling/showLanding" class="button">Home</a>
+		<a href="/inventorybilling/showWarehouseList" class="button">Warehouse List</a>
+		<b>.....On Warehouse Details Page.....</b>
+	</div>
 </body>
 
 </html>

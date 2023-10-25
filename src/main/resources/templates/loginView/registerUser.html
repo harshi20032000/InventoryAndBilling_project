@@ -1,83 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Registration</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        h2 {
-            color: #333;
-        }
+		.container {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			text-align: center;
+			/* Center the content in the container */
+		}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+		h2 {
+			color: #333;
+			text-align: center;
+			/* Center the heading */
+		}
 
-        form {
-            margin-top: 20px;
-        }
+		form {
+			margin-top: 20px;
+		}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
+		label {
+			display: block;
+		 margin: 10px auto; /* Center the label text symmetrically */
+		 color: #333;
+		}
 
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+		input[type="text"],
+		input[type="password"] {
+			width: 90%; /* Adjusted width for better alignment */
+		 padding: 10px;
+		 margin: 0 auto; /* Center the input fields symmetrically */
+		 border: 1px solid #ccc;
+		 border-radius: 5px;
+		}
 
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+		input[type="submit"] {
+			background-color: #333;
+		 color: #fff;
+		 padding: 10px 20px;
+		 border: none;
+		 border-radius: 5px;
+		 cursor: pointer;
+		 transition: background-color 0.3s;
+		 margin: 0 auto; /* Center the submit button */
+		}
 
-        input[type="submit"]:hover {
-            background-color: #555;
-        }
-    </style>
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>User Registration</h2>
-        <form action="registerUser" method="post">
-            <label for="firstName">First Name:</label>
-            <input type="text" name="firstName" id="firstName">
+	<div class="container">
+		<h2>User Registration</h2>
+		<form action="registerUser" method="post">
+			<label for="firstName">First Name:</label>
+			<input type="text" name="firstName" id="firstName">
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" name="lastName" id="lastName">
+			<label for="lastName">Last Name:</label>
+			<input type="text" name="lastName" id="lastName">
 
-            <label for="email">Username:</label>
-            <input type="text" name="email" id="email">
+			<label for="email">Username:</label>
+			<input type="text" name="email" id="email">
 
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password">
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" name="confirmPassword" id="confirmPassword">
+			<label for="confirmPassword">Confirm Password:</label>
+			<input type="password" name="confirmPassword" id="confirmPassword">
 
-            <input type="submit" value="Register">
-        </form>
-    </div>
+			<input type="submit" value="Register">
+		</form>
+	</div>
 </body>
+
 </html>

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <style>
+	<style>
         /* Add your custom CSS styles here */
         body {
             font-family: Arial, sans-serif;
@@ -62,41 +62,106 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2>Book Order - Select Party</h2>
+	<div class="container">
+		<h2>Book Order - Select Products</h2>
 
-        <!-- Display Order Details -->
-        <div>
-            <h3>Order Details</h3>
-            <p>Order ID: <span th:text="${order.orderId}"></span></p>
-            <p>Order Date: <span th:text="${order.orderDate}"></span></p>
-        </div>
+		<!-- Display Order Details -->
+		<div>
+			<h3>Order Details</h3>
+			<p>Order ID: <span th:text="${order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+		</div>
 
-        <!-- Display Selected Rep Details -->
-        <div>
-            <h3>Selected Rep Details</h3>
-            <p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
-            <p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
-            <p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
-            <!-- Add more rep details as needed -->
-        </div>
+		<!-- Display Selected Rep Details -->
+		<div>
+			<h3>Selected Rep Details</h3>
+			<p>Reps ID: <span th:text="${order.reps.repId}"></span></p>
+			<p>Reps Name: <span th:text="${order.reps.repName}"></span></p>
+			<p>Reps Location: <span th:text="${order.reps.repLocation}"></span></p>
+			<!-- Add more rep details as needed -->
+		</div>
 
-        <!-- Select Party -->
-        <form action="/inventorybilling/bookOrderSaveParty" method="post">
-            <h3>Select Party</h3>
-            <select name="selectedParty" id="selectedParty">
-                <!-- Iterate through the list of parties and create options -->
-                <option th:each="party : ${partyList}" th:value="${party.partyId}" th:text="${party.partyId}+' - '+${party.partyName}+ ' - ' + ${party.partyLocation}"></option>
-            </select>
-            <input type="hidden" name="orderId" th:value="${order.orderId}" />
-            <button type="submit">Next</button>
-        </form>
+		<!-- Display Party Details -->
+		<h3>Party Details</h3>
+		<p>Party ID: <span th:text="${order.party.partyId}"></span></p>
+		<p>Party Name: <span th:text="${order.party.partyName}"></span></p>
+		<p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
 
-        <!-- Add a button to add a new party -->
-        <a href="/inventorybilling/showAddParty">Add New Party</a>
+		<h3>Order Line Items</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Rate</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Warehouse Quantities</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Check if orderLineItems is not empty before iterating -->
+				<th:if="${order.orderLineItems !=null and not #lists.isEmpty(order.orderLineItems)}">
+					<tr th:each="lineItem : ${order.orderLineItems}">
+						<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+						<td th:text="${lineItem.rate}"></td>
+						<td th:text="${lineItem.quantity}"></td>
+						<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+						<td colspan="4">
+							<table>
+								<thead>
+									<tr>
+										<th>Warehouse ID</th>
+										<th>Warehouse Name</th>
+										<th>Quantity Taken</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+										<td th:text="${entry.key.wareId}"></td>
+										<td th:text="${entry.key.wareName}"></td>
+										<td th:text="${entry.value}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					</th:if>
 
-        <!-- Add a Home button or other navigation options as needed -->
-        <a href="/inventorybilling/showLanding">Home</a>
-    </div>
+			</tbody>
+		</table>
+		<!-- Display a message if there are no order line items -->
+		<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
+
+
+		<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
+		<!-- Display Total Order Price if it's not null or empty -->
+		<h3 th:if="${totalPrice != null and totalPrice > 0}">Total Order Price: <span th:text="${totalPrice}"></span>
+		</h3>
+
+		<!-- Display Total Order Quantity if it's not null or empty -->
+		<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
+				th:text="${totalQuantities}"></span>
+		</h3>
+
+
+		<!-- Product Selection Dropdown -->
+		<form action="/inventorybilling/bookOrderShowTotalProductQuantity" method="post">
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+
+			<div class="form-group">
+				<label for="selectedProduct">Select a Product:</label>
+				<select name="selectedProduct" id="selectedProduct" class="form-control">
+					<option th:each="product : ${productsList}" th:value="${product.productId}"
+						th:text="${product.productId}+' - '+${product.brandName}+ ' - ' + ${product.pType}+ ' - ' + ${product.price}">
+					</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">AddProductToOrder</button>
+		</form>
+		<!-- Add a Home button or other navigation options as needed -->
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+		<b>.....On Book Order Select Product Page.....</b>
+	</div>
 </body>
+
 </html>

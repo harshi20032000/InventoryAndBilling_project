@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Product Quantities</title>
-    <style>
-        /* Add CSS styles for your table */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit Product Quantities</title>
+	<style>
+		/* Add CSS styles for your table */
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
 
-        th {
-            background-color: #f2f2f2;
-        }
+		th {
+			background-color: #f2f2f2;
+		}
 
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
+		.button-container {
+			text-align: center;
+			margin-top: 20px;
+		}
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-right: 10px;
-        }
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			text-decoration: none;
+			margin-right: 10px;
+		}
 
-        .button:hover {
-            background-color: #555;
-        }
-    </style>
+		.button:hover {
+			background-color: #555;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container" style="text-align: center;">
-        <h2 style="margin-top: 20px;">Edit Product Quantities</h2>
-        <form action="/inventorybilling/updateProductQuantities" method="post" th:object="${product}" style="margin-top: 20px;">
-            <h3>Product Name: <span th:text="${product.brandName}" style="font-weight: bold;"></span></h3>
-            <table style="border-collapse: collapse; width: 100%; margin-top: 20px;">
-                <thead>
-                    <tr style="background-color: #f2f2f2;">
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Warehouse ID</th>
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Warehouse Name</th>
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Warehouse Code</th>
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Quantity</th>
-                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">New Quantity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Iterate through the list of warehouses -->
-                    <tr th:each="warehouse : ${warehouses}">
-                        <td th:text="${warehouse.wareId}" style="border: 1px solid #ddd; padding: 8px; text-align: left;"></td>
-                        <td th:text="${warehouse.wareName}" style="border: 1px solid #ddd; padding: 8px; text-align: left;"></td>
-                        <td th:text="${warehouse.wareCode}" style="border: 1px solid #ddd; padding: 8px; text-align: left;"></td>
-                        <td>
-                            <!-- Display the current quantity from the warehouseQuantities map -->
-                            <span th:text="${product.warehouseQuantities[warehouse.wareId]}" style="font-weight: bold;"></span>
-                        </td>
-                        <td>
-                            <!-- Add an input field to edit the new quantity -->
-                            <input type="number" th:field="*{warehouseQuantities[__${warehouse.wareId}__]}" style="border: 1px solid #ddd; padding: 8px; text-align: left;" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- Add a hidden input field for the productId -->
-            <input type="hidden" th:field="*{productId}" />
-            <!-- Add a save button to submit the form -->
-            <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Save</button>
-        </form>
-        <!-- Add a home button to navigate back to product details -->
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary" style="margin-top: 20px;">Home</a>
-    </div>
+	<div class="container" style="text-align: center;">
+		<h2 style="margin-top: 20px;">Edit Product Quantities</h2>
+		<form action="/inventorybilling/updateProductQuantities" method="post" th:object="${product}"
+			style="margin-top: 20px;">
+			<p>Product ID: <span th:text="${product.productId}"></span></p>
+			<p>Product Code: <span th:text="${product.pType}"></span></p>
+			<h3>Product Name: <span th:text="${product.brandName}" style="font-weight: bold;"></span></h3>
+			<p>Total Product Quantity: <span th:text="${totalProductQuantity}"></span></p>
+
+			<table style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+				<thead>
+					<tr style="background-color: #f2f2f2;">
+						<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Warehouse ID</th>
+						<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Warehouse Name</th>
+						<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Warehouse Code</th>
+						<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Quantity</th>
+						<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">New Quantity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Iterate through the list of warehouses -->
+					<tr th:each="warehouse : ${warehouses}">
+						<td th:text="${warehouse.wareId}"
+							style="border: 1px solid #ddd; padding: 8px; text-align: left;"></td>
+						<td th:text="${warehouse.wareName}"
+							style="border: 1px solid #ddd; padding: 8px; text-align: left;"></td>
+						<td th:text="${warehouse.wareCode}"
+							style="border: 1px solid #ddd; padding: 8px; text-align: left;"></td>
+						<td>
+							<!-- Display the current quantity from the warehouseQuantities map -->
+							<span th:text="${product.warehouseQuantities[warehouse.wareId]}"
+								style="font-weight: bold;"></span>
+						</td>
+						<td>
+							<!-- Add an input field to edit the new quantity -->
+							<input type="number" th:field="*{warehouseQuantities[__${warehouse.wareId}__]}"
+								style="border: 1px solid #ddd; padding: 8px; text-align: left;" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- Add a hidden input field for the productId -->
+			<input type="hidden" th:field="*{productId}" />
+			<!-- Add a save button to submit the form -->
+			<button type="submit" class="btn btn-primary" style="margin-top: 20px;">Save</button>
+		</form>
+		<!-- Add a home button to navigate back to product details -->
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary" style="margin-top: 20px;">Home</a>
+		<b>.....On Edit Product Quantities Page.....</b>
+	</div>
 </body>
+
 </html>

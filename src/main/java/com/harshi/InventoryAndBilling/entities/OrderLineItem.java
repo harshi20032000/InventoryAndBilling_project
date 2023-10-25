@@ -14,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * An OrderLineItem represents an individual line item within an order. It
@@ -37,8 +38,10 @@ public class OrderLineItem {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    @NotNull
     private int quantity;
 
+    @NotNull
     private BigDecimal rate;
     
     @ElementCollection
