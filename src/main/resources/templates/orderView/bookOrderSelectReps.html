@@ -1,7 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- ... (head content) ... -->
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,15 +73,14 @@
                 </select>
             </div>
             <input type="hidden" name="currentDate" th:value="${currentDate}" />
-            <button type="submit" class="btn btn-primary">Next</button>
+            <button type="submit">Next</button>
         </form>
 
         <!-- Add a button to add a new representative -->
-        <a href="/inventorybilling/showAddReps" class="btn btn-success">Add New Reps</a>
+        <a href="/inventorybilling/showAddReps">Add New Reps</a>
 
         <!-- Add a Home button or other navigation options as needed -->
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+        <a href="/inventorybilling/showLanding">Home</a>
     </div>
 </body>
 </html>
-

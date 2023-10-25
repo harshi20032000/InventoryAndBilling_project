@@ -1,0 +1,256 @@
+2023-10-19 20:26:37|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 12512 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-19 20:26:37|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-19 20:26:39|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 20:26:40|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 141 ms. Found 10 JPA repository interfaces.
+2023-10-19 20:26:41|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-19 20:26:41|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-19 20:26:41|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-19 20:26:41|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-19 20:26:41|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-19 20:26:41|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 4379 ms
+2023-10-19 20:26:42|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 20:26:42|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-19 20:26:42|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-19 20:26:43|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 20:26:43|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-19 20:26:43|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-19 20:26:44|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55d1f065
+2023-10-19 20:26:44|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-19 20:26:45|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 20:26:46|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 20:26:46|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 20:26:47|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-19 20:26:48|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 20:26:48|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-19 20:26:48|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-19 20:26:48|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-19 20:26:48|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 12.023 seconds (process running for 13.009)
+2023-10-19 20:26:53|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 20:26:53|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-19 20:26:53|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 0 ms
+2023-10-19 20:26:55|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-19 20:26:59|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: ayush11006
+2023-10-19 20:26:59|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: ayush11006
+2023-10-19 20:27:17|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.TransportController-Displaying the list of transports
+2023-10-19 20:27:21|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-19 20:33:48|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 11912 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-19 20:33:48|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-19 20:33:49|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 20:33:49|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 105 ms. Found 10 JPA repository interfaces.
+2023-10-19 20:33:50|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-19 20:33:50|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-19 20:33:50|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-19 20:33:50|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-19 20:33:50|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-19 20:33:50|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1716 ms
+2023-10-19 20:33:50|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 20:33:50|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-19 20:33:50|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-19 20:33:50|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 20:33:50|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-19 20:33:50|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-19 20:33:51|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52f43225
+2023-10-19 20:33:51|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-19 20:33:51|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 20:33:52|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 20:33:52|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 20:33:52|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-19 20:33:53|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 20:33:53|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-19 20:33:54|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-19 20:33:54|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-19 20:33:54|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 6.205 seconds (process running for 6.918)
+2023-10-19 20:34:11|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 20:34:11|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-19 20:34:11|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 17 ms
+2023-10-19 20:34:13|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-19 20:34:17|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: ayush11006
+2023-10-19 20:34:18|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: ayush11006
+2023-10-19 20:34:43|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-19 20:34:49|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-19 20:34:56|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 2
+2023-10-19 20:35:05|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 4 in order with ID: 2
+2023-10-19 20:35:30|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 4 in order with ID: 2
+2023-10-19 20:36:11|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 2
+2023-10-19 20:36:18|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-19 20:36:21|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 2
+2023-10-19 20:42:31|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 2860 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-19 20:42:31|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-19 20:42:31|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 20:42:32|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 113 ms. Found 10 JPA repository interfaces.
+2023-10-19 20:42:32|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-19 20:42:32|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-19 20:42:32|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-19 20:42:32|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-19 20:42:32|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-19 20:42:32|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1826 ms
+2023-10-19 20:42:33|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 20:42:33|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-19 20:42:33|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-19 20:42:33|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 20:42:33|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-19 20:42:33|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-19 20:42:33|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63326a3a
+2023-10-19 20:42:33|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-19 20:42:34|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 20:42:35|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 20:42:35|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 20:42:35|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-19 20:42:36|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 20:42:36|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-19 20:42:36|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-19 20:42:36|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-19 20:42:36|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 6.243 seconds (process running for 7.006)
+2023-10-19 20:42:51|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 20:42:51|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-19 20:42:51|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 7 ms
+2023-10-19 20:42:55|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-19 20:43:06|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: ayush11006
+2023-10-19 20:43:06|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: ayush11006
+2023-10-19 20:43:09|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-19 20:43:14|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 4
+2023-10-19 20:43:21|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 3
+2023-10-19 20:43:33|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 3
+2023-10-19 20:44:01|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 3
+2023-10-19 20:45:26|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 3
+2023-10-19 20:45:51|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 3
+2023-10-19 20:46:51|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 6 in order with ID: 3
+2023-10-19 20:47:14|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 6 in order with ID: 3
+2023-10-19 20:47:40|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 3
+2023-10-19 20:47:41|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-19 20:47:43|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 3
+2023-10-19 20:49:57|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-19 23:44:57|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 12548 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-19 23:44:57|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-19 23:44:58|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 23:44:58|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 136 ms. Found 10 JPA repository interfaces.
+2023-10-19 23:44:59|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-19 23:44:59|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:44:59|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-19 23:44:59|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-19 23:44:59|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-19 23:44:59|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2247 ms
+2023-10-19 23:45:00|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 23:45:00|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-19 23:45:00|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-19 23:45:00|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 23:45:00|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-19 23:45:00|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-19 23:45:01|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4315fe1b
+2023-10-19 23:45:01|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-19 23:45:01|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 23:45:02|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 23:45:02|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 23:45:02|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-19 23:45:03|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 23:45:04|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-19 23:45:04|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:45:04|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-19 23:45:04|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 7.423 seconds (process running for 8.543)
+2023-10-19 23:45:19|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-19 23:45:19|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-19 23:45:19|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-19 23:45:23|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-19 23:45:27|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: ayush11006
+2023-10-19 23:45:27|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: ayush11006
+2023-10-19 23:45:31|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-19 23:57:10|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 9680 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-19 23:57:10|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-19 23:57:12|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 23:57:12|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 191 ms. Found 10 JPA repository interfaces.
+2023-10-19 23:57:13|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-19 23:57:13|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:13|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-19 23:57:13|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-19 23:57:13|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-19 23:57:14|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 3453 ms
+2023-10-19 23:57:14|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 23:57:14|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-19 23:57:14|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-19 23:57:14|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 23:57:15|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-19 23:57:15|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-19 23:57:15|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27d58238
+2023-10-19 23:57:15|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-19 23:57:16|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 23:57:18|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 23:57:18|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 23:57:19|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-19 23:57:20|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 23:57:20|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-19 23:57:20|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:20|[main]|WARN |org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-10-19 23:57:20|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 23:57:20|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-19 23:57:20|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-19 23:57:20|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:20|[main]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-19 23:57:20|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:20|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:20|[main]|INFO |org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger-
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-10-19 23:57:20|[main]|ERROR|org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter-
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8087 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8087 or configure this application to listen on another port.
+
+2023-10-19 23:57:46|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 5832 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-19 23:57:46|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-19 23:57:47|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 23:57:47|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 133 ms. Found 10 JPA repository interfaces.
+2023-10-19 23:57:48|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-19 23:57:48|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:48|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-19 23:57:48|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-19 23:57:48|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-19 23:57:48|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2518 ms
+2023-10-19 23:57:49|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 23:57:49|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-19 23:57:49|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-19 23:57:49|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 23:57:49|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-19 23:57:49|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-19 23:57:50|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4315fe1b
+2023-10-19 23:57:50|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-19 23:57:51|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-19 23:57:54|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 23:57:54|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 23:57:55|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-19 23:57:58|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 23:57:58|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-19 23:57:59|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:59|[main]|WARN |org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-10-19 23:57:59|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 23:57:59|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-19 23:57:59|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-19 23:57:59|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:59|[main]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-19 23:57:59|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:59|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-19 23:57:59|[main]|INFO |org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger-
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-10-19 23:57:59|[main]|ERROR|org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter-
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8087 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8087 or configure this application to listen on another port.
+

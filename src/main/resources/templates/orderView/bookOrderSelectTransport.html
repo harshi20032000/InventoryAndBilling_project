@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
-    <!-- ... (head content) ... -->
-</head>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <h2>Book Order - Select Transport</h2>
@@ -30,48 +73,45 @@
         <p>Party ID: <span th:text="${order.party.partyId}"></span></p>
         <p>Party Name: <span th:text="${order.party.partyName}"></span></p>
         <p>Party Location: <span th:text="${order.party.partyLocation}"></span></p>
-        <!-- Add any other party details as needed -->
 
-       <h3>Order Line Items</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Rate</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
-            <th>Warehouse Quantities</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="lineItem : ${order.orderLineItems}">
-            <td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
-            <td th:text="${lineItem.rate}"></td>
-            <td th:text="${lineItem.quantity}"></td>
-            <td th:text="${lineItem.rate * lineItem.quantity}"></td>
-            <td colspan="4">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Warehouse ID</th>
-                            <th>Warehouse Name</th>
-                            <th>Quantity Taken</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
-                            <td th:text="${entry.key.wareId}"></td>
-                            <td th:text="${entry.key.wareName}"></td>
-                            <td th:text="${entry.value}"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
+        <h3>Order Line Items</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Rate</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Warehouse Quantities</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="lineItem : ${order.orderLineItems}">
+                    <td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+                    <td th:text="${lineItem.rate}"></td>
+                    <td th:text="${lineItem.quantity}"></td>
+                    <td th:text="${lineItem.rate * lineItem.quantity}"></td>
+                    <td colspan="4">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Warehouse ID</th>
+                                    <th>Warehouse Name</th>
+                                    <th>Quantity Taken</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+                                    <td th:text="${entry.key.wareId}"></td>
+                                    <td th:text="${entry.key.wareName}"></td>
+                                    <td th:text="${entry.value}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <!-- Form for Selecting Transport -->
         <form action="/inventorybilling/bookOrderSaveTransport" method="post">
@@ -80,14 +120,12 @@
             <div class="form-group">
                 <label for="transport">Select a Transport:</label>
                 <select name="selectedTransport" id="selectedTransport" class="form-control">
-                    <option th:each="transport : ${transportsList}" th:value="${transport.transportId}"
-                        th:text="${transport.transportName}"></option>
+                    <option th:each="transport : ${transportsList}" th:value="${transport.transportId}" th:text="${transport.transportName}"></option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Next</button>
+            <button type="submit">Next</button>
         </form>
     </div>
 </body>
-
 </html>
