@@ -73,7 +73,10 @@
 
 	<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
 	<!-- Display Total Order Price if it's not null or empty -->
-	<h3 th:if="${totalPrice != null and totalPrice > 0}">Total Order Price: <span th:text="${totalPrice}"></span>
+	<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
+	</h3>
+	
+	<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span th:text="${remainingAmount}"></span>
 	</h3>
 
 	<!-- Display Total Order Quantity if it's not null or empty -->

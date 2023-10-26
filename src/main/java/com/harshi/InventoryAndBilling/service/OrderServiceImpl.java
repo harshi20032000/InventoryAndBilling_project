@@ -1,11 +1,13 @@
 package com.harshi.InventoryAndBilling.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.harshi.InventoryAndBilling.entities.Order;
+import com.harshi.InventoryAndBilling.entities.OrderStatus;
 import com.harshi.InventoryAndBilling.entities.Transport;
 import com.harshi.InventoryAndBilling.entities.TransportAndBuiltNumber;
 import com.harshi.InventoryAndBilling.repo.OrderRepository;
@@ -23,6 +25,9 @@ public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
 	private TransportAndBuiltNumberRepository transportAndBuiltNumberRepository;
+	
+	@Autowired
+	private OrderStatusHistoryService orderStatusHistoryService;
 
 	@Override
 	public Order saveOrder(Order order) {
@@ -51,6 +56,10 @@ public class OrderServiceImpl implements OrderService {
 	public Order updateOrderBiltyNo(Long orderId, Long transportId, String biltyNumber) {
 	    // Find the order to be updated by its ID
 	    Order orderToBeUpdated = orderRepository.findById(orderId).orElse(null);
+	    
+	 // Set the orderStatus to "Order Placed"
+	 // Update the ordrStatus in the received order
+	 		orderStatusHistoryService.addStatusChangeToOrder(orderToBeUpdated, "BuiltyNo Updated");
 
 	    // Find the new Transport by its ID
 	    Transport transportToBeAdded = transportRepository.findById(transportId).orElse(null);

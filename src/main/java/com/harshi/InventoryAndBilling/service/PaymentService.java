@@ -1,10 +1,12 @@
 package com.harshi.InventoryAndBilling.service;
 
+import java.math.BigDecimal;
+
 import com.harshi.InventoryAndBilling.entities.Payment;
 
 public interface PaymentService {
 
-	public Long getTotalOutstanding();
+	public BigDecimal getTotalOutstanding();
 	
 	public Payment savePayment(Payment payment);
 	
