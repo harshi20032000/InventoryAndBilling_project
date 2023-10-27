@@ -235,7 +235,7 @@ public class OrderController {
 		// Update the order with the new line item and product
 		Order updatedOrder = orderService.saveOrder(order);
 
-		// Calculate total price for the line item
+		// Calculate total price for the order
 		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 

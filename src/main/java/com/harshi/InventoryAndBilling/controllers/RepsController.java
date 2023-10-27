@@ -1,5 +1,6 @@
 package com.harshi.InventoryAndBilling.controllers;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.harshi.InventoryAndBilling.entities.Order;
 import com.harshi.InventoryAndBilling.entities.Reps;
+import com.harshi.InventoryAndBilling.helper.OrderHelper;
 import com.harshi.InventoryAndBilling.service.PartyService;
 import com.harshi.InventoryAndBilling.service.RepsService;
 
@@ -95,6 +97,12 @@ public class RepsController {
         LOGGER.info("Displaying representative details for representative with ID: {}", repId);
         Reps reps = repsService.getRepsById(repId);
         List<Order> orderList = repsService.getOrderListByReps(repId);
+        // Calculate total price for the line item
+		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(orderList);
+		BigDecimal remainingBillAmount = OrderHelper.totalPendingPrice(orderList);
+		// Add the order to the model for reference
+		model.addAttribute("totalBillAmount", totalBillAmount);
+		model.addAttribute("remainingBillAmount", remainingBillAmount);
         model.addAttribute("orders", orderList);
         model.addAttribute("reps", reps);
         return "repsView/repsDetails";

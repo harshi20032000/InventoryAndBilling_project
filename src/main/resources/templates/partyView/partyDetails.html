@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 </head>
-    <!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+<!-- ... (head content) ... -->
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f4f4f4;
+		margin: 0;
+		padding: 0;
+	}
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+	.container {
+		max-width: 800px;
+		margin: 20px auto;
+		padding: 20px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+	}
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+	h2 {
+		color: #333;
+		margin-bottom: 20px;
+	}
 
-        p {
-            margin: 10px 0;
-        }
+	p {
+		margin: 10px 0;
+	}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+	.btn {
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		padding: 10px 20px;
+		cursor: pointer;
+		margin-right: 10px;
+	}
 
-        .btn-secondary {
-            background-color: #6c757d;
-        }
+	.btn-secondary {
+		background-color: #6c757d;
+	}
 
-        .btn-secondary:hover {
-            background-color: #5a6268;
-        }
+	.btn-secondary:hover {
+		background-color: #5a6268;
+	}
 
-        b {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+	b {
+		display: block;
+		margin-top: 20px;
+		font-weight: bold;
+		color: #007bff;
+	}
+</style>
 </head>
+
 <body>
 	<div class="container">
 		<h2>Party Details Page</h2>
@@ -100,11 +101,10 @@
 			</tbody>
 		</table>
 
-		<!-- ... (remaining HTML content) ... -->
-
-
-		<!-- ... (remaining HTML content) ... -->
-
+		<div>
+			<p>Total Bill Amount: <span th:text="${totalBillAmount}"></span></p>
+			<p>Remaining Bill Amount: <span th:text="${remainingBillAmount}"></span></p>
+		</div>
 
 		<!-- Add a "Back to Party List" button -->
 		<a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Party List</a>

@@ -5,11 +5,14 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 import com.harshi.InventoryAndBilling.entities.Order;
 import com.harshi.InventoryAndBilling.entities.OrderLineItem;
+import com.harshi.InventoryAndBilling.entities.Payment;
 import com.harshi.InventoryAndBilling.entities.Product;
 import com.harshi.InventoryAndBilling.entities.Warehouse;
 /**
@@ -127,5 +130,43 @@ public class OrderHelper {
 	public static Date convertToDate(LocalDate localDate) {
 	    return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 	}
+	
+	/**
+	 * Calculates the total price of a list of orders based on their order line items.
+	 *
+	 * @param orderList The list of orders to calculate the total price for.
+	 * @return The total price of the orders in the list.
+	 */
+	public static BigDecimal totalOrderPrice(List<Order> orderList) {
+	    BigDecimal totalPrice = orderList.stream()
+	            .flatMap(order -> order.getOrderLineItems().stream())
+	            .map(lineItem -> lineItem.getRate().multiply(BigDecimal.valueOf(lineItem.getQuantity())))
+	            .reduce(BigDecimal.ZERO, BigDecimal::add);
+	    return totalPrice;
+	}
+	
+	/**
+	 * Calculates the total pending price for a list of orders based on their total amounts and payments.
+	 *
+	 * @param orderList   The list of orders to calculate the pending price for.
+	 * @return The total pending price for the orders in the list.
+	 */
+	public static BigDecimal totalPendingPrice(List<Order> orderList) {
+	    BigDecimal totalPendingPrice = orderList.stream()
+	        .map(order -> {
+	            // Use Optional to handle null values
+	            Optional<BigDecimal> totalBillAmountOptional = Optional.ofNullable(order.getTotalBillAmount());
+	            Optional<List<Payment>> paymentsOptional = Optional.ofNullable(order.getPayments());
+
+	            return paymentsOptional.orElse(List.of())
+	                .stream()
+	                .map(payment -> new BigDecimal(payment.getPayAmount()))
+	                .reduce(totalBillAmountOptional.orElse(BigDecimal.ZERO), BigDecimal::subtract);
+	        })
+	        .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+	    return totalPendingPrice;
+	}
+
 }
 
