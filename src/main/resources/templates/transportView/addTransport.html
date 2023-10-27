@@ -1,92 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<!-- ... (head content) ... -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        .container {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 500px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+		h2 {
+			color: #333;
+			margin-bottom: 20px;
+		}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+		.form-group {
+			margin-bottom: 15px;
+		}
 
-        label {
-            font-weight: bold;
-        }
+		label {
+			font-weight: bold;
+		}
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-transform: uppercase;
+		}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        .btn-secondary {
-            background-color: #555;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
 
-        .btn-secondary:hover {
-            background-color: #333;
-        }
+		.btn-secondary:hover {
+			background-color: #333;
+		}
 
-        b {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+		b {
+			display: block;
+			margin-top: 20px;
+			font-weight: bold;
+			color: #007bff;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Add Transport</h2>
-        <form action="/inventorybilling/addTransport" method="post" th:object="${transport}">
-            <div class="form-group">
-                <label for="transportName">Name:</label>
-                <input type="text" id="transportName" name="transportName" th:field="*{transportName}" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="contactDetails">Contact Details:</label>
-                <input type="text" id="contactDetails" name="contactDetails" th:field="*{contactDetails}" class="form-control" required />
-            </div>
-            
-            <!-- Add a "Save" button to submit the form -->
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-        
-        <!-- Add a "Back to Transport List" button -->
-        <a href="/inventorybilling/showTransportList" class="btn btn-secondary">Back to Transport List</a>
-        
-        <!-- Add buttons to navigate to the homepage -->
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-        <b>On Add Transport Page</b>
-    </div>
+	<div class="container">
+		<h2>Add Transport</h2>
+		<form action="/inventorybilling/addTransport" method="post" th:object="${transport}">
+			<div class="form-group">
+				<label for="transportName">Name:</label>
+				<input type="text" id="transportName" name="transportName" th:field="*{transportName}"
+					class="form-control" required />
+			</div>
+			<div class="form-group">
+				<label for="contactDetails">Contact Details:</label>
+				<input type="text" id="contactDetails" name="contactDetails" th:field="*{contactDetails}"
+					class="form-control" required />
+			</div>
+
+			<!-- Add a "Save" button to submit the form -->
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+
+		<!-- Add a "Back to Transport List" button -->
+		<a href="/inventorybilling/showTransportList" class="btn btn-secondary">Back to Transport List</a>
+
+		<!-- Add buttons to navigate to the homepage -->
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+		<b>On Add Transport Page</b>
+	</div>
 </body>
+
 </html>
