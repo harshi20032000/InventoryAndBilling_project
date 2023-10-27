@@ -3,83 +3,84 @@
 
 <head>
 	<!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
-        h3 {
-            color: #333;
-            margin-bottom: 10px;
-        }
+		h3 {
+			color: #333;
+			margin-bottom: 10px;
+		}
 
-        p {
-            color: #777;
-        }
+		p {
+			color: #777;
+		}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
 
-        th {
-            background-color: #f2f2f2;
-        }
+		th {
+			background-color: #f2f2f2;
+		}
 
-        a {
-            display: inline-block;
-            margin: 10px 0;
-            text-decoration: none;
-            color: #007bff;
-        }
+		a {
+			display: inline-block;
+			margin: 10px 0;
+			text-decoration: none;
+			color: #007bff;
+		}
 
-        a:hover {
-            text-decoration: underline;
-        }
+		a:hover {
+			text-decoration: underline;
+		}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        .btn-secondary {
-            background-color: #555;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
 
-        .btn-secondary:hover {
-            background-color: #333;
-        }
+		.btn-secondary:hover {
+			background-color: #333;
+		}
 
-        .btn-warning {
-            background-color: #ff9900;
-        }
+		.btn-warning {
+			background-color: #ff9900;
+		}
 
-        .btn-warning:hover {
-            background-color: #ff8800;
-        }
-    </style>
+		.btn-warning:hover {
+			background-color: #ff8800;
+		}
+	</style>
 </head>
 
 <body>
@@ -151,7 +152,10 @@
 
 	<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
 	<!-- Display Total Order Price if it's not null or empty -->
-	<h3 th:if="${totalPrice != null and totalPrice > 0}">Total Order Price: <span th:text="${totalPrice}"></span>
+	<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
+	</h3>
+	
+	<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span th:text="${remainingAmount}"></span>
 	</h3>
 
 	<!-- Display Total Order Quantity if it's not null or empty -->
@@ -185,6 +189,23 @@
 		</tbody>
 	</table>
 	<p th:if="${#lists.isEmpty(order.payments)}">No payment information yet.</p>
+
+	<h3>Order Status History</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Update Timestamp</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="change : ${order.statusHistory}">
+				<td th:text="${change.updateTimestamp}"></td>
+				<td th:text="${change.orderStatus}"></td>
+			</tr>
+		</tbody>
+	</table>
+
 
 
 	<!-- Added an "Edit Transport Details" button linking to the showEditOrderTransport method -->

@@ -1,6 +1,7 @@
 package com.harshi.InventoryAndBilling.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,15 +36,18 @@ public class Order {
 	@JoinColumn(name = "party_id")
 	private Party party;
 
-    @ManyToOne
-    @JoinColumn(name = "transport_and_built_number_id")
-    private TransportAndBuiltNumber transportAndBuiltNumber;
+	@ManyToOne
+	@JoinColumn(name = "transport_and_built_number_id")
+	private TransportAndBuiltNumber transportAndBuiltNumber;
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderLineItem> orderLineItems = new ArrayList<>();
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Payment> payments = new ArrayList<>();
+	private List<Payment> payments = new ArrayList<>();
+
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<OrderStatusHistory> statusHistory = new ArrayList<>();
 
 	// Constructors, getters, and setters
 
@@ -52,11 +56,11 @@ public class Order {
 	}
 
 	public Order(LocalDate orderDate, Reps reps, Party party, TransportAndBuiltNumber transportAndBuiltNumber) {
-        this.orderDate = orderDate;
-        this.reps = reps;
-        this.party = party;
-        this.transportAndBuiltNumber = transportAndBuiltNumber;
-    }
+		this.orderDate = orderDate;
+		this.reps = reps;
+		this.party = party;
+		this.transportAndBuiltNumber = transportAndBuiltNumber;
+	}
 
 	// Getters and setters
 
@@ -108,46 +112,56 @@ public class Order {
 		this.transportAndBuiltNumber = transportAndBuiltNumber;
 	}
 
-	
-	 public void addLineItem(OrderLineItem lineItem) {
-	        // Set the order for the line item
-	        lineItem.setOrder(this);
-	        
-	        // Add the line item to the list of line items
-	        orderLineItems.add(lineItem);
-	    }
+	public void addLineItem(OrderLineItem lineItem) {
+		// Set the order for the line item
+		lineItem.setOrder(this);
 
-	    public void removeLineItem(OrderLineItem lineItem) {
-	        // Remove the line item from the list of line items
-	    	orderLineItems.remove(lineItem);
-	        
-	        // Set the order for the line item to null
-	        if (lineItem != null) {
-	            lineItem.setOrder(null);
-	        }
-	    }
+		// Add the line item to the list of line items
+		orderLineItems.add(lineItem);
+	}
 
-		public List<Payment> getPayments() {
-			return payments;
+	public void removeLineItem(OrderLineItem lineItem) {
+		// Remove the line item from the list of line items
+		orderLineItems.remove(lineItem);
+
+		// Set the order for the line item to null
+		if (lineItem != null) {
+			lineItem.setOrder(null);
 		}
+	}
 
-		public void setPayments(List<Payment> payments) {
-			this.payments = payments;
+	public List<Payment> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(List<Payment> payments) {
+		this.payments = payments;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", orderDate=" + orderDate + ", reps=" + reps + ", party=" + party
+				+ ", transport=" + transportAndBuiltNumber + ", orderLineItems=" + orderLineItems + "]";
+	}
+
+	public void addPayment(Payment payment) {
+		if (payments == null) {
+			payments = new ArrayList<>();
 		}
+		payments.add(payment);
+		payment.setOrder(this);
+	}
 
-		@Override
-		public String toString() {
-			return "Order [orderId=" + orderId + ", orderDate=" + orderDate + ", reps=" + reps + ", party=" + party
-					+ ", transport=" + transportAndBuiltNumber + ", orderLineItems=" + orderLineItems+ "]";
-		}
+	public List<OrderStatusHistory> getStatusHistory() {
+		return statusHistory;
+	}
 
-		public void addPayment(Payment payment) {
-		    if (payments == null) {
-		        payments = new ArrayList<>(); 
-		    }
-		    payments.add(payment);
-		    payment.setOrder(this); 
-		}
+	public void setStatusHistory(List<OrderStatusHistory> statusHistory) {
+		this.statusHistory = statusHistory;
+	}
 
+	public void addStatusChange(OrderStatusHistory change) {
+		statusHistory.add(change);
+	}
 
 }

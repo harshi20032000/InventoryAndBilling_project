@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <style>
-        /* Add your custom CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+	<style>
+		/* Add your custom CSS styles here */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
 
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+		}
 
-        h2 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+		h2 {
+			color: #333;
+			text-align: center;
+			margin-bottom: 20px;
+		}
 
-        h3 {
-            color: #333;
-        }
+		h3 {
+			color: #333;
+		}
 
-        select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		select {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+		button {
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
 
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+		button:hover {
+			background-color: #0056b3;
+		}
+	</style>
 </head>
+
 <body>
 	<div class="container">
 		<h2>Book Order - Select Transport</h2>
@@ -117,7 +119,12 @@
 		</table>
 
 		<!-- Display Total Order Price and Total Order Quantity -->
-		<h3>Total Order Price: <span th:text="${totalPrice}"></span></h3>
+		<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
+		</h3>
+
+		<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span
+				th:text="${remainingAmount}"></span>
+		</h3>
 		<h3>Total Order Quantity: <span th:text="${totalQuantities}"></span></h3>
 
 

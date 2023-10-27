@@ -89,4 +89,1521 @@
 2023-10-26 22:55:26|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Displaying the list of available products
 2023-10-26 22:55:30|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Displaying the list of available products
 2023-10-26 22:55:32|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.ProductController-Displaying the add products form
-2023-10-26 22:55:38|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.RepsController-Displaying the list of representatives
+2023-10-26 01:19:45|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 01:19:45|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 8068 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 01:19:45|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 01:19:46|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 01:19:46|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 96 ms. Found 10 JPA repository interfaces.
+2023-10-26 01:19:46|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 01:19:46|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 01:19:46|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 01:19:46|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 01:19:47|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 01:19:47|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1705 ms
+2023-10-26 01:19:47|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 01:19:47|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 01:19:47|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 01:19:47|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 01:19:47|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 01:19:47|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 01:19:47|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68a5aadd
+2023-10-26 01:19:47|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 01:19:48|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 01:19:49|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 01:19:49|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 01:19:49|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 01:19:50|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 01:19:50|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 01:19:50|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 01:19:50|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 01:19:50|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 5.937 seconds (process running for 6.496)
+2023-10-26 01:21:11|[http-nio-8087-exec-5]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 01:21:11|[http-nio-8087-exec-5]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 01:21:11|[http-nio-8087-exec-5]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-26 01:21:16|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 01:21:18|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 01:21:19|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 01:21:24|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 01:21:28|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 34
+2023-10-26 01:21:43|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 01:21:45|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 3
+2023-10-26 01:21:53|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 01:21:55|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 6
+2023-10-26 01:23:53|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 01:24:02|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 01:24:04|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 4
+2023-10-26 01:24:08|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 04:36:01|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 04:36:01|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 13452 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 04:36:01|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 04:36:02|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 04:36:02|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 49 ms. Found 10 JPA repository interfaces.
+2023-10-26 04:36:02|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 04:36:02|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:36:02|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 04:36:02|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 04:36:02|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 04:36:02|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 943 ms
+2023-10-26 04:36:02|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 04:36:02|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 04:36:02|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 04:36:02|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 04:36:02|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 04:36:02|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 04:36:03|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f2b9da8
+2023-10-26 04:36:03|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 04:36:03|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 04:36:03|[main]|INFO |org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard-HHH000182: No default (no-argument) constructor for class: com.harshi.InventoryAndBilling.entities.OrderStatusHistory (class must be instantiated by Interceptor)
+2023-10-26 04:36:04|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 04:36:04|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 04:36:04|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 04:36:04|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 04:36:04|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 04:36:05|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:36:05|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 04:36:05|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 3.815 seconds (process running for 4.609)
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 04:38:23|[RMI TCP Connection(12)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 04:38:27|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 04:38:27|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 3928 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 04:38:27|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 04:38:28|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 04:38:28|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 39 ms. Found 10 JPA repository interfaces.
+2023-10-26 04:38:28|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 04:38:28|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:38:28|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 04:38:28|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 04:38:28|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 04:38:28|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 802 ms
+2023-10-26 04:38:28|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 04:38:28|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 04:38:28|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 04:38:28|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 04:38:28|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 04:38:28|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 04:38:29|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a7a6d34
+2023-10-26 04:38:29|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 04:38:29|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 04:38:29|[main]|INFO |org.hibernate.metamodel.internal.EntityInstantiatorPojoStandard-HHH000182: No default (no-argument) constructor for class: com.harshi.InventoryAndBilling.entities.OrderStatusHistory (class must be instantiated by Interceptor)
+2023-10-26 04:38:30|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 04:38:30|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 04:38:30|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 04:38:30|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 04:38:30|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 04:38:31|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:38:31|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 04:38:31|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 3.426 seconds (process running for 3.981)
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 04:43:01|[RMI TCP Connection(13)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 04:43:07|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 04:43:07|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 11644 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 04:43:07|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 04:43:08|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 04:43:08|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 47 ms. Found 10 JPA repository interfaces.
+2023-10-26 04:43:08|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 04:43:08|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:43:08|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 04:43:08|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 04:43:08|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 04:43:08|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 845 ms
+2023-10-26 04:43:08|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 04:43:08|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 04:43:08|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 04:43:08|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 04:43:08|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 04:43:09|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 04:43:09|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6630dd28
+2023-10-26 04:43:09|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 04:43:09|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 04:43:10|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 04:43:10|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 04:43:10|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 04:43:10|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 04:43:10|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 04:43:10|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 04:43:10|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 04:43:10|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 3.324 seconds (process running for 3.969)
+2023-10-26 04:51:26|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 04:51:26|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 04:51:26|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-26 04:51:31|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 04:51:34|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 04:51:34|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 04:51:40|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 04:51:45|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 04:51:47|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-26 04:52:40|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 04:52:42|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-26 04:52:44|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 37
+2023-10-26 04:52:47|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 37
+2023-10-26 04:52:56|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 37
+2023-10-26 04:53:17|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 13 in order with ID: 37
+2023-10-26 04:53:26|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 13 in order with ID: 37
+2023-10-26 04:53:51|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 37
+2023-10-26 04:53:53|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 04:53:56|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 37
+2023-10-26 04:55:13|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 04:55:15|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 04:55:19|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 37
+2023-10-26 05:10:39|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 05:10:40|[RMI TCP Connection(36)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 06:09:06|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 06:09:06|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 21816 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 06:09:06|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 06:09:06|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 06:09:06|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 70 ms. Found 11 JPA repository interfaces.
+2023-10-26 06:09:07|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 06:09:07|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 06:09:07|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 06:09:07|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 06:09:07|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 06:09:07|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 930 ms
+2023-10-26 06:09:07|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 06:09:07|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 06:09:07|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 06:09:07|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 06:09:07|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 06:09:07|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 06:09:07|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ddb302
+2023-10-26 06:09:07|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 06:09:08|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 06:09:08|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 06:09:09|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 06:09:09|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 06:09:09|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 06:09:09|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 06:09:09|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 06:09:09|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 06:09:09|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 3.811 seconds (process running for 4.501)
+2023-10-26 06:09:28|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 06:09:28|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 06:09:28|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-26 06:09:32|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 06:09:34|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 06:09:34|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 06:09:37|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 06:09:42|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 7
+2023-10-26 06:09:46|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 4 for order with ID: 38
+2023-10-26 06:09:53|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 7 in order with ID: 38
+2023-10-26 06:10:04|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 7 in order with ID: 38
+2023-10-26 06:10:14|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 38
+2023-10-26 06:10:28|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 38
+2023-10-26 06:10:43|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 4 for order with ID: 38
+2023-10-26 06:10:45|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 06:10:49|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 38
+2023-10-26 06:11:32|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 06:11:33|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 06:11:36|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 38
+2023-10-26 15:38:51|[HikariPool-1 housekeeper]|WARN |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h45m13s106ms706µs300ns).
+2023-10-26 15:48:56|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 15:48:56|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 15:48:56|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 15:48:56|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 15:48:57|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 15:48:57|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 15:48:57|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 15:48:57|[RMI TCP Connection(64)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 15:48:57|[RMI TCP Connection(64)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 17:22:24|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 17:22:24|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 2456 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 17:22:24|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 17:22:26|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 17:22:26|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 190 ms. Found 11 JPA repository interfaces.
+2023-10-26 17:22:27|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 17:22:27|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:22:27|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 17:22:27|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 17:22:27|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 17:22:27|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 3026 ms
+2023-10-26 17:22:27|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 17:22:28|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 17:22:28|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 17:22:28|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:22:28|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 17:22:28|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 17:22:30|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b444b5
+2023-10-26 17:22:30|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 17:22:31|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:22:33|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 17:22:35|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:22:35|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 17:22:37|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 17:22:37|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 17:22:38|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:22:38|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 17:22:38|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 14.577 seconds (process running for 16.944)
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 17:22:41|[RMI TCP Connection(4)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 17:22:51|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 17:22:51|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 24264 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 17:22:51|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 17:22:52|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 17:22:52|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 169 ms. Found 11 JPA repository interfaces.
+2023-10-26 17:22:53|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 17:22:53|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:22:53|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 17:22:53|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 17:22:54|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 17:22:54|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2954 ms
+2023-10-26 17:22:54|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 17:22:54|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 17:22:54|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 17:22:54|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:22:55|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 17:22:55|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 17:22:56|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ce2eaa7
+2023-10-26 17:22:56|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 17:22:58|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:23:01|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 17:23:01|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:23:02|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 17:23:02|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 17:23:03|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 17:23:03|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:23:03|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 17:23:03|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 13.423 seconds (process running for 16.447)
+2023-10-26 17:23:07|[http-nio-8087-exec-2]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 17:23:07|[http-nio-8087-exec-2]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 17:23:07|[http-nio-8087-exec-2]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 0 ms
+2023-10-26 17:23:11|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 17:23:15|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 17:23:15|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 17:23:17|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 17:23:21|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 2
+2023-10-26 17:23:26|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 3 for order with ID: 39
+2023-10-26 17:23:34|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 39
+2023-10-26 17:23:42|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 39
+2023-10-26 17:23:49|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 39
+2023-10-26 17:28:46|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 17:28:46|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 2500 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 17:28:46|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 17:28:47|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 17:28:48|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 141 ms. Found 11 JPA repository interfaces.
+2023-10-26 17:28:49|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 17:28:49|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:28:49|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 17:28:49|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 17:28:49|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 17:28:49|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2182 ms
+2023-10-26 17:28:49|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 17:28:49|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 17:28:49|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 17:28:49|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:28:50|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 17:28:50|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 17:28:50|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@da5d5e1
+2023-10-26 17:28:50|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 17:28:51|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:28:53|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 17:28:53|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:28:54|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 17:28:55|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 17:28:55|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 17:28:55|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:28:55|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 17:28:55|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 9.529 seconds (process running for 11.254)
+2023-10-26 17:29:10|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 17:29:10|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 17:29:10|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-26 17:29:10|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 39
+2023-10-26 17:29:35|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 17:29:39|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 17:29:39|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 17:29:42|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 17:29:47|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 4
+2023-10-26 17:29:52|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 5 for order with ID: 40
+2023-10-26 17:29:59|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 40
+2023-10-26 17:30:10|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 40
+2023-10-26 17:30:19|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 40
+2023-10-26 17:30:32|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 40
+2023-10-26 17:30:51|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:07|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:08|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:09|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:10|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:10|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:10|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:10|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:11|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:11|[http-nio-8087-exec-11]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:11|[http-nio-8087-exec-12]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:11|[http-nio-8087-exec-13]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:11|[http-nio-8087-exec-14]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:11|[http-nio-8087-exec-15]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:12|[http-nio-8087-exec-16]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:12|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 40
+2023-10-26 17:31:41|[http-nio-8087-exec-11]|WARN |org.hibernate.engine.jdbc.spi.SqlExceptionHelper-SQL Error: 0, SQLState: null
+2023-10-26 17:31:41|[http-nio-8087-exec-11]|ERROR|org.hibernate.engine.jdbc.spi.SqlExceptionHelper-HikariPool-1 - Connection is not available, request timed out after 30006ms.
+2023-10-26 17:31:41|[http-nio-8087-exec-11]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction] with root cause
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30006ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:152)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:400)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:601)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.findById(Unknown Source)
+	at com.harshi.InventoryAndBilling.service.OrderServiceImpl.getOrderById(OrderServiceImpl.java:39)
+	at com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:385)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-26 17:31:41|[http-nio-8087-exec-12]|WARN |org.hibernate.engine.jdbc.spi.SqlExceptionHelper-SQL Error: 0, SQLState: null
+2023-10-26 17:31:41|[http-nio-8087-exec-12]|ERROR|org.hibernate.engine.jdbc.spi.SqlExceptionHelper-HikariPool-1 - Connection is not available, request timed out after 30006ms.
+2023-10-26 17:31:41|[http-nio-8087-exec-12]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction] with root cause
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30006ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:152)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:400)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:601)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.findById(Unknown Source)
+	at com.harshi.InventoryAndBilling.service.OrderServiceImpl.getOrderById(OrderServiceImpl.java:39)
+	at com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:385)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-26 17:31:41|[http-nio-8087-exec-13]|WARN |org.hibernate.engine.jdbc.spi.SqlExceptionHelper-SQL Error: 0, SQLState: null
+2023-10-26 17:31:41|[http-nio-8087-exec-13]|ERROR|org.hibernate.engine.jdbc.spi.SqlExceptionHelper-HikariPool-1 - Connection is not available, request timed out after 30009ms.
+2023-10-26 17:31:41|[http-nio-8087-exec-13]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction] with root cause
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30009ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:152)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:400)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:601)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.findById(Unknown Source)
+	at com.harshi.InventoryAndBilling.service.OrderServiceImpl.getOrderById(OrderServiceImpl.java:39)
+	at com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:385)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-26 17:31:41|[http-nio-8087-exec-14]|WARN |org.hibernate.engine.jdbc.spi.SqlExceptionHelper-SQL Error: 0, SQLState: null
+2023-10-26 17:31:41|[http-nio-8087-exec-14]|ERROR|org.hibernate.engine.jdbc.spi.SqlExceptionHelper-HikariPool-1 - Connection is not available, request timed out after 30004ms.
+2023-10-26 17:31:41|[http-nio-8087-exec-14]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction] with root cause
+java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30004ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:38)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:152)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:400)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:601)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.findById(Unknown Source)
+	at com.harshi.InventoryAndBilling.service.OrderServiceImpl.getOrderById(OrderServiceImpl.java:39)
+	at com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:385)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-26 17:31:50|[http-nio-8087-exec-12]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 17:31:54|[http-nio-8087-exec-13]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 40
+2023-10-26 17:33:35|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 17:33:40|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 17:33:42|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-26 17:33:44|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 41
+2023-10-26 17:33:54|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 41
+2023-10-26 17:34:03|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 41
+2023-10-26 17:34:08|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 41
+2023-10-26 17:34:11|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 17:34:14|[http-nio-8087-exec-17]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 41
+2023-10-26 17:34:39|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 17:34:39|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:34:39|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 17:34:39|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.catalina.core.StandardWrapper-Waiting for [9] instance(s) to be deallocated for Servlet [dispatcherServlet]
+2023-10-26 17:34:40|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.catalina.core.StandardWrapper-Waiting for [9] instance(s) to be deallocated for Servlet [dispatcherServlet]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.catalina.core.StandardWrapper-Waiting for [9] instance(s) to be deallocated for Servlet [dispatcherServlet]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.catalina.loader.WebappClassLoaderBase-The web application [inventorybilling] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:[
+ app//com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ java.base@17.0.8.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ java.base@17.0.8.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+ app//org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+ app//org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+ app//org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+ app//org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+ app//org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+ app//org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+ app//org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+ app//org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ app//org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+ app//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+ app//org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+ app//org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+ app//org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+ app//org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+ app//org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+ app//org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+ app//org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+ app//org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+ app//org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+ app//org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+ app//org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+ app//org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+ app//org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+ app//org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+ app//org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+ app//org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+ app//org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.base@17.0.8.1/java.lang.Thread.run(Thread.java:833)]
+2023-10-26 17:34:41|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:34:46|[RMI TCP Connection(14)-127.0.0.1]|WARN |org.apache.tomcat.util.net.NioEndpoint-The executor associated with thread pool [http-nio-8087] has not fully shutdown. Some application threads may still be running.
+2023-10-26 17:34:46|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:34:46|[RMI TCP Connection(14)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:34:46|[RMI TCP Connection(14)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 17:34:46|[RMI TCP Connection(14)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 17:56:24|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 17:56:24|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 9100 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 17:56:24|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 17:56:25|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 17:56:25|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 129 ms. Found 11 JPA repository interfaces.
+2023-10-26 17:56:26|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 17:56:26|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:56:26|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 17:56:26|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 17:56:26|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 17:56:26|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1898 ms
+2023-10-26 17:56:26|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 17:56:26|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 17:56:26|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 17:56:27|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:56:27|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 17:56:27|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 17:56:27|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@445058e8
+2023-10-26 17:56:27|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 17:56:28|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:56:29|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 17:56:30|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:56:30|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 17:56:31|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 17:56:31|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 17:56:32|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:56:32|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 17:56:32|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 7.876 seconds (process running for 9.648)
+2023-10-26 17:56:54|[http-nio-8087-exec-2]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 17:56:54|[http-nio-8087-exec-2]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 17:56:54|[http-nio-8087-exec-2]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2023-10-26 17:56:54|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 17:56:58|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 17:57:02|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 41
+2023-10-26 17:57:13|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 17:57:15|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 17:57:21|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 9
+2023-10-26 17:57:25|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 3 for order with ID: 42
+2023-10-26 17:57:31|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 42
+2023-10-26 17:57:39|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 42
+2023-10-26 17:57:44|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 42
+2023-10-26 17:57:44|[http-nio-8087-exec-2]|WARN |org.hibernate.engine.jdbc.spi.SqlExceptionHelper-SQL Error: 3819, SQLState: HY000
+2023-10-26 17:57:44|[http-nio-8087-exec-2]|ERROR|org.hibernate.engine.jdbc.spi.SqlExceptionHelper-Check constraint 'order_status_history_chk_1' is violated.
+2023-10-26 17:57:44|[http-nio-8087-exec-2]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.springframework.orm.jpa.JpaSystemException: could not execute statement [Check constraint 'order_status_history_chk_1' is violated.] [insert into order_status_history (order_id,order_status,update_timestamp) values (?,?,?)]] with root cause
+java.sql.SQLException: Check constraint 'order_status_history_chk_1' is violated.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:275)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performInsert(GetGeneratedKeysDelegate.java:107)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorPostInsertSingleTable.execute(MutationExecutorPostInsertSingleTable.java:101)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:169)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:111)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2757)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:674)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:363)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:277)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:180)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:140)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360)
+	at jdk.proxy2/jdk.proxy2.$Proxy119.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
+	at jdk.proxy2/jdk.proxy2.$Proxy119.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:617)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy135.save(Unknown Source)
+	at com.harshi.InventoryAndBilling.service.OrderStatusHistoryServiceImpl.addStatusChangeToOrder(OrderStatusHistoryServiceImpl.java:33)
+	at com.harshi.InventoryAndBilling.controllers.OrderController.bookOrderSaveTransport(OrderController.java:402)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 17:58:27|[RMI TCP Connection(9)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 17:59:34|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 17:59:35|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 20808 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 17:59:35|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 17:59:35|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 17:59:36|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 132 ms. Found 11 JPA repository interfaces.
+2023-10-26 17:59:37|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 17:59:37|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:59:37|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 17:59:37|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 17:59:37|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 17:59:37|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2127 ms
+2023-10-26 17:59:37|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 17:59:37|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 17:59:37|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 17:59:37|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:59:38|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 17:59:38|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 17:59:38|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ce2eaa7
+2023-10-26 17:59:38|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 17:59:39|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 17:59:40|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 17:59:41|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 17:59:41|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 17:59:42|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 17:59:43|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 17:59:43|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 17:59:43|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 17:59:43|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 9.15 seconds (process running for 10.681)
+2023-10-26 18:00:41|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 18:00:41|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 18:00:41|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-26 18:00:48|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 18:00:50|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 18:00:50|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 18:00:51|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 18:00:56|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected representative with ID: 9
+2023-10-26 18:01:00|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected party with ID: 3 for order with ID: 43
+2023-10-26 18:01:05|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 43
+2023-10-26 18:01:16|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 43
+2023-10-26 18:02:01|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 43
+2023-10-26 18:02:04|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 18:02:07|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 43
+2023-10-26 18:09:24|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 18:09:27|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-26 18:09:29|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 18:09:33|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 18:09:36|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 43
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 18:10:41|[RMI TCP Connection(18)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 19:26:53|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 19:26:53|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 9888 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 19:26:53|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 19:26:54|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 19:26:54|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 140 ms. Found 11 JPA repository interfaces.
+2023-10-26 19:26:55|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 19:26:55|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:26:55|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 19:26:55|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 19:26:55|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 19:26:55|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2266 ms
+2023-10-26 19:26:55|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 19:26:55|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 19:26:55|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 19:26:56|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 19:26:56|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 19:26:56|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 19:26:57|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7fc1fd31
+2023-10-26 19:26:57|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 19:26:57|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 19:26:59|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 19:26:59|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 19:27:00|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 19:27:00|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 19:27:01|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 19:27:01|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:27:01|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 19:27:01|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 9.146 seconds (process running for 10.963)
+2023-10-26 19:27:24|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 19:27:24|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 19:27:24|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 0 ms
+2023-10-26 19:27:27|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 19:27:31|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 19:27:31|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 19:27:37|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 19:27:46|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 43
+2023-10-26 19:28:37|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 19:28:39|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 19:28:42|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 42
+2023-10-26 19:29:18|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 19:29:21|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 42
+2023-10-26 19:32:01|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 19:32:02|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 19:32:05|[http-nio-8087-exec-9]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 42
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 19:39:40|[RMI TCP Connection(21)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-26 19:39:43|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 19:39:43|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 11988 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-26 19:39:43|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-26 19:39:44|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 19:39:44|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 109 ms. Found 11 JPA repository interfaces.
+2023-10-26 19:39:45|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-26 19:39:45|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:39:45|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-26 19:39:45|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26 19:39:45|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-26 19:39:45|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1639 ms
+2023-10-26 19:39:45|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 19:39:45|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26 19:39:45|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-26 19:39:46|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 19:39:46|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 19:39:46|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-26 19:39:46|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ab455e2
+2023-10-26 19:39:46|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-26 19:39:47|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-26 19:39:48|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 19:39:48|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 19:39:49|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 19:39:49|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 19:39:49|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-26 19:39:50|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-26 19:39:50|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-26 19:39:50|[main]|INFO |com.harshi.InventoryAndBilling.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 6.887 seconds (process running for 8.088)
+2023-10-26 19:41:34|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 19:41:34|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-26 19:41:34|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 0 ms
+2023-10-26 19:41:36|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Displaying the login page
+2023-10-26 19:41:39|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Attempting login for email: mitucool@gmail.com
+2023-10-26 19:41:39|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.UserController-Login successful for email: mitucool@gmail.com
+2023-10-26 19:41:45|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order list
+2023-10-26 19:41:48|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Displaying order details for order with ID: 42
+2023-10-26 19:51:07|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 19:53:01|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.TransportController-Displaying the list of transports
+2023-10-26 19:53:06|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-26 19:53:11|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 19:53:16|[http-nio-8087-exec-7]|INFO |com.harshi.InventoryAndBilling.controllers.OrderController-Entering showBookOrder
+2023-10-26 19:53:18|[http-nio-8087-exec-8]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2023-10-26 20:54:24|[HikariPool-1 housekeeper]|WARN |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m34s651ms306µs100ns).
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-26 22:09:26|[RMI TCP Connection(156)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.

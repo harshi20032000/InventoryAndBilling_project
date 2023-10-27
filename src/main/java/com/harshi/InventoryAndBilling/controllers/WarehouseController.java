@@ -1,7 +1,6 @@
 package com.harshi.InventoryAndBilling.controllers;
 
 import java.util.List;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.harshi.InventoryAndBilling.entities.Product;
 import com.harshi.InventoryAndBilling.entities.Warehouse;
+import com.harshi.InventoryAndBilling.helper.WarehouseHelper;
 import com.harshi.InventoryAndBilling.service.ProductService;
 import com.harshi.InventoryAndBilling.service.WarehouseService;
 /**
@@ -107,7 +107,6 @@ public class WarehouseController {
         }
     }
 
-	
     /**
      * Displays details of a warehouse identified by its unique ID.
      *
@@ -124,7 +123,7 @@ public class WarehouseController {
             // Fetch the list of products
             List<Product> productsList = productService.getProductsList();
             
-            Integer totalProductQuantity = totalProductQuantity(warehouse);
+            Integer totalProductQuantity = WarehouseHelper.totalProductQuantity(warehouse);
 
             // Add the warehouse and products list to the model
             model.addAttribute("warehouse", warehouse);
@@ -144,24 +143,6 @@ public class WarehouseController {
         }
     }
 
-
-    /**
-     * Find the sum of quantities of all product in a warehouse.
-     *
-     * @param product   The warehouse whose sum of quantities of every product it has we need to find.
-     * @return The sum of quantities of the every product in that warehouse.
-     */
-    private Integer totalProductQuantity(Warehouse warehouse) {
-    	Integer totalProductQuantity = 0;
-        Map<Product, Integer> productQuantities = warehouse.getProductQuantities();
-
-        for (Integer quantity : productQuantities.values()) {
-            totalProductQuantity += quantity;
-        }
-
-        return totalProductQuantity;
-	}
-
 	/**
      * Displays a form to edit the quantities of products in a specific warehouse.
      *
@@ -178,7 +159,7 @@ public class WarehouseController {
             // Fetch the list of products
             List<Product> productsList = productService.getProductsList();
             
-            Integer totalProductQuantity = totalProductQuantity(warehouse);
+            Integer totalProductQuantity = WarehouseHelper.totalProductQuantity(warehouse);
             
             // Add the warehouse and products list to the model
             model.addAttribute("warehouse", warehouse);
@@ -198,8 +179,6 @@ public class WarehouseController {
         }
     }
 
-
-    
     /**
      * Handles the update of warehouse product quantities and saves the changes to the database.
      *
@@ -235,8 +214,5 @@ public class WarehouseController {
         // Redirect to the warehouse details page to display the updated details
         return "warehouseView/warehousesList";
     }
-
-
-
 
 }
