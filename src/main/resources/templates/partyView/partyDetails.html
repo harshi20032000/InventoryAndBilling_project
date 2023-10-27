@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-</head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Party Details </title>
+
 <!-- ... (head content) ... -->
 <style>
 	body {
@@ -62,7 +66,10 @@
 		<p>Name: <span th:text="${party.partyName}"></span></p>
 		<p>Location: <span th:text="${party.partyLocation}"></span></p>
 
+		<!-- Description for the table -->
+        <!-- Display a table of orders -->
 		<table class="table table-bordered">
+			<caption>table of orders for this party</caption>
 			<thead>
 				<tr>
 					<th>OrderId</th>

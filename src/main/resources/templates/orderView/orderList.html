@@ -2,80 +2,99 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+	<!-- ... (head content) ... -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+		h2 {
+			color: #333;
+			margin-bottom: 20px;
+		}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-        th {
-            background-color: #f2f2f2;
-        }
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: left;
+		}
 
-        a {
-            display: inline-block;
-            margin: 5px 0;
-            text-decoration: none;
-            color: #007bff;
-        }
+		th {
+			background-color: #f2f2f2;
+		}
 
-        a:hover {
-            text-decoration: underline;
-        }
+		a {
+			display: inline-block;
+			margin: 5px 0;
+			text-decoration: none;
+			color: #007bff;
+		}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+		a:hover {
+			text-decoration: underline;
+		}
 
-        .btn-secondary {
-            background-color: #555;
-        }
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        .btn-secondary:hover {
-            background-color: #333;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
 
-        .btn-info {
-            background-color: #17a2b8;
-        }
+		.btn-secondary:hover {
+			background-color: #333;
+		}
 
-        .btn-info:hover {
-            background-color: #117a8b;
-        }
-    </style>
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column; 
+		}
+	</style>
 </head>
+
 <body>
 	<div class="container">
 		<h2>Order List</h2>
@@ -106,10 +125,14 @@
 				</tr>
 			</tbody>
 		</table>
-		<!-- Add "Create Order" and "Home" buttons -->
-		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-		<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
-		<b>.....On Order List Page.....</b>
+
+
+		<footer>
+			<!-- Added "Book Order" and "Home" buttons -->
+			<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<div><b>.....On Order List Page.....</b></div>
+		</footer>
 	</div>
 </body>
 

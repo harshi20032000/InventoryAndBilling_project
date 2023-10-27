@@ -12,54 +12,89 @@
 		}
 
 		.container {
-			background-color: #fff;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-			padding: 20px;
-			border-radius: 5px;
-			margin: 20px auto;
 			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
 		}
 
-		h2 {
-			font-size: 24px;
-			margin-bottom: 20px;
+		h3 {
+			color: #333;
+			margin-bottom: 10px;
+		}
+
+		p {
+			color: #777;
 		}
 
 		table {
 			width: 100%;
 			border-collapse: collapse;
-			border-spacing: 0;
 		}
 
 		th,
 		td {
-			border: 1px solid #ccc;
-			padding: 10px;
+			border: 1px solid #ddd;
+			padding: 8px;
 			text-align: left;
 		}
 
 		th {
 			background-color: #f2f2f2;
-			font-weight: bold;
 		}
 
-		td a {
-			color: #007BFF;
+		a {
+			display: inline-block;
+			margin: 10px 0;
 			text-decoration: none;
+			color: #007bff;
 		}
 
-		.button-container {
-			text-align: center;
-			margin-top: 20px;
+		a:hover {
+			text-decoration: underline;
 		}
 
-		.button {
-			background-color: #007BFF;
+		.btn {
+			background-color: #007bff;
 			color: #fff;
-			padding: 10px 20px;
 			border: none;
 			border-radius: 5px;
-			text-decoration: none;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.btn-secondary {
+			background-color: #555;
+		}
+
+		.btn-secondary:hover {
+			background-color: #333;
+		}
+
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 		}
 	</style>
 </head>
@@ -82,18 +117,18 @@
 					<td th:text="${warehouse.wareCode}"></td>
 					<td th:text="${warehouse.wareName}"></td>
 					<td>
-						<a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}">View Details</a>
+						<a th:href="@{'/warehouseDetails/' + ${warehouse.wareId}}" class="btn btn-info">View Details</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<a href="showAddWarehouse" class="btn btn-secondary">Add Warehouse</a>
-		<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
-		<b th:text="${msg}"></b>
-		<div class="button-container">
+		<footer>
+			<a href="showAddWarehouse" class="btn btn-secondary">Add Warehouse</a>
+			<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
 			<a href="showLanding" class="btn btn-secondary">Home</a>
-		</div>
-		<b>.....On Warehouse List Page.....</b>
+			<b th:text="${msg}"></b>
+			<b>.....On Warehouse List Page.....</b>
+		</footer>
 	</div>
 </body>
 

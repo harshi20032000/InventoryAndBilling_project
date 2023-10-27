@@ -2,7 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<!-- ... (head content) ... -->
+	 <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add New Payment to Order</title>
 </head>
 
 <body>
@@ -31,6 +33,7 @@
 	<!-- Display Product Line Items -->
 	<h3>Order Line Items</h3>
 	<table>
+		<caption>Display Added Product Line Items</caption>
 		<thead>
 			<tr>
 				<th>Product</th>
@@ -48,6 +51,7 @@
 				<td th:text="${lineItem.rate * lineItem.quantity}"></td>
 				<td colspan="4">
 					<table>
+						<caption>Display From which warehouse Product Line Items were selected</caption>
 						<thead>
 							<tr>
 								<th>WareID</th>
