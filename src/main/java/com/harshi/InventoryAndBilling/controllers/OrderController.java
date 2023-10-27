@@ -177,7 +177,8 @@ public class OrderController {
 
 		// Calculate total quantities from warehouseQuantities (you need to implement
 		// this logic)
-		BigDecimal totalQuantitiesInWarehouse = OrderHelper.calculateTotalQuantities(selectedProduct.getWarehouseQuantities());
+		BigDecimal totalQuantitiesInWarehouse = OrderHelper
+				.calculateTotalQuantities(selectedProduct.getWarehouseQuantities());
 
 		// Calculate total price for the line item
 		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
@@ -222,7 +223,8 @@ public class OrderController {
 		lineItem.setQuantity(quantity);
 
 		// Update the warehouse quantities and get orderWarehouseQuantities
-		Map<Warehouse, Integer> orderWarehouseQuantities = OrderHelper.updateProductQuantities(quantity, selectedProduct);
+		Map<Warehouse, Integer> orderWarehouseQuantities = OrderHelper.updateProductQuantities(quantity,
+				selectedProduct);
 
 		// Set orderWarehouseQuantities in the line item
 		lineItem.setOrderWarehouseQuantities(orderWarehouseQuantities);
@@ -236,6 +238,17 @@ public class OrderController {
 		// Calculate total price for the line item
 		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
+
+		// Set totalBillAmount and remainingBillAmount
+		BigDecimal totalBillAmount = totalPrice;
+		BigDecimal remainingBillAmount = totalBillAmount;
+
+		updatedOrder.setTotalBillAmount(totalBillAmount);
+		updatedOrder.setRemainingBillAmount(remainingBillAmount);
+
+		// Update the order with the new line item and product
+		updatedOrder = orderService.saveOrder(order);
+
 		// Add the order to the model for reference
 		modelMap.addAttribute("order", updatedOrder);
 		modelMap.addAttribute("lineItem", lineItem);
@@ -444,7 +457,10 @@ public class OrderController {
 
 		// Update the ordrStatus in the received order
 		orderStatusHistoryService.addStatusChangeToOrder(order, "Payment Received of - " + savedPayment.getPayAmount());
-
+		// Update remainingBillAmount when a payment is added, Later change with order.getTotalBillAmount(); and test
+	    BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(order);
+	    BigDecimal remainingBillAmount = totalBillAmount.subtract(new BigDecimal(savedPayment.getPayAmount()) );
+	    order.setRemainingBillAmount(remainingBillAmount);
 		// Update the order
 		Order updatedOrder = orderService.saveOrder(order);
 		// Calculate total price for the line item

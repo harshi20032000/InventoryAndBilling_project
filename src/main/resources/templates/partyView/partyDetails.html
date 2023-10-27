@@ -2,23 +2,72 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <!-- ... (head content) ... -->
+	<!-- ... (head content) ... -->
 </head>
 
 <body>
-    <div class="container">
-        <h2>Party Details Page</h2>
-        <p>ID: <span th:text="${party.partyId}"></span></p>
-        <p>Name: <span th:text="${party.partyName}"></span></p>
-        <p>Location: <span th:text="${party.partyLocation}"></span></p>
-        
-        <!-- Add a "Back to Party List" button -->
-        <a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Party List</a>
-        <!-- Add buttons to navigate to the homepage and add party page -->
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-        <a href="/inventorybilling/showAddParty" class="btn btn-success">Add Party</a>
-        <b>.....On Party Details Page.....</b>
-    </div>
+	<div class="container">
+		<h2>Party Details Page</h2>
+		<p>ID: <span th:text="${party.partyId}"></span></p>
+		<p>Name: <span th:text="${party.partyName}"></span></p>
+		<p>Location: <span th:text="${party.partyLocation}"></span></p>
+
+		<!-- ... (previous HTML content) ... -->
+
+		<!-- ... (previous HTML content) ... -->
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>OrderId</th>
+					<th>OrderDate</th>
+					<th>Reps</th>
+					<th>TotalAmount</th>
+					<th>PendingAmount</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Use Thymeleaf to loop through orders and display them -->
+				<tr th:each="order : ${orders}">
+					<td th:text="${order.orderId}"></td>
+					<td th:text="${order.orderDate}"></td>
+					<td th:if="${order.reps != null and !#strings.isEmpty(order.reps.repName) and !#strings.isEmpty(order.reps.repLocation)}"
+						th:text="${order.reps.repName + ' ' + order.reps.repLocation}"></td>
+					<td
+						th:unless="${order.reps != null and !#strings.isEmpty(order.reps.repName) and !#strings.isEmpty(order.reps.repLocation)}">
+						N/A</td>
+
+					<!-- Check if totalAmount is not null and greater than zero before displaying -->
+					<td th:if="${order.totalBillAmount != null and order.totalBillAmount > 0}"
+						th:text="${order.totalBillAmount}">
+					</td>
+					<td th:unless="${order.totalBillAmount != null and order.totalBillAmount > 0}">N/A</td>
+					<!-- Check if remainingAmount is not null and greater than zero before displaying -->
+					<td th:if="${order.remainingBillAmount != null and order.remainingBillAmount > 0}"
+						th:text="${order.remainingBillAmount}"></td>
+					<td th:unless="${order.remainingBillAmount != null and order.remainingBillAmount > 0}">N/A</td>
+					<td>
+						<a th:href="'/inventorybilling/orderDetails/' + ${order.orderId}" class="btn btn-primary">View
+							Details</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- ... (remaining HTML content) ... -->
+
+
+		<!-- ... (remaining HTML content) ... -->
+
+
+		<!-- Add a "Back to Party List" button -->
+		<a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Party List</a>
+		<!-- Add buttons to navigate to the homepage and add party page -->
+		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+		<a href="/inventorybilling/showAddParty" class="btn btn-success">Add Party</a>
+		<b>.....On Party Details Page.....</b>
+	</div>
 </body>
 
 </html>

@@ -1,15 +1,11 @@
 package com.harshi.InventoryAndBilling.entities;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 

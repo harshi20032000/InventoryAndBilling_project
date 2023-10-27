@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RepsRepository extends JpaRepository<Reps, Long> {
-    // Define custom query methods if needed
+    
+	
 }
 

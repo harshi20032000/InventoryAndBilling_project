@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.harshi.InventoryAndBilling.entities.Order;
 import com.harshi.InventoryAndBilling.entities.Party;
 import com.harshi.InventoryAndBilling.service.PartyService;
 
@@ -53,6 +54,8 @@ public class PartyController {
     public String showPartyDetails(@PathVariable Long partyId, Model model) {
         LOGGER.info("Displaying party details for party with ID: {}", partyId);
         Party party = partyService.getPartyById(partyId);
+        List<Order> orderList = partyService.getOrderListByParty(partyId);
+        model.addAttribute("orders", orderList);
         model.addAttribute("party", party);
         return "partyView/partyDetails";
     }

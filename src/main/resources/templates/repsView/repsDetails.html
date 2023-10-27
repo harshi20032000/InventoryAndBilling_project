@@ -62,6 +62,50 @@
 			<p>Location: <span th:text="${reps.repLocation}"></span></p>
 		</div>
 
+		<!-- ... (previous HTML content) ... -->
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>OrderId</th>
+					<th>OrderDate</th>
+					<th>Party</th>
+					<th>Total Amount</th>
+					<th>Pending Amount</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Use Thymeleaf to loop through orders and display them -->
+				<tr th:each="order : ${orders}">
+					<td th:text="${order.orderId}"></td>
+					<td th:text="${order.orderDate}"></td>
+					<!-- Check if totalAmount is not null and not empty before displaying -->
+					<td th:if="${order.party != null and !#strings.isEmpty(order.party.partyName) and !#strings.isEmpty(order.party.partyLocation)}"
+						th:text="${order.party.partyName + ' ' + order.party.partyLocation}"></td>
+					<td
+						th:unless="${order.party != null and !#strings.isEmpty(order.party.partyName) and !#strings.isEmpty(order.party.partyLocation)}">
+						N/A</td>
+					<!-- Check if totalAmount is not null and greater than zero before displaying -->
+					<td th:if="${order.totalBillAmount != null and order.totalBillAmount > 0}"
+						th:text="${order.totalBillAmount}">
+					</td>
+					<td th:unless="${order.totalBillAmount != null and order.totalBillAmount > 0}">N/A</td>
+					<!-- Check if remainingAmount is not null and greater than zero before displaying -->
+					<td th:if="${order.remainingBillAmount != null and order.remainingBillAmount > 0}"
+						th:text="${order.remainingBillAmount}"></td>
+					<td th:unless="${order.remainingBillAmount != null and order.remainingBillAmount > 0}">N/A</td>
+					<td>
+						<a th:href="'/inventorybilling/orderDetails/' + ${order.orderId}" class="btn btn-primary">View
+							Details</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- ... (remaining HTML content) ... -->
+
+
 		<!-- Add a "Back to Reps List" button -->
 		<a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
 		<!-- Add buttons to navigate to the homepage and add reps page -->

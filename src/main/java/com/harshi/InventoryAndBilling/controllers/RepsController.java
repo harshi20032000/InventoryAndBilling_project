@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.harshi.InventoryAndBilling.entities.Order;
 import com.harshi.InventoryAndBilling.entities.Reps;
+import com.harshi.InventoryAndBilling.service.PartyService;
 import com.harshi.InventoryAndBilling.service.RepsService;
 
 /**
@@ -92,6 +94,8 @@ public class RepsController {
     public String showRepsDetails(@PathVariable Long repId, Model model) {
         LOGGER.info("Displaying representative details for representative with ID: {}", repId);
         Reps reps = repsService.getRepsById(repId);
+        List<Order> orderList = repsService.getOrderListByReps(repId);
+        model.addAttribute("orders", orderList);
         model.addAttribute("reps", reps);
         return "repsView/repsDetails";
     }

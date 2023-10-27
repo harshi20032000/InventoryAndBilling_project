@@ -1,7 +1,7 @@
 package com.harshi.InventoryAndBilling.entities;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +48,10 @@ public class Order {
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderStatusHistory> statusHistory = new ArrayList<>();
+	
+	private BigDecimal totalBillAmount; 
+
+    private BigDecimal remainingBillAmount; 
 
 	// Constructors, getters, and setters
 
@@ -162,6 +166,22 @@ public class Order {
 
 	public void addStatusChange(OrderStatusHistory change) {
 		statusHistory.add(change);
+	}
+
+	public BigDecimal getTotalBillAmount() {
+		return totalBillAmount;
+	}
+
+	public void setTotalBillAmount(BigDecimal totalBillAmount) {
+		this.totalBillAmount = totalBillAmount;
+	}
+
+	public BigDecimal getRemainingBillAmount() {
+		return remainingBillAmount;
+	}
+
+	public void setRemainingBillAmount(BigDecimal remainingBillAmount) {
+		this.remainingBillAmount = remainingBillAmount;
 	}
 
 }
