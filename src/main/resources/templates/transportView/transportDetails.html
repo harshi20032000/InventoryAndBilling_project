@@ -2,6 +2,69 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- ... (head content) ... -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn-secondary {
+            background-color: #555;
+        }
+
+        .btn-secondary:hover {
+            background-color: #333;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #1e7e34;
+        }
+
+        b {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,7 +78,7 @@
         <!-- Add buttons to navigate to the homepage and add transport page -->
         <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
         <a href="/inventorybilling/showAddTransport" class="btn btn-success">Add Transport</a>
-        <b>.....On Transport Details Page.....</b>
+        <b>On Transport Details Page</b>
     </div>
 </body>
 </html>
