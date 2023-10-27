@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.harshi.InventoryAndBilling.entities.Order;
-import com.harshi.InventoryAndBilling.entities.OrderLineItem;
 import com.harshi.InventoryAndBilling.entities.Payment;
+import com.harshi.InventoryAndBilling.helper.OrderHelper;
 import com.harshi.InventoryAndBilling.repo.OrderRepository;
 import com.harshi.InventoryAndBilling.repo.PaymentRepository;
 
@@ -25,28 +25,11 @@ public class PaymentServiceImpl implements PaymentService {
 		List<Order> orderList = orderRepository.findAll();
 		BigDecimal totalPendingAmount= new BigDecimal(0);
 		for(Order eachOrder : orderList) {
-			BigDecimal totalOrderPrice = totalOrderPrice(eachOrder);
-			BigDecimal pendingPrice = totalPendingPrice(eachOrder, totalOrderPrice);
+			BigDecimal totalOrderPrice = OrderHelper.totalOrderPrice(eachOrder);
+			BigDecimal pendingPrice = OrderHelper.totalPendingPrice(eachOrder, totalOrderPrice);
 			totalPendingAmount=totalPendingAmount.add(pendingPrice);
 		}
 		return totalPendingAmount;
-	}
-	
-	private BigDecimal totalOrderPrice(Order order) {
-		BigDecimal totalPrice = new BigDecimal(0);
-		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
-			totalPrice = totalPrice
-					.add(eachOrderLineItem.getRate().multiply(new BigDecimal(eachOrderLineItem.getQuantity())));
-		}
-		return totalPrice;
-	}
-
-	private BigDecimal totalPendingPrice(Order order, BigDecimal totalAmount) {
-		BigDecimal remainingPrice = totalAmount;
-		for (Payment eachPayment : order.getPayments()) {
-			remainingPrice = remainingPrice.subtract(new BigDecimal(eachPayment.getPayAmount()));
-		}
-		return remainingPrice;
 	}
 
 	@Override

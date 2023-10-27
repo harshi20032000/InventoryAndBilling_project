@@ -2,13 +2,8 @@ package com.harshi.InventoryAndBilling.controllers;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.harshi.InventoryAndBilling.entities.Order;
 import com.harshi.InventoryAndBilling.entities.OrderLineItem;
-import com.harshi.InventoryAndBilling.entities.OrderStatus;
 import com.harshi.InventoryAndBilling.entities.Party;
 import com.harshi.InventoryAndBilling.entities.Payment;
 import com.harshi.InventoryAndBilling.entities.Product;
@@ -33,6 +27,7 @@ import com.harshi.InventoryAndBilling.entities.Reps;
 import com.harshi.InventoryAndBilling.entities.Transport;
 import com.harshi.InventoryAndBilling.entities.TransportAndBuiltNumber;
 import com.harshi.InventoryAndBilling.entities.Warehouse;
+import com.harshi.InventoryAndBilling.helper.OrderHelper;
 import com.harshi.InventoryAndBilling.repo.TransportAndBuiltNumberRepository;
 import com.harshi.InventoryAndBilling.service.OrderService;
 import com.harshi.InventoryAndBilling.service.OrderStatusHistoryService;
@@ -182,11 +177,11 @@ public class OrderController {
 
 		// Calculate total quantities from warehouseQuantities (you need to implement
 		// this logic)
-		BigDecimal totalQuantitiesInWarehouse = calculateTotalQuantities(selectedProduct.getWarehouseQuantities());
+		BigDecimal totalQuantitiesInWarehouse = OrderHelper.calculateTotalQuantities(selectedProduct.getWarehouseQuantities());
 
 		// Calculate total price for the line item
-		BigDecimal totalPrice = totalOrderPrice(order);
-		Integer totalQuantities = totalOrderQuantity(order);
+		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
 		modelMap.addAttribute("order", order);
 		modelMap.addAttribute("selectedProduct", selectedProduct);
@@ -195,21 +190,6 @@ public class OrderController {
 		modelMap.addAttribute("totalQuantities", totalQuantities);
 
 		return "orderView/bookOrderCreateOrderLineItems";
-	}
-
-	/**
-	 * Calculates the total quantities for a product based on warehouse quantities.
-	 *
-	 * @param warehouseQuantities A map of warehouse quantities.
-	 * @return The total quantities as a BigDecimal.
-	 */
-	private BigDecimal calculateTotalQuantities(Map<Warehouse, Integer> warehouseQuantities) {
-
-		Long totalQuantitiesInWarehouse = 0L;
-		for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
-			totalQuantitiesInWarehouse += entry.getValue();
-		}
-		return BigDecimal.valueOf(totalQuantitiesInWarehouse);
 	}
 
 	/**
@@ -242,7 +222,7 @@ public class OrderController {
 		lineItem.setQuantity(quantity);
 
 		// Update the warehouse quantities and get orderWarehouseQuantities
-		Map<Warehouse, Integer> orderWarehouseQuantities = updateProductQuantities(quantity, selectedProduct);
+		Map<Warehouse, Integer> orderWarehouseQuantities = OrderHelper.updateProductQuantities(quantity, selectedProduct);
 
 		// Set orderWarehouseQuantities in the line item
 		lineItem.setOrderWarehouseQuantities(orderWarehouseQuantities);
@@ -254,8 +234,8 @@ public class OrderController {
 		Order updatedOrder = orderService.saveOrder(order);
 
 		// Calculate total price for the line item
-		BigDecimal totalPrice = totalOrderPrice(order);
-		Integer totalQuantities = totalOrderQuantity(order);
+		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
 		modelMap.addAttribute("order", updatedOrder);
 		modelMap.addAttribute("lineItem", lineItem);
@@ -266,75 +246,6 @@ public class OrderController {
 		return "orderView/bookOrderSelectMoreProducts";
 	}
 
-	private Integer totalOrderQuantity(Order order) {
-		int totalQuantity = 0;
-		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
-			totalQuantity += eachOrderLineItem.getQuantity();
-		}
-		return totalQuantity;
-	}
-
-	private BigDecimal totalOrderPrice(Order order) {
-		BigDecimal totalPrice = new BigDecimal(0);
-		for (OrderLineItem eachOrderLineItem : order.getOrderLineItems()) {
-			totalPrice = totalPrice
-					.add(eachOrderLineItem.getRate().multiply(new BigDecimal(eachOrderLineItem.getQuantity())));
-		}
-		return totalPrice;
-	}
-
-	private BigDecimal totalPendingPrice(Order order, BigDecimal totalAmount) {
-		BigDecimal remainingPrice = totalAmount;
-		for (Payment eachPayment : order.getPayments()) {
-			remainingPrice = remainingPrice.subtract(new BigDecimal(eachPayment.getPayAmount()));
-		}
-		return remainingPrice;
-	}
-
-	/**
-	 * Updates the product quantities based on order line items.
-	 *
-	 * @param quantity        The quantity to update.
-	 * @param selectedProduct The selected product.
-	 * @return A map of warehouse quantities for the order.
-	 */
-	private Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct) {
-		Map<Warehouse, Integer> warehouseQuantities = selectedProduct.getWarehouseQuantities();
-		Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
-
-		for (Entry<Warehouse, Integer> entry : warehouseQuantities.entrySet()) {
-			Warehouse warehouse = entry.getKey();
-			Integer availableQuantity = entry.getValue();
-
-			// Calculate how much can be deducted from this warehouse
-			int quantityToDeduct = Math.min(availableQuantity, quantity);
-
-			if (quantityToDeduct > 0) {
-				// Deduct the quantity from this warehouse
-				warehouseQuantities.put(warehouse, availableQuantity - quantityToDeduct);
-
-				// Put the quantity of product deducted from this warehouse into the new field
-				// to be returned to show for each OrderDetails.
-				orderWarehouseQuantities.put(warehouse, quantityToDeduct);
-
-				// Reduce the total quantity
-				quantity -= quantityToDeduct;
-			}
-
-			// If quantity is now zero, break the loop
-			if (quantity == 0) {
-				break;
-			}
-		}
-
-		// Set the updated warehouseQuantities to the selectedProduct
-		selectedProduct.setWarehouseQuantities(warehouseQuantities);
-
-		// returns the quantities of product deducted from each warehouse for a specific
-		// order to track for future reference.
-		return orderWarehouseQuantities;
-	}
-
 	@PostMapping("/bookOrderShowSelectProducts")
 	public String bookOrderShowSelectProducts(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
@@ -343,8 +254,8 @@ public class OrderController {
 		List<Product> productsList = productService.getProductsList();
 
 		// Calculate total price for the line item
-		BigDecimal totalPrice = totalOrderPrice(order);
-		Integer totalQuantities = totalOrderQuantity(order);
+		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
 		modelMap.addAttribute("order", order);
 		modelMap.addAttribute("productsList", productsList);
@@ -363,8 +274,8 @@ public class OrderController {
 		List<Transport> transportsList = transportService.getTransportList();
 
 		// Calculate total price for the line item
-		BigDecimal totalPrice = totalOrderPrice(order);
-		Integer totalQuantities = totalOrderQuantity(order);
+		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
 		modelMap.addAttribute("totalPrice", totalPrice);
 		modelMap.addAttribute("totalQuantities", totalQuantities);
@@ -445,9 +356,9 @@ public class OrderController {
 		Order order = orderService.getOrderById(orderId);
 
 		// Calculate total price for the line item
-		BigDecimal totalAmount = totalOrderPrice(order);
-		BigDecimal remainingAmount = totalPendingPrice(order, totalAmount);
-		Integer totalQuantities = totalOrderQuantity(order);
+		BigDecimal totalAmount = OrderHelper.totalOrderPrice(order);
+		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
 		modelMap.addAttribute("totalAmount", totalAmount);
 		modelMap.addAttribute("remainingAmount", remainingAmount);
@@ -464,9 +375,9 @@ public class OrderController {
 
 		// Add the order to the model for editing
 		// Calculate total price for the line item
-		BigDecimal totalAmount = totalOrderPrice(order);
-		Integer totalQuantities = totalOrderQuantity(order);
-		BigDecimal remainingAmount = totalPendingPrice(order, totalAmount);
+		BigDecimal totalAmount = OrderHelper.totalOrderPrice(order);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
+		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
 		// Add the order to the model for reference
 		model.addAttribute("totalAmount", totalAmount);
 		model.addAttribute("remainingAmount", remainingAmount);
@@ -484,9 +395,9 @@ public class OrderController {
 		// Update the order in the database
 		Order updatedOrder = orderService.updateOrderBiltyNo(orderId, transportId, biltyNumber);
 		// Calculate total price for the line item
-		BigDecimal totalAmount = totalOrderPrice(updatedOrder);
-		BigDecimal remainingAmount = totalPendingPrice(updatedOrder, totalAmount);
-		Integer totalQuantities = totalOrderQuantity(updatedOrder);
+		BigDecimal totalAmount = OrderHelper.totalOrderPrice(updatedOrder);
+		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(updatedOrder, totalAmount);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(updatedOrder);
 		// Add the order to the model for reference
 		modelMap.addAttribute("totalAmount", totalAmount);
 		modelMap.addAttribute("remainingAmount", remainingAmount);
@@ -502,9 +413,9 @@ public class OrderController {
 		// Retrieve the order by ID
 		Order order = orderService.getOrderById(orderId);
 		// Calculate total price for the line item
-		BigDecimal totalAmount = totalOrderPrice(order);
-		BigDecimal remainingAmount = totalPendingPrice(order, totalAmount);
-		Integer totalQuantities = totalOrderQuantity(order);
+		BigDecimal totalAmount = OrderHelper.totalOrderPrice(order);
+		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
 		model.addAttribute("totalAmount", totalAmount);
 		model.addAttribute("remainingAmount", remainingAmount);
@@ -537,9 +448,9 @@ public class OrderController {
 		// Update the order
 		Order updatedOrder = orderService.saveOrder(order);
 		// Calculate total price for the line item
-		BigDecimal totalAmount = totalOrderPrice(updatedOrder);
-		BigDecimal remainingAmount = totalPendingPrice(updatedOrder, totalAmount);
-		Integer totalQuantities = totalOrderQuantity(updatedOrder);
+		BigDecimal totalAmount = OrderHelper.totalOrderPrice(updatedOrder);
+		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(updatedOrder, totalAmount);
+		Integer totalQuantities = OrderHelper.totalOrderQuantity(updatedOrder);
 		// Add the order to the model for reference
 		modelMap.addAttribute("totalAmount", totalAmount);
 		modelMap.addAttribute("remainingAmount", remainingAmount);
@@ -547,9 +458,4 @@ public class OrderController {
 		modelMap.addAttribute("order", updatedOrder);
 		return "orderView/orderDetails";
 	}
-
-	public Date convertToDate(LocalDate localDate) {
-		return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-	}
-
 }
