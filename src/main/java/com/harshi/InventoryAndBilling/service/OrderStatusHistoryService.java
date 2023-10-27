@@ -1,7 +1,6 @@
 package com.harshi.InventoryAndBilling.service;
 
 import com.harshi.InventoryAndBilling.entities.Order;
-import com.harshi.InventoryAndBilling.entities.OrderStatus;
 import com.harshi.InventoryAndBilling.entities.OrderStatusHistory;
 
 public interface OrderStatusHistoryService {
