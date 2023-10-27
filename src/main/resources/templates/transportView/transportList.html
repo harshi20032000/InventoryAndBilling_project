@@ -1,10 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <!-- ... (head content) ... -->
-</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+        }
+
+        .btn-info:hover {
+            background-color: #138496;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #1e7e34;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        b {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <h2>Transport List</h2>
@@ -32,12 +113,10 @@
             </tbody>
         </table>
         <!-- Add "Add Transport" and "Home" buttons -->
-                <a href="/inventorybilling/showAddTransport" class="btn btn-success">Add Transport</a>
-                <a href="showBookOrder" class="btn btn-secondary">Book Order</a>
-
+        <a href="/inventorybilling/showAddTransport" class="btn btn-success">Add Transport</a>
+        <a href="/inventorybilling/showBookOrder" class="btn btn-secondary">Book Order</a>
         <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-        <b>.....On Transport List Page.....</b>
+        <b>On Transport List Page</b>
     </div>
 </body>
-
 </html>
