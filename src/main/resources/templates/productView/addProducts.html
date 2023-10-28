@@ -95,7 +95,16 @@
 			<input type="text" id="brandName" name="brandName" th:field="*{brandName}" required>
 
 			<label for="pType">Product Type:</label>
-			<input type="text" id="pType" name="pType" th:field="*{pType}" required>
+			<select id="pType" name="pType" th:field="*{pType}" required>
+				<option value="EYEGLASSES">EYEGLASSES</option>
+				<option value="SUNGLASSES">SUNGLASSES</option>
+				<option value="CONTACTLENSES">CONTACTLENSES</option>
+				<option value="NIGHTVISIONGEAR">NIGHTVISIONGEAR</option>
+				<option value="BINOCULARS">BINOCULARS</option>
+				<option value="READINGGLASSES">READINGGLASSES</option>
+				<option value="TELESCOPE">TELESCOPE</option>
+				<option value="ACCESSORIES">ACCESSORIES</option>
+			</select>
 
 			<label for="price">Price:</label>
 			<input type="number" class="form-control" id="price" name="price" th:field="*{price}" required>

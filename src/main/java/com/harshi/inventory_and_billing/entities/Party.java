@@ -17,11 +17,11 @@ public class Party {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long partyId;
     
-    @Length(min=3, max=12, message="partyName should be min 3 and max 12")
+    @Length(min=3, max=30, message="partyName should be min 3 and max 12")
     @NotBlank(message="partyName is mandatory")
     private String partyName;
     
-    @Length(min=3, max=12, message="partyLocation should be min 3 and max 12")
+    @Length(min=3, max=30, message="partyLocation should be min 3 and max 12")
     @NotBlank(message="partyLocation is mandatory")
     private String partyLocation;
 
