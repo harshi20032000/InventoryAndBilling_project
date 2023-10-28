@@ -1,10 +1,14 @@
 package com.harshi.inventory_and_billing.entities;
 
+import org.hibernate.validator.constraints.Length;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "transport")
@@ -14,7 +18,11 @@ public class Transport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transportId;
 
+    @Column(unique = true)
+    @Length(min=3, max=30, message="transportName should be min 3 and max 30")
+    @NotBlank(message="transportName is mandatory")
     private String transportName;
+    
     private String contactDetails;
 
     // Constructors, getters, and setters

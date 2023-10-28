@@ -78,21 +78,34 @@ public class ProductController {
      *
      * @param product   The Product object to be added.
      * @param modelMap  ModelMap for adding attributes to the view.
-     * @return The view name for the product list.
+     * @return The view name for the product list or the error view in case of an exception.
      */
     @RequestMapping("/addProducts")
     public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
         LOGGER.info("Saving a new product");
-        // Save the product with warehouse quantities
-        product.setBrandName( product.getBrandName().toUpperCase() );
-        product.setPType( product.getPType().toUpperCase() );
-        Product savedProduct = productService.saveProduct(product);
-        List<Product> productsList = productService.getProductsList();
-        modelMap.addAttribute("productsList", productsList);
-        String msg = "Product saved with ID - " + savedProduct.getProductId();
-        modelMap.addAttribute("msg", msg);
-        return "productView/productsList";
+        try {
+            // Convert brand name and product type to uppercase
+            product.setBrandName(product.getBrandName().toUpperCase());
+            product.setPType(product.getPType().toUpperCase());
+
+            // Save the product with warehouse quantities
+            Product savedProduct = productService.saveProduct(product);
+            List<Product> productsList = productService.getProductsList();
+            modelMap.addAttribute("productsList", productsList);
+            String msg = "Product saved with ID - " + savedProduct.getProductId();
+            modelMap.addAttribute("msg", msg);
+            return "productView/productsList";
+        } catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace(); // You can log the exception for debugging purposes
+
+            // Add an error message to the model to display to the user
+            modelMap.addAttribute("error", "An error occurred while saving the product. Please try again.");
+            modelMap.addAttribute("errorMessage", e.getMessage());
+            return "error"; // Return to the error view with the error message
+        }
     }
+
 
     /**
      * Display the details of a specific product by productId.

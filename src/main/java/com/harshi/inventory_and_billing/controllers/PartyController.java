@@ -90,14 +90,28 @@ public class PartyController {
 	 */
 	@PostMapping("/addParty")
 	public String addParty(@ModelAttribute("party") Party party, ModelMap modelMap) {
-		LOGGER.info("Saving a new party");
-		party.setPartyName( party.getPartyName().toUpperCase() );
-		party.setPartyLocation( party.getPartyLocation().toUpperCase() );
-		Party savedParty = partyService.saveParty(party);
-		List<Party> partyList = partyService.getPartyList();
-		modelMap.addAttribute("partyList", partyList);
-		String msg = "Party saved with ID - " + savedParty.getPartyId();
-		modelMap.addAttribute("msg", msg);
-		return "partyView/partyList";
+	    LOGGER.info("Saving a new party");
+	    try {
+	        // Convert party name and location to uppercase
+	        party.setPartyName(party.getPartyName().toUpperCase());
+	        party.setPartyLocation(party.getPartyLocation().toUpperCase());
+
+	        // Attempt to save the party
+	        Party savedParty = partyService.saveParty(party);
+	        List<Party> partyList = partyService.getPartyList();
+	        modelMap.addAttribute("partyList", partyList);
+	        String msg = "Party saved with ID - " + savedParty.getPartyId();
+	        modelMap.addAttribute("msg", msg);
+	        return "partyView/partyList";
+	    } catch (Exception e) {
+	        // Handle the exception
+	        e.printStackTrace(); // You can log the exception for debugging purposes
+
+	        // Add an error message to the model to display to the user
+	        modelMap.addAttribute("error", "An error occurred while saving the party. Please try again.");
+	        modelMap.addAttribute("errorMessage", e.getMessage());
+	        return "error"; // Return to the same view with the error message
+	    }
 	}
+
 }

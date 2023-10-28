@@ -75,17 +75,31 @@ public class TransportController {
      *
      * @param transport   The Transport object to be added.
      * @param modelMap ModelMap for adding attributes to the view.
-     * @return The view name for the transport list.
+     * @return The view name for the transport list or the error view in case of an exception.
      */
     @PostMapping("/addTransport")
     public String addTransport(@ModelAttribute("transport") Transport transport, ModelMap modelMap) {
         LOGGER.info("Saving a new transport");
-        transport.setTransportName( transport.getTransportName().toUpperCase() );
-        Transport savedTransport = transportService.saveTransport(transport);
-        List<Transport> transportList = transportService.getTransportList();
-        modelMap.addAttribute("transportList", transportList);
-        String msg = "Transport saved with ID - " + savedTransport.getTransportId();
-        modelMap.addAttribute("msg", msg);
-        return "transportView/transportList";
+        try {
+            // Convert transport name to uppercase
+            transport.setTransportName(transport.getTransportName().toUpperCase());
+
+            // Attempt to save the transport
+            Transport savedTransport = transportService.saveTransport(transport);
+            List<Transport> transportList = transportService.getTransportList();
+            modelMap.addAttribute("transportList", transportList);
+            String msg = "Transport saved with ID - " + savedTransport.getTransportId();
+            modelMap.addAttribute("msg", msg);
+            return "transportView/transportList";
+        } catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace(); // You can log the exception for debugging purposes
+
+            // Add an error message to the model to display to the user
+            modelMap.addAttribute("error", "An error occurred while saving the transport. Please try again.");
+            modelMap.addAttribute("errorMessage", e.getMessage());
+            return "error"; // Return to the error view with the error message
+        }
     }
+
 }

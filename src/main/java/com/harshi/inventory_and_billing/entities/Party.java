@@ -2,6 +2,7 @@ package com.harshi.inventory_and_billing.entities;
 
 import org.hibernate.validator.constraints.Length;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,11 +18,12 @@ public class Party {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long partyId;
     
-    @Length(min=3, max=30, message="partyName should be min 3 and max 12")
+    @Column(unique = true)
+    @Length(min=3, max=30, message="partyName should be min 3 and max 30")
     @NotBlank(message="partyName is mandatory")
     private String partyName;
     
-    @Length(min=3, max=30, message="partyLocation should be min 3 and max 12")
+    @Length(min=3, max=30, message="partyLocation should be min 3 and max 30")
     @NotBlank(message="partyLocation is mandatory")
     private String partyLocation;
 

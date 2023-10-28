@@ -43,19 +43,34 @@ public class UserController {
      * Register a new user.
      *
      * @param user The User object to be registered.
-     * @return The view name for the login page.
+     * @param modelMap ModelMap for adding attributes to the view.
+     * @return The view name for the login page or the error view in case of an exception.
      */
     @PostMapping(value = "/registerUser")
-    public String register(@ModelAttribute("user") User user) {
+    public String register(@ModelAttribute("user") User user, ModelMap modelMap) {
         LOGGER.info("Registering user: {}", user);
-        user.setEmail((user.getEmail().toUpperCase()));
-        user.setLastName((user.getLastName().toUpperCase()));
-        user.setFirstName((user.getFirstName().toUpperCase())); 
-        user.setPassword((user.getPassword().toUpperCase()));
-        userRepository.save(user);
-        LOGGER.info("User registered: {}", user);
-        return "loginView/login";
+        try {
+            // Convert user data to uppercase
+            user.setEmail(user.getEmail().toUpperCase());
+            user.setLastName(user.getLastName().toUpperCase());
+            user.setFirstName(user.getFirstName().toUpperCase());
+            user.setPassword(user.getPassword().toUpperCase());
+
+            // Save the user
+            userRepository.save(user);
+            LOGGER.info("User registered: {}", user);
+            return "loginView/login";
+        } catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace(); // You can log the exception for debugging purposes
+
+            // Add an error message to the model to display to the user
+            modelMap.addAttribute("error", "An error occurred while registering the user. Please try again.");
+            modelMap.addAttribute("errorMessage", e.getMessage());
+            return "error"; // Return to the error view with the error message
+        }
     }
+
 
     /**
      * Display the login page.

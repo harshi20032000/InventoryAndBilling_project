@@ -74,14 +74,16 @@ public class WarehouseController {
      *
      * @param warehouse  The Warehouse object to be added.
      * @param modelMap   ModelMap for adding attributes to the view.
-     * @return The view name for the list of warehouses or an error page in case of an exception.
+     * @return The view name for the list of warehouses or an error view in case of an exception.
      */
     @RequestMapping("/addWarehouse")
     public String addWarehouse(@ModelAttribute("warehouse") Warehouse warehouse, ModelMap modelMap) {
         try {
-            // Save the warehouse to the database
-        	warehouse.setWareCode( warehouse.getWareCode().toUpperCase() );
-        	warehouse.setWareName( warehouse.getWareName().toUpperCase() );
+            // Convert warehouse data to uppercase
+            warehouse.setWareCode(warehouse.getWareCode().toUpperCase());
+            warehouse.setWareName(warehouse.getWareName().toUpperCase());
+
+            // Attempt to save the warehouse
             Warehouse savedWarehouse = warehouseService.saveWarehouse(warehouse);
 
             // Fetch the list of all warehouses
@@ -101,13 +103,16 @@ public class WarehouseController {
 
             return "warehouseView/warehousesList";
         } catch (Exception e) {
-            // Log an error message if an exception occurs during the process
-            LOGGER.error("Error adding warehouse: {}", e.getMessage());
+            // Handle the exception
+            e.printStackTrace(); // You can log the exception for debugging purposes
 
-            // You might also want to handle the exception, display an error message, or redirect accordingly
-            return "errorPage"; // Adjust this to your error handling strategy
+            // Add an error message to the model to display to the user
+            modelMap.addAttribute("error", "An error occurred while adding the warehouse. Please try again.");
+            modelMap.addAttribute("errorMessage", e.getMessage());
+            return "error"; // Return to the error view with the error message
         }
     }
+
 
     /**
      * Displays details of a warehouse identified by its unique ID.

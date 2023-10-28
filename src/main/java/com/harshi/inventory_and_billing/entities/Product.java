@@ -29,6 +29,7 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long productId;
 
+	@Column(unique = true)
 	@Length(min=3, max=30, message="brandName should be min 3 and max 12")
     @NotBlank(message="brandName is mandatory")
 	private String brandName;

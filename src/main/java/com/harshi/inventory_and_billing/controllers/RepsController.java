@@ -72,20 +72,34 @@ public class RepsController {
      *
      * @param reps     The Reps object to be added.
      * @param modelMap ModelMap for adding attributes to the view.
-     * @return The view name for the representative list.
+     * @return The view name for the representative list or the error view in case of an exception.
      */
     @RequestMapping("/addReps")
     public String addReps(@ModelAttribute("reps") Reps reps, ModelMap modelMap) {
         LOGGER.info("Saving a new representative");
-        reps.setRepName( reps.getRepName().toUpperCase() );
-        reps.setRepLocation( reps.getRepLocation().toUpperCase() );
-        Reps savedReps = repsService.saveReps(reps);
-        List<Reps> repsList = repsService.getRepsList();
-        modelMap.addAttribute("repsList", repsList);
-        String msg = "Representative saved with ID - " + savedReps.getRepId();
-        modelMap.addAttribute("msg", msg);
-        return "repsView/repsList";
+        try {
+            // Convert representative name and location to uppercase
+            reps.setRepName(reps.getRepName().toUpperCase());
+            reps.setRepLocation(reps.getRepLocation().toUpperCase());
+
+            // Save the representative
+            Reps savedReps = repsService.saveReps(reps);
+            List<Reps> repsList = repsService.getRepsList();
+            modelMap.addAttribute("repsList", repsList);
+            String msg = "Representative saved with ID - " + savedReps.getRepId();
+            modelMap.addAttribute("msg", msg);
+            return "repsView/repsList";
+        } catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace(); // You can log the exception for debugging purposes
+
+            // Add an error message to the model to display to the user
+            modelMap.addAttribute("error", "An error occurred while saving the representative. Please try again.");
+            modelMap.addAttribute("errorMessage", e.getMessage());
+            return "error"; // Return to the error view with the error message
+        }
     }
+
 
     /**
      * Display the details of a specific representative by repId.
