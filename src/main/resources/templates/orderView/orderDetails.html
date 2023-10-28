@@ -177,7 +177,10 @@
 		<h3>Transport-Details</h3>
 		<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span>
 		</p>
+		<p>Contact Details: <span th:text="${order.transportAndBuiltNumber?.transport?.contactDetails} ?: 'N/A'"></span>
+		</p>
 		<p>Bilty No: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+
 
 		<!-- Display Payment Details -->
 		<h3>Payment Details</h3>

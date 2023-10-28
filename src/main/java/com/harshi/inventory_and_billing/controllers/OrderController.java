@@ -352,6 +352,12 @@ public class OrderController {
 	public String showOrderList(ModelMap modelMap) {
 		LOGGER.info("Displaying order list");
 		List<Order> orderList = orderService.getAllOrders();
+		// Calculate total price for the line item
+		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(orderList);
+		BigDecimal totalRemainingAmount = OrderHelper.totalPendingPrice(orderList);
+		// Add the order to the model for reference
+		modelMap.addAttribute("totalBillAmount", totalBillAmount);
+		modelMap.addAttribute("totalRemainingAmount", totalRemainingAmount);
 		modelMap.addAttribute("orderList", orderList);
 		return "orderView/orderList";
 	}
@@ -406,7 +412,7 @@ public class OrderController {
 			@RequestParam("transportId") Long transportId, @RequestParam("biltyNumber") String biltyNumber,
 			ModelMap modelMap) {
 		// Update the order in the database
-		biltyNumber=biltyNumber.toUpperCase();
+		biltyNumber = biltyNumber.toUpperCase();
 		Order updatedOrder = orderService.updateOrderBiltyNo(orderId, transportId, biltyNumber);
 		// Calculate total price for the line item
 		BigDecimal totalAmount = OrderHelper.totalOrderPrice(updatedOrder);

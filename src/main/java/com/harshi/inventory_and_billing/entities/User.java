@@ -37,7 +37,7 @@ public class User {
     @Email
     private String email;
     
-    @Length(min=8, max=15, message="lastName should be min 8 char and max 15 char")
+    @Length(min=8, max=15, message="password should be min 8 char and max 15 char")
     @NotBlank(message="password is mandatory")
     private String password;
 

@@ -137,9 +137,10 @@
 				<label for="transport">Select a Transport:</label>
 				<select name="selectedTransport" id="selectedTransport" class="form-control">
 					<option th:each="transport : ${transportsList}" th:value="${transport.transportId}"
-						th:text="${transport.transportName}"></option>
+						th:text="${transport.transportName + ' - ' + transport.contactDetails}"></option>
 				</select>
 			</div>
+
 
 			<button type="submit" class="btn btn-primary">Next</button>
 		</form>

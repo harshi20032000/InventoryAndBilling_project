@@ -90,7 +90,7 @@
 			border-radius: 5px;
 			display: flex;
 			justify-content: space-between;
-			flex-direction: column; 
+			flex-direction: column;
 		}
 	</style>
 </head>
@@ -99,6 +99,7 @@
 	<div class="container">
 		<h2>Order List</h2>
 		<!-- Display a table with order details -->
+		<!-- Display a table with order details -->
 		<table>
 			<thead>
 				<tr>
@@ -106,6 +107,8 @@
 					<th>Date</th>
 					<th>Party</th>
 					<th>Rep</th>
+					<th>Bill Amount</th>
+					<th>Remaining Amount</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -118,6 +121,10 @@
 					<td th:text="${order.party != null ? order.party.partyName : 'N/A'}"></td>
 					<!-- Use the null-safe navigation operator to access repName -->
 					<td th:text="${order.reps != null ? order.reps.repName : 'N/A'}"></td>
+					<!-- Display totalBillAmount or 'NA' -->
+					<td th:text="${order.totalBillAmount != null ? order.totalBillAmount : 'N/A'}"></td>
+					<!-- Display remainingBillAmount or 'NA' -->
+					<td th:text="${order.remainingBillAmount != null ? order.remainingBillAmount : 'N/A'}"></td>
 					<td>
 						<!-- Add a "View Details" button linking to OrderDetailsPage -->
 						<a th:href="@{'/orderDetails/' + ${order.orderId}}" class="btn btn-info">View Details</a>
@@ -126,6 +133,10 @@
 			</tbody>
 		</table>
 
+		<div>
+			<p>Net Total Amount: <span th:text="${totalBillAmount}"></span></p>
+			<p>Net Remaining Amount: <span th:text="${totalRemainingAmount}"></span></p>
+		</div>
 
 		<footer>
 			<!-- Added "Book Order" and "Home" buttons -->
