@@ -84,6 +84,8 @@ public class ProductController {
     public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
         LOGGER.info("Saving a new product");
         // Save the product with warehouse quantities
+        product.setBrandName( product.getBrandName().toUpperCase() );
+        product.setPType( product.getPType().toUpperCase() );
         Product savedProduct = productService.saveProduct(product);
         List<Product> productsList = productService.getProductsList();
         modelMap.addAttribute("productsList", productsList);
@@ -144,7 +146,7 @@ public class ProductController {
         LOGGER.info("Updating product quantities for product with ID: {}", product.getProductId());
         // Update the product quantities in the database
         Product fetchedProduct = productService.getProductById(product.getProductId());
-        if (fetchedProduct.getProductId() == product.getProductId()) {
+        if (fetchedProduct.getBrandName().equals(product.getBrandName()) ) {
             fetchedProduct.setWarehouseQuantities(product.getWarehouseQuantities());
             productService.saveProduct(fetchedProduct);
         }

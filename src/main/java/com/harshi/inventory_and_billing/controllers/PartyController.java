@@ -91,6 +91,8 @@ public class PartyController {
 	@PostMapping("/addParty")
 	public String addParty(@ModelAttribute("party") Party party, ModelMap modelMap) {
 		LOGGER.info("Saving a new party");
+		party.setPartyName( party.getPartyName().toUpperCase() );
+		party.setPartyLocation( party.getPartyLocation().toUpperCase() );
 		Party savedParty = partyService.saveParty(party);
 		List<Party> partyList = partyService.getPartyList();
 		modelMap.addAttribute("partyList", partyList);

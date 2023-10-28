@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.harshi.inventory_and_billing.entities.User;
@@ -45,10 +45,13 @@ public class UserController {
      * @param user The User object to be registered.
      * @return The view name for the login page.
      */
-    @RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+    @PostMapping(value = "/registerUser")
     public String register(@ModelAttribute("user") User user) {
         LOGGER.info("Registering user: {}", user);
-        user.setPassword((user.getPassword()));  // Ensure proper handling of the password, e.g., hashing.
+        user.setEmail((user.getEmail().toUpperCase()));
+        user.setLastName((user.getLastName().toUpperCase()));
+        user.setFirstName((user.getFirstName().toUpperCase())); 
+        user.setPassword((user.getPassword().toUpperCase()));
         userRepository.save(user);
         LOGGER.info("User registered: {}", user);
         return "loginView/login";
@@ -73,10 +76,12 @@ public class UserController {
      * @param modelMap ModelMap for adding attributes to the view.
      * @return The appropriate view based on login success or failure.
      */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping(value = "/login")
     public String login(@RequestParam("email") String email, @RequestParam("password") String password,
                        ModelMap modelMap) {
         LOGGER.info("Attempting login for email: {}", email);
+        email=email.toUpperCase();
+        password=password.toUpperCase();
         boolean isLoginSuccess = securityService.login(email, password);
         if (isLoginSuccess) {
             LOGGER.info("Login successful for email: {}", email);

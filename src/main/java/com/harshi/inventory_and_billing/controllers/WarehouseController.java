@@ -80,6 +80,8 @@ public class WarehouseController {
     public String addWarehouse(@ModelAttribute("warehouse") Warehouse warehouse, ModelMap modelMap) {
         try {
             // Save the warehouse to the database
+        	warehouse.setWareCode( warehouse.getWareCode().toUpperCase() );
+        	warehouse.setWareName( warehouse.getWareName().toUpperCase() );
             Warehouse savedWarehouse = warehouseService.saveWarehouse(warehouse);
 
             // Fetch the list of all warehouses

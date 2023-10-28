@@ -322,7 +322,7 @@ public class OrderController {
 		// Create a new TransportAndBuiltNumber and set its values
 		TransportAndBuiltNumber transportAndBuiltNumber = new TransportAndBuiltNumber();
 		transportAndBuiltNumber.setTransport(selectedTransport);
-		transportAndBuiltNumber.setBuiltNumber("NotAlloted" + order.getOrderId());
+		transportAndBuiltNumber.setBuiltNumber("NotAlloted_Oid-" + order.getOrderId());
 
 		// Save the TransportAndBuiltNumber to the database
 		transportAndBuiltNumber = transportAndBuiltNumberRepo.save(transportAndBuiltNumber);
@@ -331,7 +331,7 @@ public class OrderController {
 		order.setTransportAndBuiltNumber(transportAndBuiltNumber);
 
 		// Update the ordrStatus in the received order
-		orderStatusHistoryService.addStatusChangeToOrder(order, "Order Placed");
+		orderStatusHistoryService.addStatusChangeToOrder(order, "Order Placed_Oid-" + order.getOrderId());
 
 		// Update the order with the new transport
 		Order updatedOrder = orderService.saveOrder(order);
@@ -406,6 +406,7 @@ public class OrderController {
 			@RequestParam("transportId") Long transportId, @RequestParam("biltyNumber") String biltyNumber,
 			ModelMap modelMap) {
 		// Update the order in the database
+		biltyNumber=biltyNumber.toUpperCase();
 		Order updatedOrder = orderService.updateOrderBiltyNo(orderId, transportId, biltyNumber);
 		// Calculate total price for the line item
 		BigDecimal totalAmount = OrderHelper.totalOrderPrice(updatedOrder);
@@ -457,10 +458,11 @@ public class OrderController {
 
 		// Update the ordrStatus in the received order
 		orderStatusHistoryService.addStatusChangeToOrder(order, "Payment Received of - " + savedPayment.getPayAmount());
-		// Update remainingBillAmount when a payment is added, Later change with order.getTotalBillAmount(); and test
-	    BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(order);
-	    BigDecimal remainingBillAmount = totalBillAmount.subtract(new BigDecimal(savedPayment.getPayAmount()) );
-	    order.setRemainingBillAmount(remainingBillAmount);
+		// Update remainingBillAmount when a payment is added, Later change with
+		// order.getTotalBillAmount(); and test
+		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(order);
+		BigDecimal remainingBillAmount = totalBillAmount.subtract(new BigDecimal(savedPayment.getPayAmount()));
+		order.setRemainingBillAmount(remainingBillAmount);
 		// Update the order
 		Order updatedOrder = orderService.saveOrder(order);
 		// Calculate total price for the line item

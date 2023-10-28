@@ -80,6 +80,7 @@ public class TransportController {
     @PostMapping("/addTransport")
     public String addTransport(@ModelAttribute("transport") Transport transport, ModelMap modelMap) {
         LOGGER.info("Saving a new transport");
+        transport.setTransportName( transport.getTransportName().toUpperCase() );
         Transport savedTransport = transportService.saveTransport(transport);
         List<Transport> transportList = transportService.getTransportList();
         modelMap.addAttribute("transportList", transportList);

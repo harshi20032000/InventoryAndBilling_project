@@ -77,6 +77,8 @@ public class RepsController {
     @RequestMapping("/addReps")
     public String addReps(@ModelAttribute("reps") Reps reps, ModelMap modelMap) {
         LOGGER.info("Saving a new representative");
+        reps.setRepName( reps.getRepName().toUpperCase() );
+        reps.setRepLocation( reps.getRepLocation().toUpperCase() );
         Reps savedReps = repsService.saveReps(reps);
         List<Reps> repsList = repsService.getRepsList();
         modelMap.addAttribute("repsList", repsList);
