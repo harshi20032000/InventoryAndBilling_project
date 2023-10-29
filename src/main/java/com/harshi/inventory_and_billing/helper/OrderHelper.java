@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
+import java.util.TreeMap;
 
 import com.harshi.inventory_and_billing.entities.Order;
 import com.harshi.inventory_and_billing.entities.OrderLineItem;
@@ -92,20 +94,48 @@ public class OrderHelper {
 	 * @param quantity  The quantity to update.
 	 * @param selectedProduct  The selected product.
 	 * @param order The current order from which to fetch the last order quantities.
+	 * @param mainWarehouse checked and deducted quantities from the 'MAIN' warehouse if available.
 	 * @return A map of warehouse quantities for the order.
 	 */
-	public static Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct, Order order) {
+	public static Map<Warehouse, Integer> updateProductQuantities(int quantity, Product selectedProduct, Order order, Warehouse mainWarehouse) {
+	    // Create a copy of the selected product's warehouse quantities
 	    Map<Warehouse, Integer> warehouseQuantities = new HashMap<>(selectedProduct.getWarehouseQuantities());
-	    Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
-	    List<Warehouse> warehouseList = new ArrayList<>(); // Declare the list here
 
+	    // Create a map to store the quantities for the current order
+	    Map<Warehouse, Integer> orderWarehouseQuantities = new HashMap<>();
+
+	    // Create a list to store warehouses that will be given preference based on the last order
+	    List<Warehouse> warehouseList = new ArrayList<>();
+
+	    // Check if an order exists and has order line items
 	    if (order != null && order.getOrderLineItems() != null && !order.getOrderLineItems().isEmpty()) {
-	        // Calculate List of warehouses from the first orderlineItems of the selected order if present.
-	        // These warehouseList will be given preference for the current orderlineitems.
+	        // Retrieve the first order line item from the selected order
 	        OrderLineItem orderLineItem = order.getOrderLineItems().get(0);
+
+	        // Extract the warehouse quantities from the first order line item
 	        Map<Warehouse, Integer> previousOrderLineWarehouseQuantities = orderLineItem.getOrderWarehouseQuantities();
-	        warehouseList.addAll(previousOrderLineWarehouseQuantities.keySet()); // Add warehouses to the list
-	        //these warehouseList will be given preference for the current orderlineitems.
+
+	        // Add the warehouses from the previous order line item to the list
+	        warehouseList.addAll(previousOrderLineWarehouseQuantities.keySet());
+
+	        // These warehouseList will be given preference for the current order line items.
+	    }
+
+	    // Logic to deduct from the 'MAIN' warehouse first
+	    if (warehouseQuantities.containsKey(mainWarehouse)) {
+	        int mainWarehouseQuantity = warehouseQuantities.get(mainWarehouse);
+	        int quantityToDeductFromMain = Math.min(mainWarehouseQuantity, quantity);
+
+	        if (quantityToDeductFromMain > 0) {
+	            // Deduct the quantity from the 'MAIN' warehouse
+	            warehouseQuantities.put(mainWarehouse, mainWarehouseQuantity - quantityToDeductFromMain);
+	            
+	            // Add the deducted quantity to the order's warehouse quantities
+	            orderWarehouseQuantities.put(mainWarehouse, quantityToDeductFromMain);
+	            
+	            // Reduce the remaining quantity
+	            quantity -= quantityToDeductFromMain;
+	        }
 	    }
 
 	    // Logic for preference to warehouses used in the last order
@@ -115,13 +145,19 @@ public class OrderHelper {
 	        int quantityToDeduct = Math.min(availableQuantity, quantity);
 
 	        if (quantityToDeduct > 0) {
+	            // Deduct the quantity from the preferred warehouse
 	            warehouseQuantities.put(preferredWarehouse, availableQuantity - quantityToDeduct);
+	            
+	            // Add the deducted quantity to the order's warehouse quantities
 	            orderWarehouseQuantities.put(preferredWarehouse, quantityToDeduct);
+	            
+	            // Reduce the remaining quantity
 	            quantity -= quantityToDeduct;
 	        }
 
+	        // If the required quantity is fulfilled, exit the loop
 	        if (quantity == 0) {
-	            break; // We've fulfilled the required quantity
+	            break;
 	        }
 	    }
 
@@ -133,24 +169,28 @@ public class OrderHelper {
 	        int quantityToDeduct = Math.min(availableQuantity, quantity);
 
 	        if (quantityToDeduct > 0) {
+	            // Deduct the quantity from the current warehouse
 	            warehouseQuantities.put(warehouse, availableQuantity - quantityToDeduct);
+	            
+	            // Add the deducted quantity to the order's warehouse quantities
 	            orderWarehouseQuantities.put(warehouse, quantityToDeduct);
+	            
+	            // Reduce the remaining quantity
 	            quantity -= quantityToDeduct;
 	        }
 
+	        // If the required quantity is fulfilled, exit the loop
 	        if (quantity == 0) {
-	            break; // We've fulfilled the required quantity
+	            break;
 	        }
 	    }
 
 	    // Update the product's warehouse quantities with the changes
 	    selectedProduct.setWarehouseQuantities(warehouseQuantities);
+
+	    // Return the quantities allocated for the current order
 	    return orderWarehouseQuantities;
 	}
-
-
-
-
 
 
 	/**

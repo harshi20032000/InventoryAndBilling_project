@@ -36,6 +36,7 @@ import com.harshi.inventory_and_billing.service.PaymentService;
 import com.harshi.inventory_and_billing.service.ProductService;
 import com.harshi.inventory_and_billing.service.RepsService;
 import com.harshi.inventory_and_billing.service.TransportService;
+import com.harshi.inventory_and_billing.service.WarehouseService;
 
 /**
  * Controller class for managing order-related operations.
@@ -68,6 +69,9 @@ public class OrderController {
 
 	@Autowired
 	private OrderStatusHistoryService orderStatusHistoryService;
+	
+	@Autowired
+	private WarehouseService warehouseService;
 
 	/**
 	 * Display the initial page for booking an order.
@@ -215,6 +219,9 @@ public class OrderController {
 
 		// Get the selected product by ID
 		Product selectedProduct = productService.getProductById(selectedProductId);
+		
+		// Get the main warehouse by code
+		Warehouse mainWarehouse = warehouseService.getWarehouseById(1L);
 
 		// Create a new order line item
 		OrderLineItem lineItem = new OrderLineItem();
@@ -224,7 +231,7 @@ public class OrderController {
 
 		// Update the warehouse quantities and get orderWarehouseQuantities
 		Map<Warehouse, Integer> orderWarehouseQuantities = OrderHelper.updateProductQuantities(quantity,
-				selectedProduct, order);
+				selectedProduct, order, mainWarehouse);
 
 		// Set orderWarehouseQuantities in the line item
 		lineItem.setOrderWarehouseQuantities(orderWarehouseQuantities);
