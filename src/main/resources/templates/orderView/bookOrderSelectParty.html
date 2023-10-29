@@ -10,13 +10,13 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
         h2 {
             color: #333;
@@ -35,18 +35,30 @@
             border-radius: 5px;
         }
 
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+        .btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
+
+		.btn-secondary:hover {
+			background-color: #333;
+		}
+
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
 
         a {
             display: inline-block;
@@ -58,6 +70,21 @@
         a:hover {
             text-decoration: underline;
         }
+        footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
     </style>
 </head>
 
@@ -90,15 +117,15 @@
 					th:text="${party.partyId}+' - '+${party.partyName}+ ' - ' + ${party.partyLocation}"></option>
 			</select>
 			<input type="hidden" name="orderId" th:value="${order.orderId}" />
-			<button type="submit">Next</button>
+			<button type="submit" class="btn btn-info">Next</button>
 		</form>
-
+		<footer>
 		<!-- Add a button to add a new party -->
-		<a href="/inventorybilling/showAddParty">Add New Party</a>
-
+		<a href="/inventorybilling/showAddParty"class="btn btn-secondary">Add New Party</a>
 		<!-- Add a Home button or other navigation options as needed -->
-		<a href="/inventorybilling/showLanding">Home</a>
+		<a href="/inventorybilling/showLanding"class="btn btn-secondary">Home</a>
 		<b>.....On Book Order Select Party Page.....</b>
+		</footer>
 	</div>
 </body>
 

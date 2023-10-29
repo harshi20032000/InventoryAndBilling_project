@@ -1,200 +1,238 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <!-- Add your CSS styles in the <style> tag -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+	<!-- Add your CSS styles in the <style> tag -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
-        h2 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+		h2 {
+			color: #333;
+			text-align: center;
+			margin-bottom: 20px;
+		}
 
-        h3 {
-            color: #333;
-        }
+		h3 {
+			color: #333;
+		}
 
-        /* Style your form elements, buttons, etc. here */
-        .form-group {
-            margin-bottom: 15px;
-        }
+		/* Style your form elements, buttons, etc. here */
+		.form-group {
+			margin-bottom: 15px;
+		}
 
-        label {
-            font-weight: bold;
-        }
+		label {
+			font-weight: bold;
+		}
 
-        select, input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-transform: uppercase;
-        }
+		select,
+		input[type="text"] {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-transform: uppercase;
+		}
 
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
 
-        a {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #007bff;
-        }
+		.btn-secondary:hover {
+			background-color: #333;
+		}
 
-        a:hover {
-            text-decoration: underline;
-        }
+		.btn-info {
+			background-color: #17a2b8;
+		}
 
-        /* You can add more custom styles as needed */
-    </style>
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
+		a {
+			display: inline-block;
+			margin-top: 10px;
+			text-decoration: none;
+			color: #007bff;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+
+		/* You can add more custom styles as needed */
+	</style>
 </head>
 
 <body>
-	<div>
-		<h3>Order Details</h3>
-		<p>Order ID: <span th:text="${order.orderId}"></span></p>
-		<p>Order Date: <span th:text="${order.orderDate}"></span></p>
-	</div>
-
-	<!-- Display Selected Rep Details -->
-	<div>
-		<h3>Selected Rep Details</h3>
-		<p>Reps ID: <span th:text="${order.reps?.repId} ?: 'N/A'"></span></p>
-		<p>Reps Name: <span th:text="${order.reps?.repName} ?: 'N/A'"></span></p>
-		<p>Reps Location: <span th:text="${order.reps?.repLocation} ?: 'N/A'"></span></p>
-		<!-- Add more rep details as needed -->
-	</div>
-
-	<!-- Display Party Details -->
-	<h3>Party Details</h3>
-	<p>Party ID: <span th:text="${order.party?.partyId} ?: 'N/A'"></span></p>
-	<p>Party Name: <span th:text="${order.party?.partyName} ?: 'N/A'"></span></p>
-	<p>Party Location: <span th:text="${order.party?.partyLocation} ?: 'N/A'"></span></p>
-	<!-- Add any other party details as needed -->
-
-	<!-- Display Product Line Items -->
-	<h3>Order Line Items</h3>
-	<table>
-		<thead>
-			<tr>
-				<th>Product</th>
-				<th>Rate</th>
-				<th>Quantity</th>
-				<th>Total Price</th>
-				<th>Warehouse-Quantities</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="lineItem : ${order.orderLineItems}">
-				<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
-				<td th:text="${lineItem.rate}"></td>
-				<td th:text="${lineItem.quantity}"></td>
-				<td th:text="${lineItem.rate * lineItem.quantity}"></td>
-				<td colspan="4">
-					<table>
-						<thead>
-							<tr>
-								<th>WareID</th>
-								<th>WareName</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
-								<td th:text="${entry.key.wareId}"></td>
-								<td th:text="${entry.key.wareName}"></td>
-								<td th:text="${entry.value}"></td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<!-- Display a message if there are no order line items -->
-	<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
-
-	<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
-	<!-- Display Total Order Price if it's not null or empty -->
-	<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
-	</h3>
-	
-	<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span th:text="${remainingAmount}"></span>
-	</h3>
-
-	<!-- Display Total Order Quantity if it's not null or empty -->
-	<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
-			th:text="${totalQuantities}"></span>
-	</h3>
-
 	<div class="container">
-		<h2>Edit Order Transport Details</h2>
+		<div>
+			<h3>Order Details</h3>
+			<p>Order ID: <span th:text="${order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+		</div>
 
-		<!-- Display the current transport details -->
-		<h3>Current Transport Details</h3>
-		<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span>
-		</p>
-		<p>Builty Number: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+		<!-- Display Selected Rep Details -->
+		<div>
+			<h3>Selected Rep Details</h3>
+			<p>Reps ID: <span th:text="${order.reps?.repId} ?: 'N/A'"></span></p>
+			<p>Reps Name: <span th:text="${order.reps?.repName} ?: 'N/A'"></span></p>
+			<p>Reps Location: <span th:text="${order.reps?.repLocation} ?: 'N/A'"></span></p>
+			<!-- Add more rep details as needed -->
+		</div>
 
-		<!-- Create a form for updating transport details -->
-		<form action="/inventorybilling/editOrderTransport" method="post">
-			<h3>Update Transport Details</h3>
+		<!-- Display Party Details -->
+		<h3>Party Details</h3>
+		<p>Party ID: <span th:text="${order.party?.partyId} ?: 'N/A'"></span></p>
+		<p>Party Name: <span th:text="${order.party?.partyName} ?: 'N/A'"></span></p>
+		<p>Party Location: <span th:text="${order.party?.partyLocation} ?: 'N/A'"></span></p>
+		<!-- Add any other party details as needed -->
 
-			<!-- Select a transport from the list -->
-			<div class="form-group">
-				<label for="selectedTransport">Select Transport:</label>
-				<select class="form-control" name="transportId">
-					<option th:each="transport : ${transportList}" th:value="${transport.transportId}"
-						th:text="${transport.transportName}"></option>
-				</select>
-			</div>
+		<!-- Display Product Line Items -->
+		<h3>Order Line Items</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Rate</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Warehouse-Quantities</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="lineItem : ${order.orderLineItems}">
+					<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+					<td th:text="${lineItem.rate}"></td>
+					<td th:text="${lineItem.quantity}"></td>
+					<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+					<td colspan="4">
+						<table>
+							<thead>
+								<tr>
+									<th>WareID</th>
+									<th>WareName</th>
+									<th>Quantity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+									<td th:text="${entry.key.wareId}"></td>
+									<td th:text="${entry.key.wareName}"></td>
+									<td th:text="${entry.value}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
-			<!-- Update the Builty Number -->
-			<div class="form-group">
-				<label for="builtyNumber">Builty Number:</label>
-				<input type="text" class="form-control" name="biltyNumber" />
-			</div>
+		<!-- Display a message if there are no order line items -->
+		<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
 
-			<!-- Add hidden input for orderId -->
-			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+		<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
+		<!-- Display Total Order Price if it's not null or empty -->
+		<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
+		</h3>
 
-			<!-- Add a "Save Changes" button to update the transport details -->
-			<button type="submit" class="btn btn-success">Save Changes</button>
-		</form>
+		<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span
+				th:text="${remainingAmount}"></span>
+		</h3>
+
+		<!-- Display Total Order Quantity if it's not null or empty -->
+		<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
+				th:text="${totalQuantities}"></span>
+		</h3>
+
+		<div class="container">
+			<h2>Edit Order Transport Details</h2>
+
+			<!-- Display the current transport details -->
+			<h3>Current Transport Details</h3>
+			<p>Transport Name: <span
+					th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span>
+			</p>
+			<p>Builty Number: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
+
+			<!-- Create a form for updating transport details -->
+			<form action="/inventorybilling/editOrderTransport" method="post">
+				<h3>Update Transport Details</h3>
+
+				<!-- Select a transport from the list -->
+				<div class="form-group">
+					<label for="selectedTransport">Select Transport:</label>
+					<select class="form-control" name="transportId">
+						<option th:each="transport : ${transportList}" th:value="${transport.transportId}"
+							th:text="${transport.transportName}"></option>
+					</select>
+				</div>
+
+				<!-- Update the Builty Number -->
+				<div class="form-group">
+					<label for="builtyNumber">Builty Number:</label>
+					<input type="text" class="form-control" name="biltyNumber" />
+				</div>
+
+				<!-- Add hidden input for orderId -->
+				<input type="hidden" name="orderId" th:value="${order.orderId}" />
+
+				<!-- Add a "Save Changes" button to update the transport details -->
+				<button type="submit" class="btn btn-info">Save Changes</button>
+			</form>
 
 
-		<!-- Add a "Back to Order Details" button -->
-		<a th:href="@{'/orderDetails/'+ ${order.orderId}}" class="btn btn-secondary">Back to Order Details</a>
+		</div>
+		<footer>
+			<!-- Add a "Back to Order Details" button -->
+			<a th:href="@{'/orderDetails/'+ ${order.orderId}}" class="btn btn-secondary">Back to Order Details</a>
+
+			<!-- Add a "Back to Order List" button -->
+			<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+
+			<b>.....On edit Order Transport Details Page.....</b>
+		</footer>
 	</div>
 
-
-	<!-- Add a "Back to Order List" button -->
-	<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
-	</form>
-	<b>.....On edit Order Transport Details Page.....</b>
-	</div>
 </body>
 
 </html>
