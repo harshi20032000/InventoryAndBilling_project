@@ -1,9 +1,7 @@
 package com.harshi.inventory_and_billing.entities;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -15,8 +13,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -38,14 +34,6 @@ public class Warehouse {
     @NotBlank(message = "wareCode is mandatory")
     @Length(min=3, max=5, message="wareCode should be min 3 and max 5")
     private String wareCode; 
-
-    @ManyToMany()
-    @JoinTable(
-            name = "products_warehouses",
-            joinColumns = @JoinColumn(name = "warehouse_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-        )
-    private Set<Product> products = new HashSet<>();
     
     @ElementCollection
 	@CollectionTable(name = "product_warehouse_quantity", joinColumns = @JoinColumn(name = "warehouse_id"))
@@ -88,10 +76,6 @@ public class Warehouse {
 
     public void setWareCode(String wareCode) { // Add setter for wareCode
         this.wareCode = wareCode;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
     }
 
     // Other methods if needed

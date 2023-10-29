@@ -2,9 +2,7 @@ package com.harshi.inventory_and_billing.entities;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -16,7 +14,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -38,9 +35,6 @@ public class Product {
 	private String pType;
 
 	private BigDecimal basePrice;
-
-	@ManyToMany(mappedBy = "products")
-	private Set<Warehouse> warehouses = new HashSet<>();
 
 	@ElementCollection
 	@CollectionTable(name = "product_warehouse_quantity", joinColumns = @JoinColumn(name = "product_id"))
@@ -83,10 +77,6 @@ public class Product {
 
 	public void setPType(String pType) {
 		this.pType = pType;
-	}
-
-	public Set<Warehouse> getWarehouses() {
-		return warehouses;
 	}
 
 	// Other methods if needed

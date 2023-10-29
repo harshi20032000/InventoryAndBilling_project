@@ -224,7 +224,7 @@ public class OrderController {
 
 		// Update the warehouse quantities and get orderWarehouseQuantities
 		Map<Warehouse, Integer> orderWarehouseQuantities = OrderHelper.updateProductQuantities(quantity,
-				selectedProduct);
+				selectedProduct, order);
 
 		// Set orderWarehouseQuantities in the line item
 		lineItem.setOrderWarehouseQuantities(orderWarehouseQuantities);
@@ -467,7 +467,7 @@ public class OrderController {
 		// Update remainingBillAmount when a payment is added, Later change with
 		// order.getTotalBillAmount(); and test
 		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(order);
-		BigDecimal remainingBillAmount = totalBillAmount.subtract(new BigDecimal(savedPayment.getPayAmount()));
+		BigDecimal remainingBillAmount = totalBillAmount.subtract(BigDecimal.valueOf(savedPayment.getPayAmount()));
 		order.setRemainingBillAmount(remainingBillAmount);
 		// Update the order
 		Order updatedOrder = orderService.saveOrder(order);
