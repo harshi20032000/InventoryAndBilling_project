@@ -1,98 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add New Party</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>add New Party</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+		h2 {
+			color: #333;
+			margin-bottom: 20px;
+		}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+		.form-group {
+			margin-bottom: 15px;
+		}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-transform: uppercase;
-        }
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			text-transform: uppercase;
+		}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        .btn-secondary {
-            background-color: #6c757d;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
 
-        .btn-secondary:hover {
-            background-color: #5a6268;
-        }
+		.btn-secondary:hover {
+			background-color: #333;
+		}
 
-        b {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
+
+		b {
+			display: block;
+			margin-top: 20px;
+			font-weight: bold;
+			color: #007bff;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Add Party</h2>
-        <form action="/inventorybilling/addParty" method="post" th:object="${party}">
-            <div class="form-group">
-                <label for="partyName">Name:</label>
-                <input type="text" id="partyName" name="partyName" th:field="*{partyName}" class="form-control" required />
-            </div>
-            <div class="form-group">
-                <label for="partyLocation">Location:</label>
-                <input type="text" id="partyLocation" name="partyLocation" th:field="*{partyLocation}" class="form-control" required />
-            </div>
-            
-            <!-- Add a "Save" button to submit the form -->
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-        
-        <!-- Add a "Back to Parties List" button -->
-        <a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Parties List</a>
-        
-        <!-- Add buttons to navigate to the homepage -->
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-        <b>On Add Party Page</b>
-    </div>
+	<div class="container">
+		<h2>Add Party</h2>
+		<form action="/inventorybilling/addParty" method="post" th:object="${party}">
+			<div class="form-group">
+				<label for="partyName">Name:</label>
+				<input type="text" id="partyName" name="partyName" th:field="*{partyName}" class="form-control"
+					required />
+			</div>
+			<div class="form-group">
+				<label for="partyLocation">Location:</label>
+				<input type="text" id="partyLocation" name="partyLocation" th:field="*{partyLocation}"
+					class="form-control" required />
+			</div>
+
+			<!-- Add a "Save" button to submit the form -->
+			<button type="submit" class="btn btn-info">Save</button>
+		</form>
+		<footer>
+			<!-- Add a "Back to Parties List" button -->
+			<a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Parties List</a>
+
+			<!-- Add buttons to navigate to the homepage -->
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<div><b>On Add Party Page</b></div>
+		</footer>
+	</div>
 </body>
+
 </html>

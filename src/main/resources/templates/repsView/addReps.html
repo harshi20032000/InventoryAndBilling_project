@@ -13,7 +13,12 @@
 		}
 
 		.container {
-			margin-top: 50px;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border: 1px solid #ddd;
+			border-radius: 5px;
 		}
 
 		.card {
@@ -32,7 +37,28 @@
 		}
 
 		.btn {
-			margin-right: 10px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.btn-secondary {
+			background-color: #555;
+		}
+
+		.btn-secondary:hover {
+			background-color: #333;
+		}
+
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
 		}
 
 		input[type="text"] {
@@ -42,6 +68,22 @@
 			border: 1px solid #ccc;
 			border-radius: 5px;
 			text-transform: uppercase;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 		}
 	</style>
 </head>
@@ -66,18 +108,21 @@
 					</div>
 
 					<!-- Add a "Save" button to submit the form -->
-					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="submit" class="btn btn-info">Save</button>
 				</form>
 			</div>
-			<div class="card-footer">
-				<!-- Add a "Back to Reps List" button -->
-				<a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
-				<!-- Add a "Home" button to navigate to the homepage -->
-				<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-			</div>
-		</div>
-		<b>.....On Add Reps Page.....</b>
-	</div>
+			<footer>
+				<div class="card-footer">
+					<!-- Add a "Back to Reps List" button -->
+					<a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
+					<!-- Add a "Home" button to navigate to the homepage -->
+					<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+					<b>.....On Add Reps Page.....</b>
+				</div>
+			</footer>
+
+
+
 </body>
 
 </html>
