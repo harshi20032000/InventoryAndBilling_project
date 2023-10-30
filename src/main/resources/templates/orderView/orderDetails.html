@@ -2,13 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<!-- ... (head content) ... -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order Details</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f4f4f4;
 			margin: 0;
 			padding: 0;
+			text-align: left;
 		}
 
 		.container {
@@ -32,13 +35,15 @@
 		table {
 			width: 100%;
 			border-collapse: collapse;
+			margin: 0 auto;
 		}
 
 		th,
 		td {
 			border: 1px solid #ddd;
-			padding: 8px;
+			padding: 10px;
 			text-align: left;
+			background-color: #f4f4f4;
 		}
 
 		th {
@@ -54,6 +59,14 @@
 
 		a:hover {
 			text-decoration: underline;
+		}
+
+		caption,
+		p {
+			padding: 10px;
+			text-align: left;
+			color: #000;
+			font-weight: bold;
 		}
 
 		.btn {
@@ -79,7 +92,6 @@
 			color: #333;
 			margin-top: 20px;
 			max-width: 800px;
-			/* Add this property */
 			margin: 20px auto;
 			padding: 20px;
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -94,31 +106,63 @@
 <body>
 	<div class="container">
 		<!-- Display Order Details -->
+		<!-- Display Order Details -->
 		<div>
 			<h3>Order Details</h3>
-			<p>Order ID: <span th:text="${order.orderId}"></span></p>
-			<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+			<div style="display: flex; justify-content: space-between;">
+				<p>Order ID: <span th:text="${order.orderId}"></span></p>
+				<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+			</div>
 		</div>
+
 
 		<!-- Display Selected Rep Details -->
-		<div>
-			<h3>Selected Rep Details</h3>
-			<p>Reps ID: <span th:text="${order.reps?.repId} ?: 'N/A'"></span></p>
-			<p>Reps Name: <span th:text="${order.reps?.repName} ?: 'N/A'"></span></p>
-			<p>Reps Location: <span th:text="${order.reps?.repLocation} ?: 'N/A'"></span></p>
-			<!-- Add more rep details as needed -->
+		<div th:if="${order.reps != null}">
+			<table>
+				<caption>Selected Rep Details</caption>
+				<tbody>
+					<tr>
+						<td>Reps ID:</td>
+						<td th:text="${order.reps.repId} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Reps Name:</td>
+						<td th:text="${order.reps.repName} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Reps Location:</td>
+						<td th:text="${order.reps.repLocation} ?: 'N/A'"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
-		<!-- Display Party Details -->
-		<h3>Party Details</h3>
-		<p>Party ID: <span th:text="${order.party?.partyId} ?: 'N/A'"></span></p>
-		<p>Party Name: <span th:text="${order.party?.partyName} ?: 'N/A'"></span></p>
-		<p>Party Location: <span th:text="${order.party?.partyLocation} ?: 'N/A'"></span></p>
-		<!-- Add any other party details as needed -->
 
-		<!-- Display Product Line Items -->
-		<h3>Order Line Items</h3>
+		<!-- Display Party Details -->
+		<div th:if="${order.party != null}">
+			<table>
+				<caption>Party Details</caption>
+				<tbody>
+					<tr>
+						<td>Party ID:</td>
+						<td th:text="${order.party.partyId} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Party Name:</td>
+						<td th:text="${order.party.partyName} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Party Location:</td>
+						<td th:text="${order.party.partyLocation} ?: 'N/A'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
 		<table>
+			<caption>....Order Line Items....</caption>
 			<thead>
 				<tr>
 					<th>Product</th>
@@ -138,14 +182,12 @@
 						<table>
 							<thead>
 								<tr>
-									<th>WareID</th>
 									<th>WareName</th>
 									<th>Quantity</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
-									<td th:text="${entry.key.wareId}"></td>
 									<td th:text="${entry.key.wareName}"></td>
 									<td th:text="${entry.value}"></td>
 								</tr>
@@ -156,35 +198,60 @@
 			</tbody>
 		</table>
 
-		<!-- Display a message if there are no order line items -->
 		<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
 
-		<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
-		<!-- Display Total Order Price if it's not null or empty -->
-		<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
-		</h3>
+		<!-- Display Total Bill Amount, Remaining Amount, and Total Order Quantity -->
+		<div th:if="${totalAmount != null or remainingAmount != null or totalQuantities != null}">
+			<table>
+				<caption>Total Order Summary</caption>
+				<thead>
+					<tr>
+						<th>Details</th>
+						<th>Amount/Quantity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${totalQuantities != null and totalQuantities > 0}">
+						<td>Total Order Quantity:</td>
+						<td th:text="${totalQuantities}"></td>
+					</tr>
+					<tr th:if="${totalAmount != null and totalAmount > 0}">
+						<td>Total Bill Amount:</td>
+						<td th:text="${totalAmount}"></td>
+					</tr>
+					<tr th:if="${remainingAmount != null and remainingAmount > 0}">
+						<td>Remaining Amount:</td>
+						<td th:text="${remainingAmount}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-		<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span
-				th:text="${remainingAmount}"></span>
-		</h3>
 
-		<!-- Display Total Order Quantity if it's not null or empty -->
-		<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
-				th:text="${totalQuantities}"></span>
-		</h3>
+		<!-- Display Transport Details -->
+		<div th:if="${order.transportAndBuiltNumber != null}">
+			<table>
+				<caption>Transport Details</caption>
+				<tbody>
+					<tr th:if="${order.transportAndBuiltNumber.transport != null}">
+						<td>Transport Name:</td>
+						<td th:text="${order.transportAndBuiltNumber.transport.transportName} ?: 'N/A'"></td>
+					</tr>
+					<tr th:if="${order.transportAndBuiltNumber.transport != null}">
+						<td>Contact Details:</td>
+						<td th:text="${order.transportAndBuiltNumber.transport.contactDetails} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Bilty No:</td>
+						<td th:text="${order.transportAndBuiltNumber.builtNumber} ?: 'N/A'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-		<!-- Display Transport and BuiltyNumber -->
-		<h3>Transport-Details</h3>
-		<p>Transport Name: <span th:text="${order.transportAndBuiltNumber?.transport?.transportName} ?: 'N/A'"></span>
-		</p>
-		<p>Contact Details: <span th:text="${order.transportAndBuiltNumber?.transport?.contactDetails} ?: 'N/A'"></span>
-		</p>
-		<p>Bilty No: <span th:text="${order.transportAndBuiltNumber?.builtNumber} ?: 'N/A'"></span></p>
 
-
-		<!-- Display Payment Details -->
-		<h3>Payment Details</h3>
 		<table th:if="${not #lists.isEmpty(order.payments)}">
+			<caption>....Payment Details....</caption>
 			<thead>
 				<tr>
 					<th>Date</th>
@@ -206,6 +273,7 @@
 
 		<h3>Order Status History</h3>
 		<table>
+			<caption>Order Status History</caption>
 			<thead>
 				<tr>
 					<th>Update Timestamp</th>
@@ -220,20 +288,12 @@
 			</tbody>
 		</table>
 
-
 		<footer>
-			<!-- Added an "Edit Transport Details" button linking to the showEditOrderTransport method -->
 			<a th:href="@{'/showEditOrderTransport/' + ${order.orderId}}" class="btn btn-secondary">Edit Transport
 				Details</a>
-
-			<!-- Added an "add Payment to order" button linking to the showAddOrderPayment method -->
 			<a th:href="@{'/showAddOrderPayment/' + ${order.orderId}}" class="btn btn-secondary">Add Payment To
 				Order</a>
-
-
-			<!-- Added a "Back to Order List" button -->
 			<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
-			<!-- Added buttons to navigate to the homepage -->
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<div><b>.....On Order Details Page.....</b></div>
 		</footer>
