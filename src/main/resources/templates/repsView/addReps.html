@@ -10,6 +10,45 @@
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			margin: 5px 0;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			text-transform: uppercase;
+		}
+
+
+		a {
+			display: inline-block;
+			margin: 5px 0;
+			text-decoration: none;
+			color: #007bff;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 		}
 
 		.container {
@@ -19,17 +58,6 @@
 			background-color: #f2f2f2;
 			border: 1px solid #ddd;
 			border-radius: 5px;
-		}
-
-		.card {
-			border: 1px solid #ccc;
-			border-radius: 5px;
-		}
-
-		.card-header {
-			background-color: #007bff;
-			color: #fff;
-			text-align: center;
 		}
 
 		.form-group {
@@ -60,66 +88,36 @@
 		.btn-info:hover {
 			background-color: #117a8b;
 		}
-
-		input[type="text"] {
-			width: 100%;
-			padding: 10px;
-			margin: 5px 0;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			text-transform: uppercase;
-		}
-
-		footer {
-			text-align: center;
-			background-color: #fff;
-			color: #333;
-			margin-top: 20px;
-			max-width: 800px;
-			/* Add this property */
-			margin: 20px auto;
-			padding: 20px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			border-radius: 5px;
-			display: flex;
-			justify-content: space-between;
-			flex-direction: column;
-		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
-		<div class="card">
-			<div class="card-header">
-				<h2>Add Reps</h2>
+		<h2>Add Reps</h2>
+		<form action="/inventorybilling/addReps" method="post" th:object="${reps}">
+			<div class="form-group">
+				<label for="repName">Name:</label>
+				<input type="text" id="repName" name="repName" th:field="*{repName}" class="form-control" required />
 			</div>
-			<div class="card-body">
-				<form action="/inventorybilling/addReps" method="post" th:object="${reps}">
-					<div class="form-group">
-						<label for="repName">Name:</label>
-						<input type="text" id="repName" name="repName" th:field="*{repName}" class="form-control"
-							required />
-					</div>
-					<div class="form-group">
-						<label for="repLocation">Location:</label>
-						<input type="text" id="repLocation" name="repLocation" th:field="*{repLocation}"
-							class="form-control" required />
-					</div>
+			<div class="form-group">
+				<label for="repLocation">Location:</label>
+				<input type="text" id="repLocation" name="repLocation" th:field="*{repLocation}" class="form-control"
+					required />
+			</div>
 
-					<!-- Add a "Save" button to submit the form -->
-					<button type="submit" class="btn btn-info">Save</button>
-				</form>
-			</div>
-			<footer>
-				<div class="card-footer">
-					<!-- Add a "Back to Reps List" button -->
-					<a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
-					<!-- Add a "Home" button to navigate to the homepage -->
-					<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-					<b>.....On Add Reps Page.....</b>
-				</div>
-			</footer>
+			<!-- Add a "Save" button to submit the form -->
+			<button type="submit" class="btn btn-info">Save</button>
+		</form>
+		<footer>
+
+			<!-- Add a "Back to Reps List" button -->
+			<a href="/inventorybilling/showRepsList" class="btn btn-secondary">Back to Reps List</a>
+			<!-- Add a "Home" button to navigate to the homepage -->
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<b>.....On Add Reps Page.....</b>
+
+		</footer>
+	</div>
 
 
 

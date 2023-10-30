@@ -2,111 +2,137 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Party List</title>
-    <!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Party List</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-align: left;
+			/* Align content to the left */
+		}
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+		h2 {
+			color: #333;
+			margin-bottom: 20px;
+		}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
 
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: left;
+			background-color: #f4f4f4;
+		}
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
+		th {
+			background-color: #f4f4f4;
+		}
 
-        th {
-            background-color: #f2f2f2;
-        }
+		a {
+			display: inline-block;
+			margin: 10px 0;
+			text-decoration: none;
+			color: #007bff;
+		}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-right: 10px;
-            text-decoration: none;
-        }
+		a:hover {
+			text-decoration: underline;
+		}
 
-        .btn-secondary {
-            background-color: #6c757d;
-        }
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
 
-        .btn-secondary:hover {
-            background-color: #5a6268;
-        }
+		.btn-secondary {
+			background-color: #555;
+		}
 
-        b {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+		.btn-secondary:hover {
+			background-color: #333;
+		}
+
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Party List</h2>
-        <!-- Display a table with party details -->
-        <table>
-			<caption>a table with party details</caption>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Iterate through the list of parties -->
-                <tr th:each="party : ${partyList}">
-                    <td th:text="${party.partyId}"></td>
-                    <td th:text="${party.partyName}"></td>
-                    <td th:text="${party.partyLocation}"></td>
-                    <td>
-                        <!-- Add a "View Details" button linking to partyDetails page -->
-                        <a th:href="@{'/partyDetails/' + ${party.partyId}}" class="btn btn-info">View Details</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- Add "Add Party" and "Home" buttons -->
-        <a href="/inventorybilling/showAddParty" class="btn btn-success">Add Party</a>
-        <a href="showBookOrder" class="btn btn-secondary">Book Order</a>
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-        <b>.....On Party List Page.....</b>
-    </div>
+	<div class="container">
+		<h2>Party List</h2>
+		<table>
+			<caption>.....Party Details.....</caption>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Location</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="party : ${partyList}">
+					<td th:text="${party.partyId}"></td>
+					<td th:text="${party.partyName}"></td>
+					<td th:text="${party.partyLocation}"></td>
+					<td>
+						<a th:href="@{'/partyDetails/' + ${party.partyId}}" class="btn btn-info">View Details</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<footer>
+			<a href="/inventorybilling/showAddParty" class="btn btn-secondary">Add Party</a>
+			<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<b>.....On Party List Page.....</b>
+		</footer>
+	</div>
 </body>
+
 </html>

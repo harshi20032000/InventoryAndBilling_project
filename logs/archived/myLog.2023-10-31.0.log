@@ -1,0 +1,552 @@
+2023-10-31 01:04:01|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-31 01:04:01|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 22388 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-31 01:04:01|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-31 01:04:01|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-31 01:04:01|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 53 ms. Found 11 JPA repository interfaces.
+2023-10-31 01:04:02|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-31 01:04:02|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-31 01:04:02|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-31 01:04:02|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-31 01:04:02|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-31 01:04:02|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1035 ms
+2023-10-31 01:04:02|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-31 01:04:02|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-31 01:04:02|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-31 01:04:02|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 01:04:02|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-31 01:04:02|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-31 01:04:03|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70d687b8
+2023-10-31 01:04:03|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-31 01:04:03|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 01:04:04|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-31 01:04:04|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 01:04:04|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-31 01:04:05|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-31 01:04:05|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-31 01:04:05|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-31 01:04:05|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-31 01:04:05|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 4.693 seconds (process running for 5.498)
+2023-10-31 01:04:19|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-31 01:04:19|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-31 01:04:19|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2023-10-31 01:04:28|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.UserController-Displaying the login page
+2023-10-31 01:04:31|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.UserController-Attempting login for email: harshibabu604@gmail.com
+2023-10-31 01:04:31|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.UserController-Login successful for email: HARSHIBABU604@GMAIL.COM
+2023-10-31 01:04:35|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 01:04:57|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:05:00|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:05:06|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:05:15|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:05:17|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 01:05:26|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:05:27|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:05:32|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:05:37|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:05:40|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:05:42|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:05:53|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 01:05:59|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the add party form
+2023-10-31 01:10:36|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:10:38|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:10:40|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:11:22|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:29:36|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:31:05|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:32:52|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:32:53|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 01:33:04|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:33:06|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:33:11|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:34:47|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:34:49|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 01:34:56|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:36:14|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 01:36:16|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the add party form
+2023-10-31 01:36:25|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:36:43|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 01:36:46|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the add products form
+2023-10-31 01:42:48|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:42:50|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:42:52|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:43:03|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:43:39|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 01:43:41|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the add party form
+2023-10-31 01:43:59|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:44:01|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 01:44:04|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 01:49:19|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:49:21|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 01:49:23|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the add party form
+2023-10-31 01:49:30|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:49:33|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 01:57:33|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 01:57:34|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 01:57:52|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:05:27|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:10:46|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:12:29|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:15:54|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:20:24|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:21:14|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:24:42|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:25:52|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:26:10|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:26:46|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:26:48|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 02:26:51|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:26:53|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:26:59|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:27:10|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-31 02:27:18|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:27:20|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:27:32|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:27:33|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-31 02:30:19|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:30:20|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:30:39|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:30:43|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-31 02:30:46|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:30:49|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:32:04|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:32:36|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:33:58|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:39:05|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:39:07|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-31 02:39:09|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:39:11|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:40:53|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:41:00|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:41:02|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:41:08|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:41:09|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:41:11|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 02:41:13|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:41:15|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:46:27|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:46:34|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:47:47|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:48:15|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:48:49|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:49:13|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:49:16|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:49:20|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 02:49:22|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:49:24|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:49:25|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 4
+2023-10-31 02:49:37|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:49:40|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 02:49:59|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:50:04|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:50:08|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:50:11|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:50:16|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:50:20|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 02:50:26|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:50:28|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:50:34|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:50:35|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 02:50:52|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:50:54|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:52:45|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:52:45|[http-nio-8087-exec-6]|ERROR|org.thymeleaf.TemplateEngine-[THYMELEAF][http-nio-8087-exec-6] Exception processing template "productView/productsList": An error happened during template parsing (template: "class path resource [templates/productView/productsList.html]" - line 156, col 7)
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/productView/productsList.html]" - line 156, col 7)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.attoparser.ParseException: (Line = 156, Column = 7) Incomplete structure: "<a th:href="@{'/productDetails/' + ${product.productId}}" class="btn btn-info>View Details</a>
+					</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <a href="showBookOrder" class="btn btn-secondary">Book Order</a>
+            <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+            <div><b>.....On Product List Page.....</b></div>
+        </footer>
+    </div>
+</body>
+
+</html>
+"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+2023-10-31 02:52:45|[http-nio-8087-exec-6]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/productView/productsList.html]" - line 156, col 7)] with root cause
+org.attoparser.ParseException: (Line = 156, Column = 7) Incomplete structure: "<a th:href="@{'/productDetails/' + ${product.productId}}" class="btn btn-info>View Details</a>
+					</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <a href="showBookOrder" class="btn btn-secondary">Book Order</a>
+            <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+            <div><b>.....On Product List Page.....</b></div>
+        </footer>
+    </div>
+</body>
+
+</html>
+"
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:366)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-31 02:52:45|[http-nio-8087-exec-6]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi.inventory_and_billing.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-31 02:52:45|[http-nio-8087-exec-6]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]-Exception Processing ErrorPage[errorCode=0, location=/error]
+jakarta.servlet.ServletException: Request processing failed: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1019)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi.inventory_and_billing.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	... 36 common frames omitted
+2023-10-31 02:53:37|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:53:50|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:53:53|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:53:56|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:53:58|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 02:54:07|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:54:08|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:54:12|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:54:14|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:54:21|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:54:22|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 02:54:24|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:54:27|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 02:54:41|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:54:44|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 02:54:49|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 02:58:39|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:01:58|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:02:10|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:02:11|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:02:15|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:02:17|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:02:21|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:02:24|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:05:01|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:05:03|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:05:53|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:05:54|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:05:57|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:05:58|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:06:02|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:06:05|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:10:09|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:10:38|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:10:48|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:10:50|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:10:52|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 03:10:55|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:10:58|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:11:04|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 03:11:28|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 03:11:31|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:11:34|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:11:39|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 03:11:42|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:11:45|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:11:51|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:11:52|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:12:20|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:12:24|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:12:31|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showAddWarehouse() on WarehouseController
+2023-10-31 03:12:34|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:12:39|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:12:46|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 03:12:48|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:12:50|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:12:53|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 03:13:06|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:13:16|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:13:19|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:13:33|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:13:36|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:13:39|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:13:41|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:13:44|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showAddWarehouse() on WarehouseController
+2023-10-31 03:13:47|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:13:51|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:13:55|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:13:57|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:14:01|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:14:21|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:16:46|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:16:52|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the add products form
+2023-10-31 03:17:03|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:17:07|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:17:22|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:17:24|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:17:26|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:17:28|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:17:39|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:17:42|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:17:46|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:17:51|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:18:33|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:18:35|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:18:41|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:18:45|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:19:14|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:19:23|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:19:27|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:19:29|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:19:31|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:19:33|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:19:36|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:19:40|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:19:42|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:25:02|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:26:30|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:29:47|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:30:18|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:30:20|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:30:26|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:30:29|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 03:30:33|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:30:36|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:31:55|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:31:58|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:32:00|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:32:45|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:32:47|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:33:26|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:36:24|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:36:45|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:36:46|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:36:56|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showAddWarehouse() on WarehouseController
+2023-10-31 03:36:58|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:37:00|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:37:04|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 3
+2023-10-31 03:37:07|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:37:09|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:37:14|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the add party form
+2023-10-31 03:37:15|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:37:17|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:37:20|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:37:22|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:38:32|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:39:18|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:39:23|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:39:26|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 03:41:04|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:41:06|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 03:41:10|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:41:12|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 03:42:13|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 03:42:17|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the add transport form
+2023-10-31 03:42:19|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:42:22|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 03:42:26|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:42:28|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 03:42:30|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 03:42:32|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:42:35|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-31 03:42:38|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:44:09|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-31 03:44:09|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-31 03:44:09|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-31 03:44:09|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-31 03:44:09|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-31 03:44:09|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-31 03:44:10|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 03:44:10|[RMI TCP Connection(168)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-31 03:44:10|[RMI TCP Connection(168)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.

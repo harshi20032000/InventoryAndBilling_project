@@ -2,32 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<!-- ... (head content) ... -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order List</title>
+
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f4f4f4;
 			margin: 0;
 			padding: 0;
-		}
-
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-			background-color: #f2f2f2;
-			border: 1px solid #ddd;
-			border-radius: 5px;
+			text-align: center;
 		}
 
 		h2 {
 			color: #333;
 			margin-bottom: 20px;
+
 		}
 
 		table {
 			width: 100%;
 			border-collapse: collapse;
+			margin: 0 auto;
 		}
 
 		th,
@@ -35,12 +32,14 @@
 			border: 1px solid #ddd;
 			padding: 10px;
 			text-align: left;
+			background-color: #f4f4f4;
 		}
 
 		th {
-			background-color: #f2f2f2;
+			background-color: #f4f4f4;
 		}
 
+		/* Reusable link styles */
 		a {
 			display: inline-block;
 			margin: 5px 0;
@@ -52,6 +51,43 @@
 			text-decoration: underline;
 		}
 
+		caption,
+		p {
+			padding: 10px;
+			text-align: center;
+			color: #000;
+			font-weight: bold;
+		}
+
+		/* Reusable footer styles */
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+
+		/* Reusable container styles */
+		.container {
+			max-width: 800px;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-align: left;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Reusable button styles */
 		.btn {
 			background-color: #007bff;
 			color: #fff;
@@ -77,20 +113,26 @@
 			background-color: #117a8b;
 		}
 
-		footer {
+		.amount-container {
 			text-align: center;
-			background-color: #fff;
-			color: #333;
-			margin-top: 20px;
-			max-width: 800px;
-			/* Add this property */
-			margin: 20px auto;
-			padding: 20px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		.amount-box {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			background-color: #555;
+			color: #fff;
 			border-radius: 5px;
-			display: flex;
-			justify-content: space-between;
-			flex-direction: column;
+		}
+
+		.amount-label {
+			font-weight: bold;
+		}
+
+		.amount-value {
+			font-size: 18px;
+			font-weight: bold;
 		}
 	</style>
 </head>
@@ -98,9 +140,8 @@
 <body>
 	<div class="container">
 		<h2>Order List</h2>
-		<!-- Display a table with order details -->
-		<!-- Display a table with order details -->
 		<table>
+			<caption>.....Order Details.....</caption>
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -117,29 +158,29 @@
 				<tr th:each="order : ${orderList}">
 					<td th:text="${order.orderId}"></td>
 					<td th:text="${order.orderDate}"></td>
-					<!-- Use the null-safe navigation operator to access partyName -->
 					<td th:text="${order.party != null ? order.party.partyName : 'N/A'}"></td>
-					<!-- Use the null-safe navigation operator to access repName -->
 					<td th:text="${order.reps != null ? order.reps.repName : 'N/A'}"></td>
-					<!-- Display totalBillAmount or 'NA' -->
 					<td th:text="${order.totalBillAmount != null ? order.totalBillAmount : 'N/A'}"></td>
-					<!-- Display remainingBillAmount or 'NA' -->
 					<td th:text="${order.remainingBillAmount != null ? order.remainingBillAmount : 'N/A'}"></td>
 					<td>
-						<!-- Add a "View Details" button linking to OrderDetailsPage -->
 						<a th:href="@{'/orderDetails/' + ${order.orderId}}" class="btn btn-info">View Details</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 
-		<div>
-			<p>Net Total Amount: <span th:text="${totalBillAmount}"></span></p>
-			<p>Net Remaining Amount: <span th:text="${totalRemainingAmount}"></span></p>
+		<div class="amount-container">
+			<div class="amount-box">
+				<div class="amount-label">Net Total Amount:</div>
+				<div class="amount-value" th:text="${totalBillAmount}"></div>
+			</div>
+			<div class="amount-box">
+				<div class="amount-label">Net Remaining Amount:</div>
+				<div class="amount-value" th:text="${totalRemainingAmount}"></div>
+			</div>
 		</div>
 
 		<footer>
-			<!-- Added "Book Order" and "Home" buttons -->
 			<a href="showBookOrder" class="btn btn-secondary">Book Order</a>
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<div><b>.....On Order List Page.....</b></div>
