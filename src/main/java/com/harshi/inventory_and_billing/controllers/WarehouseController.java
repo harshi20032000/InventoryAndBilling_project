@@ -199,16 +199,11 @@ public class WarehouseController {
         try {
             // Update the warehouse quantities in the database
             Warehouse fetchedWarehouse = warehouseService.getWarehouseById(warehouse.getWareId());
-            if (Objects.equals(fetchedWarehouse.getWareId(), warehouse.getWareId())) {
                 fetchedWarehouse.setProductQuantities(warehouse.getProductQuantities());
                 warehouseService.saveWarehouse(fetchedWarehouse);
                 
                 // Log a success message when the update is completed
                 LOGGER.info("Updated warehouse quantities for Warehouse ID: {}", fetchedWarehouse.getWareId());
-            } else {
-                // Log a message if there's an issue with the warehouse ID
-                LOGGER.error("Invalid Warehouse ID provided for update: {}", warehouse.getWareId());
-            }
         } catch (Exception e) {
             // Log an error message if an exception occurs during the update
             LOGGER.error("Error updating warehouse quantities: {}", e.getMessage());
