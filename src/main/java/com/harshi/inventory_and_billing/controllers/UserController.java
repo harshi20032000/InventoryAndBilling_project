@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.harshi.inventory_and_billing.entities.User;
-import com.harshi.inventory_and_billing.repo.UserRepository;
-import com.harshi.inventory_and_billing.service.SecurityService;
+import com.harshi.inventory_and_billing.service.UserService;
 
 /**
  * Controller class for managing user-related operations including registration and login.
@@ -23,10 +22,7 @@ public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private SecurityService securityService;
+    private UserService userService;
 
     /**
      * Display the registration page.
@@ -50,15 +46,8 @@ public class UserController {
     public String register(@ModelAttribute("user") User user, ModelMap modelMap) {
         LOGGER.info("Registering user: {}", user);
         try {
-            // Convert user data to uppercase
-            user.setEmail(user.getEmail().toUpperCase());
-            user.setLastName(user.getLastName().toUpperCase());
-            user.setFirstName(user.getFirstName().toUpperCase());
-            user.setPassword(user.getPassword().toUpperCase());
-
-            // Save the user
-            userRepository.save(user);
-            LOGGER.info("User registered: {}", user);
+            User savedUser = userService.saveUser(user);
+            LOGGER.info("User registered: {}", savedUser);
             return "loginView/login";
         } catch (Exception e) {
             // Handle the exception
@@ -70,7 +59,6 @@ public class UserController {
             return "error"; // Return to the error view with the error message
         }
     }
-
 
     /**
      * Display the login page.
@@ -97,7 +85,7 @@ public class UserController {
         LOGGER.info("Attempting login for email: {}", email);
         email=email.toUpperCase();
         password=password.toUpperCase();
-        boolean isLoginSuccess = securityService.login(email, password);
+        boolean isLoginSuccess = userService.login(email, password);
         if (isLoginSuccess) {
             LOGGER.info("Login successful for email: {}", email);
             modelMap.addAttribute("msg", "Login Success!");
