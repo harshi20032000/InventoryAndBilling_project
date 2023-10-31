@@ -2,147 +2,353 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add New Payment to Order</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add New Payment To Order</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		h3 {
+			color: #333;
+			margin-bottom: 10px;
+		}
+
+		p {
+			color: #777;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 0 auto;
+		}
+
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: left;
+			background-color: #f4f4f4;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		a {
+			display: inline-block;
+			margin: 10px 0;
+			text-decoration: none;
+			color: #007bff;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		caption,
+		p {
+			padding: 10px;
+			text-align: left;
+			color: #000;
+			font-weight: bold;
+		}
+
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.btn-secondary {
+			background-color: #555;
+		}
+
+		.btn-secondary:hover {
+			background-color: #333;
+		}
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			margin-top: 20px;
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+	</style>
 </head>
 
 <body>
-	<div>
-		<h3>Order Details</h3>
-		<p>Order ID: <span th:text="${order.orderId}"></span></p>
-		<p>Order Date: <span th:text="${order.orderDate}"></span></p>
-	</div>
-
-	<!-- Display Selected Rep Details -->
-	<div>
-		<h3>Selected Rep Details</h3>
-		<p>Reps ID: <span th:text="${order.reps?.repId} ?: 'N/A'"></span></p>
-		<p>Reps Name: <span th:text="${order.reps?.repName} ?: 'N/A'"></span></p>
-		<p>Reps Location: <span th:text="${order.reps?.repLocation} ?: 'N/A'"></span></p>
-		<!-- Add more rep details as needed -->
-	</div>
-
-	<!-- Display Party Details -->
-	<h3>Party Details</h3>
-	<p>Party ID: <span th:text="${order.party?.partyId} ?: 'N/A'"></span></p>
-	<p>Party Name: <span th:text="${order.party?.partyName} ?: 'N/A'"></span></p>
-	<p>Party Location: <span th:text="${order.party?.partyLocation} ?: 'N/A'"></span></p>
-	<!-- Add any other party details as needed -->
-
-	<!-- Display Product Line Items -->
-	<h3>Order Line Items</h3>
-	<table>
-		<caption>Display Added Product Line Items</caption>
-		<thead>
-			<tr>
-				<th>Product</th>
-				<th>Rate</th>
-				<th>Quantity</th>
-				<th>Total Price</th>
-				<th>Warehouse-Quantities</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="lineItem : ${order.orderLineItems}">
-				<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
-				<td th:text="${lineItem.rate}"></td>
-				<td th:text="${lineItem.quantity}"></td>
-				<td th:text="${lineItem.rate * lineItem.quantity}"></td>
-				<td colspan="4">
-					<table>
-						<caption>Display From which warehouse Product Line Items were selected</caption>
-						<thead>
-							<tr>
-								<th>WareID</th>
-								<th>WareName</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
-								<td th:text="${entry.key.wareId}"></td>
-								<td th:text="${entry.key.wareName}"></td>
-								<td th:text="${entry.value}"></td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<!-- Display a message if there are no order line items -->
-	<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
-
-	<!-- Display Total Order Price and Total Order Quantity if there are order line items -->
-	<!-- Display Total Order Price if it's not null or empty -->
-	<h3 th:if="${totalAmount != null and totalAmount > 0}">Total Bill Amount: <span th:text="${totalAmount}"></span>
-	</h3>
-	
-	<h3 th:if="${remainingAmount != null and remainingAmount > 0}">Remaining Amount: <span th:text="${remainingAmount}"></span>
-	</h3>
-
-	<!-- Display Total Order Quantity if it's not null or empty -->
-	<h3 th:if="${totalQuantities != null and totalQuantities > 0}">Total Order Quantity: <span
-			th:text="${totalQuantities}"></span>
-	</h3>
-
 	<div class="container">
-		<h2>Add Payment to Order</h2>
-
-		<!-- Create a form for adding a new payment -->
-		<form action="/inventorybilling/addOrderPayment" method="post">
-			<h3>Payment Details</h3>
-
-			<!-- Add payment date input -->
-			<div class="form-group">
-				<label for="payDate">Payment Date:</label>
-				<input type="date" class="form-control" name="payDate" />
+		<!-- Display Order Details -->
+		<div>
+			<h3>Add New Payment To Order</h3>
+			<div style="display: flex; justify-content: space-between;">
+				<p>Order ID: <span th:text="${order.orderId}"></span></p>
+				<p>Order Date: <span th:text="${order.orderDate}"></span></p>
 			</div>
-
-			<!-- Add payment amount input -->
-			<div class="form-group">
-				<label for="payAmount">Payment Amount:</label>
-				<input type="text" class="form-control" name="payAmount" />
-			</div>
-
-			<!-- Add payment mode input -->
-			<div class="form-group">
-				<label for="payMode">Payment Mode:</label>
-				<select class="form-control" name="payMode">
-					<option value="CASH">CASH</option>
-					<option value="ONLINE">ONLINE</option>
-				</select>
-			</div>
-
-			<!-- Add payment type input -->
-			<div class="form-group">
-				<label for="payType">Payment Type:</label>
-				<select class="form-control" name="payType">
-					<option value="ADVANCE">ADVANCE</option>
-					<option value="PENDING">PENDING</option>
-				</select>
-			</div>
+		</div>
 
 
-			<!-- Add hidden input for orderId -->
-			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+		<!-- Display Selected Rep Details -->
+		<div th:if="${order.reps != null}">
+			<table>
+				<caption>Selected Rep Details</caption>
+				<tbody>
+					<tr>
+						<td>Reps ID:</td>
+						<td th:text="${order.reps.repId} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Reps Name:</td>
+						<td th:text="${order.reps.repName} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Reps Location:</td>
+						<td th:text="${order.reps.repLocation} ?: 'N/A'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-			<!-- Add a "Add Payment" button to submit the payment details -->
-			<button type="submit" class="btn btn-success">Add Payment</button>
-		</form>
 
-		<!-- Add a "Back to Order Details" button -->
-		<a href="/inventorybilling/orderDetails/${order.orderId}" class="btn btn-secondary">Back to Order Details</a>
-	</div>
+		<!-- Display Party Details -->
+		<div th:if="${order.party != null}">
+			<table>
+				<caption>Party Details</caption>
+				<tbody>
+					<tr>
+						<td>Party ID:</td>
+						<td th:text="${order.party.partyId} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Party Name:</td>
+						<td th:text="${order.party.partyName} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Party Location:</td>
+						<td th:text="${order.party.partyLocation} ?: 'N/A'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-	<!-- Add a "Back to Order List" button -->
-	<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
-	<!-- Add buttons to navigate to the homepage -->
-	<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-	<b>.....On Add Order Payment Page.....</b>
-	</div>
+
+
+		<table>
+			<caption>....Order Line Items....</caption>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Rate</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Warehouse-Quantities</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="lineItem : ${order.orderLineItems}">
+					<td th:text="${lineItem.product?.brandName} ?: 'N/A'"></td>
+					<td th:text="${lineItem.rate}"></td>
+					<td th:text="${lineItem.quantity}"></td>
+					<td th:text="${lineItem.rate * lineItem.quantity}"></td>
+					<td colspan="4">
+						<table>
+							<thead>
+								<tr>
+									<th>WareName</th>
+									<th>Quantity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="entry : ${lineItem.orderWarehouseQuantities}">
+									<td th:text="${entry.key.wareName}"></td>
+									<td th:text="${entry.value}"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
+
+		<!-- Display Total Bill Amount, Remaining Amount, and Total Order Quantity -->
+		<div th:if="${totalAmount != null or remainingAmount != null or totalQuantities != null}">
+			<table>
+				<caption>Total Order Summary</caption>
+				<thead>
+					<tr>
+						<th>Details</th>
+						<th>Amount/Quantity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${totalQuantities != null and totalQuantities > 0}">
+						<td>Total Order Quantity:</td>
+						<td th:text="${totalQuantities}"></td>
+					</tr>
+					<tr th:if="${totalAmount != null and totalAmount > 0}">
+						<td>Total Bill Amount:</td>
+						<td th:text="${totalAmount}"></td>
+					</tr>
+					<tr th:if="${remainingAmount != null and remainingAmount > 0}">
+						<td>Remaining Amount:</td>
+						<td th:text="${remainingAmount}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<!-- Display Transport Details -->
+		<div th:if="${order.transportAndBuiltNumber != null}">
+			<table>
+				<caption>Transport Details</caption>
+				<tbody>
+					<tr th:if="${order.transportAndBuiltNumber.transport != null}">
+						<td>Transport Name:</td>
+						<td th:text="${order.transportAndBuiltNumber.transport.transportName} ?: 'N/A'"></td>
+					</tr>
+					<tr th:if="${order.transportAndBuiltNumber.transport != null}">
+						<td>Contact Details:</td>
+						<td th:text="${order.transportAndBuiltNumber.transport.contactDetails} ?: 'N/A'"></td>
+					</tr>
+					<tr>
+						<td>Bilty No:</td>
+						<td th:text="${order.transportAndBuiltNumber.builtNumber} ?: 'N/A'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<table th:if="${not #lists.isEmpty(order.payments)}">
+			<caption>....Payment Details....</caption>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Amount</th>
+					<th>Mode</th>
+					<th>Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="payment : ${order.payments}">
+					<td th:text="${payment.payDate}"></td>
+					<td th:text="${payment.payAmount}"></td>
+					<td th:text="${payment.payMode}"></td>
+					<td th:text="${payment.payType}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<p th:if="${#lists.isEmpty(order.payments)}">No payment information yet.</p>
+
+		<table>
+			<caption>Order Status History</caption>
+			<thead>
+				<tr>
+					<th>Update Timestamp</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="change : ${order.statusHistory}">
+					<td th:text="${change.updateTimestamp}"></td>
+					<td th:text="${change.orderStatus}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="container">
+			<h2>Add Payment to Order</h2>
+
+			<!-- Create a form for adding a new payment -->
+			<form action="/inventorybilling/addOrderPayment" method="post">
+				<h3>Payment Details</h3>
+
+				<!-- Add payment date input -->
+				<div class="form-group">
+					<label for="payDate">Payment Date:</label>
+					<input type="date" class="form-control" name="payDate" />
+				</div>
+
+				<!-- Add payment amount input -->
+				<div class="form-group">
+					<label for="payAmount">Payment Amount:</label>
+					<input type="text" class="form-control" name="payAmount" />
+				</div>
+
+				<!-- Add payment mode input -->
+				<div class="form-group">
+					<label for="payMode">Payment Mode:</label>
+					<select class="form-control" name="payMode">
+						<option value="CASH">CASH</option>
+						<option value="ONLINE">ONLINE</option>
+					</select>
+				</div>
+
+				<!-- Add payment type input -->
+				<div class="form-group">
+					<label for="payType">Payment Type:</label>
+					<select class="form-control" name="payType">
+						<option value="ADVANCE">ADVANCE</option>
+						<option value="PENDING">PENDING</option>
+					</select>
+				</div>
+
+
+				<!-- Add hidden input for orderId -->
+				<input type="hidden" name="orderId" th:value="${order.orderId}" />
+
+				<!-- Add a "Add Payment" button to submit the payment details -->
+				<button type="submit" class="btn btn-info">Add Payment</button>
+			</form>
+		</div>
+		<footer>
+			<!-- Add a "Back to Order Details" button -->
+			<a th:href="@{'/orderDetails/'+ ${order.orderId}}" class="btn btn-secondary">Back to Order Details</a>
+			<!-- Add a "Back to Order List" button -->
+			<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
+			<!-- Add buttons to navigate to the homepage -->
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<b>.....On Add Order Payment Page.....</b>
+		</footer>
+
+</div>
 </body>
 
 </html>

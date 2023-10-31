@@ -550,3 +550,312 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.we
 2023-10-31 03:44:10|[RMI TCP Connection(168)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-10-31 03:44:10|[RMI TCP Connection(168)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
 2023-10-31 03:44:10|[RMI TCP Connection(168)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-31 03:45:37|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-31 03:45:37|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 13972 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-31 03:45:37|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-31 03:45:38|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-31 03:45:38|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 54 ms. Found 11 JPA repository interfaces.
+2023-10-31 03:45:38|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-31 03:45:38|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-31 03:45:38|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-31 03:45:38|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-31 03:45:38|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-31 03:45:38|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 888 ms
+2023-10-31 03:45:38|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-31 03:45:38|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-31 03:45:38|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-31 03:45:38|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 03:45:38|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-31 03:45:38|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-31 03:45:39|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ae66c98
+2023-10-31 03:45:39|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-31 03:45:39|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 03:45:39|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-31 03:45:40|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 03:45:40|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-31 03:45:40|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-31 03:45:40|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-31 03:45:40|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-31 03:45:40|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-31 03:45:40|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 3.396 seconds (process running for 4.219)
+2023-10-31 03:45:47|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-31 03:45:47|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-31 03:45:47|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2023-10-31 03:45:47|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 03:46:00|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 3
+2023-10-31 03:46:16|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 4 for order with ID: 8
+2023-10-31 03:46:26|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 8
+2023-10-31 03:46:43|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 8
+2023-10-31 03:46:55|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 8
+2023-10-31 03:46:58|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:47:00|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 1
+2023-10-31 03:47:16|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:47:22|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:47:35|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:47:39|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-10-31 03:47:42|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:47:43|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:48:44|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 1
+2023-10-31 03:49:09|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 03:49:19|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:49:26|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 03:49:33|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 1
+2023-10-31 03:49:38|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:49:40|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:49:43|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 03:58:44|[HikariPool-1 housekeeper]|WARN |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m4s900ms165µs600ns).
+2023-10-31 03:58:47|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 03:58:50|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 03:58:54|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:02:10|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:06:54|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:09:13|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:09:14|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:10:14|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 04:11:06|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 04:12:27|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 04:14:35|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 04:15:25|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 04:16:05|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 8
+2023-10-31 04:17:52|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:17:54|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:18:01|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:18:04|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:18:05|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:21:58|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:23:29|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:24:50|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:26:31|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:26:34|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:26:39|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 04:26:53|[RMI TCP Connection(48)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-31 04:26:54|[RMI TCP Connection(48)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-31 04:29:53|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-31 04:29:53|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 10328 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-10-31 04:29:53|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-31 04:29:54|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-31 04:29:54|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 226 ms. Found 11 JPA repository interfaces.
+2023-10-31 04:29:55|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-31 04:29:55|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-31 04:29:55|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-31 04:29:55|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-31 04:29:55|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-31 04:29:55|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2628 ms
+2023-10-31 04:29:56|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-31 04:29:56|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-31 04:29:56|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-31 04:29:56|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 04:29:56|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-31 04:29:56|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-31 04:29:57|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a7a6d34
+2023-10-31 04:29:57|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-31 04:29:58|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 04:29:59|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-31 04:29:59|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 04:30:00|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-31 04:30:01|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-31 04:30:01|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-31 04:30:01|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-31 04:30:01|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-31 04:30:01|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 9.407 seconds (process running for 10.713)
+2023-10-31 04:30:06|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-31 04:30:06|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-31 04:30:06|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2023-10-31 04:30:06|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:30:08|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 04:30:18|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:30:20|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 04:30:28|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-31 04:30:31|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 9
+2023-10-31 04:30:43|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 9
+2023-10-31 04:30:52|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 9
+2023-10-31 04:31:19|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 10 in order with ID: 9
+2023-10-31 04:31:29|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 10 in order with ID: 9
+2023-10-31 04:31:38|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 4 for order with ID: 9
+2023-10-31 04:31:41|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:31:49|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 9
+2023-10-31 04:31:57|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:32:06|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 04:32:31|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 6
+2023-10-31 04:36:30|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 2 for order with ID: 10
+2023-10-31 04:39:15|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 8 in order with ID: 10
+2023-10-31 04:41:26|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 8 in order with ID: 10
+2023-10-31 04:46:53|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 12 in order with ID: 10
+2023-10-31 04:47:16|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 12 in order with ID: 10
+2023-10-31 04:49:54|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 10
+2023-10-31 04:49:58|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:50:02|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 10
+2023-10-31 04:50:35|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 10
+2023-10-31 04:51:30|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:51:33|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:51:40|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:51:57|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 04:52:00|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the add products form
+2023-10-31 04:52:37|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 04:52:47|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 04:52:50|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 04:52:54|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-31 04:57:46|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 3 for order with ID: 11
+2023-10-31 05:01:43|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 7 in order with ID: 11
+2023-10-31 05:01:54|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 7 in order with ID: 11
+2023-10-31 05:10:06|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 11
+2023-10-31 05:10:20|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 11
+2023-10-31 05:12:20|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 8 in order with ID: 11
+2023-10-31 05:12:32|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 8 in order with ID: 11
+2023-10-31 05:21:02|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 11
+2023-10-31 05:27:45|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 11
+2023-10-31 05:29:07|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 3 in order with ID: 11
+2023-10-31 05:32:14|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 3 in order with ID: 11
+2023-10-31 05:32:34|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 2 in order with ID: 11
+2023-10-31 05:33:13|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 2 in order with ID: 11
+2023-10-31 05:37:48|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 4 for order with ID: 11
+2023-10-31 05:41:12|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 05:41:17|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 05:41:21|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 4
+2023-10-31 05:41:26|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 4 for order with ID: 12
+2023-10-31 05:41:36|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 6 in order with ID: 12
+2023-10-31 05:42:32|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 6 in order with ID: 12
+2023-10-31 05:43:11|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 3 in order with ID: 12
+2023-10-31 05:43:50|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 3 in order with ID: 12
+2023-10-31 05:46:40|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 12
+2023-10-31 05:46:58|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 12
+2023-10-31 05:47:20|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 12
+2023-10-31 05:47:23|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 05:47:26|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 05:49:43|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 06:24:40|[http-nio-8087-exec-10]|WARN |org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "${order.orderId}"]
+2023-10-31 06:24:40|[http-nio-8087-exec-10]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi.inventory_and_billing.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-31 06:24:40|[http-nio-8087-exec-10]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]-Exception Processing ErrorPage[errorCode=0, location=/error]
+jakarta.servlet.ServletException: Request processing failed: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1019)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi.inventory_and_billing.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	... 35 common frames omitted
+2023-10-31 06:25:26|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 06:25:50|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 06:25:56|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 06:26:35|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 06:26:40|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 06:26:43|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 06:26:48|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 06:26:56|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 06:26:58|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 12
+2023-10-31 06:27:03|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-10-31 06:27:14|[RMI TCP Connection(127)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
