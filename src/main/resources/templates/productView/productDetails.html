@@ -70,6 +70,44 @@
 
 		a.button:hover {
 			background-color: #555;
+			text-decoration: underline;
+		}
+		.amount-container {
+			text-align: center;
+		}
+
+		.amount-box {
+			display: flex;
+			margin: 10px;
+			padding: 10px;
+			background-color: #333;
+			color: #fff;
+			border-radius: 5px;
+			max-width: 800px;
+		}
+
+		.amount-label {
+			font-weight: bold;
+			margin-right: 10px;
+		}
+
+		.amount-value {
+			font-size: 18px;
+			font-weight: bold;
+		}
+		/* Reusable footer styles */
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 		}
 	</style>
 </head>
@@ -85,6 +123,7 @@
 
 		<h3>Warehouses</h3>
 		<table>
+			<caption>.....Warehouses-Quantity Details.....</caption>
 			<thead>
 				<tr>
 					<th>Warehouse ID</th>
@@ -106,14 +145,24 @@
 				</tr>
 			</tbody>
 		</table>
-		<p>Total Product Quantity: <span th:text="${totalProductQuantity}"></span></p>
+		
+		<div class="amount-container">
+			<div class="amount-box">
+				<div class="amount-label">Total Product Quantity:</div>
+				<div class="amount-value" th:text="${totalProductQuantity}"></div>
+			</div>
+		</div>
+		
+		<footer>
 		<!-- Add an "Edit Quantities" button with the productId as a request parameter -->
+		
 		<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button" id="editQuantitiesButton">Edit
 			Quantities</a>
 		<!-- Add buttons to navigate to the homepage and product list page -->
-		<a href="/inventorybilling/showLanding" class="button">Home</a>
 		<a href="/inventorybilling/showProductsList" class="button">Product List</a>
+		<a href="/inventorybilling/showLanding" class="button">Home</a>
 		<b>.....On Product Details Page.....</b>
+		</footer>
 	</div>
 
 </body>

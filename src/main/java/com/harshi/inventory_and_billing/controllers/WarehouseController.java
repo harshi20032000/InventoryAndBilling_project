@@ -1,6 +1,7 @@
 package com.harshi.inventory_and_billing.controllers;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -198,7 +199,7 @@ public class WarehouseController {
         try {
             // Update the warehouse quantities in the database
             Warehouse fetchedWarehouse = warehouseService.getWarehouseById(warehouse.getWareId());
-            if (fetchedWarehouse.getWareId() == warehouse.getWareId()) {
+            if (Objects.equals(fetchedWarehouse.getWareId(), warehouse.getWareId())) {
                 fetchedWarehouse.setProductQuantities(warehouse.getProductQuantities());
                 warehouseService.saveWarehouse(fetchedWarehouse);
                 
