@@ -1,5 +1,6 @@
 package com.harshi.inventory_and_billing.controllers;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -17,7 +18,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.harshi.inventory_and_billing.entities.Document;
 import com.harshi.inventory_and_billing.entities.Order;
 import com.harshi.inventory_and_billing.entities.OrderLineItem;
 import com.harshi.inventory_and_billing.entities.Party;
@@ -29,6 +32,7 @@ import com.harshi.inventory_and_billing.entities.TransportAndBuiltNumber;
 import com.harshi.inventory_and_billing.entities.Warehouse;
 import com.harshi.inventory_and_billing.helper.OrderHelper;
 import com.harshi.inventory_and_billing.repo.TransportAndBuiltNumberRepository;
+import com.harshi.inventory_and_billing.service.DocumentService;
 import com.harshi.inventory_and_billing.service.OrderService;
 import com.harshi.inventory_and_billing.service.OrderStatusHistoryService;
 import com.harshi.inventory_and_billing.service.PartyService;
@@ -69,9 +73,12 @@ public class OrderController {
 
 	@Autowired
 	private OrderStatusHistoryService orderStatusHistoryService;
-	
+
 	@Autowired
 	private WarehouseService warehouseService;
+
+	@Autowired
+	private DocumentService documentService;
 
 	/**
 	 * Display the initial page for booking an order.
@@ -219,7 +226,7 @@ public class OrderController {
 
 		// Get the selected product by ID
 		Product selectedProduct = productService.getProductById(selectedProductId);
-		
+
 		// Get the main warehouse by code
 		Warehouse mainWarehouse = warehouseService.getWarehouseById(1L);
 
@@ -266,6 +273,13 @@ public class OrderController {
 		return "orderView/bookOrderSelectMoreProducts";
 	}
 
+	/**
+	 * Displays the product selection page for booking an order.
+	 *
+	 * @param orderId  The unique identifier of the order to be booked.
+	 * @param modelMap The ModelMap for adding attributes to the view.
+	 * @return The view name for the product selection page.
+	 */
 	@PostMapping("/bookOrderShowSelectProducts")
 	public String bookOrderShowSelectProducts(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
@@ -286,6 +300,13 @@ public class OrderController {
 		return "orderView/bookOrderSelectProduct";
 	}
 
+	/**
+	 * Displays the transport selection page for booking an order.
+	 *
+	 * @param orderId  The unique identifier of the order to be booked.
+	 * @param modelMap The ModelMap for adding attributes to the view.
+	 * @return The view name for the transport selection page.
+	 */
 	@PostMapping("/bookOrderShowSelectTransport")
 	public String bookOrderShowSelectTransport(@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
@@ -393,6 +414,13 @@ public class OrderController {
 		return "orderView/orderDetails";
 	}
 
+	/**
+	 * Displays the edit order transport selection page.
+	 *
+	 * @param orderId The unique identifier of the order to be edited.
+	 * @param model   The ModelMap for adding attributes to the view.
+	 * @return The view name for the edit order transport selection page.
+	 */
 	@GetMapping("/showEditOrderTransport/{orderId}")
 	public String showEditOrderTransport(@PathVariable Long orderId, ModelMap model) {
 		// Retrieve the order by ID
@@ -414,6 +442,15 @@ public class OrderController {
 		return "orderView/editOrderTransport";
 	}
 
+	/**
+	 * Handles the editing of order transport information.
+	 *
+	 * @param orderId     The unique identifier of the order being edited.
+	 * @param transportId The unique identifier of the selected transport.
+	 * @param biltyNumber The bilty number associated with the order.
+	 * @param modelMap    The ModelMap for adding attributes to the view.
+	 * @return The view name for displaying order details or the order list page.
+	 */
 	@PostMapping("/editOrderTransport")
 	public String editOrderTransport(@RequestParam("orderId") Long orderId,
 			@RequestParam("transportId") Long transportId, @RequestParam("biltyNumber") String biltyNumber,
@@ -435,6 +472,14 @@ public class OrderController {
 		return "orderView/orderDetails";
 	}
 
+	/**
+	 * Displays the page for adding payment to an existing order.
+	 *
+	 * @param orderId The unique identifier of the order to which payment is being
+	 *                added.
+	 * @param model   The ModelMap for adding attributes to the view.
+	 * @return The view name for adding order payment.
+	 */
 	@GetMapping("/showAddOrderPayment/{orderId}")
 	public String showAddOrderPayment(@PathVariable Long orderId, ModelMap model) {
 		// Retrieve the order by ID
@@ -453,11 +498,47 @@ public class OrderController {
 		return "orderView/addOrderPayment";
 	}
 
+	/**
+	 * Handles the addition of payment to an existing order.
+	 *
+	 * @param payment      The Payment object containing payment details.
+	 * @param orderId      The unique identifier of the order to which the payment
+	 *                     is added.
+	 * @param modelMap     The ModelMap for adding attributes to the view.
+	 * @param payDate      The payment date in the format "yyyy-MM-dd".
+	 * @param documentFile The uploaded document file, if provided.
+	 * @return The view name for displaying order details after payment addition.
+	 */
 	@PostMapping("/addOrderPayment")
 	public String addOrderPayment(@ModelAttribute("payment") Payment payment, @RequestParam Long orderId,
-			ModelMap modelMap, @RequestParam("payDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate payDate) {
+			ModelMap modelMap, @RequestParam("payDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate payDate,
+			@RequestParam("documentFile") MultipartFile documentFile) {
 		// Find the order by orderId
 		Order order = orderService.getOrderById(orderId);
+
+		// Check if a document file is provided
+		if (!documentFile.isEmpty()) {
+			try {
+				// Create a Document entity to save the uploaded document
+				Document document = new Document();
+				document.setName("OID_" + order.getOrderId() + "DATE_" + payDate + "AMOUNT_"
+						+ payment.getPayAmount().toString().toUpperCase());
+				document.setData(documentFile.getBytes());
+
+				// Save the document using your DocumentRepository
+				document = documentService.saveDocument(document);
+
+				// Set the document in the payment
+				payment.setDocument(document);
+			} catch (IOException e) {
+				e.printStackTrace(); // You can log the exception for debugging purposes
+
+				// Add an error message to the model to display to the user
+				modelMap.addAttribute("error", "An error occurred while uploading the document. Please try again.");
+				modelMap.addAttribute("errorMessage", e.getMessage());
+				return "error"; // Return to the same view with the error message
+			}
+		}
 
 		// Set the order for the payment
 		payment.setOrder(order);
@@ -469,24 +550,29 @@ public class OrderController {
 		// Add the saved payment to the order's payment list
 		order.addPayment(savedPayment);
 
-		// Update the ordrStatus in the received order
+		// Update the order status in the received order
 		orderStatusHistoryService.addStatusChangeToOrder(order, "Payment Received of - " + savedPayment.getPayAmount());
-		// Update remainingBillAmount when a payment is added, Later change with
-		// order.getTotalBillAmount(); and test
+
+		// Update remainingBillAmount when a payment is added
 		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(order);
 		BigDecimal remainingBillAmount = totalBillAmount.subtract(BigDecimal.valueOf(savedPayment.getPayAmount()));
 		order.setRemainingBillAmount(remainingBillAmount);
+
 		// Update the order
 		Order updatedOrder = orderService.saveOrder(order);
+
 		// Calculate total price for the line item
 		BigDecimal totalAmount = OrderHelper.totalOrderPrice(updatedOrder);
 		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(updatedOrder, totalAmount);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(updatedOrder);
+
 		// Add the order to the model for reference
 		modelMap.addAttribute("totalAmount", totalAmount);
 		modelMap.addAttribute("remainingAmount", remainingAmount);
 		modelMap.addAttribute("totalQuantities", totalQuantities);
 		modelMap.addAttribute("order", updatedOrder);
+
 		return "orderView/orderDetails";
 	}
+
 }

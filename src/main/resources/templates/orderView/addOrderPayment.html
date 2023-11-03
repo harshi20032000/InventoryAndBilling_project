@@ -85,6 +85,7 @@
 		.btn-secondary:hover {
 			background-color: #333;
 		}
+
 		.btn-info {
 			background-color: #17a2b8;
 		}
@@ -297,7 +298,7 @@
 			<h2>Add Payment to Order</h2>
 
 			<!-- Create a form for adding a new payment -->
-			<form action="/inventorybilling/addOrderPayment" method="post">
+			<form action="/inventorybilling/addOrderPayment" method="post" enctype="multipart/form-data">
 				<h3>Payment Details</h3>
 
 				<!-- Add payment date input -->
@@ -308,7 +309,7 @@
 
 				<!-- Add payment amount input -->
 				<div class="form-group">
-					<label for="payAmount">Payment Amount:</label>
+					<label for "payAmount">Payment Amount:</label>
 					<input type="text" class="form-control" name="payAmount" />
 				</div>
 
@@ -330,6 +331,11 @@
 					</select>
 				</div>
 
+				<!-- Add file input for the document -->
+				<div class="form-group">
+					<label for="documentFile">Select Document:</label>
+					<input type="file" class="form-control-file" name="documentFile" />
+				</div>
 
 				<!-- Add hidden input for orderId -->
 				<input type="hidden" name="orderId" th:value="${order.orderId}" />
@@ -337,6 +343,7 @@
 				<!-- Add a "Add Payment" button to submit the payment details -->
 				<button type="submit" class="btn btn-info">Add Payment</button>
 			</form>
+
 		</div>
 		<footer>
 			<!-- Add a "Back to Order Details" button -->
@@ -348,7 +355,7 @@
 			<b>.....On Add Order Payment Page.....</b>
 		</footer>
 
-</div>
+	</div>
 </body>
 
 </html>
