@@ -140,7 +140,7 @@
 		<!-- Display Party Details -->
 		<div th:if="${order.party != null}">
 			<table>
-				<caption>Party Details</caption>
+				<caption>.....Order Details.....</caption>
 				<tbody>
 					<tr>
 						<td>Party ID:</td>
@@ -196,7 +196,7 @@
 				</tr>
 			</tbody>
 		</table>
-
+		<caption></caption>
 		<h3 th:if="${#lists.isEmpty(order.orderLineItems)}">No order line items available.</h3>
 
 		<!-- Display Total Bill Amount, Remaining Amount, and Total Order Quantity -->

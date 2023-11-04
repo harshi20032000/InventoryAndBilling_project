@@ -1,84 +1,148 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <!-- ... (head content) ... -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+	<!-- ... (head content) ... -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-        .container {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-        p {
-            margin-bottom: 10px;
-        }
+		table,
+		th,
+		td {
+			border: 1px solid #ccc;
+		}
 
-        span {
-            font-weight: bold;
-        }
+		th,
+		td {
+			padding: 10px;
+			text-align: left;
+		}
 
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+		th {
+			background-color: #333;
+			color: #fff;
+		}
 
-        .btn-secondary {
-            background-color: #555;
-        }
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
 
-        .btn-secondary:hover {
-            background-color: #333;
-        }
+		h2 {
+			color: #333;
+			margin-bottom: 20px;
+		}
 
-        .btn-success {
-            background-color: #28a745;
-        }
+		p {
+			margin: 10px 0;
+		}
 
-        .btn-success:hover {
-            background-color: #1e7e34;
-        }
+		a.button {
+			display: inline-block;
+			text-decoration: none;
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+			margin: 5px;
+		}
 
-        b {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+		a.button:hover {
+			background-color: #555;
+			text-decoration: underline;
+		}
+
+		a.button.button-info {
+			background-color: #17a2b8;
+		}
+
+		b {
+			display: block;
+			margin-top: 20px;
+			font-weight: bold;
+			color: rgb(0, 0, 0);
+		}
+
+		.transport-details {
+			border: 1px solid #ddd;
+			border-collapse: collapse;
+			width: 50%;
+			margin: 20px auto;
+		}
+
+		.transport-details h2 {
+			background-color: rgb(0, 0, 0);
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+
+		.transport-details p {
+			padding: 10px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.transport-details p:last-child {
+			border: none;
+		}
+
+		.transport-details span {
+			font-weight: bold;
+		}
+
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Transport Details Page</h2>
-        <p>ID: <span th:text="${transport.transportId}"></span></p>
-        <p>Name: <span th:text="${transport.transportName}"></span></p>
-        <p>Contact Details: <span th:text="${transport.contactDetails}"></span></p>
-        
-        <!-- Add a "Back to Transport List" button -->
-        <a href="/inventorybilling/showTransportList" class="btn btn-secondary">Back to Transport List</a>
-        <!-- Add buttons to navigate to the homepage and add transport page -->
-        <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-        <a href="/inventorybilling/showAddTransport" class="btn btn-success">Add Transport</a>
-        <b>On Transport Details Page</b>
-    </div>
+	<div class="container">
+		<div class="transport-details">
+			<h2>Transport Details Page</h2>
+			<p>ID: <span th:text="${transport.transportId}"></span></p>
+			<p>Name: <span th:text="${transport.transportName}"></span></p>
+			<p>Contact Details: <span th:text="${transport.contactDetails}"></span></p>
+		</div>
+		<footer>
+			<!-- Add a "Back to Transport List" button -->
+			<a href="/inventorybilling/showTransportList" class="button">Back to Transport List</a>
+			<!-- Add buttons to navigate to the homepage and add transport page -->
+			<a href="/inventorybilling/showLanding" class="button">Home</a>
+			<a href="/inventorybilling/showAddTransport" class="button">Add Transport</a>
+			<b>On Transport Details Page</b>
+		</footer>
+	</div>
 </body>
+
 </html>

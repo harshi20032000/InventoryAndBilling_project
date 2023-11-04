@@ -1316,3 +1316,441 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.we
 2023-10-31 14:19:55|[RMI TCP Connection(10)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-10-31 14:19:55|[RMI TCP Connection(10)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
 2023-10-31 14:19:55|[RMI TCP Connection(10)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-10-31 19:04:31|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-10-31 19:04:31|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 17904 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-10-31 19:04:31|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-10-31 19:04:32|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-31 19:04:32|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 121 ms. Found 11 JPA repository interfaces.
+2023-10-31 19:04:33|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-10-31 19:04:33|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-10-31 19:04:33|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-10-31 19:04:33|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-31 19:04:33|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-10-31 19:04:33|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2171 ms
+2023-10-31 19:04:34|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-31 19:04:34|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-31 19:04:34|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-10-31 19:04:34|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 19:04:34|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-31 19:04:34|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-10-31 19:04:34|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18bb1b88
+2023-10-31 19:04:34|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-10-31 19:04:35|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-10-31 19:04:36|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-31 19:04:36|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-31 19:04:36|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-31 19:04:37|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-31 19:04:38|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-10-31 19:04:38|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-10-31 19:04:38|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-10-31 19:04:38|[main]|INFO |com.harshi.inventory_and_billing.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 7.389 seconds (process running for 8.113)
+2023-10-31 19:04:38|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-31 19:04:38|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-10-31 19:04:38|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 6 ms
+2023-10-31 19:04:38|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showAddWarehouse() on WarehouseController
+2023-10-31 19:04:48|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:04:51|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:04:53|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:04:58|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 19:05:15|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:05:17|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:05:20|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:05:22|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 19:05:24|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:05:26|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:05:30|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:05:33|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:05:35|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 9
+2023-10-31 19:05:41|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:05:42|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:05:47|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:06:32|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:06:33|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 1
+2023-10-31 19:06:56|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:06:58|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 19:07:12|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 19:07:13|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 1
+2023-10-31 19:07:44|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:07:46|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 19:07:47|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 19:13:12|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:13:16|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:13:19|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 9
+2023-10-31 19:13:25|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 19:19:13|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 19:19:15|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 2
+2023-10-31 19:19:36|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 19:19:38|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 1
+2023-10-31 19:19:49|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:19:51|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 19:19:53|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 19:19:55|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:19:57|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:20:04|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:20:06|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 1
+2023-10-31 19:20:27|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 19:20:29|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 10
+2023-10-31 19:23:06|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:23:08|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:23:14|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 10
+2023-10-31 19:24:23|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 10
+2023-10-31 19:25:00|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:25:41|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:25:45|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-31 19:25:50|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:25:54|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:25:58|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 19:26:00|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:26:02|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:26:04|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 1
+2023-10-31 19:26:55|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:26:56|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:27:03|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 19:27:07|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:27:11|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:27:33|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 10
+2023-10-31 19:27:40|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 12 for order with ID: 17
+2023-10-31 19:27:47|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 12 in order with ID: 17
+2023-10-31 19:27:58|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 12 in order with ID: 17
+2023-10-31 19:28:05|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 11 in order with ID: 17
+2023-10-31 19:28:17|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 11 in order with ID: 17
+2023-10-31 19:28:27|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 5 for order with ID: 17
+2023-10-31 19:28:30|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:28:32|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:28:35|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:28:41|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 17
+2023-10-31 19:28:44|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:28:46|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:28:53|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 7
+2023-10-31 19:28:56|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:29:01|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:29:08|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 9
+2023-10-31 19:29:12|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 11 for order with ID: 18
+2023-10-31 19:29:22|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 10 in order with ID: 18
+2023-10-31 19:29:37|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 10 in order with ID: 18
+2023-10-31 19:29:41|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 18
+2023-10-31 19:29:50|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 18
+2023-10-31 19:30:02|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 2 in order with ID: 18
+2023-10-31 19:30:20|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 2 in order with ID: 18
+2023-10-31 19:30:29|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 18
+2023-10-31 19:30:38|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:30:43|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:30:45|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:30:47|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:31:04|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:31:12|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 8
+2023-10-31 19:31:19|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 10 for order with ID: 19
+2023-10-31 19:31:28|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 10 in order with ID: 19
+2023-10-31 19:31:46|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 10 in order with ID: 19
+2023-10-31 19:31:53|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 19
+2023-10-31 19:32:14|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 19
+2023-10-31 19:32:23|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 8 in order with ID: 19
+2023-10-31 19:32:33|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 8 in order with ID: 19
+2023-10-31 19:32:41|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 4 for order with ID: 19
+2023-10-31 19:32:43|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:32:53|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order details for order with ID: 18
+2023-10-31 19:33:06|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:33:11|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:33:46|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 7
+2023-10-31 19:33:53|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 8 for order with ID: 20
+2023-10-31 19:34:05|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 4 in order with ID: 20
+2023-10-31 19:34:17|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 4 in order with ID: 20
+2023-10-31 19:34:24|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 2 in order with ID: 20
+2023-10-31 19:34:33|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 2 in order with ID: 20
+2023-10-31 19:34:42|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 3 in order with ID: 20
+2023-10-31 19:34:50|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 3 in order with ID: 20
+2023-10-31 19:35:00|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 2 for order with ID: 20
+2023-10-31 19:35:02|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:35:16|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:35:32|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 6
+2023-10-31 19:35:37|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 7 for order with ID: 21
+2023-10-31 19:35:43|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 21
+2023-10-31 19:35:54|[http-nio-8087-exec-2]|WARN |org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver-Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: "100\"]
+2023-10-31 19:35:54|[http-nio-8087-exec-2]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi.inventory_and_billing.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-10-31 19:35:54|[http-nio-8087-exec-2]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]-Exception Processing ErrorPage[errorCode=0, location=/error]
+jakarta.servlet.ServletException: Request processing failed: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1019)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:151)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi.inventory_and_billing.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	... 35 common frames omitted
+2023-10-31 19:36:00|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 21
+2023-10-31 19:36:10|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 4 in order with ID: 21
+2023-10-31 19:36:24|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 4 in order with ID: 21
+2023-10-31 19:36:35|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 21
+2023-10-31 19:36:45|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 21
+2023-10-31 19:36:55|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 2 for order with ID: 21
+2023-10-31 19:36:58|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:37:01|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 7
+2023-10-31 19:37:08|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:37:12|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 19:37:13|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 19:37:18|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:37:20|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:37:22|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 19:37:27|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:37:28|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:37:30|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 5
+2023-10-31 19:37:35|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:37:36|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:37:39|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 2
+2023-10-31 19:37:44|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:37:46|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:37:49|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 4
+2023-10-31 19:38:00|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:38:08|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:38:10|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 5
+2023-10-31 19:38:24|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:39:11|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:39:13|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:39:20|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:40:14|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:40:16|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:40:24|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 5
+2023-10-31 19:40:32|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 6 for order with ID: 22
+2023-10-31 19:40:36|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 3 in order with ID: 22
+2023-10-31 19:42:27|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 3 in order with ID: 22
+2023-10-31 19:42:38|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 6 in order with ID: 22
+2023-10-31 19:42:49|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 6 in order with ID: 22
+2023-10-31 19:43:01|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 7 in order with ID: 22
+2023-10-31 19:43:11|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 7 in order with ID: 22
+2023-10-31 19:43:21|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 22
+2023-10-31 19:43:25|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:43:26|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 19:43:57|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:44:00|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 19:44:04|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:47:07|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:47:24|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:47:32|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 5
+2023-10-31 19:47:41|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 5 for order with ID: 23
+2023-10-31 19:47:48|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 11 in order with ID: 23
+2023-10-31 19:48:25|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 11 in order with ID: 23
+2023-10-31 19:48:39|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 23
+2023-10-31 19:48:47|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 23
+2023-10-31 19:48:59|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 8 in order with ID: 23
+2023-10-31 19:49:06|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 8 in order with ID: 23
+2023-10-31 19:49:14|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 4 for order with ID: 23
+2023-10-31 19:49:16|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:49:24|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 4
+2023-10-31 19:49:31|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 4 for order with ID: 24
+2023-10-31 19:49:35|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 24
+2023-10-31 19:49:45|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 24
+2023-10-31 19:50:33|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 2 in order with ID: 24
+2023-10-31 19:50:44|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 2 in order with ID: 24
+2023-10-31 19:50:52|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 8 in order with ID: 24
+2023-10-31 19:51:06|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 8 in order with ID: 24
+2023-10-31 19:51:15|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 24
+2023-10-31 19:51:19|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:51:26|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 3
+2023-10-31 19:51:31|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 3 for order with ID: 25
+2023-10-31 19:51:35|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 4 in order with ID: 25
+2023-10-31 19:51:45|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 4 in order with ID: 25
+2023-10-31 19:52:01|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 7 in order with ID: 25
+2023-10-31 19:52:09|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 7 in order with ID: 25
+2023-10-31 19:52:15|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 25
+2023-10-31 19:52:25|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 25
+2023-10-31 19:52:31|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 1 for order with ID: 25
+2023-10-31 19:52:33|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:52:40|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 2
+2023-10-31 19:52:44|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 2 for order with ID: 26
+2023-10-31 19:52:48|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 6 in order with ID: 26
+2023-10-31 19:52:56|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 6 in order with ID: 26
+2023-10-31 19:53:02|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 10 in order with ID: 26
+2023-10-31 19:53:12|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 10 in order with ID: 26
+2023-10-31 19:53:21|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 9 in order with ID: 26
+2023-10-31 19:53:28|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 9 in order with ID: 26
+2023-10-31 19:53:34|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 4 for order with ID: 26
+2023-10-31 19:53:43|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:53:47|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:53:51|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:53:54|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected representative with ID: 1
+2023-10-31 19:53:56|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 27
+2023-10-31 19:54:00|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 7 in order with ID: 27
+2023-10-31 19:54:09|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 7 in order with ID: 27
+2023-10-31 19:54:15|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 27
+2023-10-31 19:54:22|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 27
+2023-10-31 19:54:28|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Calculating total quantities for selected product with ID: 11 in order with ID: 27
+2023-10-31 19:55:08|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving order line items for product with ID: 11 in order with ID: 27
+2023-10-31 19:55:16|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Saving selected transport with ID: 5 for order with ID: 27
+2023-10-31 19:55:18|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Entering showBookOrder
+2023-10-31 19:55:21|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:55:23|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.OrderController-Displaying order list
+2023-10-31 19:55:28|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 19:55:29|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 19:55:32|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 8
+2023-10-31 19:59:58|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 8
+2023-10-31 20:00:18|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:00:20|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 20:00:21|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 1
+2023-10-31 20:02:54|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:05:34|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:06:26|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:06:28|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:06:28|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:06:29|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:06:46|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:06:58|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:07:45|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:10:42|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:10:43|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:12:00|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:12:34|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the add representatives form
+2023-10-31 20:12:36|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 20:12:38|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:12:39|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 20:12:40|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying representative details for representative with ID: 3
+2023-10-31 20:12:41|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:12:43|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.RepsController-Displaying the list of representatives
+2023-10-31 20:13:22|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:13:37|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 20:13:40|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 2
+2023-10-31 20:17:42|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 2
+2023-10-31 20:18:30|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 2
+2023-10-31 20:20:31|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 2
+2023-10-31 20:20:58|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:20:59|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:21:06|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 16
+2023-10-31 20:23:33|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:23:36|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 20:23:37|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 20:24:35|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 20:24:36|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 20:25:15|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 1
+2023-10-31 20:26:36|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 16
+2023-10-31 20:27:21|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:27:22|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 20:27:23|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 2
+2023-10-31 20:27:27|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:27:32|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:27:33|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 2
+2023-10-31 20:28:47|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 2
+2023-10-31 20:30:14|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 2
+2023-10-31 20:30:21|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:30:25|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying the party list
+2023-10-31 20:30:26|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.PartyController-Displaying party details for party with ID: 2
+2023-10-31 20:30:29|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:30:33|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:30:36|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 17
+2023-10-31 20:31:16|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 17
+2023-10-31 20:32:30|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:32:31|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 3
+2023-10-31 20:33:03|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:33:06|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:33:07|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying the list of available products
+2023-10-31 20:33:14|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.ProductController-Displaying product details for product with ID: 12
+2023-10-31 20:33:21|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:33:23|[http-nio-8087-exec-6]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:33:25|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 3
+2023-10-31 20:33:59|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 3
+2023-10-31 20:34:09|[http-nio-8087-exec-8]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:34:11|[http-nio-8087-exec-9]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying the list of transports
+2023-10-31 20:34:14|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 20:39:14|[http-nio-8087-exec-3]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 20:41:57|[http-nio-8087-exec-5]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 20:42:24|[http-nio-8087-exec-7]|INFO |com.harshi.inventory_and_billing.controllers.TransportController-Displaying transport details for transport with ID: 1
+2023-10-31 20:44:07|[http-nio-8087-exec-10]|INFO |com.harshi.inventory_and_billing.controllers.DashboardController-Redirecting to landing.html
+2023-10-31 20:44:13|[http-nio-8087-exec-1]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-10-31 20:44:16|[http-nio-8087-exec-2]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 17
+2023-10-31 20:49:23|[http-nio-8087-exec-4]|INFO |com.harshi.inventory_and_billing.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 17

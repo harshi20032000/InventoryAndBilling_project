@@ -1,62 +1,105 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Party Details </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Party Details </title>
 
-<!-- ... (head content) ... -->
-<style>
-	body {
-		font-family: Arial, sans-serif;
-		background-color: #f4f4f4;
-		margin: 0;
-		padding: 0;
-	}
+	<!-- ... (head content) ... -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
 
-	.container {
-		max-width: 800px;
-		margin: 20px auto;
-		padding: 20px;
-		background-color: #fff;
-		border: 1px solid #ddd;
-		border-radius: 5px;
-	}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
 
-	h2 {
-		color: #333;
-		margin-bottom: 20px;
-	}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-	p {
-		margin: 10px 0;
-	}
+		table,
+		th,
+		td {
+			border: 1px solid #ccc;
+		}
 
-	.btn {
-		background-color: #007bff;
-		color: #fff;
-		border: none;
-		border-radius: 5px;
-		padding: 10px 20px;
-		cursor: pointer;
-		margin-right: 10px;
-	}
+		th,
+		td {
+			padding: 10px;
+			text-align: left;
+		}
 
-	.btn-secondary {
-		background-color: #6c757d;
-	}
+		th {
+			background-color: #333;
+			color: #fff;
+		}
 
-	.btn-secondary:hover {
-		background-color: #5a6268;
-	}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
 
-	b {
-		display: block;
-		margin-top: 20px;
-		font-weight: bold;
-		color: #007bff;
-	}
-</style>
+		h2 {
+			color: #333;
+			margin-bottom: 20px;
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		a.button {
+			display: inline-block;
+			text-decoration: none;
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+			margin: 5px;
+		}
+
+		a.button:hover {
+			background-color: #555;
+			text-decoration: underline;
+		}
+
+		a.button.button-info {
+			background-color: #17a2b8;
+		}
+
+		b {
+			display: block;
+			margin-top: 20px;
+			font-weight: bold;
+			color: rgb(0, 0, 0);
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+	</style>
 </head>
 
 <body>
@@ -67,7 +110,7 @@
 		<p>Location: <span th:text="${party.partyLocation}"></span></p>
 
 		<!-- Description for the table -->
-        <!-- Display a table of orders -->
+		<!-- Display a table of orders -->
 		<table class="table table-bordered">
 			<caption>table of orders for this party</caption>
 			<thead>
@@ -101,7 +144,8 @@
 						th:text="${order.remainingBillAmount}"></td>
 					<td th:unless="${order.remainingBillAmount != null and order.remainingBillAmount > 0}">N/A</td>
 					<td>
-						<a th:href="'/inventorybilling/orderDetails/' + ${order.orderId}" class="btn btn-primary">View
+						<a th:href="'/inventorybilling/orderDetails/' + ${order.orderId}"
+							class="button button-info">View
 							Details</a>
 					</td>
 				</tr>
@@ -112,13 +156,14 @@
 			<p>Total Bill Amount: <span th:text="${totalBillAmount}"></span></p>
 			<p>Remaining Bill Amount: <span th:text="${remainingBillAmount}"></span></p>
 		</div>
-
-		<!-- Add a "Back to Party List" button -->
-		<a href="/inventorybilling/showPartyList" class="btn btn-secondary">Back to Party List</a>
-		<!-- Add buttons to navigate to the homepage and add party page -->
-		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-		<a href="/inventorybilling/showAddParty" class="btn btn-success">Add Party</a>
-		<b>.....On Party Details Page.....</b>
+		<footer>
+			<!-- Add a "Back to Party List" button -->
+			<a href="/inventorybilling/showPartyList" class="button">Back to Party List</a>
+			<!-- Add buttons to navigate to the homepage and add party page -->
+			<a href="/inventorybilling/showLanding" class="button">Home</a>
+			<a href="/inventorybilling/showAddParty" class="button">Add Party</a>
+			<b>.....On Party Details Page.....</b>
+		</footer>
 	</div>
 </body>
 
