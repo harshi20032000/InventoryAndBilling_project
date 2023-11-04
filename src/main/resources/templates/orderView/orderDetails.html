@@ -297,7 +297,10 @@
 			<a th:href="@{'/showAddOrderPayment/' + ${order.orderId}}" class="btn btn-secondary">Add Payment To
 				Order</a>
 			<a href="/inventorybilling/showOrderList" class="btn btn-secondary">Back to Order List</a>
+			<a th:href="@{'/generateAndSaveOrderDetails/' + ${order.orderId}}" class="btn btn-secondary">Print Order
+				Details</a>
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<b th:text="${msg}"></b>
 			<div><b>.....On Order Details Page.....</b></div>
 		</footer>
 	</div>
