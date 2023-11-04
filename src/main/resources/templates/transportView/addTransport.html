@@ -12,12 +12,16 @@
 		}
 
 		.container {
-			max-width: 500px;
-			margin: 20px auto;
+			max-width: 800px;
+			margin: 0 auto;
 			padding: 20px;
-			background-color: #fff;
+			background-color: #f2f2f2;
 			border: 1px solid #ddd;
 			border-radius: 5px;
+		}
+
+		.form-group {
+			margin: 20px 0;
 		}
 
 		h2 {
@@ -41,6 +45,17 @@
 			text-transform: uppercase;
 		}
 
+		a {
+			display: inline-block;
+			margin: 5px 0;
+			text-decoration: none;
+			color: #007bff;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
 		.btn {
 			background-color: #007bff;
 			color: #fff;
@@ -58,11 +73,34 @@
 			background-color: #333;
 		}
 
+		.btn-info {
+			background-color: #17a2b8;
+		}
+
+		.btn-info:hover {
+			background-color: #117a8b;
+		}
+
 		b {
 			display: block;
 			margin-top: 20px;
 			font-weight: bold;
 			color: #007bff;
+		}
+
+		footer {
+			text-align: center;
+			background-color: #fff;
+			color: #333;
+			max-width: 800px;
+			/* Add this property */
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 		}
 	</style>
 </head>
@@ -83,15 +121,16 @@
 			</div>
 
 			<!-- Add a "Save" button to submit the form -->
-			<button type="submit" class="btn btn-primary">Save</button>
+			<button type="submit" class="btn btn-info">Save</button>
 		</form>
+		<footer>
+			<!-- Add a "Back to Transport List" button -->
+			<a href="/inventorybilling/showTransportList" class="btn btn-secondary">Back to Transport List</a>
 
-		<!-- Add a "Back to Transport List" button -->
-		<a href="/inventorybilling/showTransportList" class="btn btn-secondary">Back to Transport List</a>
-
-		<!-- Add buttons to navigate to the homepage -->
-		<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-		<b>On Add Transport Page</b>
+			<!-- Add buttons to navigate to the homepage -->
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<b>.....On Add Transport Page.....</b>
+		</footer>
 	</div>
 </body>
 
