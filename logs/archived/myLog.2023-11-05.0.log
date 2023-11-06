@@ -1,0 +1,435 @@
+2023-11-05 18:59:24|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-11-05 18:59:24|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 10768 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-11-05 18:59:24|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-11-05 18:59:25|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 18:59:25|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 112 ms. Found 12 JPA repository interfaces.
+2023-11-05 18:59:26|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-11-05 18:59:26|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-11-05 18:59:26|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-11-05 18:59:26|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-05 18:59:26|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-11-05 18:59:26|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2034 ms
+2023-11-05 18:59:26|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 18:59:26|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-05 18:59:26|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-11-05 18:59:27|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 18:59:27|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 18:59:27|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-11-05 18:59:27|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f1d1463
+2023-11-05 18:59:27|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-11-05 18:59:28|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 18:59:30|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 18:59:30|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 18:59:31|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-05 18:59:32|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 18:59:32|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-11-05 18:59:32|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-11-05 18:59:32|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-11-05 18:59:32|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 8.734 seconds (process running for 10.152)
+2023-11-05 19:02:10|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 19:02:10|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-11-05 19:02:10|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2023-11-05 19:05:25|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Displaying the registration page
+2023-11-05 19:06:52|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Registering user: User Details:
+First Name: Rahul
+Last Name: mondal
+Email: rmondal@gmail.com
+2023-11-05 19:06:52|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.UserController-User registered: User Details:
+First Name: RAHUL
+Last Name: MONDAL
+Email: RMONDAL@GMAIL.COM
+2023-11-05 19:07:00|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Attempting login for email: rmondal@gmail.com
+2023-11-05 19:07:01|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Login successful for email: RMONDAL@GMAIL.COM
+2023-11-05 19:07:45|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-11-05 19:07:54|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-05 19:07:56|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-05 19:08:31|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 1
+2023-11-05 19:10:09|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.PaymentController-Displaying payment details for payment with ID: 1
+2023-11-05 19:10:19|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 1
+2023-11-05 19:11:12|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-05 19:11:17|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 19:11:50|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-05 19:12:06|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Saving a new representative
+2023-11-05 19:12:08|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 19:12:16|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected representative with ID: 11
+2023-11-05 19:12:16|[http-nio-8087-exec-9]|WARN |org.hibernate.engine.jdbc.spi.SqlExceptionHelper-SQL Error: 1048, SQLState: 23000
+2023-11-05 19:12:16|[http-nio-8087-exec-9]|ERROR|org.hibernate.engine.jdbc.spi.SqlExceptionHelper-Column 'total_order_quantity' cannot be null
+2023-11-05 19:12:16|[http-nio-8087-exec-9]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [/inventorybilling] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Column 'total_order_quantity' cannot be null] [insert into orders (order_date,party_id,remaining_bill_amount,rep_id,total_bill_amount,total_order_quantity,transport_and_built_number_id) values (?,?,?,?,?,?,?)]; SQL [insert into orders (order_date,party_id,remaining_bill_amount,rep_id,total_bill_amount,total_order_quantity,transport_and_built_number_id) values (?,?,?,?,?,?,?)]; constraint [null]] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'total_order_quantity' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:275)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performInsert(GetGeneratedKeysDelegate.java:107)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorPostInsertSingleTable.execute(MutationExecutorPostInsertSingleTable.java:101)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:169)
+	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:111)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2757)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:674)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:363)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:277)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:180)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:140)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360)
+	at jdk.proxy2/jdk.proxy2.$Proxy121.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
+	at jdk.proxy2/jdk.proxy2.$Proxy121.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:617)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy130.save(Unknown Source)
+	at com.harshi_solution.inventorymate.service.OrderServiceImpl.saveOrder(OrderServiceImpl.java:32)
+	at com.harshi_solution.inventorymate.controllers.OrderController.bookOrderSaveReps(OrderController.java:130)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 19:12:16|[http-nio-8087-exec-9]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling].[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi_solution.inventorymate.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-05 19:12:16|[http-nio-8087-exec-9]|ERROR|org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]-Exception Processing ErrorPage[errorCode=0, location=/error]
+jakarta.servlet.ServletException: Request processing failed: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1019)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:359)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:305)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.web.context.request.RequestAttributes.getAttribute(String, int)" because "requestAttributes" is null
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getAttribute(DefaultErrorAttributes.java:227)
+	at org.springframework.boot.web.servlet.error.DefaultErrorAttributes.getError(DefaultErrorAttributes.java:215)
+	at com.harshi_solution.inventorymate.controllers.CustomErrorController.handleError(CustomErrorController.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	... 36 common frames omitted
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-11-05 19:21:21|[RMI TCP Connection(26)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-11-05 19:21:29|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-11-05 19:21:29|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 20880 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-11-05 19:21:29|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-11-05 19:21:30|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 19:21:30|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 122 ms. Found 12 JPA repository interfaces.
+2023-11-05 19:21:31|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-11-05 19:21:31|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:21:31|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-11-05 19:21:31|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-05 19:21:31|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-11-05 19:21:31|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2320 ms
+2023-11-05 19:21:32|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 19:21:32|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-05 19:21:32|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-11-05 19:21:32|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 19:21:32|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 19:21:32|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-11-05 19:21:33|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f581211
+2023-11-05 19:21:33|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-11-05 19:21:34|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 19:21:36|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 19:21:36|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 19:21:37|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-05 19:21:38|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 19:21:39|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-11-05 19:21:39|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:21:39|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-11-05 19:21:39|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 10.871 seconds (process running for 12.34)
+2023-11-05 19:23:07|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 19:23:07|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-11-05 19:23:07|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2023-11-05 19:23:12|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Displaying the login page
+2023-11-05 19:23:14|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Attempting login for email: rmondal@gmail.com
+2023-11-05 19:23:14|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Login successful for email: RMONDAL@GMAIL.COM
+2023-11-05 19:23:17|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 19:23:22|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected representative with ID: 11
+2023-11-05 19:23:27|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected party with ID: 1 for order with ID: 14
+2023-11-05 19:23:36|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 12 in order with ID: 14
+2023-11-05 19:23:55|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 12 in order with ID: 14
+2023-11-05 19:24:14|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 14
+2023-11-05 19:24:34|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 14
+2023-11-05 19:24:58|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected transport with ID: 2 for order with ID: 14
+2023-11-05 19:25:02|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-05 19:25:05|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 14
+2023-11-05 19:26:15|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.PaymentController-Displaying payment details for payment with ID: 16
+2023-11-05 19:28:56|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 14
+2023-11-05 19:29:45|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.util.PdfGenerator-Inside generateFullOrderDetails() on OrderDetailsPdfGenerator
+2023-11-05 19:30:16|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-05 19:31:14|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 19:31:35|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-05 19:31:55|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Saving a new representative
+2023-11-05 19:32:06|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 19:32:14|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected representative with ID: 12
+2023-11-05 19:32:46|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected party with ID: 3 for order with ID: 15
+2023-11-05 19:33:24|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 1 in order with ID: 15
+2023-11-05 19:34:04|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 1 in order with ID: 15
+2023-11-05 19:35:02|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 12 in order with ID: 15
+2023-11-05 19:35:16|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 12 in order with ID: 15
+2023-11-05 19:35:38|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 10 in order with ID: 15
+2023-11-05 19:35:47|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 10 in order with ID: 15
+2023-11-05 19:36:31|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 15
+2023-11-05 19:36:39|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-05 19:37:03|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 15
+2023-11-05 19:38:57|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.PaymentController-Displaying payment details for payment with ID: 17
+2023-11-05 19:39:41|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 15
+2023-11-05 19:41:17|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.util.PdfGenerator-Inside generateFullOrderDetails() on OrderDetailsPdfGenerator
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-11-05 19:43:41|[RMI TCP Connection(27)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2023-11-05 23:01:16|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-11-05 23:01:16|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 1248 (D:\InventoryAndBilling\InventoryAndBilling\target\classes started by Harshikesh in D:\InventoryAndBilling\InventoryAndBilling)
+2023-11-05 23:01:16|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-11-05 23:01:17|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-05 23:01:17|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 155 ms. Found 12 JPA repository interfaces.
+2023-11-05 23:01:19|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-11-05 23:01:19|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-11-05 23:01:19|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-11-05 23:01:19|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-05 23:01:19|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-11-05 23:01:19|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 3100 ms
+2023-11-05 23:01:20|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-05 23:01:20|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-05 23:01:20|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-11-05 23:01:20|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 23:01:21|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-05 23:01:21|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-11-05 23:01:22|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cf9bd1e
+2023-11-05 23:01:22|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-11-05 23:01:26|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-05 23:01:33|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-05 23:01:34|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-05 23:01:36|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-05 23:01:38|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-05 23:01:38|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-11-05 23:01:39|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-11-05 23:01:39|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-11-05 23:01:39|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 23.263 seconds (process running for 26.623)
+2023-11-05 23:02:08|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-05 23:02:08|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-11-05 23:02:08|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 3 ms
+2023-11-05 23:02:24|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Displaying the registration page
+2023-11-05 23:03:19|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Registering user: User Details:
+First Name: Mahendra
+Last Name: Singh
+Email: mdhoni@gmail.com
+2023-11-05 23:03:20|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.UserController-User registered: User Details:
+First Name: MAHENDRA
+Last Name: SINGH
+Email: MDHONI@GMAIL.COM
+2023-11-05 23:03:28|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Attempting login for email: mdhoni@gmail.com
+2023-11-05 23:03:29|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Login successful for email: MDHONI@GMAIL.COM
+2023-11-05 23:25:11|[HikariPool-1 housekeeper]|WARN |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m18s749ms246µs600ns).
+2023-11-05 23:26:43|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Attempting login for email: mdhoni@gmail.com
+2023-11-05 23:26:44|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Login successful for email: MDHONI@GMAIL.COM
+2023-11-05 23:54:12|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 23:54:37|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-05 23:54:53|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Saving a new representative
+2023-11-05 23:55:01|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-05 23:55:16|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected representative with ID: 13
+2023-11-05 23:55:54|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected party with ID: 6 for order with ID: 16
+2023-11-05 23:56:32|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 5 in order with ID: 16
+2023-11-05 23:56:59|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 5 in order with ID: 16
+2023-11-05 23:57:35|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Calculating total quantities for selected product with ID: 4 in order with ID: 16
+2023-11-05 23:57:50|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving order line items for product with ID: 4 in order with ID: 16
+2023-11-05 23:58:47|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected transport with ID: 3 for order with ID: 16
+2023-11-05 23:58:55|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-05 23:59:39|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 16

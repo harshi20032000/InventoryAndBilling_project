@@ -41,6 +41,7 @@ import com.harshi_solution.inventorymate.service.ProductService;
 import com.harshi_solution.inventorymate.service.RepsService;
 import com.harshi_solution.inventorymate.service.TransportService;
 import com.harshi_solution.inventorymate.service.WarehouseService;
+import com.harshi_solution.inventorymate.util.Constants;
 import com.harshi_solution.inventorymate.util.PdfGenerator;
 
 /**
@@ -95,15 +96,15 @@ public class OrderController {
 		LOGGER.info("Entering showBookOrder");
 		// 1. Get the current date
 		LocalDate currentDate = LocalDate.now();
-		modelMap.addAttribute("currentDate", currentDate);
+		modelMap.addAttribute(Constants.CURRENT_DATE, currentDate);
 
 		// 2. Get the list of representatives from repsService
 		List<Reps> repsList = repsService.getRepsList();
 		// Add the order to the model for reference
-		modelMap.addAttribute("repsList", repsList);
+		modelMap.addAttribute(Constants.REPS_LIST, repsList);
 
 		// Return the view name where users can select a representative
-		return "orderView/bookOrderSelectReps";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_SELECT_REPS_HTML;
 	}
 
 	/**
@@ -116,7 +117,7 @@ public class OrderController {
 	 */
 	@PostMapping("/bookOrderSaveReps")
 	public String bookOrderSaveReps(@RequestParam("selectedRep") Long selectedRepId,
-			@RequestParam("currentDate") LocalDate currentDate, ModelMap modelMap) {
+			@RequestParam(Constants.CURRENT_DATE) LocalDate currentDate, ModelMap modelMap) {
 		LOGGER.info("Saving selected representative with ID: {}", selectedRepId);
 		// Create a new Order object
 		Order order = new Order();
@@ -125,16 +126,17 @@ public class OrderController {
 		// Get the selected representative by ID
 		Reps selectedRep = repsService.getRepsById(selectedRepId);
 		order.setReps(selectedRep);
+		order.setTotalOrderQuantity(Integer.valueOf(0));
 
 		// Save the order to the database
 		Order savedOrder = orderService.saveOrder(order);
 		List<Party> partyList = partyService.getPartyList();
 		// Add the order to the model for reference
-		modelMap.addAttribute("order", savedOrder);
-		modelMap.addAttribute("partyList", partyList);
+		modelMap.addAttribute(Constants.ORDER, savedOrder);
+		modelMap.addAttribute(Constants.PARTY_LIST, partyList);
 
 		// Redirect to the next step with the order ID
-		return "orderView/bookOrderSelectParty";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_SELECT_PARTY_HTML;
 	}
 
 	/**
@@ -163,11 +165,11 @@ public class OrderController {
 		Order updatedOrder = orderService.saveOrder(order);
 		List<Product> productsList = productService.getProductsList();
 		// Add the order to the model for reference
-		modelMap.addAttribute("order", updatedOrder);
-		modelMap.addAttribute("productsList", productsList);
+		modelMap.addAttribute(Constants.ORDER, updatedOrder);
+		modelMap.addAttribute(Constants.PRODUCT_LIST, productsList);
 
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectProduct";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_SELECT_PRODUCT_HTML;
 	}
 
 	/**
@@ -179,7 +181,7 @@ public class OrderController {
 	 * @return The view for creating order line items.
 	 */
 	@PostMapping("/bookOrderShowTotalProductQuantity")
-	public String bookOrderShowTotalProductQuantity(@RequestParam("selectedProduct") Long selectedProductId,
+	public String bookOrderShowTotalProductQuantity(@RequestParam(Constants.SELECTED_PRODUCT) Long selectedProductId,
 			@RequestParam("orderId") Long orderId, ModelMap modelMap) {
 
 		LOGGER.info("Calculating total quantities for selected product with ID: {} in order with ID: {}",
@@ -199,13 +201,13 @@ public class OrderController {
 		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
-		modelMap.addAttribute("order", order);
-		modelMap.addAttribute("selectedProduct", selectedProduct);
-		modelMap.addAttribute("totalQuantitiesInWarehouse", totalQuantitiesInWarehouse);
-		modelMap.addAttribute("totalPrice", totalPrice);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, order);
+		modelMap.addAttribute(Constants.SELECTED_PRODUCT, selectedProduct);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES_IN_WAREHOUSE, totalQuantitiesInWarehouse);
+		modelMap.addAttribute(Constants.TOTAL_PRICE, totalPrice);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
 
-		return "orderView/bookOrderCreateOrderLineItems";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_CREATE_ORDER_LINE_ITEMS_HMTL;
 	}
 
 	/**
@@ -269,13 +271,13 @@ public class OrderController {
 		updatedOrder = orderService.saveOrder(order);
 
 		// Add the order to the model for reference
-		modelMap.addAttribute("order", updatedOrder);
-		modelMap.addAttribute("lineItem", lineItem);
-		modelMap.addAttribute("totalPrice", totalPrice);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, updatedOrder);
+		modelMap.addAttribute(Constants.LINE_ITEM, lineItem);
+		modelMap.addAttribute(Constants.TOTAL_PRICE, totalPrice);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
 
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectMoreProducts";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_SELECT_MORE_PRODUCTS_HTML;
 	}
 
 	/**
@@ -296,13 +298,13 @@ public class OrderController {
 		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
-		modelMap.addAttribute("order", order);
-		modelMap.addAttribute("productsList", productsList);
-		modelMap.addAttribute("totalPrice", totalPrice);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, order);
+		modelMap.addAttribute(Constants.PRODUCT_LIST, productsList);
+		modelMap.addAttribute(Constants.TOTAL_PRICE, totalPrice);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
 
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectProduct";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_SELECT_PRODUCT_HTML;
 	}
 
 	/**
@@ -317,19 +319,19 @@ public class OrderController {
 
 		// Get the order by ID
 		Order order = orderService.getOrderById(orderId);
-		List<Transport> transportsList = transportService.getTransportList();
+		List<Transport> transportList = transportService.getTransportList();
 
 		// Calculate total price for the line item
 		BigDecimal totalPrice = OrderHelper.totalOrderPrice(order);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
-		modelMap.addAttribute("totalPrice", totalPrice);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
-		modelMap.addAttribute("transportsList", transportsList);
-		modelMap.addAttribute("order", order);
+		modelMap.addAttribute(Constants.TOTAL_PRICE, totalPrice);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		modelMap.addAttribute(Constants.TRANSPORT_LIST, transportList);
+		modelMap.addAttribute(Constants.ORDER, order);
 
 		// Redirect to the next step or view
-		return "orderView/bookOrderSelectTransport";
+		return Constants.ORDER_VIEW_FOLDER+Constants.BOOK_ORDER_SELECT_TRANSPORT_HTML;
 	}
 
 	/**
@@ -369,10 +371,10 @@ public class OrderController {
 		// Update the order with the new transport
 		Order updatedOrder = orderService.saveOrder(order);
 		// Add the msg to the model for reference
-		modelMap.addAttribute("msg", "Order saved with " + updatedOrder.getOrderId());
+		modelMap.addAttribute(Constants.MSG, "Order saved with " + updatedOrder.getOrderId());
 
 		// Redirect to the next step or view
-		return "dashboardView/landing"; // Replace with the appropriate next view
+		return Constants.DASHBOARD_VIEW_FOLDER+Constants.LANDING_HTML; // Replace with the appropriate next view
 	}
 
 	/**
@@ -389,10 +391,10 @@ public class OrderController {
 		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(orderList);
 		BigDecimal totalRemainingAmount = OrderHelper.totalPendingPrice(orderList);
 		// Add the order to the model for reference
-		modelMap.addAttribute("totalBillAmount", totalBillAmount);
-		modelMap.addAttribute("totalRemainingAmount", totalRemainingAmount);
-		modelMap.addAttribute("orderList", orderList);
-		return "orderView/orderList";
+		modelMap.addAttribute(Constants.TOTAL_BILL_AMOUNT, totalBillAmount);
+		modelMap.addAttribute(Constants.TOTAL_REMAINING_AMOUNT, totalRemainingAmount);
+		modelMap.addAttribute(Constants.ORDER_LIST, orderList);
+		return Constants.ORDER_VIEW_FOLDER+Constants.ORDER_LIST;
 	}
 
 	/**
@@ -412,11 +414,11 @@ public class OrderController {
 		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
-		modelMap.addAttribute("totalAmount", totalAmount);
-		modelMap.addAttribute("remainingAmount", remainingAmount);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
-		modelMap.addAttribute("order", order);
-		return "orderView/orderDetails";
+		modelMap.addAttribute(Constants.TOTAL_AMOUNT, totalAmount);
+		modelMap.addAttribute(Constants.REMAINING_AMOUNT, remainingAmount);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, order);
+		return Constants.ORDER_VIEW_FOLDER+Constants.ORDER_DETAILS_HTML;
 	}
 
 	/**
@@ -438,13 +440,13 @@ public class OrderController {
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
 		// Add the order to the model for reference
-		model.addAttribute("totalAmount", totalAmount);
-		model.addAttribute("remainingAmount", remainingAmount);
-		model.addAttribute("totalQuantities", totalQuantities);
-		model.addAttribute("order", order);
-		model.addAttribute("transportList", transportList);
+		model.addAttribute(Constants.TOTAL_AMOUNT, totalAmount);
+		model.addAttribute(Constants.REMAINING_AMOUNT, remainingAmount);
+		model.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		model.addAttribute(Constants.ORDER, order);
+		model.addAttribute(Constants.TRANSPORT_LIST, transportList);
 
-		return "orderView/editOrderTransport";
+		return Constants.ORDER_VIEW_FOLDER+Constants.EDIT_ORDER_TRANSPORT_HTML;
 	}
 
 	/**
@@ -468,13 +470,13 @@ public class OrderController {
 		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(updatedOrder, totalAmount);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(updatedOrder);
 		// Add the order to the model for reference
-		modelMap.addAttribute("totalAmount", totalAmount);
-		modelMap.addAttribute("remainingAmount", remainingAmount);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
-		modelMap.addAttribute("order", updatedOrder);
+		modelMap.addAttribute(Constants.TOTAL_AMOUNT, totalAmount);
+		modelMap.addAttribute(Constants.REMAINING_AMOUNT, remainingAmount);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, updatedOrder);
 
 		// Redirect to the order details page or order list page
-		return "orderView/orderDetails";
+		return Constants.ORDER_VIEW_FOLDER+Constants.ORDER_DETAILS_HTML;
 	}
 
 	/**
@@ -494,13 +496,13 @@ public class OrderController {
 		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
-		model.addAttribute("totalAmount", totalAmount);
-		model.addAttribute("remainingAmount", remainingAmount);
-		model.addAttribute("totalQuantities", totalQuantities);
-		model.addAttribute("order", order);
-		model.addAttribute("payment", new Payment());
+		model.addAttribute(Constants.TOTAL_AMOUNT, totalAmount);
+		model.addAttribute(Constants.REMAINING_AMOUNT, remainingAmount);
+		model.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		model.addAttribute(Constants.ORDER, order);
+		model.addAttribute(Constants.PAYMENT, new Payment());
 
-		return "orderView/addOrderPayment";
+		return Constants.ORDER_VIEW_FOLDER+Constants.ADD_ORDER_PAYMENT_HTML;
 	}
 
 	/**
@@ -515,7 +517,7 @@ public class OrderController {
 	 * @return The view name for displaying order details after payment addition.
 	 */
 	@PostMapping("/addOrderPayment")
-	public String addOrderPayment(@ModelAttribute("payment") Payment payment, @RequestParam Long orderId,
+	public String addOrderPayment(@ModelAttribute(Constants.PAYMENT) Payment payment, @RequestParam Long orderId,
 			ModelMap modelMap, @RequestParam("payDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate payDate,
 			@RequestParam("documentFile") MultipartFile documentFile) {
 		// Find the order by orderId
@@ -539,9 +541,9 @@ public class OrderController {
 				e.printStackTrace(); // You can log the exception for debugging purposes
 
 				// Add an error message to the model to display to the user
-				modelMap.addAttribute("error", "An error occurred while uploading the document. Please try again.");
+				modelMap.addAttribute(Constants.ERROR, "An error occurred while uploading the document. Please try again.");
 				modelMap.addAttribute("errorMessage", e.getMessage());
-				return "error"; // Return to the same view with the error message
+				return Constants.ERROR; // Return to the same view with the error message
 			}
 		}
 
@@ -572,12 +574,12 @@ public class OrderController {
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(updatedOrder);
 
 		// Add the order to the model for reference
-		modelMap.addAttribute("totalAmount", totalAmount);
-		modelMap.addAttribute("remainingAmount", remainingAmount);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
-		modelMap.addAttribute("order", updatedOrder);
+		modelMap.addAttribute(Constants.TOTAL_AMOUNT, totalAmount);
+		modelMap.addAttribute(Constants.REMAINING_AMOUNT, remainingAmount);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, updatedOrder);
 
-		return "orderView/orderDetails";
+		return Constants.ORDER_VIEW_FOLDER+Constants.ORDER_DETAILS_HTML;
 	}
 
 	@GetMapping("/generateAndSaveOrderDetails/{orderId}")
@@ -587,19 +589,19 @@ public class OrderController {
 		String filepath = "D:\\InventoryAndBilling\\"+fName+".pdf";
 	    pdfGenerator.generateFullOrderDetails(orderId, filepath);
 
-	    // Redirect back to the Order Details page with a success messageOrder order = orderService.getOrderById(orderId);
+	    // Redirect back to the Order Details page with a success message
 	    Order order = orderService.getOrderById(orderId);
 		// Calculate total price for the line item
 		BigDecimal totalAmount = OrderHelper.totalOrderPrice(order);
 		BigDecimal remainingAmount = OrderHelper.totalPendingPrice(order, totalAmount);
 		Integer totalQuantities = OrderHelper.totalOrderQuantity(order);
 		// Add the order to the model for reference
-		modelMap.addAttribute("totalAmount", totalAmount);
-		modelMap.addAttribute("remainingAmount", remainingAmount);
-		modelMap.addAttribute("totalQuantities", totalQuantities);
-		modelMap.addAttribute("order", order);
-		modelMap.addAttribute("msg", "pdf save in path: "+"D:\\InventoryAndBilling");
-		return "orderView/orderDetails";
+		modelMap.addAttribute(Constants.TOTAL_AMOUNT, totalAmount);
+		modelMap.addAttribute(Constants.REMAINING_AMOUNT, remainingAmount);
+		modelMap.addAttribute(Constants.TOTAL_QUANTITIES, totalQuantities);
+		modelMap.addAttribute(Constants.ORDER, order);
+		modelMap.addAttribute(Constants.MSG, "pdf save in path: "+"D:\\InventoryAndBilling");
+		return Constants.ORDER_VIEW_FOLDER+Constants.ORDER_DETAILS_HTML;
 	}
 
 }
