@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.harshi</groupId>
-	<artifactId>InventoryAndBilling</artifactId>
+	<artifactId>InventoryMate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>InventoryAndBilling</name>
 	<description>Inventory Mangement and billing</description>

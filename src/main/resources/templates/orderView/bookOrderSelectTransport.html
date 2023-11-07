@@ -256,7 +256,7 @@
 			<div class="form-group">
 				<label for="selectedTransport">Select a Transport:</label>
 				<select name="selectedTransport" id="selectedTransport" class="form-control">
-					<option th:each="transport : ${transportsList}" th:value="${transport.transportId}"
+					<option th:each="transport : ${transportList}" th:value="${transport.transportId}"
 						th:text="${transport.transportName + ' - ' + transport.contactDetails}"></option>
 				</select>
 			</div>
@@ -267,7 +267,7 @@
 		<footer>
 			<!-- Add a Home button or other navigation options as needed -->
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-			<b>.....On Book Order Select Transport Page.....</b>
+			<b>.....On Book Order - Select Transport Page.....</b>
 		</footer>
 	</div>
 </body>
