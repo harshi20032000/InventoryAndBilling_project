@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Inventory Management and Billing App</title>
+	<title>InventoryMate - Home</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -75,15 +75,25 @@
 		}
 
 		#logo {
-			position: absolute;
-			top: 10px;
-			/* Adjust this value to control the vertical position */
-			left: 10px;
-			/* Adjust this value to control the horizontal position */
-			width: 100px;
-			/* Adjust this value to control the size */
+			width: 200px;
 			height: auto;
-			/* Maintain the aspect ratio */
+			margin: 20px auto;
+			display: block;
+		}
+
+		#owner-logo-container {
+			bottom: 10px;
+			right: 10px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
+			height: auto;
 		}
 	</style>
 </head>
@@ -145,7 +155,11 @@
 	</div>
 	<footer>
 		<b th:text="${msg}"></b>
+		<div id="owner-logo-container">
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+	</div>
 	</footer>
+	
 </body>
 
 </html>

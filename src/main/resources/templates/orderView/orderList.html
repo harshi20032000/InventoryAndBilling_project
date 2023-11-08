@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Order List</title>
+	<title>InventoryMate - Order List</title>
 
 	<style>
 		body {
@@ -18,7 +18,6 @@
 		h2 {
 			color: #333;
 			margin-bottom: 20px;
-
 		}
 
 		table {
@@ -72,6 +71,8 @@
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
+			position: relative;
+			/* Added to create a positioning context for the owner-logo-container */
 		}
 
 		/* Reusable container styles */
@@ -134,11 +135,37 @@
 			font-size: 18px;
 			font-weight: bold;
 		}
+
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#owner-logo-container {
+			bottom: 10px;
+			right: 10px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
+			height: auto;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<a href="/inventorybilling/showLanding">
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		 </a>
 		<h2>Order List</h2>
 		<table>
 			<caption>.....Order Details.....</caption>
@@ -185,7 +212,14 @@
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<div><b>.....On Order List Page.....</b></div>
 		</footer>
+
+		<div id="owner-logo-container">
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		</div>
+
 	</div>
+
+
 </body>
 
 </html>
