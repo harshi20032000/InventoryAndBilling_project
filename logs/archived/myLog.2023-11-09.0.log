@@ -1,0 +1,57 @@
+2023-11-09 00:00:09|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:02:55|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:22:35|[HikariPool-1 housekeeper]|WARN |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m41s753ms989µs300ns).
+2023-11-09 00:23:34|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:24:23|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:27:02|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:27:55|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:28:29|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:29:32|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:30:03|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:30:25|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:30:27|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:32:00|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:32:27|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:33:14|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:34:18|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:34:36|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:34:50|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:37:02|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:37:30|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:37:45|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:39:24|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:39:50|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:40:16|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:40:33|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:40:41|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:40:59|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:41:13|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:41:15|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:41:26|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:41:36|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:42:03|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:42:05|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:42:19|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:42:32|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:42:42|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:43:02|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:43:14|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:44:59|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:45:05|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:45:59|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:46:54|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:47:22|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:47:34|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:47:53|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:50:11|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:50:15|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-09 00:50:28|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-09 00:51:51|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin-Application shutdown requested.
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Pausing ProtocolHandler ["http-nio-8087"]
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.catalina.core.StandardService-Stopping service [Tomcat]
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Stopping ProtocolHandler ["http-nio-8087"]
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.apache.coyote.http11.Http11NioProtocol-Destroying ProtocolHandler ["http-nio-8087"]
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2023-11-09 00:51:52|[RMI TCP Connection(64)-127.0.0.1]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
