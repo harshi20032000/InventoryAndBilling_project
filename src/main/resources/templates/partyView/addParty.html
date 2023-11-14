@@ -104,11 +104,28 @@
 		.btn-info:hover {
 			background-color: #117a8b;
 		}
+
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Add Party</h2>
 		<form action="/inventorybilling/addParty" method="post" th:object="${party}">
 			<div class="form-group">
@@ -133,6 +150,8 @@
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<div><b>On Add Party Page</b></div>
 		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 	</div>
 </body>
 

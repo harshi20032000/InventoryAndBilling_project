@@ -13,6 +13,21 @@
 			padding: 0;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -72,6 +87,7 @@
 			background-color: #555;
 			text-decoration: underline;
 		}
+
 		.amount-container {
 			text-align: center;
 		}
@@ -95,6 +111,7 @@
 			font-size: 18px;
 			font-weight: bold;
 		}
+
 		/* Reusable footer styles */
 		footer {
 			text-align: center;
@@ -115,6 +132,8 @@
 <body>
 
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Product Details Page</h2>
 		<p>Product Id: <span th:text="${product.productId}"></span></p>
 		<p>Product Code: <span th:text="${product.pType}"></span></p>
@@ -145,24 +164,27 @@
 				</tr>
 			</tbody>
 		</table>
-		
+
 		<div class="amount-container">
 			<div class="amount-box">
 				<div class="amount-label">Total Product Quantity:</div>
 				<div class="amount-value" th:text="${totalProductQuantity}"></div>
 			</div>
 		</div>
-		
+
 		<footer>
-		<!-- Add an "Edit Quantities" button with the productId as a request parameter -->
-		
-		<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button" id="editQuantitiesButton">Edit
-			Quantities</a>
-		<!-- Add buttons to navigate to the homepage and product list page -->
-		<a href="/inventorybilling/showProductsList" class="button">Product List</a>
-		<a href="/inventorybilling/showLanding" class="button">Home</a>
-		<b>.....On Product Details Page.....</b>
+			<!-- Add an "Edit Quantities" button with the productId as a request parameter -->
+
+			<a th:href="@{'/editProductQuantities/' + ${product.productId}}" class="button"
+				id="editQuantitiesButton">Edit
+				Quantities</a>
+			<!-- Add buttons to navigate to the homepage and product list page -->
+			<a href="/inventorybilling/showProductsList" class="button">Product List</a>
+			<a href="/inventorybilling/showLanding" class="button">Home</a>
+			<b>.....On Product Details Page.....</b>
 		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 	</div>
 
 </body>

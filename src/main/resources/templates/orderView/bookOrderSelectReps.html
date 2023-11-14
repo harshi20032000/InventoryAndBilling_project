@@ -9,6 +9,21 @@
 			background-color: #f4f4f4;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -91,6 +106,8 @@
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Book Order</h2>
 		<p>Current Date: <span th:text="${currentDate}"></span></p>
 		<h3>Select Sales Representative</h3>
@@ -113,6 +130,8 @@
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<b>.....On Book Order Select Reps Page.....</b>
 		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 	</div>
 </body>
 

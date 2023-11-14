@@ -13,6 +13,21 @@
 			padding: 0;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -89,7 +104,7 @@
 			margin-top: 20px;
 		}
 
-		
+
 
 		footer {
 			text-align: center;
@@ -110,6 +125,8 @@
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Add Warehouse</h2>
 		<form action="addWarehouse" method="post" th:object="${warehouse}">
 			<div class="form-group">
@@ -131,6 +148,8 @@
 			</div>
 			<b>.....On Add Warehouse Page.....</b>
 		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 	</div>
 </body>
 

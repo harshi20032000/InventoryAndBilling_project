@@ -13,6 +13,21 @@
 			padding: 0;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -72,6 +87,7 @@
 			background-color: #555;
 			text-decoration: underline;
 		}
+
 		/* Reusable button styles */
 		.btn {
 			background-color: #007bff;
@@ -141,6 +157,8 @@
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Edit Product Quantities</h2>
 		<form action="/inventorybilling/updateProductQuantities" method="post" th:object="${product}">
 			<p>Product ID: <span th:text="${product.productId}"></span></p>
@@ -157,7 +175,7 @@
 						<th>Warehouse Code</th>
 						<th>Quantity</th>
 						<th>New Quantity</th>
-						</tr>
+					</tr>
 				</thead>
 				<tbody>
 					<!-- Iterate through the list of warehouses -->
@@ -187,6 +205,8 @@
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<b>.....On Edit Product Quantities Page.....</b>
 		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 	</div>
 </body>
 

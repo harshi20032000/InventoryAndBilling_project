@@ -15,6 +15,21 @@
 			text-align: left;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -127,6 +142,8 @@
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Book Order - Select Products</h2>
 
 		<!-- Display Order Details -->
@@ -252,7 +269,7 @@
 			<div class="form-group">
 				<label for="selectedProduct">Select a Product:</label>
 				<select name="selectedProduct" id="selectedProduct" class="form-control">
-					<option th:each="product : ${productsList}" th:value="${product.productId}"
+					<option th:each="product : ${productList}" th:value="${product.productId}"
 						th:text="${product.productId}+' - '+${product.brandName}+ ' - ' + ${product.pType}+ ' - ' + ${product.price}">
 					</option>
 				</select>
@@ -265,6 +282,8 @@
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<b>.....On Book Order Select Product Page.....</b>
 		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 
 	</div>
 </body>

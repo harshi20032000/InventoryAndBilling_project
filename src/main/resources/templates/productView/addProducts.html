@@ -13,6 +13,21 @@
 			padding: 0;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
+		}
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -123,6 +138,8 @@
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Add New Product</h2>
 		<!-- Create a form to add a new product -->
 		<form action="addProducts" method="post" th:object="${product}">
@@ -178,7 +195,10 @@
 			<a href="/inventorybilling/#" class="btn btn-secondary">Add Excel</a>
 			<a href="showLanding" class="btn btn-secondary">Home</a>
 			<div><b>.....On Add Products Page.....</b></div>
+			<!-- Company Logo -->
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 		</footer>
+
 	</div>
 </body>
 

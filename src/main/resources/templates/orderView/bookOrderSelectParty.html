@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Order - Select Party</title>
-    <style>
-        /* Add your custom CSS styles here */
-        body {
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Order - Select Party</title>
+	<style>
+		/* Add your custom CSS styles here */
+		body {
 			font-family: Arial, sans-serif;
 			background-color: #f4f4f4;
 			margin: 0;
 			padding: 0;
 			text-align: left;
+		}
+
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#ownerlogo {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 150px;
+			height: auto;
 		}
 
 		.container {
@@ -22,22 +38,24 @@
 			border: 1px solid #ddd;
 			border-radius: 5px;
 		}
-       h2 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+
+		h2 {
+			color: #333;
+			text-align: center;
+			margin-bottom: 20px;
+		}
 
 		h3 {
 			color: #333;
 			margin-bottom: 10px;
 		}
-  select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+
+		select {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
 
 		p {
 			color: #777;
@@ -111,22 +129,25 @@
 			justify-content: space-between;
 			flex-direction: column;
 		}
-    </style>
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Book Order - Select Party</h2>
-        
-        <!-- Display Order Details -->
-        <div>
-            <h3>Order Details</h3>
-            <div style="display: flex; justify-content: space-between;">
-                <p>Order ID: <span th:text="${order.orderId}"></span></p>
-                <p>Order Date: <span th:text="${order.orderDate}"></span></p>
-            </div>
-        </div>
-        
-      <!-- Display Selected Rep Details -->
+	<div class="container">
+		<!-- Logo -->
+		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		<h2>Book Order - Select Party</h2>
+
+		<!-- Display Order Details -->
+		<div>
+			<h3>Order Details</h3>
+			<div style="display: flex; justify-content: space-between;">
+				<p>Order ID: <span th:text="${order.orderId}"></span></p>
+				<p>Order Date: <span th:text="${order.orderDate}"></span></p>
+			</div>
+		</div>
+
+		<!-- Display Selected Rep Details -->
 		<div th:if="${order.reps != null}">
 			<table>
 				<caption>Selected Rep Details</caption>
@@ -146,25 +167,28 @@
 				</tbody>
 			</table>
 		</div>
-        
-        <!-- Select Party -->
-        <form action="/inventorybilling/bookOrderSaveParty" method="post">
-            <h3>Select Party</h3>
-            <select name="selectedParty" id="selectedParty">
-                <!-- Iterate through the list of parties and create options -->
-                <option th:each="party : ${partyList}" th:value="${party.partyId}"
-                        th:text="${party.partyId}+' - '+${party.partyName}+ ' - ' + ${party.partyLocation}"></option>
-            </select>
-            <input type="hidden" name="orderId" th:value="${order.orderId}" />
-            <button type="submit" class="btn btn-info">Next</button>
-        </form>
-        <footer>
-            <!-- Add a button to add a new party -->
-            <a href="/inventorybilling/showAddParty" class="btn btn-secondary">Add New Party</a>
-            <!-- Add a Home button or other navigation options as needed -->
-            <a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
-            <b>.....On Book Order Select Party Page.....</b>
-        </footer>
-    </div>
+
+		<!-- Select Party -->
+		<form action="/inventorybilling/bookOrderSaveParty" method="post">
+			<h3>Select Party</h3>
+			<select name="selectedParty" id="selectedParty">
+				<!-- Iterate through the list of parties and create options -->
+				<option th:each="party : ${partyList}" th:value="${party.partyId}"
+					th:text="${party.partyId}+' - '+${party.partyName}+ ' - ' + ${party.partyLocation}"></option>
+			</select>
+			<input type="hidden" name="orderId" th:value="${order.orderId}" />
+			<button type="submit" class="btn btn-info">Next</button>
+		</form>
+		<footer>
+			<!-- Add a button to add a new party -->
+			<a href="/inventorybilling/showAddParty" class="btn btn-secondary">Add New Party</a>
+			<!-- Add a Home button or other navigation options as needed -->
+			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
+			<b>.....On Book Order Select Party Page.....</b>
+		</footer>
+		<!-- Company Logo -->
+		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+	</div>
 </body>
+
 </html>
