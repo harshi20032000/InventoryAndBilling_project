@@ -64,11 +64,27 @@
 		input[type="submit"]:hover {
 			background-color: #555;
 		}
+		#logo {
+            width: 200px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+
+        #ownerlogo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 120px;
+            height: auto;
+        }
 	</style>
 </head>
 
 <body>
 	<div class="container">
+		<!-- Logo -->
+        <img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>User Registration</h2>
 		<form action="registerUser" method="post">
 			<label for="firstName">First Name:</label>
@@ -88,6 +104,8 @@
 
 			<input type="submit" value="Register">
 		</form>
+		<!-- Company Logo -->
+    <img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
 	</div>
 </body>
 
