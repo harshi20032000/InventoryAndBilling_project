@@ -19,12 +19,15 @@ import com.harshi_solution.inventorymate.entities.Order;
 import com.harshi_solution.inventorymate.entities.Party;
 import com.harshi_solution.inventorymate.helper.OrderHelper;
 import com.harshi_solution.inventorymate.service.PartyService;
+import com.harshi_solution.inventorymate.util.Constants;
 
 /**
  * Controller class for managing party-related operations.
  */
 @Controller
 public class PartyController {
+
+	
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(PartyController.class);
 
@@ -41,8 +44,8 @@ public class PartyController {
 	public String showPartyList(ModelMap modelMap) {
 		LOGGER.info("Displaying the party list");
 		List<Party> partyList = partyService.getPartyList();
-		modelMap.addAttribute("partyList", partyList);
-		return "partyView/partyList";
+		modelMap.addAttribute(Constants.PARTY_LIST, partyList);
+		return Constants.PARTY_VIEW_FOLDER + Constants.PARTY_LIST;
 	}
 
 	/**
@@ -65,7 +68,7 @@ public class PartyController {
 		model.addAttribute("remainingBillAmount", remainingBillAmount);
 		model.addAttribute("orders", orderList);
 		model.addAttribute("party", party);
-		return "partyView/partyDetails";
+		return Constants.PARTY_VIEW_FOLDER + Constants.PARTY_DETAILS;
 	}
 
 	/**
@@ -78,7 +81,7 @@ public class PartyController {
 	public String showAddParty(Model model) {
 		LOGGER.info("Displaying the add party form");
 		model.addAttribute("party", new Party());
-		return "partyView/addParty";
+		return Constants.PARTY_VIEW_FOLDER + Constants.ADD_PARTY;
 	}
 
 	/**
@@ -88,30 +91,30 @@ public class PartyController {
 	 * @param modelMap ModelMap for adding attributes to the view.
 	 * @return The view name for the party list.
 	 */
-	@PostMapping("/addParty")
+	@PostMapping(Constants.ADD_PARTY)
 	public String addParty(@ModelAttribute("party") Party party, ModelMap modelMap) {
-	    LOGGER.info("Saving a new party");
-	    try {
-	        // Convert party name and location to uppercase
-	        party.setPartyName(party.getPartyName().toUpperCase());
-	        party.setPartyLocation(party.getPartyLocation().toUpperCase());
+		LOGGER.info("Saving a new party");
+		try {
+			// Convert party name and location to uppercase
+			party.setPartyName(party.getPartyName().toUpperCase());
+			party.setPartyLocation(party.getPartyLocation().toUpperCase());
 
-	        // Attempt to save the party
-	        Party savedParty = partyService.saveParty(party);
-	        List<Party> partyList = partyService.getPartyList();
-	        modelMap.addAttribute("partyList", partyList);
-	        String msg = "Party saved with ID - " + savedParty.getPartyId();
-	        modelMap.addAttribute("msg", msg);
-	        return "partyView/partyList";
-	    } catch (Exception e) {
-	        // Handle the exception
-	        e.printStackTrace(); // You can log the exception for debugging purposes
+			// Attempt to save the party
+			Party savedParty = partyService.saveParty(party);
+			List<Party> partyList = partyService.getPartyList();
+			modelMap.addAttribute(Constants.PARTY_LIST, partyList);
+			String msg = "Party saved with ID - " + savedParty.getPartyId();
+			modelMap.addAttribute("msg", msg);
+			return Constants.PARTY_VIEW_FOLDER + Constants.PARTY_LIST;
+		} catch (Exception e) {
+			// Handle the exception
+			e.printStackTrace(); // You can log the exception for debugging purposes
 
-	        // Add an error message to the model to display to the user
-	        modelMap.addAttribute("error", "An error occurred while saving the party. Please try again.");
-	        modelMap.addAttribute("errorMessage", e.getMessage());
-	        return "error"; // Return to the same view with the error message
-	    }
+			// Add an error message to the model to display to the user
+			modelMap.addAttribute("error", "An error occurred while saving the party. Please try again.");
+			modelMap.addAttribute("errorMessage", e.getMessage());
+			return "error"; // Return to the same view with the error message
+		}
 	}
 
 }
