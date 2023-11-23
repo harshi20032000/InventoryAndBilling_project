@@ -25,7 +25,23 @@ import com.harshi_solution.inventorymate.service.RepsService;
 @Controller
 public class RepsController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(RepsController.class);
+    private static final String TOTAL_BILL_AMOUNT = "totalBillAmount";
+
+	private static final String REMAINING_BILL_AMOUNT = "remainingBillAmount";
+
+	private static final String ORDERS = "orders";
+
+	private static final String REPS2 = "reps";
+
+	private static final String ERROR = "error";
+
+	private static final String ERROR_MESSAGE = "errorMessage";
+
+	private static final String MSG = "msg";
+
+	private static final String REPS_LIST = "repsList";
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(RepsController.class);
 
     @Autowired
     private RepsService repsService;
@@ -35,7 +51,7 @@ public class RepsController {
      *
      * @return A new Reps instance.
      */
-    @ModelAttribute("reps")
+    @ModelAttribute(REPS2)
     public Reps getReps() {
         return new Reps();
     }
@@ -50,8 +66,8 @@ public class RepsController {
     public String showRepsList(ModelMap modelMap) {
         LOGGER.info("Displaying the list of representatives");
         List<Reps> repsList = repsService.getRepsList();
-        modelMap.addAttribute("repsList", repsList);
-        return "repsView/repsList";
+        modelMap.addAttribute(REPS_LIST, repsList);
+        return "repsView/"+REPS_LIST;
     }
 
     /**
@@ -63,7 +79,7 @@ public class RepsController {
     @RequestMapping("/showAddReps")
     public String showAddReps(Model model) {
         LOGGER.info("Displaying the add representatives form");
-        return "repsView/addReps";
+        return "repsView/"+"addReps";
     }
 
     /**
@@ -74,7 +90,7 @@ public class RepsController {
      * @return The view name for the representative list or the error view in case of an exception.
      */
     @RequestMapping("/addReps")
-    public String addReps(@ModelAttribute("reps") Reps reps, ModelMap modelMap) {
+    public String addReps(@ModelAttribute(REPS2) Reps reps, ModelMap modelMap) {
         LOGGER.info("Saving a new representative");
         try {
             // Convert representative name and location to uppercase
@@ -84,18 +100,18 @@ public class RepsController {
             // Save the representative
             Reps savedReps = repsService.saveReps(reps);
             List<Reps> repsList = repsService.getRepsList();
-            modelMap.addAttribute("repsList", repsList);
+            modelMap.addAttribute(REPS_LIST, repsList);
             String msg = "Representative saved with ID - " + savedReps.getRepId();
-            modelMap.addAttribute("msg", msg);
-            return "repsView/repsList";
+            modelMap.addAttribute(MSG, msg);
+            return "repsView/"+"repsList";
         } catch (Exception e) {
             // Handle the exception
             e.printStackTrace(); // You can log the exception for debugging purposes
 
             // Add an error message to the model to display to the user
-            modelMap.addAttribute("error", "An error occurred while saving the representative. Please try again.");
-            modelMap.addAttribute("errorMessage", e.getMessage());
-            return "error"; // Return to the error view with the error message
+            modelMap.addAttribute(ERROR, "An error occurred while saving the representative. Please try again.");
+            modelMap.addAttribute(ERROR_MESSAGE, e.getMessage());
+            return ERROR; // Return to the error view with the error message
         }
     }
 
@@ -116,10 +132,10 @@ public class RepsController {
 		BigDecimal totalBillAmount = OrderHelper.totalOrderPrice(orderList);
 		BigDecimal remainingBillAmount = OrderHelper.totalPendingPrice(orderList);
 		// Add the order to the model for reference
-		model.addAttribute("totalBillAmount", totalBillAmount);
-		model.addAttribute("remainingBillAmount", remainingBillAmount);
-        model.addAttribute("orders", orderList);
-        model.addAttribute("reps", reps);
-        return "repsView/repsDetails";
+		model.addAttribute(TOTAL_BILL_AMOUNT, totalBillAmount);
+		model.addAttribute(REMAINING_BILL_AMOUNT, remainingBillAmount);
+        model.addAttribute(ORDERS, orderList);
+        model.addAttribute(REPS2, reps);
+        return "repsView/"+"repsDetails";
     }
 }

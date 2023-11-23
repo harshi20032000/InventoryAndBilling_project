@@ -23,7 +23,17 @@ import com.harshi_solution.inventorymate.service.TransportService;
 @Controller
 public class TransportController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TransportController.class);
+    private static final String ERROR = "error";
+
+	private static final String ERROR_MESSAGE = "errorMessage";
+
+	private static final String MSG = "msg";
+
+	private static final String TRANSPORT2 = "transport";
+
+	private static final String TRANSPORT_LIST = "transportList";
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(TransportController.class);
 
     @Autowired
     private TransportService transportService;
@@ -38,8 +48,8 @@ public class TransportController {
     public String showTransportList(ModelMap modelMap) {
         LOGGER.info("Displaying the list of transports");
         List<Transport> transportList = transportService.getTransportList();
-        modelMap.addAttribute("transportList", transportList);
-        return "transportView/transportList";
+        modelMap.addAttribute(TRANSPORT_LIST, transportList);
+        return "transportView/"+TRANSPORT_LIST;
     }
 
     /**
@@ -53,8 +63,8 @@ public class TransportController {
     public String showTransportDetails(@PathVariable Long transportId, Model model) {
         LOGGER.info("Displaying transport details for transport with ID: {}", transportId);
         Transport transport = transportService.getTransportById(transportId);
-        model.addAttribute("transport", transport);
-        return "transportView/transportDetails";
+        model.addAttribute(TRANSPORT2, transport);
+        return "transportView/"+"transportDetails";
     }
 
     /**
@@ -66,8 +76,8 @@ public class TransportController {
     @RequestMapping("/showAddTransport")
     public String showAddTransport(Model model) {
         LOGGER.info("Displaying the add transport form");
-        model.addAttribute("transport", new Transport());
-        return "transportView/addTransport";
+        model.addAttribute(TRANSPORT2, new Transport());
+        return "transportView/"+"addTransport";
     }
 
     /**
@@ -78,7 +88,7 @@ public class TransportController {
      * @return The view name for the transport list or the error view in case of an exception.
      */
     @PostMapping("/addTransport")
-    public String addTransport(@ModelAttribute("transport") Transport transport, ModelMap modelMap) {
+    public String addTransport(@ModelAttribute(TRANSPORT2) Transport transport, ModelMap modelMap) {
         LOGGER.info("Saving a new transport");
         try {
             // Convert transport name to uppercase
@@ -87,18 +97,18 @@ public class TransportController {
             // Attempt to save the transport
             Transport savedTransport = transportService.saveTransport(transport);
             List<Transport> transportList = transportService.getTransportList();
-            modelMap.addAttribute("transportList", transportList);
+            modelMap.addAttribute(TRANSPORT_LIST, transportList);
             String msg = "Transport saved with ID - " + savedTransport.getTransportId();
-            modelMap.addAttribute("msg", msg);
-            return "transportView/transportList";
+            modelMap.addAttribute(MSG, msg);
+            return "transportView/"+"transportList";
         } catch (Exception e) {
             // Handle the exception
             e.printStackTrace(); // You can log the exception for debugging purposes
 
             // Add an error message to the model to display to the user
-            modelMap.addAttribute("error", "An error occurred while saving the transport. Please try again.");
-            modelMap.addAttribute("errorMessage", e.getMessage());
-            return "error"; // Return to the error view with the error message
+            modelMap.addAttribute(ERROR, "An error occurred while saving the transport. Please try again.");
+            modelMap.addAttribute(ERROR_MESSAGE, e.getMessage());
+            return ERROR; // Return to the error view with the error message
         }
     }
 

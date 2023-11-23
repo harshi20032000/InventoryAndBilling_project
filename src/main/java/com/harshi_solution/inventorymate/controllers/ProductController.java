@@ -26,6 +26,20 @@ import com.harshi_solution.inventorymate.service.WarehouseService;
 @Controller
 public class ProductController {
 
+	private static final String TOTAL_PRODUCT_QUANTITY = "totalProductQuantity";
+
+	private static final String PRODUCT2 = "product";
+
+	private static final String ERROR_MESSAGE = "errorMessage";
+
+	private static final String ERROR = "error";
+
+	private static final String MSG2 = "msg";
+
+	private static final String PRODUCTS_LIST = "productsList";
+
+	private static final String WAREHOUSES2 = "warehouses";
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
 	@Autowired
@@ -40,7 +54,7 @@ public class ProductController {
 	 *
 	 * @return A new Product instance.
 	 */
-	@ModelAttribute("product")
+	@ModelAttribute(PRODUCT2)
 	public Product getProduct() {
 		return new Product();
 	}
@@ -56,8 +70,8 @@ public class ProductController {
 		LOGGER.info("Displaying the list of available products");
 		// Retrieve available products and add them to the modelMap
 		List<Product> productsList = productService.getProductsList();
-		modelMap.addAttribute("productsList", productsList);
-		return "productView/productsList";
+		modelMap.addAttribute(PRODUCTS_LIST, productsList);
+		return "productView/"+PRODUCTS_LIST;
 	}
 
 	/**
@@ -70,8 +84,8 @@ public class ProductController {
 	public String showAddProducts(Model model) {
 		LOGGER.info("Displaying the add products form");
 		List<Warehouse> warehouses = warehouseService.getWarehousesList();
-		model.addAttribute("warehouses", warehouses);
-		return "productView/addProducts";
+		model.addAttribute(WAREHOUSES2, warehouses);
+		return "productView/"+"addProducts";
 	}
 
 	/**
@@ -83,7 +97,7 @@ public class ProductController {
 	 *         exception.
 	 */
 	@RequestMapping("/addProducts")
-	public String addProducts(@ModelAttribute("product") Product product, ModelMap modelMap) {
+	public String addProducts(@ModelAttribute(PRODUCT2) Product product, ModelMap modelMap) {
 		LOGGER.info("Saving a new product");
 		try {
 			// Convert brand name and product type to uppercase
@@ -93,18 +107,18 @@ public class ProductController {
 			// Save the product with warehouse quantities
 			Product savedProduct = productService.saveProduct(product);
 			List<Product> productsList = productService.getProductsList();
-			modelMap.addAttribute("productsList", productsList);
+			modelMap.addAttribute(PRODUCTS_LIST, productsList);
 			String msg = "Product saved with ID - " + savedProduct.getProductId();
-			modelMap.addAttribute("msg", msg);
-			return "productView/productsList";
+			modelMap.addAttribute(MSG2, msg);
+			return "productView/"+"productsList";
 		} catch (Exception e) {
 			// Handle the exception
 			e.printStackTrace(); // You can log the exception for debugging purposes
 
 			// Add an error message to the model to display to the user
-			modelMap.addAttribute("error", "An error occurred while saving the product. Please try again.");
-			modelMap.addAttribute("errorMessage", e.getMessage());
-			return "error"; // Return to the error view with the error message
+			modelMap.addAttribute(ERROR, "An error occurred while saving the product. Please try again.");
+			modelMap.addAttribute(ERROR_MESSAGE, e.getMessage());
+			return ERROR; // Return to the error view with the error message
 		}
 	}
 
@@ -121,10 +135,10 @@ public class ProductController {
 		Product product = productService.getProductById(productId);
 		List<Warehouse> warehouses = warehouseService.getWarehousesList();
 		Integer totalProductQuantity = ProductHelper.totalProductQuantity(product);
-		model.addAttribute("totalProductQuantity", totalProductQuantity);
-		model.addAttribute("product", product);
-		model.addAttribute("warehouses", warehouses);
-		return "productView/productDetails";
+		model.addAttribute(TOTAL_PRODUCT_QUANTITY, totalProductQuantity);
+		model.addAttribute(PRODUCT2, product);
+		model.addAttribute(WAREHOUSES2, warehouses);
+		return "productView/"+"productDetails";
 	}
 
 	/**
@@ -140,10 +154,10 @@ public class ProductController {
 		Product product = productService.getProductById(productId);
 		List<Warehouse> warehouses = warehouseService.getWarehousesList();
 		Integer totalProductQuantity = ProductHelper.totalProductQuantity(product);
-		model.addAttribute("totalProductQuantity", totalProductQuantity);
-		model.addAttribute("product", product);
-		model.addAttribute("warehouses", warehouses);
-		return "productView/editProductQuantities";
+		model.addAttribute(TOTAL_PRODUCT_QUANTITY, totalProductQuantity);
+		model.addAttribute(PRODUCT2, product);
+		model.addAttribute(WAREHOUSES2, warehouses);
+		return "productView/"+"editProductQuantities";
 	}
 
 	/**
@@ -155,16 +169,16 @@ public class ProductController {
 	 * @return The view name for the product list.
 	 */
 	@PostMapping("/updateProductQuantities")
-	public String updateProductQuantities(@ModelAttribute("product") Product product, ModelMap modelMap) {
+	public String updateProductQuantities(@ModelAttribute(PRODUCT2) Product product, ModelMap modelMap) {
 		LOGGER.info("Updating product quantities for product with ID: {}", product.getProductId());
 		// Update the product quantities in the database
 		Product fetchedProduct = productService.getProductById(product.getProductId());
 		fetchedProduct.setWarehouseQuantities(product.getWarehouseQuantities());
 		productService.saveProduct(fetchedProduct);
 		List<Product> productsList = productService.getProductsList();
-		modelMap.addAttribute("productsList", productsList);
+		modelMap.addAttribute(PRODUCTS_LIST, productsList);
 		String msg = "Product updated with ID - " + product.getProductId();
-		modelMap.addAttribute("msg", msg);
-		return "productView/productsList";
+		modelMap.addAttribute(MSG2, msg);
+		return "productView/"+"productsList";
 	}
 }

@@ -20,6 +20,12 @@ import com.harshi_solution.inventorymate.service.PaymentService;
 @Controller
 public class PaymentController {
 
+	private static final String ORDER_ID = "orderId";
+
+	private static final String DOCUMENT = "document";
+
+	private static final String PAYMENT2 = "payment";
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(PaymentController.class);
 
 	@Autowired
@@ -40,8 +46,8 @@ public class PaymentController {
     public String showTPaymentDetails(@PathVariable Long payId, Model model) {
         LOGGER.info("Displaying payment details for payment with ID: {}", payId);
         Payment payment = paymentService.getPaymentById(payId);
-        model.addAttribute("payment", payment);
-        return "paymentView/paymentDetails";
+        model.addAttribute(PAYMENT2, payment);
+        return "paymentView/"+"paymentDetails";
     }
     
     @GetMapping("/viewDocument/{payId}")
@@ -49,10 +55,10 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(payId);
 
         if (payment.getDocument() != null) {
-            model.addAttribute("document", payment.getDocument());
-            model.addAttribute("orderId", payment.getOrder().getOrderId());
+            model.addAttribute(DOCUMENT, payment.getDocument());
+            model.addAttribute(ORDER_ID, payment.getOrder().getOrderId());
 
-            return "paymentView/viewDocument"; // Replace "viewDocument" with your actual Thymeleaf view name
+            return "paymentView/"+"viewDocument"; // Replace "viewDocument" with your actual Thymeleaf view name
         } else {
             // Handle the case where no document is found
             return "documentNotFound"; // Create a view for displaying a message about document not found
