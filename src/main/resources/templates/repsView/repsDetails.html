@@ -18,11 +18,18 @@
 			display: block;
 		}
 
-		#ownerlogo {
-			position: absolute;
+		#owner-logo-container {
 			bottom: 10px;
 			right: 10px;
-			width: 150px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
 			height: auto;
 		}
 
@@ -134,8 +141,9 @@
 
 <body>
 	<div class="container">
-		<!-- Logo -->
-		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		<a href="/inventorybilling/showLanding">
+			<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		</a>
 		<h2>Reps Details Page</h2>
 		<div class="card">
 			<p>ID: <span th:text="${reps.repId}"></span></p>
@@ -200,7 +208,9 @@
 			<b>.....On Reps Details Page.....</b>
 		</footer>
 		<!-- Company Logo -->
-		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		<div id="owner-logo-container">
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		</div>
 	</div>
 </body>
 

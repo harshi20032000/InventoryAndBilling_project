@@ -148,49 +148,51 @@
 <body>
 
 	<div class="container">
-		<!-- Logo -->
-		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
-		<div>
-			<h2>Payment Details Page</h2>
-			<p>Payment ID: <span th:text="${payment.payId}"></span></p>
-			<p>Payment Date: <span th:text="${payment.payDate}"></span></p>
-			<p>Payment Amount: <span th:text="${payment.payAmount}"></span></p>
-			<p>Payment Mode: <span th:text="${payment.payMode}"></span></p>
-			<p>Payment Type: <span th:text="${payment.payType}"></span></p>
+		<a href="/inventorybilling/showLanding">
+			<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		</a>
+		<h2>Payment Details Page</h2>
+		<p>Payment ID: <span th:text="${payment.payId}"></span></p>
+		<p>Payment Date: <span th:text="${payment.payDate}"></span></p>
+		<p>Payment Amount: <span th:text="${payment.payAmount}"></span></p>
+		<p>Payment Mode: <span th:text="${payment.payMode}"></span></p>
+		<p>Payment Type: <span th:text="${payment.payType}"></span></p>
 
-			<!-- Check if a document is associated with the payment -->
-			<th:block th:if="${payment.document != null}">
-				<p>Document Name: <span th:text="${payment.document.name}"></span></p>
-				<!-- Provide links to download and view the document -->
-				<a th:href="@{'/viewDocument/' + ${payment.payId}}" class="button">View Document</a>
-			</th:block>
+		<!-- Check if a document is associated with the payment -->
+		<th:block th:if="${payment.document != null}">
+			<p>Document Name: <span th:text="${payment.document.name}"></span></p>
+			<!-- Provide links to download and view the document -->
+			<a th:href="@{'/viewDocument/' + ${payment.payId}}" class="button">View Document</a>
+		</th:block>
 
+	</div>
+
+	<!-- Display Order Information -->
+	<div>
+		<h3>Order Information and Total Bill Amount</h3>
+		<div class="order-info">
+			<p>Order ID: <span th:text="${payment.order.orderId}"></span></p>
+			<p>Order Date: <span th:text="${payment.order.orderDate}"></span></p>
+			<!-- You can add more fields here as needed -->
 		</div>
-
-		<!-- Display Order Information -->
-		<div>
-			<h3>Order Information and Total Bill Amount</h3>
-			<div class="order-info">
-				<p>Order ID: <span th:text="${payment.order.orderId}"></span></p>
-				<p>Order Date: <span th:text="${payment.order.orderDate}"></span></p>
-				<!-- You can add more fields here as needed -->
-			</div>
-			<div class="total-bill">
-				<p>Total Bill Amount: <span th:text="${payment.order.totalBillAmount}"></span></p>
-				<p>Remaining Bill Amount: <span th:text="${payment.order.remainingBillAmount}"></span></p>
-				<!-- You can add more fields here as needed -->
-			</div>
+		<div class="total-bill">
+			<p>Total Bill Amount: <span th:text="${payment.order.totalBillAmount}"></span></p>
+			<p>Remaining Bill Amount: <span th:text="${payment.order.remainingBillAmount}"></span></p>
+			<!-- You can add more fields here as needed -->
 		</div>
+	</div>
 
-		<footer>
-			<!-- Add buttons to navigate to other pages -->
-			<!-- Add a "Back to Order Details" button -->
-			<a th:href="@{'/orderDetails/'+ ${payment.order.orderId}}" class="button">Back to Order Details</a>
-			<a href="/inventorybilling/showLanding" class="button">Home</a>
-			<b>.....On Payment Details Page.....</b>
-		</footer>
-		<!-- Company Logo -->
+	<footer>
+		<!-- Add buttons to navigate to other pages -->
+		<!-- Add a "Back to Order Details" button -->
+		<a th:href="@{'/orderDetails/'+ ${payment.order.orderId}}" class="button">Back to Order Details</a>
+		<a href="/inventorybilling/showLanding" class="button">Home</a>
+		<b>.....On Payment Details Page.....</b>
+	</footer>
+	<!-- Company Logo -->
+	<div id="owner-logo-container">
 		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+	</div>
 	</div>
 
 </body>
