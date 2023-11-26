@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.harshi_solution.inventorymate.entities.User;
 import com.harshi_solution.inventorymate.service.UserService;
+import com.harshi_solution.inventorymate.util.Constants;
 
 /**
  * Controller class for managing user-related operations including registration and login.
@@ -19,13 +20,7 @@ import com.harshi_solution.inventorymate.service.UserService;
 @Controller
 public class UserController {
 
-    private static final String MSG = "msg";
-
-	private static final String ERROR_MESSAGE = "errorMessage";
-
-	private static final String ERROR = "error";
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+   	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
@@ -38,7 +33,7 @@ public class UserController {
     @RequestMapping("/showReg")
     public String showRegistrationPage() {
         LOGGER.info("Displaying the registration page");
-        return "loginView/"+"registerUser";
+        return Constants.LOGIN_VIEW+Constants.REGISTER_USER;
     }
 
     /**
@@ -54,15 +49,15 @@ public class UserController {
         try {
             User savedUser = userService.saveUser(user);
             LOGGER.info("User registered: {}", savedUser);
-            return "loginView/"+"login";
+            return Constants.LOGIN_VIEW+Constants.LOGIN;
         } catch (Exception e) {
             // Handle the exception
             e.printStackTrace(); // You can log the exception for debugging purposes
 
             // Add an error message to the model to display to the user
-            modelMap.addAttribute(ERROR, "An error occurred while registering the user. Please try again.");
-            modelMap.addAttribute(ERROR_MESSAGE, e.getMessage());
-            return ERROR; // Return to the error view with the error message
+            modelMap.addAttribute(Constants.ERROR, "An error occurred while registering the user. Please try again.");
+            modelMap.addAttribute(Constants.ERROR_MESSAGE, e.getMessage());
+            return Constants.ERROR; // Return to the error view with the error message
         }
     }
 
@@ -74,7 +69,7 @@ public class UserController {
     @RequestMapping("/showLogin")
     public String showLoginPage() {
         LOGGER.info("Displaying the login page");
-        return "loginView/"+"login";
+        return Constants.LOGIN_VIEW+Constants.LOGIN;
     }
 
     /**
@@ -94,12 +89,12 @@ public class UserController {
         boolean isLoginSuccess = userService.login(email, password);
         if (isLoginSuccess) {
             LOGGER.info("Login successful for email: {}", email);
-            modelMap.addAttribute(MSG, "Login Success!");
-            return "dashboardView/"+"landing";
+            modelMap.addAttribute(Constants.MSG, "Login Success!");
+            return Constants.DASHBOARD_VIEW+Constants.LANDING;
         } else {
             LOGGER.warn("Login failed for email: {}", email);
-            modelMap.addAttribute(MSG, "Invalid username/password. Try Again");
+            modelMap.addAttribute(Constants.MSG, "Invalid username/password. Try Again");
         }
-        return "loginView/"+"login";
+        return Constants.LOGIN_VIEW+Constants.LOGIN;
     }
 }

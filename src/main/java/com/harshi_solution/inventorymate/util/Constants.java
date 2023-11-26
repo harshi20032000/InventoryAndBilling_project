@@ -4,7 +4,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Constants {
+	
 	public static final String ORDER = "order";
+	
 	public static final String PAYMENT = "payment";
 	public static final String TOTAL_REMAINING_AMOUNT = "totalRemainingAmount";
 	public static final String TOTAL_BILL_AMOUNT = "totalBillAmount";
@@ -41,8 +43,72 @@ public class Constants {
 	public static final String PARTY_DETAILS = "partyDetails";
 
 	public static final String PARTY_VIEW_FOLDER = "partyView/";
+	public static final String LANDING = "landing";
+	public static final String DOCUMENT_NOT_FOUND = "documentNotFound";
 
-	// Private constructor to prevent instantiation
-	private Constants() {
+	public static final String VIEW_DOCUMENT = "viewDocument";
+
+	public static final String PAYMENT_DETAILS = "paymentDetails";
+
+	public static final String PAYMENT_VIEW = "paymentView/";
+
+	public static final String ORDER_ID = "orderId";
+
+	public static final String DOCUMENT = "document";
+
+
+
+	public static final String EDIT_PRODUCT_QUANTITIES = "editProductQuantities";
+
+	public static final String PRODUCT_DETAILS = "productDetails";
+
+	public static final String PRODUCTS_LIST = "productsList";
+
+	public static final String ADD_PRODUCTS = "addProducts";
+
+	public static final String PRODUCT_VIEW_FOLDER = "productView/";
+
+	public static final String TOTAL_PRODUCT_QUANTITY = "totalProductQuantity";
+
+	public static final String PRODUCT = "product";
+
+	public static final String ERROR_MESSAGE = "errorMessage";
+
+	public static final String WAREHOUSES = "warehouses";
+
+	public static final String REPS_DETAILS = "repsDetails";
+
+	public static final String REPS_VIEW = "repsView/";
+
+	public static final String REMAINING_BILL_AMOUNT = "remainingBillAmount";
+
+	public static final String ORDERS = "orders";
+
+	public static final String REPS = "reps";
+
+	public static final String ADD_TRANSPORT = "addTransport";
+
+	public static final String TRANSPORT_VIEW_FOLDER = "transportView/";
+
+	public static final String TRANSPORT = "transport";
+
+	public static final String REGISTER_USER = "registerUser";
+
+	public static final String LOGIN = "login";
+
+	public static final String LOGIN_VIEW = "loginView/";
+
+	public static final String DASHBOARD_VIEW = "dashboardView/";
+
+	public static final String WAREHOUSES_LIST = "warehousesList";
+
+	public static final String ADD_WAREHOUSE = "addWarehouse";
+
+	public static final String WAREHOUSE_VIEW = "warehouseView/";
+
+	public static final String WAREHOUSE = "warehouse";
+
+	// public constructor to prevent instantiation
+	public Constants() {
 	}
 }

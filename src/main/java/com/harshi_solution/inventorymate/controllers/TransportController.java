@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.harshi_solution.inventorymate.entities.Transport;
 import com.harshi_solution.inventorymate.service.TransportService;
+import com.harshi_solution.inventorymate.util.Constants;
 
 /**
  * Controller class for managing transport-related operations.
@@ -23,17 +24,7 @@ import com.harshi_solution.inventorymate.service.TransportService;
 @Controller
 public class TransportController {
 
-    private static final String ERROR = "error";
-
-	private static final String ERROR_MESSAGE = "errorMessage";
-
-	private static final String MSG = "msg";
-
-	private static final String TRANSPORT2 = "transport";
-
-	private static final String TRANSPORT_LIST = "transportList";
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(TransportController.class);
+   	private static final Logger LOGGER = LoggerFactory.getLogger(TransportController.class);
 
     @Autowired
     private TransportService transportService;
@@ -48,8 +39,8 @@ public class TransportController {
     public String showTransportList(ModelMap modelMap) {
         LOGGER.info("Displaying the list of transports");
         List<Transport> transportList = transportService.getTransportList();
-        modelMap.addAttribute(TRANSPORT_LIST, transportList);
-        return "transportView/"+TRANSPORT_LIST;
+        modelMap.addAttribute(Constants.TRANSPORT_LIST, transportList);
+        return Constants.TRANSPORT_VIEW_FOLDER+Constants.TRANSPORT_LIST;
     }
 
     /**
@@ -63,8 +54,8 @@ public class TransportController {
     public String showTransportDetails(@PathVariable Long transportId, Model model) {
         LOGGER.info("Displaying transport details for transport with ID: {}", transportId);
         Transport transport = transportService.getTransportById(transportId);
-        model.addAttribute(TRANSPORT2, transport);
-        return "transportView/"+"transportDetails";
+        model.addAttribute(Constants.TRANSPORT, transport);
+        return Constants.TRANSPORT_VIEW_FOLDER+"transportDetails";
     }
 
     /**
@@ -76,8 +67,8 @@ public class TransportController {
     @RequestMapping("/showAddTransport")
     public String showAddTransport(Model model) {
         LOGGER.info("Displaying the add transport form");
-        model.addAttribute(TRANSPORT2, new Transport());
-        return "transportView/"+"addTransport";
+        model.addAttribute(Constants.TRANSPORT, new Transport());
+        return Constants.TRANSPORT_VIEW_FOLDER+Constants.ADD_TRANSPORT;
     }
 
     /**
@@ -88,7 +79,7 @@ public class TransportController {
      * @return The view name for the transport list or the error view in case of an exception.
      */
     @PostMapping("/addTransport")
-    public String addTransport(@ModelAttribute(TRANSPORT2) Transport transport, ModelMap modelMap) {
+    public String addTransport(@ModelAttribute(Constants.TRANSPORT) Transport transport, ModelMap modelMap) {
         LOGGER.info("Saving a new transport");
         try {
             // Convert transport name to uppercase
@@ -97,18 +88,19 @@ public class TransportController {
             // Attempt to save the transport
             Transport savedTransport = transportService.saveTransport(transport);
             List<Transport> transportList = transportService.getTransportList();
-            modelMap.addAttribute(TRANSPORT_LIST, transportList);
+            modelMap.addAttribute(Constants.TRANSPORT_LIST, transportList);
             String msg = "Transport saved with ID - " + savedTransport.getTransportId();
-            modelMap.addAttribute(MSG, msg);
-            return "transportView/"+"transportList";
+            modelMap.addAttribute(Constants.MSG, msg);
+            return Constants.TRANSPORT_VIEW_FOLDER+Constants.TRANSPORT_LIST;
+            
         } catch (Exception e) {
             // Handle the exception
             e.printStackTrace(); // You can log the exception for debugging purposes
 
             // Add an error message to the model to display to the user
-            modelMap.addAttribute(ERROR, "An error occurred while saving the transport. Please try again.");
-            modelMap.addAttribute(ERROR_MESSAGE, e.getMessage());
-            return ERROR; // Return to the error view with the error message
+            modelMap.addAttribute(Constants.ERROR, "An error occurred while saving the transport. Please try again.");
+            modelMap.addAttribute(Constants.ERROR_MESSAGE, e.getMessage());
+            return Constants.ERROR; // Return to the error view with the error message
         }
     }
 

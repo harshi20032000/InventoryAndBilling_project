@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.harshi_solution.inventorymate.service.PaymentService;
+import com.harshi_solution.inventorymate.util.Constants;
 
 /**
  * Controller class for managing the dashboard and related views.
@@ -15,7 +16,8 @@ import com.harshi_solution.inventorymate.service.PaymentService;
 @Controller
 public class DashboardController {
 
-    @Autowired
+
+	@Autowired
     private PaymentService paymentService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DashboardController.class);
@@ -43,6 +45,6 @@ public class DashboardController {
     public String login(ModelMap modelMap) {
         LOGGER.info("Redirecting to landing.html");
         modelMap.addAttribute("msg", ".....On Home Page.....");
-        return "dashboardView/landing";
+        return Constants.DASHBOARD_VIEW_FOLDER + Constants.LANDING;
     }
 }

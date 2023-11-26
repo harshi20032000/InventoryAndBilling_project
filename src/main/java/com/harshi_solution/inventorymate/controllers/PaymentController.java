@@ -16,18 +16,13 @@ import com.harshi_solution.inventorymate.entities.Document;
 import com.harshi_solution.inventorymate.entities.Payment;
 import com.harshi_solution.inventorymate.service.DocumentService;
 import com.harshi_solution.inventorymate.service.PaymentService;
+import com.harshi_solution.inventorymate.util.Constants;
 
 @Controller
 public class PaymentController {
 
-	private static final String ORDER_ID = "orderId";
-
-	private static final String DOCUMENT = "document";
-
-	private static final String PAYMENT2 = "payment";
-
 	private static final Logger LOGGER = LoggerFactory.getLogger(PaymentController.class);
-
+	
 	@Autowired
 	private PaymentService paymentService;
 	
@@ -46,8 +41,8 @@ public class PaymentController {
     public String showTPaymentDetails(@PathVariable Long payId, Model model) {
         LOGGER.info("Displaying payment details for payment with ID: {}", payId);
         Payment payment = paymentService.getPaymentById(payId);
-        model.addAttribute(PAYMENT2, payment);
-        return "paymentView/"+"paymentDetails";
+        model.addAttribute(Constants.PAYMENT, payment);
+        return Constants.PAYMENT_VIEW+Constants.PAYMENT_DETAILS;
     }
     
     @GetMapping("/viewDocument/{payId}")
@@ -55,13 +50,13 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(payId);
 
         if (payment.getDocument() != null) {
-            model.addAttribute(DOCUMENT, payment.getDocument());
-            model.addAttribute(ORDER_ID, payment.getOrder().getOrderId());
+            model.addAttribute(Constants.DOCUMENT, payment.getDocument());
+            model.addAttribute(Constants.ORDER_ID, payment.getOrder().getOrderId());
 
-            return "paymentView/"+"viewDocument"; // Replace "viewDocument" with your actual Thymeleaf view name
+            return Constants.PAYMENT_VIEW+Constants.VIEW_DOCUMENT; // Replace "viewDocument" with your actual Thymeleaf view name
         } else {
             // Handle the case where no document is found
-            return "documentNotFound"; // Create a view for displaying a message about document not found
+            return Constants.DOCUMENT_NOT_FOUND; // Create a view for displaying a message about document not found
         }
     }
     

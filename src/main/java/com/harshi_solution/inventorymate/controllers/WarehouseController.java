@@ -19,27 +19,14 @@ import com.harshi_solution.inventorymate.entities.Warehouse;
 import com.harshi_solution.inventorymate.helper.WarehouseHelper;
 import com.harshi_solution.inventorymate.service.ProductService;
 import com.harshi_solution.inventorymate.service.WarehouseService;
+import com.harshi_solution.inventorymate.util.Constants;
 /**
  * Controller class for managing warehouse-related operations.
  */
 @Controller
 public class WarehouseController {
 	
-    private static final String TOTAL_PRODUCT_QUANTITY = "totalProductQuantity";
-
-	private static final String PRODUCTS_LIST = "productsList";
-
-	private static final String WAREHOUSE2 = "warehouse";
-
-	private static final String ERROR_MESSAGE = "errorMessage";
-
-	private static final String ERROR = "error";
-
-	private static final String MSG2 = "msg";
-
-	private static final String WAREHOUSES_LIST = "warehousesList";
-
-	@Autowired
+    	@Autowired
     private ProductService productService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WarehouseController.class);
@@ -52,7 +39,7 @@ public class WarehouseController {
      *
      * @return An empty Warehouse object.
      */
-    @ModelAttribute(WAREHOUSE2)
+    @ModelAttribute(Constants.WAREHOUSE)
     public Warehouse getWarehouse() {
         return new Warehouse();
     }
@@ -68,8 +55,8 @@ public class WarehouseController {
         LOGGER.info("Inside showWarehouseList() on WarehouseController");
         // Retrieve all warehouses and add them to the modelMap
         List<Warehouse> warehousesList = warehouseService.getWarehousesList();
-        modelMap.addAttribute(WAREHOUSES_LIST, warehousesList);
-        return "warehouseView/"+WAREHOUSES_LIST;
+        modelMap.addAttribute(Constants.WAREHOUSES_LIST, warehousesList);
+        return Constants.WAREHOUSE_VIEW+Constants.WAREHOUSES_LIST;
     }
 
     /**
@@ -80,7 +67,7 @@ public class WarehouseController {
     @RequestMapping("/showAddWarehouse")
     public String showAddWarehouse() {
         LOGGER.info("Inside showAddWarehouse() on WarehouseController");
-        return "warehouseView/"+"addWarehouse";
+        return Constants.WAREHOUSE_VIEW+Constants.ADD_WAREHOUSE;
     }
 
     /**
@@ -91,7 +78,7 @@ public class WarehouseController {
      * @return The view name for the list of warehouses or an error view in case of an exception.
      */
     @RequestMapping("/addWarehouse")
-    public String addWarehouse(@ModelAttribute(WAREHOUSE2) Warehouse warehouse, ModelMap modelMap) {
+    public String addWarehouse(@ModelAttribute(Constants.WAREHOUSE) Warehouse warehouse, ModelMap modelMap) {
         try {
             // Convert warehouse data to uppercase
             warehouse.setWareCode(warehouse.getWareCode().toUpperCase());
@@ -104,26 +91,26 @@ public class WarehouseController {
             List<Warehouse> warehousesList = warehouseService.getWarehousesList();
 
             // Add the warehouses list to the model
-            modelMap.addAttribute(WAREHOUSES_LIST, warehousesList);
+            modelMap.addAttribute(Constants.WAREHOUSES_LIST, warehousesList);
 
             // Create a success message
             String msg = "Warehouse saved with ID - " + savedWarehouse.getWareId();
 
             // Add the success message to the model
-            modelMap.addAttribute(MSG2, msg);
+            modelMap.addAttribute(Constants.MSG, msg);
 
             // Log a message indicating a successful warehouse addition
             LOGGER.info(msg);
 
-            return "warehouseView/"+"warehousesList";
+            return Constants.WAREHOUSE_VIEW+Constants.WAREHOUSES_LIST;
         } catch (Exception e) {
             // Handle the exception
             e.printStackTrace(); // You can log the exception for debugging purposes
 
             // Add an error message to the model to display to the user
-            modelMap.addAttribute(ERROR, "An error occurred while adding the warehouse. Please try again.");
-            modelMap.addAttribute(ERROR_MESSAGE, e.getMessage());
-            return ERROR; // Return to the error view with the error message
+            modelMap.addAttribute(Constants.ERROR, "An error occurred while adding the warehouse. Please try again.");
+            modelMap.addAttribute(Constants.ERROR_MESSAGE, e.getMessage());
+            return Constants.ERROR; // Return to the error view with the error message
         }
     }
 
@@ -147,14 +134,14 @@ public class WarehouseController {
             Integer totalProductQuantity = WarehouseHelper.totalProductQuantity(warehouse);
 
             // Add the warehouse and products list to the model
-            model.addAttribute(WAREHOUSE2, warehouse);
-            model.addAttribute(PRODUCTS_LIST, productsList);
-            model.addAttribute(TOTAL_PRODUCT_QUANTITY, totalProductQuantity);
+            model.addAttribute(Constants.WAREHOUSE, warehouse);
+            model.addAttribute(Constants.PRODUCTS_LIST, productsList);
+            model.addAttribute(Constants.TOTAL_PRODUCT_QUANTITY, totalProductQuantity);
 
             // Log a message indicating a successful retrieval of warehouse details
             LOGGER.info("Viewing warehouse details for Warehouse ID: {}", warehouseId);
 
-            return "warehouseView/"+"warehouseDetails";
+            return Constants.WAREHOUSE_VIEW+"warehouseDetails";
         } catch (Exception e) {
             // Log an error message if an exception occurs during the process
             LOGGER.error("Error viewing warehouse details: {}", e.getMessage());
@@ -183,9 +170,9 @@ public class WarehouseController {
             Integer totalProductQuantity = WarehouseHelper.totalProductQuantity(warehouse);
             
             // Add the warehouse and products list to the model
-            model.addAttribute(WAREHOUSE2, warehouse);
-            model.addAttribute(PRODUCTS_LIST, productsList);
-            model.addAttribute(TOTAL_PRODUCT_QUANTITY, totalProductQuantity);
+            model.addAttribute(Constants.WAREHOUSE, warehouse);
+            model.addAttribute(Constants.PRODUCTS_LIST, productsList);
+            model.addAttribute(Constants.TOTAL_PRODUCT_QUANTITY, totalProductQuantity);
             
             // Log a message indicating a successful retrieval of warehouse and products
             LOGGER.info("Editing warehouse quantities for Warehouse ID: {}", warehouseId);
@@ -208,7 +195,7 @@ public class WarehouseController {
      * @return The view name for the updated list of warehouses or an error page in case of an exception.
      */
     @PostMapping("/updateWarehouseQuantities")
-    public String updateWarehouseQuantities(@ModelAttribute(WAREHOUSE2) Warehouse warehouse, ModelMap modelMap) {
+    public String updateWarehouseQuantities(@ModelAttribute(Constants.WAREHOUSE) Warehouse warehouse, ModelMap modelMap) {
         try {
             // Update the warehouse quantities in the database
             Warehouse fetchedWarehouse = warehouseService.getWarehouseById(warehouse.getWareId());
@@ -223,12 +210,12 @@ public class WarehouseController {
         }
 
         List<Warehouse> warehousesList = warehouseService.getWarehousesList();
-        modelMap.addAttribute(WAREHOUSES_LIST, warehousesList);
+        modelMap.addAttribute(Constants.WAREHOUSES_LIST, warehousesList);
         String msg = "Warehouse updated with ID - " + warehouse.getWareId();
-        modelMap.addAttribute(MSG2, msg);
+        modelMap.addAttribute(Constants.MSG, msg);
         
         // Redirect to the warehouse details page to display the updated details
-        return "warehouseView/"+"warehousesList";
+        return Constants.WAREHOUSE_VIEW+Constants.WAREHOUSES_LIST;
     }
 
 }
