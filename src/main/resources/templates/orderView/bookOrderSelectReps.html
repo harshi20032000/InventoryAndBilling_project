@@ -2,11 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Order - Select Reps</title>
 	<style>
 		/* Add your custom CSS styles here */
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+			text-align: left;
 		}
 
 		#logo {
@@ -14,14 +20,6 @@
 			height: auto;
 			margin: 20px auto;
 			display: block;
-		}
-
-		#ownerlogo {
-			position: absolute;
-			bottom: 10px;
-			right: 10px;
-			width: 150px;
-			height: auto;
 		}
 
 		.container {
@@ -41,6 +39,7 @@
 
 		h3 {
 			color: #333;
+			margin-bottom: 10px;
 		}
 
 		select {
@@ -51,7 +50,7 @@
 		}
 
 		.btn {
-			background-color: #007bff;
+			background-color: #17a2b8;
 			color: #fff;
 			border: none;
 			border-radius: 5px;
@@ -79,11 +78,18 @@
 			display: inline-block;
 			margin-top: 10px;
 			text-decoration: none;
-			color: #007bff;
+			color: #17a2b8;
 		}
 
 		a:hover {
 			text-decoration: underline;
+		}
+
+		p {
+			padding: 10px;
+			text-align: left;
+			color: #000;
+			font-weight: bold;
 		}
 
 		footer {
@@ -101,6 +107,21 @@
 			justify-content: space-between;
 			flex-direction: column;
 		}
+
+		#owner-logo-container {
+			bottom: 10px;
+			right: 10px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
+			height: auto;
+		}
 	</style>
 </head>
 
@@ -109,7 +130,7 @@
 		<!-- Logo -->
 		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
 		<h2>Book Order</h2>
-		<p>Current Date: <span th:text="${currentDate}"></span></p>
+		<p>Order Date: <span th:text="${currentDate}"></span></p>
 		<h3>Select Sales Representative</h3>
 		<form action="/inventorybilling/bookOrderSaveReps" method="post">
 			<div class="form-group">
@@ -131,7 +152,9 @@
 			<b>.....On Book Order Select Reps Page.....</b>
 		</footer>
 		<!-- Company Logo -->
-		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		<div id="owner-logo-container">
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		</div>
 	</div>
 </body>
 

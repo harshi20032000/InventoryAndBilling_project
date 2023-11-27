@@ -22,14 +22,6 @@
 			display: block;
 		}
 
-		#ownerlogo {
-			position: absolute;
-			bottom: 10px;
-			right: 10px;
-			width: 150px;
-			height: auto;
-		}
-
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
@@ -57,10 +49,6 @@
 			border-radius: 5px;
 		}
 
-		p {
-			color: #777;
-		}
-
 		table {
 			width: 100%;
 			border-collapse: collapse;
@@ -83,7 +71,7 @@
 			display: inline-block;
 			margin: 10px 0;
 			text-decoration: none;
-			color: #007bff;
+			color: #17a2b8;
 		}
 
 		a:hover {
@@ -99,7 +87,7 @@
 		}
 
 		.btn {
-			background-color: #007bff;
+			background-color:  #17a2b8;
 			color: #fff;
 			border: none;
 			border-radius: 5px;
@@ -128,6 +116,20 @@
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
+		}
+		#owner-logo-container {
+			bottom: 10px;
+			right: 10px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
+			height: auto;
 		}
 	</style>
 </head>
@@ -187,7 +189,9 @@
 			<b>.....On Book Order Select Party Page.....</b>
 		</footer>
 		<!-- Company Logo -->
-		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		<div id="owner-logo-container">
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		</div>
 	</div>
 </body>
 
