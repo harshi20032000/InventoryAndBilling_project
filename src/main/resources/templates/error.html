@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <title>Error Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
 
-     	.container {
+<head>
+	<meta charset="UTF-8" />
+	<title>Error Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
 			max-width: 800px;
 			margin: 0 auto;
 			padding: 20px;
@@ -20,38 +21,67 @@
 			border-radius: 5px;
 		}
 
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
+		h1 {
+			color: #333;
+			margin-bottom: 20px;
+		}
 
-        p {
-            margin: 10px 0;
-        }
+		p {
+			margin: 10px 0;
+		}
 
-        a {
-            background-color: #555;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
+		a {
+			background-color: #555;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			text-decoration: none;
+			display: inline-block;
+			margin-top: 20px;
+		}
 
-        a:hover {
-            background-color: #333;
-        }
-    </style>
+		a:hover {
+			background-color: #333;
+		}
+
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#owner-logo-container {
+			bottom: 10px;
+			right: 10px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
+			height: auto;
+		}
+	</style>
 </head>
-<body>
-    <div class="container">
-        <h1>Error</h1>
-        <p th:text="${error}">An error occurred</p>
-        <p th:text="${errorMessage}">Error Message</p>
-        <a th:href="@{/showLanding}" class="btn btn-secondary">Home</a>
-    </div>
-</body>
-</html>
 
+<body>
+	<div class="container">
+		<a href="/inventorybilling/showLanding">
+			<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		</a>
+		<h1>Error</h1>
+		<p th:text="${error}">An error occurred</p>
+		<p th:text="${errorMessage}">Error Message</p>
+		<a th:href="@{/showLanding}" class="btn btn-secondary">Home</a>
+		<div id="owner-logo-container">
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		</div>
+	</div>
+</body>
+
+</html>

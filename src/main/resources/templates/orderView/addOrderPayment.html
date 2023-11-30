@@ -45,11 +45,18 @@
 			display: block;
 		}
 
-		#ownerlogo {
-			position: absolute;
+		#owner-logo-container {
 			bottom: 10px;
 			right: 10px;
-			width: 150px;
+			width: 120px;
+			height: auto;
+		}
+
+		#ownerlogo {
+			position: relative;
+			bottom: 0px;
+			left: 670px;
+			width: 120px;
 			height: auto;
 		}
 
@@ -128,9 +135,9 @@
 
 <body>
 	<div class="container">
-		<!-- Logo -->
-		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
-		<!-- Display Order Details -->
+		<a href="/inventorybilling/showLanding">
+			<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		</a>
 		<div>
 			<h3>Add New Payment To Order</h3>
 			<div style="display: flex; justify-content: space-between;">
@@ -371,8 +378,9 @@
 			<a href="/inventorybilling/showLanding" class="btn btn-secondary">Home</a>
 			<b>.....On Add Order Payment Page.....</b>
 		</footer>
-		<!-- Company Logo -->
-		<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		<div id="owner-logo-container">
+			<img src="/inventorybilling/assets/software_owner_logo.png" alt="Your Company Logo" id="ownerlogo">
+		</div>
 	</div>
 </body>
 

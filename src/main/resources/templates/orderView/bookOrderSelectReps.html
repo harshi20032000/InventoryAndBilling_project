@@ -15,21 +15,6 @@
 			text-align: left;
 		}
 
-		#logo {
-			width: 200px;
-			height: auto;
-			margin: 20px auto;
-			display: block;
-		}
-
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-			background-color: #f2f2f2;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-		}
 
 		h2 {
 			color: #333;
@@ -108,6 +93,13 @@
 			flex-direction: column;
 		}
 
+		#logo {
+			width: 200px;
+			height: auto;
+			margin: 20px auto;
+			display: block;
+		}
+
 		#owner-logo-container {
 			bottom: 10px;
 			right: 10px;
@@ -127,8 +119,9 @@
 
 <body>
 	<div class="container">
-		<!-- Logo -->
-		<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		<a href="/inventorybilling/showLanding">
+			<img src="/inventorybilling/assets/logo_nobg.png" alt="Your Logo" id="logo">
+		</a>
 		<h2>Book Order</h2>
 		<p>Order Date: <span th:text="${currentDate}"></span></p>
 		<h3>Select Sales Representative</h3>

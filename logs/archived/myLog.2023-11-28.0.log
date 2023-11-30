@@ -1,0 +1,118 @@
+2023-11-28 18:31:58|[background-preinit]|INFO |org.hibernate.validator.internal.util.Version-HV000001: Hibernate Validator 8.0.1.Final
+2023-11-28 18:31:58|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Starting InventoryAndBillingApplication using Java 17.0.8.1 with PID 2540 (C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling\target\classes started by Asus in C:\Users\Asus\Downloads\InventoryAndBilling\InventoryAndBilling)
+2023-11-28 18:31:58|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-No active profile set, falling back to 1 default profile: "default"
+2023-11-28 18:32:00|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-28 18:32:00|[main]|INFO |org.springframework.data.repository.config.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 141 ms. Found 12 JPA repository interfaces.
+2023-11-28 18:32:01|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8087 (http)
+2023-11-28 18:32:01|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8087"]
+2023-11-28 18:32:01|[main]|INFO |org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2023-11-28 18:32:01|[main]|INFO |org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-28 18:32:01|[main]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring embedded WebApplicationContext
+2023-11-28 18:32:01|[main]|INFO |org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 2634 ms
+2023-11-28 18:32:01|[main]|INFO |org.hibernate.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-28 18:32:01|[main]|INFO |org.hibernate.Version-HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-28 18:32:01|[main]|INFO |org.hibernate.cfg.Environment-HHH000406: Using bytecode reflection optimizer
+2023-11-28 18:32:02|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-28 18:32:02|[main]|INFO |org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo-No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-28 18:32:02|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2023-11-28 18:32:03|[main]|INFO |com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55d1f065
+2023-11-28 18:32:03|[main]|INFO |com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2023-11-28 18:32:03|[main]|INFO |org.hibernate.bytecode.internal.BytecodeProviderInitiator-HHH000021: Bytecode provider name : bytebuddy
+2023-11-28 18:32:04|[main]|INFO |org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-28 18:32:05|[main]|INFO |org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-28 18:32:05|[main]|INFO |org.springframework.data.jpa.repository.query.QueryEnhancerFactory-Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-28 18:32:06|[main]|WARN |org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-28 18:32:06|[main]|INFO |org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping-Adding welcome page template: index
+2023-11-28 18:32:07|[main]|INFO |org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8087"]
+2023-11-28 18:32:07|[main]|INFO |org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8087 (http) with context path '/inventorybilling'
+2023-11-28 18:32:07|[main]|INFO |com.harshi_solution.inventorymate.InventoryAndBillingApplication-Started InventoryAndBillingApplication in 9.017 seconds (process running for 9.856)
+2023-11-28 18:33:04|[http-nio-8087-exec-1]|INFO |org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/inventorybilling]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-28 18:33:04|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2023-11-28 18:33:04|[http-nio-8087-exec-1]|INFO |org.springframework.web.servlet.DispatcherServlet-Completed initialization in 6 ms
+2023-11-28 18:33:06|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Displaying the login page
+2023-11-28 18:33:11|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Attempting login for email: ayush11006@gmail.com
+2023-11-28 18:33:11|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.UserController-Login successful for email: AYUSH11006@GMAIL.COM
+2023-11-28 18:33:20|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-28 18:33:26|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-28 18:33:29|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 18:46:10|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-28 18:46:14|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected representative with ID: 5
+2023-11-28 18:46:23|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 18:46:25|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order list
+2023-11-28 18:46:33|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 38
+2023-11-28 18:46:58|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 18:49:18|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the party list
+2023-11-28 18:49:24|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the add party form
+2023-11-28 18:49:28|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the party list
+2023-11-28 18:49:36|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the add party form
+2023-11-28 18:49:50|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 18:49:55|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.TransportController-Displaying the list of transports
+2023-11-28 18:52:07|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.TransportController-Displaying transport details for transport with ID: 5
+2023-11-28 18:54:15|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.TransportController-Displaying the list of transports
+2023-11-28 18:54:16|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.TransportController-Displaying transport details for transport with ID: 2
+2023-11-28 18:54:18|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.TransportController-Displaying the list of transports
+2023-11-28 18:54:21|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.TransportController-Displaying the add transport form
+2023-11-28 18:55:25|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:01:25|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the list of representatives
+2023-11-28 19:05:58|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying representative details for representative with ID: 1
+2023-11-28 19:07:42|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 2
+2023-11-28 19:07:54|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the list of representatives
+2023-11-28 19:07:56|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-28 19:08:08|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Saving a new representative
+2023-11-28 19:08:10|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:08:14|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the party list
+2023-11-28 19:09:28|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:09:30|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the list of representatives
+2023-11-28 19:09:55|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying representative details for representative with ID: 13
+2023-11-28 19:10:00|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-28 19:10:01|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:10:04|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the list of representatives
+2023-11-28 19:10:08|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Displaying the add representatives form
+2023-11-28 19:10:20|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.RepsController-Saving a new representative
+2023-11-28 19:10:34|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-28 19:10:35|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:10:38|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-11-28 19:10:42|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:13:11|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Inside getTotalOutstanding() on DashboardController
+2023-11-28 19:13:13|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:19:21|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying the list of available products
+2023-11-28 19:22:04|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying product details for product with ID: 12
+2023-11-28 19:22:13|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Editing product quantities for product with ID: 12
+2023-11-28 19:22:25|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Updating product quantities for product with ID: 12
+2023-11-28 19:22:27|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying product details for product with ID: 13
+2023-11-28 19:22:30|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Editing product quantities for product with ID: 13
+2023-11-28 19:22:34|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Updating product quantities for product with ID: 13
+2023-11-28 19:22:36|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying product details for product with ID: 13
+2023-11-28 19:22:42|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying the list of available products
+2023-11-28 19:22:58|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying product details for product with ID: 13
+2023-11-28 19:23:30|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying the list of available products
+2023-11-28 19:23:34|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying the add products form
+2023-11-28 19:24:21|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.ProductController-Displaying the list of available products
+2023-11-28 19:24:23|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:25:35|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-11-28 19:27:30|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 1
+2023-11-28 19:27:33|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Editing warehouse quantities for Warehouse ID: 1
+2023-11-28 19:28:25|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 1
+2023-11-28 19:28:28|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Editing warehouse quantities for Warehouse ID: 1
+2023-11-28 19:28:29|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 1
+2023-11-28 19:28:37|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-11-28 19:28:39|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Inside showAddWarehouse() on WarehouseController
+2023-11-28 19:30:12|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Warehouse saved with ID - 19
+2023-11-28 19:32:19|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 18
+2023-11-28 19:32:21|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:32:29|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the party list
+2023-11-28 19:33:41|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying party details for party with ID: 1
+2023-11-28 19:33:47|[http-nio-8087-exec-4]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 1
+2023-11-28 19:33:49|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:33:51|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the party list
+2023-11-28 19:34:17|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying party details for party with ID: 12
+2023-11-28 19:34:32|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Displaying order details for order with ID: 17
+2023-11-28 19:35:37|[http-nio-8087-exec-2]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:35:39|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the party list
+2023-11-28 19:35:40|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.PartyController-Displaying the add party form
+2023-11-28 19:38:22|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-28 19:38:26|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Inside showWarehouseList() on WarehouseController
+2023-11-28 19:38:28|[http-nio-8087-exec-9]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 19
+2023-11-28 19:38:31|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Editing warehouse quantities for Warehouse ID: 19
+2023-11-28 19:39:51|[http-nio-8087-exec-3]|INFO |com.harshi_solution.inventorymate.controllers.WarehouseController-Viewing warehouse details for Warehouse ID: 19
+2023-11-28 19:40:13|[http-nio-8087-exec-5]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
