@@ -263,3 +263,5 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.we
 2023-11-30 19:08:48|[http-nio-8087-exec-8]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
 2023-11-30 19:08:51|[http-nio-8087-exec-6]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Saving selected representative with ID: 1
 2023-11-30 19:08:54|[http-nio-8087-exec-7]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
+2023-11-30 20:00:26|[http-nio-8087-exec-10]|INFO |com.harshi_solution.inventorymate.controllers.OrderController-Entering showBookOrder
+2023-11-30 20:00:28|[http-nio-8087-exec-1]|INFO |com.harshi_solution.inventorymate.controllers.DashboardController-Redirecting to landing.html
