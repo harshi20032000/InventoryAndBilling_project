@@ -13,7 +13,8 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user")
+//name changed to users because user is reserved in postgres
+@Table(name = "users")
 public class User {
 
     @Id

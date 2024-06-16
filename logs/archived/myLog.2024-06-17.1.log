@@ -1,0 +1,49 @@
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:26:47|[http-nio-8087-exec-10]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:19|[http-nio-8087-exec-1]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:21|[http-nio-8087-exec-2]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:22|[http-nio-8087-exec-3]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:22|[http-nio-8087-exec-5]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:22|[http-nio-8087-exec-4]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|DEBUG|org.springframework.web.servlet.DispatcherServlet-GET "/inventorybilling/showLanding", parameters={}
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|DEBUG|org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping-Mapped to com.harshi.InventoryAndBilling.controllers.DashboardController#login(ModelMap)
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|INFO |com.harshi.InventoryAndBilling.controllers.DashboardController-Redirecting to landing.html
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|DEBUG|org.springframework.web.servlet.view.ContentNegotiatingViewResolver-Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|DEBUG|org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor-Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2024-06-17 00:33:23|[http-nio-8087-exec-6]|DEBUG|org.springframework.web.servlet.DispatcherServlet-Completed 200 OK
